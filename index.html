@@ -1,0 +1,397 @@
+<!--
+This was made possible by using the D3 and the D3 sankey plugin
+D3: https://d3js.org/
+Sankey Plugin: https://github.com/d3/d3-sankey
+-->
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+	<meta charset="UTF-8">
+
+	<!-- include d3 and sankey plugin -->
+	<script src="d3.js"></script>
+	<!--script src="sankey.js" type="module"></script-->
+
+	<!-- separate file for my sankey graph -->
+	<!--script src="mySankey.js"></script-->
+	<!--link rel="stylesheet" href="style.css"-->
+
+	<!-- STYLESHEET -->
+	<style>
+ 
+ 		.node rect {
+   			cursor: move;
+     		fill-opacity: .9;
+	   		shape-rendering: crispEdges;
+	   	}
+	    
+		.node text {
+			pointer-events: none;
+		    text-shadow: 0 1px 0 #fff;
+		}
+			 
+		.link {
+			fill: none;
+			stroke: #000;
+			stroke-opacity: .2;
+		}
+				    
+		.link:hover {
+			stroke-opacity: .5;
+		}
+					   
+	</style>
+
+	<head>
+		<title>Sankey Diagram</title>
+	</head>
+
+	<body>
+		
+		<h1>My Sankey Diagram</h1>
+		<p id="chart"></p>
+
+		<script>
+			
+			// constant values
+			const units  = "Students";
+			const margin = {top:10 , bottom:10 , right:10 , left:10};
+			const width  = 1200 - margin.left - margin.right;
+			const height = 740 - margin.top - margin.bottom;
+
+			const NODE_WIDTH = 36;
+			const NODE_PADDING = 10;
+			
+			const FILENAME = "sankey.csv";
+
+			const SANKEY_LAYOUT = 32;
+
+			const DEGREES_DARKER = 2;
+
+			// create canvas
+			d3.select("#chart").append("svg")
+				.attr("width"  , width + margin.left + margin.right)
+				.attr("height" , height + margin.top + margin.bottom)
+			  .append("g") // this is the group where the chart will go
+			  	.attr("transform" , "translate(" + margin.left + "," + margin.right + ")" );
+			
+			// set sankey properties
+			var sankey = d3.sankey()
+				.nodeWidth(NODE_WIDTH)
+				.nodePadding(NODE_PADDING)
+				.size([width , height]);
+
+			// load in data
+			d3.csv(FILENAME , function(error , data){
+				
+				// graph is an objest containing arrays (nodes , links)
+				graph = { nodes: [] , links: [] };
+				
+				data.forEach( function(d){
+					graph.nodes.push( {"name"  : d.source}); // this will cause nodes to
+					graph.nodes.push( {"name"  : d.target}); // be included more than once
+					graph.links.push( {"source": d.source,
+									   "target": d.target,
+									   "value" : d.value });
+				});
+
+				// clear duplicate nodes
+				graph.nodes = d3.keys( d3.nest()
+					.key( function(d) { return d.name; })
+					.map(graph.nodes));
+				
+				// replace link text with index of node
+				graph.links.forEach( function(d , i){
+					graph.links[i].source = graph.nodes.indexOf( graph.links[i].source );	
+					graph.links[i].target = graph.nodes.indexOf( graph.links[i].target );	
+				});
+
+				// make nodes an array of objects conatining name
+				graph.nodes.forEach( function( d , i ){
+					graph.nodes[i] = { "name": d };
+				});
+
+				// add array of nodes and links to sankey
+				sankey
+					.nodes( graph.nodes )
+					.links( graph.links )
+					.layout( SANKEY_LAYOUT );
+				
+				// add in the links to the svg
+				var link = svg.append("g").selectAll(".link")
+					.data(graph.links)
+					.enter()
+					.append("path")
+						.attr("class" , "link")
+						.attr("d" , path)
+						.style("stroke-width" , function(d){ return Math.max(1 , d.dy); })
+						.sort(function(a , b){ return b.dy - a.dy; });
+				
+				// add the link titles (ie the little card when hovering over)
+				link.append("title")
+					.text(function(d){
+						return d.source.name + " -> " +
+								d.target.name + "\n" + format( d.values );
+					});
+
+				// add in the nodes to svg
+				var node = svg.append("g").selectAll(".node")
+					.data(graph.nodes)
+					.enter()
+					.append("g")
+						.attr("class" , "node")
+						.attr("transform" , function(d){
+							return d.name + "\n" + format( d.value ); 
+						})
+					.call(d3.behavior.drag()
+						.origin(function(d){ return d; })
+						.on("dragstart" , function(){
+							this.parentNode.appendChild(this); 
+						})
+						.on("drag" , dragmove)
+					);
+
+				// add the rectangles for the nodes
+				node.append("rect")
+					.attr("height" , function(d){ return d.dy; })
+					.attr("width" , sankey.nodeWidth())
+					.style("fill" , function(d){
+						return d3.rgb(d.color).darker(DEGREES_DARKER); })
+					.append("title")
+						.text(function(d){
+							return d.name + "\n" + format(d.value); });
+
+				// add in the title for the nodes
+				node.append("text")
+					.attr("x" , -6)
+					.attr("y" , function(d){ return d.dy / 2; })
+					.attr("dy" , ".35em")
+					.attr("text-anchor" , "end")
+					.attr("transform" , null)
+					.text(function(d) { return d.name; })
+					.filter(function(d){ return d.x < width / 2; })
+					.attr("x" , 6 + sankey.nodeWidth())
+					.attr("text-anchor" , "start");
+
+				// function for moving the nodes
+				function dragmove(d){
+					d3.select(this)
+					.attr("transform" , "translate(" + d.x + "," +
+						(d.y = Math.max(0, Math.min(height - d.dy, d3.event.y)))
+						+ ")" );
+					sankey.relayout()
+					link.attr("d" , path);
+				}
+
+				////////////////////////////////////////////////////////////////
+				//                SANKEY.JS
+				///////////////////////////////////////////////////////////////
+
+				// function to create sankey with default values
+				d3.sankey = function(){
+					var sankey = {},
+						nodeWidth = 24,
+						nodePadding = 8,
+						size = [1 , 1],
+						nodes = [],
+						links = [];
+					
+					// setters and getters ( function(_) combines them )
+					sankey.nodeWidth = function(_){
+						if(!arguments.length) return nodeWidth;
+						nodeWidth = +_;
+						return sankey;
+					};
+
+					sankey.nodePadding = function(_){
+						if(!arguments.length) return nodePadding;
+						nodePadding = +_;
+						return sankey;
+					};
+
+					sankey.size = function(_){
+						if(!arguments.length) return size;
+						size = _;
+						return sankey;
+					};
+
+					sankey.nodes = function(_){
+						if(!arguments.length) return nodes;
+						nodes = _;
+						return sankey;
+					};
+
+					sankey.links = function(_){
+						if(!arguments.length) return links;
+						links = _;
+						return sankey;
+					};
+
+
+					// layout stuff???
+					sankey.layout = function(iterations){
+						computeNodeLinks();
+						computeNodeValues();
+						computeNodeBreadths();
+						computeNodeDepths(iterations);
+						computeLinkDepths();
+						return sankey;
+					};
+
+					sankey.relayout = function(){
+						computeLinkDepths();
+						return sankey;
+					};
+
+					// connects nodes to links
+					sankey.link = function(){
+						var curvature = .5;
+
+						function link(d){
+							var x0 = d.source.x + d.source.dx,
+								x1 = d.target.x,
+								xi = d3.interpolateNumber(x0 , x1),
+								x2 = xi(curvature),
+								x3 = xi(1 - curvature),
+								y0 = d.source.y + d.sy + d.dy / 2,
+								y1 = d.target.y + d.ty + d.dy / 2;
+
+							return "M" + x0 + "," + y0
+								 + "C" + x2 + "," + y0
+								 + " " + x3 + "," + y1
+								 + " " + x1 + "," + y1;
+						}
+
+						link.curvature = function(_){
+							if(!arguments.length) return curvature;
+							cuvature = +_;
+							return link;
+						};
+
+						return link;
+					};
+
+					// populate sourceLinks and targetLinks for each node
+					// if source and target are not objects, assume they are indices
+					function computeNodeLinks(){
+						nodes.forEach(function(node){
+							node.sourceLinks = [];
+							node.targetLinks = [];
+						});
+
+						links.forEach(function(link){
+							var source = link.source,
+								target = link.target;
+							if(typeof source == "number") source = link.source = nodes[link.source];
+							if(typeof target == "number") target = link.target = nodes[link.target];
+							source.sourceLinks.push(link);
+							target.targetLinks.push(link);
+						});
+					}
+
+					// compute the value of each node by counting the associated links
+					function computeNodeValues(){
+						nodes.forEach(function(node){
+							node.value = Math.max(
+								d3.sum(node.sourceLinks , value),
+								d3.sum(node.targetLinks , value)	
+							);
+						});
+					}
+
+					// iteratively assign the breadth (x-position) of each node
+					// max breadth = incoming neighbors plus one
+					// nodes with no incoming links are assigned breadth zero,
+					// nodes with no outgoing links are assigned maximum breadth
+					function computeNodeBreadths(){
+						var remainingNodes = nodes,
+							nextNodes,
+							x = 0;
+
+						while(remainingNodes.length){
+							nextNodes = [];
+							remainingNodes.forEach(function(node){
+								node.x = x
+								node.dx = nodeWidth;
+								node.sourceLinks.forEach(function(link){
+									nextNodes.push(link.target);
+								});
+							});
+							remainingNOdes = nextNodes;
+							++x;
+						}
+
+						moveSinksRight(x);
+						scaleNodeBreadths( (width - nodeWidth) / (x - 1) );
+					}
+
+					function moveSourcesRight(){
+						nodes.forEach(function(node){
+							if(!node.targetLinks.length){
+								node.x = d3.min(node.sourceLinks , 
+									function(d){ return d.target.x; }) - 1;
+							}
+						});
+					}
+
+					function moveSinksRight(x){
+						nodes.forEach(function(node){
+							if(!node.sourceLinks.length){
+								node.x = x - 1;
+							}
+						});
+					}
+
+					function scaleNodeBreadths(kx){
+						nodes.forEach(function(node){
+							node.x *= kx;
+						});
+					}
+
+					function computeNodeDepths(iterations){
+						var nodesByBreadth = d3.nest()
+							.key(function(d){ return d.x; })
+							.sortKeys(d3.ascending)
+							.entries(nodes)
+							.map(function(d){ return d.values; });
+						
+						initializeNodeDepth();
+						resolveCollisions();
+						for( var alpha = 1; iterations > 0; --iterations){
+							relaxRightToLeft(alpha *= .99);
+							resolveCollisions();
+							relaxLeftToRight(alpha);
+							resolveCollisions();
+						}
+					}
+
+					function initializeNodeDepth(){
+						var ky = d3.min(nodesByBreadth , function(nodes){
+							return (size[1] - (nodes.length - 1) * nodePadding) / d3.sum(nodes , value);
+						});
+						
+						nodesByBreadth.forEach(function(nodes){
+							nodes.forEach(function(node){
+								if(node.targetLinks.length){
+									var y = d3.sum(node.targetlinks , weightedSource) /
+										d3.sum(node.targetLinks , value);
+									node.y += (y - center(node)) * alpha;
+								}
+							});
+						});
+
+						links.forEach(function(link){
+							link.dy = link.value * ky;
+						});
+					}
+*/
+					
+			});
+			
+
+		</script>
+
+	</body>
+
+</html>
