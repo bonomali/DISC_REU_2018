@@ -1,0 +1,24 @@
+{
+  "took" : 761,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 5,
+    "successful" : 5,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : 13516,
+    "max_score" : 0.1095196,
+    "hits" : [ {
+      "_index" : "openlrsstatement",
+      "_type" : "statement",
+      "_id" : "9642bada-fa14-4df7-9e51-0efb5f8f3aef",
+      "_score" : 0.1095196,
+      "_source":{"id":"9642bada-fa14-4df7-9e51-0efb5f8f3aef","actor":{"objectType":"Agent","name":"Admin Lanski","account":{"homePage":"https://sakailogin.nd.edu","name":"admin4"}},"verb":{"id":"http://www.adlnet.gov/expapi/verbs/experienced"},"object":{"id":"https://sakailogin.nd.edu/portal/web/SP18-FYS-10102-21/id/2b9c82d0-18b6-4a36-ae6b-1a2cd40c6458/url/https%3A%2F%2Fsakailogin.nd.edu%2Faccess%2Fcontent%2Fgroup%2Fd4d124f8-135e-4ff6-90dc-840974c10984%2FCoursework%2Fsp18fys10102_with_forwarding.html","objectType":"Activity","definition":{"type":"http://adlnet.gov/expapi/activities/view-web-content"}},"context":{"contextActivities":{"parent":[{"id":"https://sakailogin.nd.edu/portal/site/SP18-FYS-10102-21"}]}},"timestamp":"2018-03-16T09:22:49-04:00","stored":"2018-03-16T13:22:49Z"}
+    }, {
+      "_index" : "openlrsstatement",
+      "_type" : "statement",
+      "_id" : "b79bc753-8cab-4c46-9308-c118621a8278",
+      "_score" : 0.1095196,
+      "_source":{"id":"b79bc753-8cab-4c46-9308-c118621a8278","actor":{"objectType":"Agent","name":"Admin Lanski","account":{"homePage":"https://sakailogin.nd.edu","name":"admin4"}},"verb":{"id":"http://www.adlnet.gov/expapi/verbs/experienced"},"object":{"id":"https://sakailogin.nd.edu/portal/web/SP18-FYS-10102-24/id/fd8177be-d0b0-4695-b30f-ce53de2d44b5/url/https%3A%2F%2Fsakailogin.nd.edu%2Faccess%2Fcontent%2Fgroup%2Fd4d124f8-135e-4ff6-90dc-840974c10984%2FCoursework%2Fsp18fys10102_with_forwarding.html","objectType":"Activity","definition":{"type":"http://adlnet.gov/expapi/activities/view-web-content"}},"context":{"contextActivities":{"parent":[{"id":"https://sakailogin.nd.edu/portal/site/SP18-FYS-10102-24"}]}},"timestamp":"2018-03-16T09:22:53-04:00","stored":"2018-03-16T13:22:53Z"}
+    }]}}
