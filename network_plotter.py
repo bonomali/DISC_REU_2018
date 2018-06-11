@@ -1,6 +1,3 @@
-import plotly.plotly as py
-import plotly.graph_objs as go
-
 import matplotlib.pyplot as plt
 
 import networkx as nx
@@ -15,16 +12,15 @@ network_data = np.genfromtxt(network_file, delimiter=',',dtype=None)[:20]
 
 nodes = []
 weights = []
+G = nx.DiGraph()
 for line in network_data:
 	left_node = line[0]
 	right_node = line[1]
-	weight = line[2]
+	weight = float(line[2])
 	nodes.append((left_node, right_node))
 	weights.append(weight)
-
-
-G = nx.DiGraph()
-G.add_edges_from(nodes)
+	type(weight)
+	G.add_edge(left_node, right_node, weight= weight)
 
 pos=nx.spring_layout(G)
 
@@ -42,5 +38,7 @@ for key in pos.keys():
 	x,y = pos[key]
 	plt.text(x,y+0.1,s=key, fontsize=6, bbox=dict(facecolor='red', alpha=0.5),horizontalalignment='center')
 
-plt.show()
 
+nx.write_gexf(G, "weighted-network.gexf")
+
+plt.show()
