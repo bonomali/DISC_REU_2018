@@ -10,6 +10,7 @@
 import csv
 import json
 import sys
+import datetime as dt
 
 #json_filepath = "SP18RawActivityData/SP18_FYS_10101_activity_03_23.json"
 #json_filepath = "easy_sample.json"
@@ -33,6 +34,7 @@ def raw_data_to_csv(json_filepath, csv_filepath):
 		print(account_name)
 		date = d["_source"]["timestamp"][:10]
 		time = d["_source"]["timestamp"][11:-6]
+		week = int((dt.datetime.strptime(str(date), '%Y-%m-%d').date()).strftime("%W"))
 		timestamp = d["_source"]["timestamp"][:-6]
 		object_id = d["_source"]["object"]["id"]
 
@@ -40,7 +42,7 @@ def raw_data_to_csv(json_filepath, csv_filepath):
 		verb_id = d["_source"]["verb"]["id"][35:] 
 		
 		#make a new dictionary with wanted info
-		d_entry = {"account_name": account_name, "date": date, "time" :time, "timestamp":timestamp, "object_id": object_id, "verb_id": verb_id}
+		d_entry = {"account_name": account_name, "date": date, "time" :time, "timestamp":timestamp, "week": week, "object_id": object_id, "verb_id": verb_id}
 		
 		#append to the output info
 		processed_data.append(d_entry)

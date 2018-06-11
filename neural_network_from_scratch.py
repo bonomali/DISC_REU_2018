@@ -3,7 +3,7 @@
 	The numer of nodes in the input layer is determined by the dimensinoality of our data, i.e. 2 (X[:,0] and X[:,1])
 	Similarly, the output layer node number is determined by the number of classes we have; i.e. 2 (blue vs pink in plot).
 	We can choose the dimensionality (number of nodes) of the hidden layer. The more nodes we put in, the more complex functions we can fit; but they come at a cost of e.g. overfitting.
-	Also need an activation function for hiddin layer. Activation function transforms the inputs of the layer into its outputs. A nonlinear activation functino is what allows us to fit nonlinear hypotheses. Common choices for activation functions are tanh or sigmoid. 
+	Also need an activation function for hidden layer. Activation function transforms the inputs of the layer into its outputs. A nonlinear activation functino is what allows us to fit nonlinear hypotheses. Common choices for activation functions are tanh or sigmoid. 
 	We will use tanh, which performs quite well in many scenarios.
 	A nice property of these functions is that their derivative can be computed using the original function value; e.g. derivative of tanh x is 1 - tanh^2x.
 	Because we want our network to output probablities, the acivation function for the output layer will be the softmax, which is simply a way to convert raw scores to probabilities.
@@ -12,31 +12,18 @@
 	As an input, our gradient descent needs the gradients of the loss function wrt our parameters. To calculate these gradients we use the famous backpropagation algorithm, which is a way to efficently calculate the gradients starting from the output."""
 
 import matplotlib.pyplot as plt 
+from mpl_toolkits.mplot3d import Axes3D
 import numpy as np 
 import sklearn 
 import sklearn.datasets 
 import sklearn.linear_model 
 import matplotlib 
 
-#Generate a dataset and plot it
-np.random.seed(0)
-X, y = sklearn.datasets.make_moons(200, noise=0.20)
-plt.scatter(X[:,0], X[:,1], s=40, c=y, cmap = plt.cm.Spectral)
-
-#Start by defining useful variables and parameters for gradient descent:
-num_examples = len(X[:,0]) # training set size
-nn_input_dim = 2 #input layer dimensionality
-nn_output_dim= 2 #output layer dimensionality
-
-#Gradient descent parameters -- just pick by hand
-epsilon = 0.01		#learning rate for gradient descent
-reg_lambda = 0.01	#regularisation strength
-
 """Function to evaluate total loss on the dataset"""
-def calculate_loss(model):
+def calculate_loss(model, input_data):
 	W1, b1, W2, b2 = model["W1"], model["b1"], model["W2"], model["b2"]
 	#forward propagation to calculate our predictions, where zi is input to layer i, ai is output of layer i (input x activation function)
-	z1 = X.dot(W1) + b1
+	z1 = input_data.dot(W1) + b1
 	a1 = np.tanh(z1)
 	z2 = a1.dot(W2) + b2
 	exp_scores = np.exp(z2)
@@ -63,7 +50,13 @@ def predict(model, x):
 # nn_hdim: number of nodes in the hidden layer
 # num_passes: number of passes through the training data for gradient descent
 # print_loss: if True, print the loss ever 1000 iterations
-def build_model(nn_hdim, num_passes=20000, print_loss=False):
+def build_model(input_data, nn_hdim,
+				nn_output_dim = 3, num_passes=20000,
+				epsilon = 0.01, reg_lambda = 0.01,
+				print_loss=False):
+	#Start by defining useful variables and parameters for gradient descent:
+	num_examples = len(input_data[:,0]) # training set size
+	nn_input_dim = len(input_data[0,:]) #input layer dimensionality
 	#Initialise the parameters to random values. Need to learn these.
 	np.random.seed(0)
 	W1 = np.random.randn(nn_input_dim, nn_hdim) / np.sqrt(nn_input_dim)
@@ -77,7 +70,7 @@ def build_model(nn_hdim, num_passes=20000, print_loss=False):
 	#Gradient descent. For each batch:
 	for i in xrange(0, num_passes):
 		#Forward propagation
-		z1 = X.dot(W1) + b1
+		z1 = input_data.dot(W1) + b1
 		a1 = np.tanh(z1)
 		z2 = a1.dot(W2) + b2
 		exp_scores = np.exp(z2)
@@ -108,43 +101,28 @@ def build_model(nn_hdim, num_passes=20000, print_loss=False):
 		#optionally print the loss.
 		#Computationally expensive because it uses the whole dataset, so don't do it too frequently.
 		if print_loss and i %1000 == 0:
-			print "Loss after iteration %i: %f" %(i, calculate_loss(model))
+			print "Loss after iteration %i: %f" %(i, calculate_loss(model, input_data))
 	return model
 
-"""Used to generate contour diagram of plot"""
-def plot_decision_boundary(pred_func): 
-	# Set min and max values and give it some padding 
-	x_min, x_max = X[:, 0].min() - .5, X[:, 0].max() + .5 
-	y_min, y_max = X[:, 1].min() - .5, X[:, 1].max() + .5 
-	h = 0.01 
-	# Generate a grid of points with distance h between them 
-	xx, yy = np.meshgrid(np.arange(x_min, x_max, h), np.arange(y_min, y_max, h)) 
-	# Predict the function value for the whole gid 
-	Z = pred_func(np.c_[xx.ravel(), yy.ravel()])
-	Z = Z.reshape(xx.shape) 
-	# Plot the contour and training examples 
-	plt.contourf(xx, yy, Z, cmap=plt.cm.Spectral) 
-	plt.scatter(X[:, 0], X[:, 1], c=y, cmap=plt.cm.Spectral) 
+#Import some data to play with. Iris data contains 3 different iris types recorded with four parameters: Sepal length, sepal width, petal length, petal width.
+iris = sklearn.datasets.load_iris()
+X = iris.data
+y = iris.target
+#Data is 4d, so first plot 2d sepal data 
+plt.figure()
+plt.scatter(X[:,0], X[:,1], s=40, c=y, cmap = plt.cm.Spectral)
+plt.title("Sepal data")
+plt.xlabel("Sepal length")
+plt.ylabel("Sepal width")
+#then do 3d sepal width, petal length, petal width
+plt.figure()
+#ax = fig.add_subplot(111, projection='3d')
+ax = Axes3D(plt.gcf())
+ax.scatter(X[:,1], X[:,2], zs=X[:,3], c=y, cmap = plt.cm.Spectral)
 
-#Now let's see what happens if we train a network with a hidden layer size of 3.
+
 
 #Build a model with a 3D hidden layer
-model = build_model(3, print_loss = True)
-plt.figure()
-plot_decision_boundary(lambda x: predict(model, x))
-plt.title("Decision boundary for hidden layer size 3")
+model = build_model(X, 3, print_loss = True)
+model_func = lambda x: predict(model, x)
 
-model = build_model(10, print_loss = True)
-plt.figure()
-plot_decision_boundary(lambda x: predict(model, x))
-plt.title("Decision boundary for hidden layer size 10")
-
-model = build_model(6, print_loss = True)
-plt.figure()
-plot_decision_boundary(lambda x: predict(model, x))
-plt.title("Decision boundary for hidden layer size 6")
-
-model = build_model(2, print_loss = True)
-plt.figure()
-plot_decision_boundary(lambda x: predict(model, x))
-plt.title("Decision boundary for hidden layer size 2")
