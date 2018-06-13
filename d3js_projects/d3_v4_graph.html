@@ -42,7 +42,7 @@ var init = pickyForce.initialize;
 // a subset of nodes
 pickyForce.initialize = function(nodes) {
     // Filter subset of nodes and delegate to saved initialization.
-    init(nodes.filter(function(n,i) { return i%2; }));
+    init(nodes.filter(function(n) { console.log(n.group); return (+n.group); }));
     };
 
 
@@ -65,14 +65,13 @@ d3.csv(nodepath, function(nodes_data) {
 	//Open up the links file, and push link data in too
 	d3.csv(linkpath, function(links_data) {
 		links_data.forEach(link => graph.links.push( link ) );
-		console.log(graph);
 
  		var link = svg.append("g")
       		.attr("class", "links")
     		.selectAll("line")
     		.data(graph.links)
     		.enter().append("line")
-      		.attr("stroke-opacity", function(d) { console.log(d.value); return (d.value); });
+      		.attr("stroke-opacity", function(d) { return (d.value); });
 
   		var node = svg.append("g")
       		.attr("class", "nodes")
