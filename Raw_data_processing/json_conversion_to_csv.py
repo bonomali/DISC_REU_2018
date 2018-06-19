@@ -12,10 +12,11 @@ import json
 import sys
 import datetime as dt
 
-#json_filepath = "SP18RawActivityData/SP18_FYS_10101_activity_03_23.json"
+#
 #json_filepath = "easy_sample.json"
-#csv_filepath = "SP18_FYS_03_23.csv"
-
+#
+json_filepath = "SP18RawActivityData/SP18_FYS_10101_activity_03_23.json"
+csv_filepath = "SP18_03_23.csv"
 
 def raw_data_to_csv(json_filepath, csv_filepath):
 	f = open(json_filepath, 'r')

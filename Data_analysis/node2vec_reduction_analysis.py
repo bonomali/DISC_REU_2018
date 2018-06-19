@@ -9,7 +9,7 @@ from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
 
 #First, load in the modularity classes dictionary
-with open('nodes_classified_8groups.csv') as f:
+with open('nodes_classified.csv') as f:
     next(f)  # Skip the header
     reader = csv.reader(f, skipinitialspace=True)
     mod_class_dict = dict(reader)
@@ -45,7 +45,7 @@ print('Cumulative explained variation for 32 principal components: {}'.format(np
 pca_2 = PCA(n_components=2)
 pca_2_result = pca_2.fit_transform(vectors)
 
-print('Cumulative explained variation for 2 principal components: {}'.format(np.sum(pca.explained_variance_ratio_)))
+print('Cumulative explained variation for 2 principal components: {}'.format(np.sum(pca_2.explained_variance_ratio_)))
 figa, axa = plt.subplots(1,1, figsize=(6,6))
 scat = axa.scatter(pca_2_result[:,0], pca_2_result[:,1], c=mod_classes, cmap=cmap, norm=norm)
 ax2a = figa.add_axes([0.9, 0.1, 0.03, 0.8])
