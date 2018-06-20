@@ -31,7 +31,7 @@ var y = d3.scale.sqrt()
 var color = d3.scale.category20c();
 
 var partition = d3.layout.partition()
-    .value(function(d) { return d.size; });
+    .value(function(d) { return 10; });
 
 var arc = d3.svg.arc()
     .startAngle(function(d) { return Math.max(0, Math.min(2 * Math.PI, x(d.x))); })
@@ -45,7 +45,7 @@ var svg = d3.select("body").append("svg")
   .append("g")
     .attr("transform", "translate(" + width / 2 + "," + (height / 2) + ")");
 
-d3.json("sunburst_data.json", function(error, root) {
+d3.json("test_data.json", function(error, root) {
   if (error) throw error;
 
   svg.selectAll("path")

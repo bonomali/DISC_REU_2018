@@ -176,6 +176,7 @@ d3.csv(nodepath, function(nodes_data) {
                            .attr("marker-end", marker(colour, opacity));
         });
 
+		var clicked = false;
 
   		var node = svg.append("g")
       		.attr("class", "nodes")
@@ -184,9 +185,49 @@ d3.csv(nodepath, function(nodes_data) {
     		.enter().append("circle")
       		.attr("r",  function(d) { return 5.; } )
       		.attr("fill", function(d) { return color(d.group); })
-     		.on("mouseover", mouseOver(.2))
-      		.on("mouseout", mouseOut)
+     		//.on("mouseover", mouseOver(.2))
+      		//.on("mouseout", mouseOut)
 			.on("click" , function(d){
+
+				/*clicked = true ? clicked = false : clicked = true;
+
+				if(clicked){*/
+
+					// check all other nodes to see if they're connected
+            		// to this one. if so, keep the opacity at 1, otherwise
+            		// fade
+            		node.style("stroke-opacity", function(o) {
+                		thisOpacity = isConnected(d, o) ? 1 : 0.1;
+                		return thisOpacity;
+            		});
+            		node.style("fill-opacity", function(o) {
+                		thisOpacity = isConnected(d, o) ? 1 : 0.1;
+                		return thisOpacity;
+            		});
+            		// also style link accordingly
+            		link.style("stroke-opacity", function(o) {
+                		return o.source === d || o.target === d ? 1 : 0.1;
+					});
+
+					link.attr("marker-end", function(o) {
+						return o.source === d || o.target === d ? marker(color(o.group), 1.0) : marker(color(o.group), 0.1);
+            		});
+
+				/*}else{
+
+					node.style("stroke-opacity", 1);
+        			node.style("fill-opacity", 1);
+        			link.style("stroke-opacity", function(d) { return (d.value); });
+        			link.style("stroke", "#999");
+					link.each(function(d) {
+            			var colour = color(d.group);
+						var opacity = d.value;
+            			d3.select(this).style("stroke", colour)
+						   .attr("stroke-opacity", opacity)
+                           .attr("marker-end", marker(colour, opacity));
+
+					});
+				}*/
 
 				let table = d3.select("#node_info");
 
@@ -196,7 +237,22 @@ d3.csv(nodepath, function(nodes_data) {
 				table.select("#inLinks").select("td").text( (d.in_size - 2) / .5);
 				table.select("#outLinks").select("td").text( (d.out_size - 2) / .5);
 			})
+			.on("dblclick" , function(d){
+					node.style("stroke-opacity", 1);
+        			node.style("fill-opacity", 1);
+        			link.style("stroke-opacity", function(d) { return (d.value); });
+        			link.style("stroke", "#999");
+					link.each(function(d) {
+            			var colour = color(d.group);
+						var opacity = d.value;
+            			d3.select(this).style("stroke", colour)
+						   .attr("stroke-opacity", opacity)
+                           .attr("marker-end", marker(colour, opacity));
 
+					});
+
+
+			})
       		.call(d3.drag()
           		.on("start", dragstarted)
           		.on("drag", dragged)
