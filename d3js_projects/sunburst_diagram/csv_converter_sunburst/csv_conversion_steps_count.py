@@ -1,42 +1,96 @@
 import csv
+import json
 
-# turn csv into diction 
-nodes = {};
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# repeatSource() compares a node path to a previously established
+#				 travel path, then adds a new branch
+# input:		 node;   travel path of node
+#                source; original travel paths branch
+# output:        returns a full branch of paths
+def repeatSource( node , source ):
+	# BASE CASE: found a different item
+	if type(source) != dict:
+		print('weird')
+		return source
+		
+	elif node[ -1 ] not in source.keys():
+		print('base')
+		return getChild( node )
+
+	# RECURSIVE CASE
+	else:
+		print( list(source.keys()) )
+		return repeatSource( node[ : -1] , source[ list(source.keys())[0] ] )	
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# getChild() formats the hierarchy for a node sequence
+#			 ie: { node: { node: { node: { node : '' } } } }
+# Input:     node; a list of sequence data
+# Output:    a dictionary organized sequence
+def getChild( node ):
+	# BASE CASE: last item
+	if len(node) == 1:
+		return node[0]
+
+	# RECURSIVE CASE
+	else:
+		return { node[-1] : getChild( node[ : -1 ] ) }
+
+
+#######################################################################
+
+# turn csv into dictionary for json
+
+data = []
 
 #First, load in the modularity classes dictionary
-with open('network-cell.csv' , newline='') as f:
+with open('nodes_classified.csv' , newline='') as f:
 	next(f)  # Skip the header
 
 	# reader is an array of arrays
-	# ['source' , 'target' , 'value']
+	# ['node' , 'group']
 	reader = csv.reader(f, skipinitialspace=True)
 
-	# make a dictionary of nodes with their values	
+	# make a list of nodes with their values	
 	for elem in reader:
-		print(elem)
+		# format elements
+		node = elem[0].replace('|' , '.')
+		node = node[ : -1 ] if node[-1] == '.' else node
+		node = node.split('.')
+		#node = node.replace('.' , ',')
 
-		# add up number of instances of node
-		# by adding all times where node was target
-		if(elem[1] not in nodes):
-			nodes[ elem[1] ] = int(elem[2])
-		else:
-			nodes[ elem[1] ] = int(elem[2])
+		# add to list
+		data.append(node)
+	
+	print(data)
 
-	# find source nodes ( should only be the ones where they end in a | )
-	sourceNodes = {};
-	for key in nodes.keys():
-		if key[ -1 ] == '|':
-			sourceKey = key[ : len(key) - 1] # remove the bar
-			sourceNodes[ sourceKey ] = nodes[key]
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	'''
+	# put all sources together (recursively do until stop?)
+	sourceNodes = {}
+	for node in data:
+		source = node[ -1 ]
 
-	print(sourceNodes)
+		# for a new source, create sequence
+		if source not in sourceNodes.keys():
+			sourceNodes[ source ] = getChild( node )
 
-	# find out how many trails began with 2
-	#for key in nodes.keys():
-		#if key[ len(key) - 2 : len(key) ] == ".2":
-			#print(key)
+			if sourceNodes[ source ] == str( sourceNodes[ source ] ):
+				sourceNodes[ source ] = { source : '' }
 
+		# if source was a string and found twice, add and make object
+		elif sourceNodes[source] == source:
+			sourceNodes[ source ] = getChild( node )
+
+		# if a source is repeated, branch paths
+		else:			
+			sourceNodes[source] = repeatSource( node , sourceNodes[source] )
+
+
+	for node in sourceNodes.keys():
+		print( sourceNodes[node] )
+	'''
 # write data out to a csv
-	#writer = csv.writer(open("sunburst_data.csv", 'w'))
-	#	for row in data:
-	#	writer.writerow(row)
+writer = csv.writer(open("sunburst_data.csv", 'w'))
+for row in data:
+	writer.writerow(row)
