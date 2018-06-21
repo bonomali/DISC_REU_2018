@@ -10,7 +10,7 @@
  */
 
 //Define where to look for nodes and where to look for links
-var nodepath = "nodes_classified.csv"
+var nodepath = "nodes_doubly_classified.csv"
 var linkpath = "weights-network-cell.csv"
 
 //Load up pre-defined svg
@@ -45,7 +45,6 @@ var defs = svg.append("svg:defs");
     };
 
 var color = d3.scaleOrdinal(d3.schemeCategory20);
-console.log(color)
 
 /*
 // Custom implementation of a force applied to only every second node
@@ -81,7 +80,7 @@ d3.csv(nodepath, function(nodes_data) {
 	graph = { "links": [] , "nodes": []};
 
 	//Push in node data (both ID and class) from nodepath
-	nodes_data.forEach(node => graph.nodes.push( { "id":node.Id , "group":node.modularity_class, "in_size":2., "out_size":2.} ) );
+	nodes_data.forEach(node => graph.nodes.push( { "id":node.sequence , "Gephi":node.Gephi, "Group_15D":node.KMeans_15D, "Group_2D":node.KMeans_2D, "in_size":2., "out_size":2.} ) );
 
 	//Open up the links file, and push link data in too
 	d3.csv(linkpath, function(links_data) {
@@ -93,7 +92,7 @@ d3.csv(nodepath, function(nodes_data) {
 			for (j =0; j < graph.links.length; j++) {
 				if (graph.nodes[i].id === graph.links[j].source) {
 					graph.nodes[i].out_size += 0.5
-					graph.links[j].group = graph.nodes[i].group
+					graph.links[j].Gephi = graph.nodes[i].Gephi
 			}; 
 				if (graph.nodes[i].id === graph.links[j].target) {
 					graph.nodes[i].in_size += 0.5
@@ -112,7 +111,7 @@ d3.csv(nodepath, function(nodes_data) {
       		//.attr("stroke-opacity", function(d) { return (d.value); })
 			//.attr('marker-end','url(#arrowhead)').attr("stroke-opacity", function(d) { return (d.value); });
 			.each(function(d) {
-            var colour = color(d.group);
+            var colour = color(d.Gephi);
 			var opacity = d.value;
             d3.select(this).style("stroke", colour)
 						   .attr("stroke-opacity", opacity)
@@ -127,7 +126,7 @@ d3.csv(nodepath, function(nodes_data) {
     		.data(graph.nodes)
     		.enter().append("circle")
       		.attr("r",  function(d) { return 5.; } )
-      		.attr("fill", function(d) { return color(d.group); })
+      		.attr("fill", function(d) { return color(d.Gephi); })
      		//.on("mouseover", mouseOver(.2))
       		//.on("mouseout", mouseOut)
 			.on("click" , function(d){
@@ -150,8 +149,8 @@ d3.csv(nodepath, function(nodes_data) {
                 	return o.source === d || o.target === d ? 1 : 0.1;
 				});
 				link.attr("marker-end", function(o) {
-					return o.source === d || o.target === d ? marker(color(o.group), 1.0) : 
-						marker(color(o.group), 0.1);
+					return o.source === d || o.target === d ? marker(color(o.Gephi), 1.0) : 
+						marker(color(o.Gephi), 0.1);
            		});
 
 
@@ -159,7 +158,7 @@ d3.csv(nodepath, function(nodes_data) {
 
 				// add in data
 				table.select("#id").select("td").text(d.id);
-				table.select("#group").select("td").text(d.group);
+				table.select("#group").select("td").text(d.Gephi);
 				table.select("#inLinks").select("td").text( (d.in_size - 2) / .5);
 				table.select("#outLinks").select("td").text( (d.out_size - 2) / .5);
 			})
@@ -176,7 +175,7 @@ d3.csv(nodepath, function(nodes_data) {
         	link.style("stroke-opacity", function(d) { return (d.value); });
         	link.style("stroke", "#999");
 			link.each(function(d) {
-       			var colour = color(d.group);
+       			var colour = color(d.Gephi);
 				var opacity = d.value;
        			d3.select(this).style("stroke", colour)
 				   .attr("stroke-opacity", opacity)
@@ -219,7 +218,7 @@ var linkedByIndex = {};
         return linkedByIndex[a.index + "," + b.index] || linkedByIndex[b.index + "," + a.index] || a.index == b.index;
     }
 
-    // fade nodes on hover
+    /*// fade nodes on hover
     function mouseOver(opacity) {
 		console.log("mouseover");
         return function(d) {
@@ -257,7 +256,7 @@ var linkedByIndex = {};
 						   .attr("stroke-opacity", opacity)
                            .attr("marker-end", marker(colour, opacity));
         });
-    }
+    }*/
 
 
 
@@ -285,6 +284,42 @@ d3.selectAll("input[name=filter]").on("change", function(d){
 
 
 });
+
+
+
+
+d3.selectAll("input[name=grouping]").on("change", function(d){
+
+  // value of selected grouping
+  var value = this.value;
+
+	switch (value) {
+		case "gephi":
+			link.attr("marker-end", function(d) {return marker(color(d.Gephi), d.value)})
+			link.style("stroke", function(d) {return color(d.Gephi)})
+			node.attr("fill", function(d) { return color(d.Gephi); })
+			break;
+		case "D15":
+			link.attr("marker-end", function(d) {return marker(color(d.Group_15D), d.value)})
+			link.style("stroke", function(d) {return color(d.Group_15D)})
+			node.attr("fill", function(d) { return color(d.Group_15D); })			
+			break;
+		case "D2":
+			link.attr("marker-end", function(d) {return marker(color(d.Group_2D), d.value)})
+			link.style("stroke", function(d) {return color(d.Group_2D)})
+			node.attr("fill", function(d) { return color(d.Group_2D); })	
+			break;
+		default:
+			link.attr("marker-end", function(d) {return marker(color(d.Gephi), d.value)})
+			link.style("stroke", function(d) {return color(d.Gephi)})
+			node.attr("fill", function(d) { return color(d.Gephi); })
+	}
+
+
+});
+
+
+
 
 
 

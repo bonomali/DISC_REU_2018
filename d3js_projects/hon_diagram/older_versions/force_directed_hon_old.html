@@ -33,7 +33,7 @@
 
 <script>
 //Define where to look for nodes and where to look for links
-var nodepath = "nodes_classified.csv"
+var nodepath = "nodes_doubly_classified.csv"
 var linkpath = "weights-network-cell.csv"
 
 //Load up pre-defined svg
@@ -68,7 +68,6 @@ var defs = svg.append("svg:defs");
     };
 
 var color = d3.scaleOrdinal(d3.schemeCategory20);
-console.log(color)
 
 /*
 // Custom implementation of a force applied to only every second node
@@ -104,8 +103,10 @@ d3.csv(nodepath, function(nodes_data) {
 	graph = { "links": [] , "nodes": []};
 
 	//Push in node data (both ID and class) from nodepath
-	nodes_data.forEach(node => graph.nodes.push( { "id":node.Id , "group":node.modularity_class, "in_size":2., "out_size":2.} ) );
 
+	nodes_data.forEach(node => graph.nodes.push( { "id":node.sequence , "Gephi":node.Gephi, "Kmeans_15D":node.KMeans_15D, "group":node.KMeans_2D, "in_size":2., "out_size":2.} ) );
+	
+	console.log(nodes_data)
 	//Open up the links file, and push link data in too
 	d3.csv(linkpath, function(links_data) {
 		links_data.forEach(link => graph.links.push( link ) );
@@ -149,7 +150,7 @@ d3.csv(nodepath, function(nodes_data) {
     		.data(graph.nodes)
     		.enter().append("circle")
       		.attr("r",  function(d) { return 5.; } )
-      		.attr("fill", function(d) { return color(d.group); })
+      		.attr("fill", function(d) { console.log(d.group); return color(d.group); })
      		.on("mouseover", mouseOver(.2))
       		.on("mouseout", mouseOut)
 
