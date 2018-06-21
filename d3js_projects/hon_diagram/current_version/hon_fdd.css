@@ -1,3 +1,13 @@
+/*	Filename: hon_fdd.css
+ *	Date:	  6/21/2018
+ *	Authors:  Eric Gronda, Maggie Goulden
+ *	Works Cited:
+ *		Bostock, Mike. “Force-Directed Graph.” Popular Blocks, 13 June 2018, bl.ocks.org/mbostock/4062045.
+ *
+ *	Description:
+ *		css file for the higher order network force directed diagram. 
+ */
+
 .links line {
 	stroke-width: 2px;
 }

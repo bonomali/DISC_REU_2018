@@ -1,3 +1,14 @@
+/*	
+ *	Filename: hon_fdd.js
+ *	Date:	  6/21/2018
+ * 	Authors:  Eric Gronda, Maggie Goulden
+ *	Works Cited:
+ *		Bostock, Mike. “Force-Directed Graph.” Popular Blocks, 13 June 2018, bl.ocks.org/mbostock/4062045.
+ *
+ *	Description:
+ *		js file for the higher order network force directed diagram. 
+ */
+
 //Define where to look for nodes and where to look for links
 var nodepath = "nodes_classified.csv"
 var linkpath = "weights-network-cell.csv"
