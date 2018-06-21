@@ -1,0 +1,12 @@
+.arc text {
+font: 12px arial;
+	  text-anchor: middle;
+}
+
+.arc path {
+stroke: #fff;
+}
+
+.title {
+fill: green;
+}

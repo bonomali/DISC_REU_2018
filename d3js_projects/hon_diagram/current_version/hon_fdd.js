@@ -1,71 +1,14 @@
-<!DOCTYPE html>
-<meta charset="utf-8">
-<style>
+/*	
+ *	Filename: hon_fdd.js
+ *	Date:	  6/21/2018
+ * 	Authors:  Eric Gronda, Maggie Goulden
+ *	Works Cited:
+ *		Bostock, Mike. “Force-Directed Graph.” Popular Blocks, 13 June 2018, bl.ocks.org/mbostock/4062045.
+ *
+ *	Description:
+ *		js file for the higher order network force directed diagram. 
+ */
 
-.links line {
-	stroke-width: 2px;
-}
-
-.nodes circle {
-	stroke: black;
-	stroke-width: 0px;
-}
-
-svg, table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-
-th, td {
-    padding: 15px;
-}
-
-th {
-    text-align: left;
-}
-
-svg {
-  float: left;
-  width: 70%;
-  padding: 5px;
-}
-
-</style>
-
-<body>
-
-	
-	<svg class="column" id="hon_diagram" width = "960" height = "800" ></svg>
-
-	<div id="node_info">
-		<h3>Click node for data:</h3>
-		<table>
-			<tr id="id">		<th>NODE:</th>		<td></td>	</tr>
-			<tr id="group">		<th>GROUP:</th>		<td></td>	</tr>
-			<tr id="inLinks">	<th>LINKS IN:</th>	<td></td>	</tr>
-			<tr id="outLinks">	<th>LINKS OUT:</th>	<td></td>	</tr>
-		</table>
-	</div>
-
-    <div id="map"></div>
-    <div id="legend">
-      <h3>Change node size</h3>
-      <div class="input-group" id="filters">
-		<label><input type="radio" name="filter" value="none">None (uniform size)</label><br />
-        <label><input type="radio" name="filter" value="all">All links</label><br />
-        <label><input type="radio" name="filter" value="in">Links in</label><br />
-        <label><input type="radio" name="filter" value="out">Links out</label><br />
-      </div>
-    </div>
-
-
-
-</body>
-
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<script src="http://d3js.org/d3-selection-multi.v1.js"></script>
-
-<script>
 //Define where to look for nodes and where to look for links
 var nodepath = "nodes_classified.csv"
 var linkpath = "weights-network-cell.csv"
@@ -176,6 +119,7 @@ d3.csv(nodepath, function(nodes_data) {
                            .attr("marker-end", marker(colour, opacity));
         });
 
+		var clicked = false;
 
   		var node = svg.append("g")
       		.attr("class", "nodes")
@@ -184,9 +128,32 @@ d3.csv(nodepath, function(nodes_data) {
     		.enter().append("circle")
       		.attr("r",  function(d) { return 5.; } )
       		.attr("fill", function(d) { return color(d.group); })
-     		.on("mouseover", mouseOver(.2))
-      		.on("mouseout", mouseOut)
+     		//.on("mouseover", mouseOver(.2))
+      		//.on("mouseout", mouseOut)
 			.on("click" , function(d){
+
+				/* highlight travel path for nodes */
+
+				// check all other nodes to see if they're connected
+            	// to this one. if so, keep the opacity at 1, otherwise
+            	// fade
+            	node.style("stroke-opacity", function(o) {
+                	thisOpacity = isConnected(d, o) ? 1 : 0.1;
+                	return thisOpacity;
+            	});
+            	node.style("fill-opacity", function(o) {
+                	thisOpacity = isConnected(d, o) ? 1 : 0.1;
+                	return thisOpacity;
+            	});
+            	// also style link accordingly
+            	link.style("stroke-opacity", function(o) {
+                	return o.source === d || o.target === d ? 1 : 0.1;
+				});
+				link.attr("marker-end", function(o) {
+					return o.source === d || o.target === d ? marker(color(o.group), 1.0) : 
+						marker(color(o.group), 0.1);
+           		});
+
 
 				let table = d3.select("#node_info");
 
@@ -196,11 +163,26 @@ d3.csv(nodepath, function(nodes_data) {
 				table.select("#inLinks").select("td").text( (d.in_size - 2) / .5);
 				table.select("#outLinks").select("td").text( (d.out_size - 2) / .5);
 			})
-
-      		.call(d3.drag()
+			.call(d3.drag()
           		.on("start", dragstarted)
           		.on("drag", dragged)
           		.on("end", dragended));
+
+			
+		// double click anywhere on svg to un-highlight
+		svg.on("dblclick" , function(d){
+			node.style("stroke-opacity", 1);
+        	node.style("fill-opacity", 1);
+        	link.style("stroke-opacity", function(d) { return (d.value); });
+        	link.style("stroke", "#999");
+			link.each(function(d) {
+       			var colour = color(d.group);
+				var opacity = d.value;
+       			d3.select(this).style("stroke", colour)
+				   .attr("stroke-opacity", opacity)
+                   .attr("marker-end", marker(colour, opacity));
+			});
+		});
 
   node.append("title")
       .text(function(d) { return d.id; });
@@ -328,4 +310,3 @@ function dragended(d) {
 }
 
 
-</script>
