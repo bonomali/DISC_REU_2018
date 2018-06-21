@@ -21,7 +21,7 @@ def parse_args():
 	'''
 	parser = argparse.ArgumentParser(description="Run node2vec.")
 	
-	parser.add_argument('--input', nargs='?', default='network-space-delim.csv',
+	parser.add_argument('--input', nargs='?', default='karate.csv',
 	                    help='Input graph path')
 	
 	parser.add_argument('--output', nargs='?', default='karate-vectors.csv',
@@ -54,7 +54,7 @@ def parse_args():
 	parser.add_argument('--weighted', dest='weighted', action='store_true',
 	                    help='Boolean specifying (un)weighted. Default is unweighted.')
 	parser.add_argument('--unweighted', dest='unweighted', action='store_false')
-	parser.set_defaults(weighted=True)
+	parser.set_defaults(weighted=False)
 	
 	parser.add_argument('--directed', dest='directed', action='store_true',
 	                    help='Graph is (un)directed. Default is undirected.')
@@ -79,7 +79,7 @@ def read_graph():
 		#G = nx.read_edgelist(fh, data=(('weight',float),), delimiter=',', create_using=nx.DiGraph())
 		print("weighted")
 	else:
-		G = nx.read_edgelist(args.input, nodetype=int, create_using=nx.DiGraph())
+		G = nx.read_edgelist(args.input, nodetype=str, create_using=nx.DiGraph())
 		print("unweighted")	
 		for edge in G.edges():
 			G[edge[0]][edge[1]]['weight'] = 1
