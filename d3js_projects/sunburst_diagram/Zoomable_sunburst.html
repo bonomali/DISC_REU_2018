@@ -16,8 +16,8 @@ path {
 <script src="Zoomable_sunburst_files/d3.js"></script>
 <script>
 
-var width = 960,
-    height = 700,
+var width = 2000,
+    height = 2000,
     radius = (Math.min(width, height) / 2) - 10;
 
 var formatNumber = d3.format(",d");
@@ -45,7 +45,7 @@ var svg = d3.select("body").append("svg")
   .append("g")
     .attr("transform", "translate(" + width / 2 + "," + (height / 2) + ")");
 
-d3.json("test_data.json", function(error, root) {
+d3.json("sunburst_data.json", function(error, root) {
   if (error) throw error;
 
   svg.selectAll("path")
