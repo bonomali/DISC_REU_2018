@@ -1,0 +1,32 @@
+.links line {
+	stroke-width: 2px;
+}
+
+.nodes circle {
+	stroke: black;
+	stroke-width: 0px;
+}
+
+svg, table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+}
+
+th {
+    text-align: left;
+}
+
+#controls{
+	paddng:35px;
+}
+
+svg {
+  float: left;
+  width: 70%;
+  padding: 5px;
+}
+
