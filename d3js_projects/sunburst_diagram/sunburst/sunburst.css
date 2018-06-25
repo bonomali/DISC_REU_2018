@@ -1,3 +1,9 @@
 path {
   stroke: #fff;
 }
+
+text {
+  fill: white;
+  font: 30px sans-serif;
+  text-anchor: end;
+}
