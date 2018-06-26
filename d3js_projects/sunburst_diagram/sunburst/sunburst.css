@@ -7,3 +7,26 @@ text {
   font: 30px sans-serif;
   text-anchor: end;
 }
+
+#full_sunburst {
+	width: 50%;
+	border-collapse: collapse;
+	display:inline-block;
+}
+
+#dialog-window {
+	float: left;
+	width: 30%;
+  	height: 660px;
+  	border: 1px black solid;
+	display:inline-block;
+}
+
+#non-scrollable-content {
+	height: 100px;
+}
+
+#scrollable-content {
+  height: 544px;
+  overflow: auto;
+}

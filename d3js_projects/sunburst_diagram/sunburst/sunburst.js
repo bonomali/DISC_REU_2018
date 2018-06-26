@@ -1,3 +1,4 @@
+// Set up variables
 var width = 960,
     height = 600,
     radius = (Math.min(width, height) / 2) - 10;
@@ -24,13 +25,14 @@ var sequence = 	d3.select("#active_sequence").append("svg")
 	.attr("width" , 1000)
 	.attr("height" , 50)
 
-
-var svg = d3.select("#sunburst").append("svg")
+// add svg element
+var svg = d3.select("#sunburst_diagram").append("svg")
     .attr("width", width)
     .attr("height", height)
   .append("g")
     .attr("transform", "translate(" + width / 2 + "," + (height / 2) + ")");
 
+// load in data
 d3.json("sunburst_data.json", function(error, root) {
   if (error) throw error;
   
@@ -49,25 +51,83 @@ d3.json("sunburst_data.json", function(error, root) {
 });
 
 function click(d) {
-  svg.transition()
-      .duration(750)
-      .tween("scale", function() {
-        var xd = d3.interpolate(x.domain(), [d.x0, d.x1]),
-            yd = d3.interpolate(y.domain(), [d.y0, 1]),
-            yr = d3.interpolate(y.range(), [d.y0 ? 20 : 0, radius]);
-        return function(t) { x.domain(xd(t)); y.domain(yd(t)).range(yr(t)); };
-      })
-    .selectAll("path")
-      .attrTween("d", function(d) { return function() { return arc(d); }; });
+
+	// zoom in feature
+	svg.transition()
+		.duration(750)
+      	.tween("scale", function() {
+			var xd = d3.interpolate(x.domain(), [d.x0, d.x1]),
+    			yd = d3.interpolate(y.domain(), [d.y0, 1]),
+        		yr = d3.interpolate(y.range(), [d.y0 ? 20 : 0, radius]);
+        	return function(t) { x.domain(xd(t)); y.domain(yd(t)).range(yr(t)); };
+      	})
+    	.selectAll("path")
+      	.attrTween("d", function(d) { return function() { return arc(d); }; });
+
+	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// clear data table
+	d3.select("#scrollable-content").select("table").select("tbody").selectAll("tr").remove();
+	
+	// fill in data table
+	
+	// display name of sequence
+	var name_seq = "";
+	d3.select("#node_sequence")
+		.text( function(e){ 
+			var node = d;
+			while(node.parent){
+				name_seq = node.data.name + "-" + name_seq;
+				node = node.parent;
+			}
+			if(name_seq[ name_seq.length - 1 ] === "-")
+				name_seq = name_seq.slice(0, -1);
+			return name_seq; 
+		});
+
+
+	// use the sequence name to find matches
+	// then display in scrollable content
+	d3.csv("sequence.csv" , function(input){
+		var matching = [];
+
+		// add the matching people to the array
+		input.forEach( function(object){
+			if( object.sequence.search( name_seq ) != -1 )
+				matching.push(object);
+		});
+
+		// display data in scrolllable table		
+ 		var rows = d3.select("#scrollable-content").select("table").select("tbody").selectAll("tr")
+			.data(matching, function (d) {return d;});
+
+		rows.enter()
+			.append('tr')
+			.selectAll("td")
+			.data(function (d) {return [d.name, d.sequence];})
+			.enter()
+			.append("td")
+			.text(function(d) { return d; });
+
+		rows.exit().remove();
+
+		var cells = rows.selectAll('td')
+			.data(function (d) {return [d.name, d.sequence];})
+			.text(function (d) {return d;});
+
+		cells.enter()
+			.append("td")
+			.text(function(d) { return d; });
+
+		cells.exit().remove();
+	});
 }
 
-d3.select(self.frameElement).style("height", height + "px");// mouse over effects: highlight, display sequences
 
 // Mouse over effects
 function mouseover(d) {
 
 	// display on screen the current sequence
-	node = d;
+	var node = d;
 	while(node.parent){
 		// add rectangles
 		sequence.append("rect")
