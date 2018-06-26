@@ -92,8 +92,20 @@ function click(d) {
 
 		// add the matching people to the array
 		input.forEach( function(object){
-			if( object.sequence.search( name_seq ) != -1 )
-				matching.push(object);
+
+			var seq_indices = getIndicesOf(name_seq , object.sequence);
+
+			if( seq_indices.length > 0 ){
+				newObj = object;
+				newObj.num_seq = seq_indices.length;
+				
+				seq_indices.forEach( function(i){
+					newObj.sequence = newObj.sequence.replaceAll( name_seq , '...' )
+				});
+
+
+				matching.push(newObj);
+			}
 		});
 
 		// display data in scrolllable table		
@@ -103,7 +115,7 @@ function click(d) {
 		rows.enter()
 			.append('tr')
 			.selectAll("td")
-			.data(function (d) {return [d.name, d.sequence];})
+			.data(function (d) {return [d.num_seq, d.sequence];})
 			.enter()
 			.append("td")
 			.text(function(d) { return d; });
@@ -111,7 +123,7 @@ function click(d) {
 		rows.exit().remove();
 
 		var cells = rows.selectAll('td')
-			.data(function (d) {return [d.name, d.sequence];})
+			.data(function (d) {return [d.num_seq, d.sequence];})
 			.text(function (d) {return d;});
 
 		cells.enter()
@@ -120,6 +132,28 @@ function click(d) {
 
 		cells.exit().remove();
 	});
+}
+
+String.prototype.replaceAll = function(str1, str2, ignore) 
+{
+    return this.replace(new RegExp(str1.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g,"\\$&"),(ignore?"gi":"g")),(typeof(str2)=="string")?str2.replace(/\$/g,"$$$$"):str2);
+} 
+
+function getIndicesOf(searchStr, str, caseSensitive) {
+    var searchStrLen = searchStr.length;
+    if (searchStrLen == 0) {
+        return [];
+    }
+    var startIndex = 0, index, indices = [];
+    if (!caseSensitive) {
+        str = str.toLowerCase();
+        searchStr = searchStr.toLowerCase();
+    }
+    while ((index = str.indexOf(searchStr, startIndex)) > -1) {
+        indices.push(index);
+        startIndex = index + searchStrLen;
+    }
+    return indices;
 }
 
 
