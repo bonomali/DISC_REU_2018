@@ -3,7 +3,8 @@
 -->
 
 <!DOCTYPE html>
-<html><head>
+<html>
+<head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta charset="utf-8">
 <style>
 
@@ -12,12 +13,13 @@ path {
 }
 
 </style>
+<title>Sunburst Diagram</title>
 </head><body>
 <script src="Zoomable_sunburst_files/d3.js"></script>
 <script>
 
-var width = 2000,
-    height = 2000,
+var width = 800,
+    height = 800,
     radius = (Math.min(width, height) / 2) - 10;
 
 var formatNumber = d3.format(",d");
