@@ -34,11 +34,11 @@ with open('nodes_classified.csv') as f:
 
 #Define stuff for colorbar
 cmap = plt.cm.jet
-bounds = np.linspace(0,16,16)
+bounds = np.linspace(0,4,5)
 norm = mpl.colors.BoundaryNorm(bounds, cmap.N)
 
 # Generate walks
-node2vec = Node2Vec(G, dimensions=15, walk_length=30, num_walks=100)
+node2vec = Node2Vec(G, dimensions=15, walk_length=30, num_walks=100, p=10., q=0.5)
 # Learn embeddings 
 model = node2vec.fit(window=20, min_count=1)
 
@@ -52,7 +52,7 @@ for sequence in sequences:
 	mod_classes.append(mod_class)
 
 #or, define colors by k-means clusters
-estimator = KMeans(n_clusters = 16)
+estimator = KMeans(n_clusters = 4)
 estimator.fit(vectors)
 labels = estimator.labels_
 
@@ -65,7 +65,7 @@ tsne_one = tsne_results[:,0]
 tsne_two = tsne_results[:,1]
 
 #Then apply the same KMeans to 2-D data
-est = KMeans(n_clusters = 16)
+est = KMeans(n_clusters = 4)
 est.fit(tsne_results)
 labls = est.labels_
 
@@ -89,15 +89,14 @@ for index in range(len(sequences)):
 	gephi = mod_classes[index]
 	Kmeans_15D = labels[index]
 	Kmeans_2D = labls[index]
-	line_dict = {'sequence':str(sequence), 'Gephi':str(gephi), '15D_KMeans': str(Kmeans_15D), '2D_KMeans' : str(Kmeans_2D)}
+	line_dict = {'sequence':str(sequence), 'Gephi':str(gephi), 'KMeans_15D': str(Kmeans_15D), 'KMeans_2D' : str(Kmeans_2D)}
 	csv_data.append(line_dict)
 
-with open("nodes_doubly_classified.csv",'w') as resultFile:
-	fieldnames = ['sequence', 'Gephi', '15D_KMeans', '2D_KMeans']
+with open("nodes_structure_small_dim_classified.csv",'w') as resultFile:
+	fieldnames = ['sequence', 'Gephi', 'KMeans_15D', 'KMeans_2D']
 	writer = csv.DictWriter(resultFile, fieldnames=fieldnames)
 	writer.writeheader()
 	writer.writerows(csv_data)
-
 
 
 

@@ -34,6 +34,6 @@ for key in pos.keys():
 	plt.text(x,y+0.1,s=key, fontsize=6, bbox=dict(facecolor='red', alpha=0.5),horizontalalignment='center')
 
 
-nx.write_gexf(G, "weighted-network-all.gexf")
+nx.write_gml(G, "weighted-network-all.gml")
 
 plt.show()
