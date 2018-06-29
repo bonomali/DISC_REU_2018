@@ -52,7 +52,7 @@ def processObjRef():
 			# get assignment name
 			assignment = ( ( row[URL].split('/') )[-1].split('.') )[0]
 
-			data.append( [ assignment , row[URL_NUM] , row[TYPE] ] )
+			data.append( [ assignment , row[URL_NUM] , row[TYPE] , row[URL] ] )
 	
 	return data
 
@@ -63,8 +63,16 @@ def combineData( allData , objectRef ):
 
 	# clear all urls
 	for student in allData:
-		for assignment in objectRef:		
-			if assignment[0] in student[4]:
+		for assignment in objectRef:
+
+			# check for coursework
+			if "Coursework" in student[4]:
+				student[4] = "Coursework"
+				student.append( assignment[1] )
+				student.append( assignment[2] )
+
+			# check for equivalent url
+			elif assignment[3] == student[4]:
 
 				student[4] = assignment[0]
 				student.append( assignment[1] )
