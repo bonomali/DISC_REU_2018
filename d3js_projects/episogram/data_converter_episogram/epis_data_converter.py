@@ -59,7 +59,7 @@ def processObjRef():
 def combineData( allData , objectRef ):
 	
 	# change header
-	allData[0] = ['account', 'week' , 'date' , 'time' , 'assignment' , 'url_num' , 'type']
+	allData = allData[ 1 : ]
 
 	# clear all urls
 	for student in allData:
