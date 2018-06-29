@@ -33,15 +33,16 @@ for line in network_data:
 	nodeleft_int = object_ref[nodeleft]
 	noderight = line[1]
 	noderight_int = object_ref[noderight]
-	newline = [nodeleft_int, noderight_int]
+	weight = line[2]
+	newline = [nodeleft_int, noderight_int, weight]
 	int_data.append(newline)
 
-with open('object_ref.csv', 'w') as csv_file:
+with open('object_ref-weights.csv', 'w') as csv_file:
     writer = csv.writer(csv_file)
     for key, value in object_ref.items():
        writer.writerow([key, value])
 
-with open('int-network-cell.csv', 'w') as csv_file:
+with open('int-network-cell-weights.csv', 'w') as csv_file:
     writer = csv.writer(csv_file)
-    for key, value in int_data:
-       writer.writerow([key, value])
+    for key, value, weight in int_data:
+       writer.writerow([key, value, weight])

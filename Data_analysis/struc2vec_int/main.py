@@ -18,10 +18,10 @@ def parse_args():
 	'''
 	parser = argparse.ArgumentParser(description="Run struc2vec.")
 	
-	parser.add_argument('--input', nargs='?', default='int-network-cell.csv',
+	parser.add_argument('--input', nargs='?', default='int-network-cell-weights.csv',
 	                    help='Input graph path')
 	
-	parser.add_argument('--output', nargs='?', default='int-structure-classes.txt',
+	parser.add_argument('--output', nargs='?', default='int-structure-classes-weighted.txt',
 	                    help='Embeddings path')
 	
 	parser.add_argument('--dimensions', type=int, default=128,
@@ -48,12 +48,12 @@ def parse_args():
 	parser.add_argument('--weighted', dest='weighted', action='store_true',
 	                    help='Boolean specifying (un)weighted. Default is unweighted.')
 	parser.add_argument('--unweighted', dest='unweighted', action='store_false')
-	parser.set_defaults(weighted=False)
+	parser.set_defaults(weighted=True)
 	
 	parser.add_argument('--directed', dest='directed', action='store_true',
 	                    help='Graph is (un)directed. Default is undirected.')
 	parser.add_argument('--undirected', dest='undirected', action='store_false')
-	parser.set_defaults(directed=False)
+	parser.set_defaults(directed=True)
 	
 	parser.add_argument('--OPT1', default=False, type=bool,
                       help='optimization 1')

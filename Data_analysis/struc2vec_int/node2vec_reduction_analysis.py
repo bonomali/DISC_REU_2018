@@ -11,7 +11,7 @@ from node2vec import Node2Vec
 from sklearn.cluster import KMeans
 
 
-network_file = "int-structure-classes.emb"
+network_file = "int-structure-classes-weighted.txt"
 
 network_data = np.genfromtxt(network_file, delimiter=' ')
 
@@ -20,10 +20,12 @@ with open('nodes_classified.csv') as f:
     reader = csv.reader(f, skipinitialspace=True)
     mod_class_dict = dict(reader)
 
-with open('object_ref.csv') as f:
+with open('object_ref-weights.csv') as f:
     reader = csv.reader(f)
     object_ref = dict(reader)
+
 #Ok, now need to reverse the dictionary, st the keys correspond to numbers and the sequence is the value
+
 sequence_ref = {}
 for key in object_ref.keys():
 	sequence_ref[object_ref[key]] = key
@@ -40,7 +42,7 @@ for line in network_data:
 
 
 #Define stuff for colorbar
-num_clusters = 10
+num_clusters = 4
 cmap = plt.cm.jet
 bounds = np.linspace(0,num_clusters,num_clusters+1)
 norm = mpl.colors.BoundaryNorm(bounds, cmap.N)
@@ -74,7 +76,7 @@ fig, axes = plt.subplots(1,3, figsize=(5,3.5))
 scat = axes[0].scatter(tsne_one,tsne_two,c=mod_classes,cmap=cmap, norm=norm)
 axes[0].set_title("Gephi classes")
 scat = axes[1].scatter(tsne_one,tsne_two,c=labels,cmap=cmap, norm=norm)
-axes[1].set_title("KMeans applied to 15-D data")
+axes[1].set_title("KMeans applied to 128-D data")
 scat = axes[2].scatter(tsne_one, tsne_two, c=labls, cmap=cmap, norm=norm)
 axes[2].set_title("KMeans applied to 2D TSNE data")
 
@@ -92,7 +94,7 @@ for index in range(len(node_sequences)):
 	line_dict = {'sequence':str(sequence), 'Gephi':str(gephi), 'KMeans_15D': str(Kmeans_15D), 'KMeans_2D' : str(Kmeans_2D)}
 	csv_data.append(line_dict)
 
-with open("struc2vec-classified.csv",'w') as resultFile:
+with open("struc2vec-directed-weighted-classified.csv",'w') as resultFile:
 	fieldnames = ['sequence', 'Gephi', 'KMeans_15D', 'KMeans_2D']
 	writer = csv.DictWriter(resultFile, fieldnames=fieldnames)
 	writer.writeheader()
