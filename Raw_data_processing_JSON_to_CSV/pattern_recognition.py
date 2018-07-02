@@ -6,11 +6,7 @@ from collections import Counter
 import datetime as dt
 import csv
 import sys
-import matplotlib.pyplot as plt
-import matplotlib.dates as mdates
 import numpy as np
-from difflib import get_close_matches
-from difflib import SequenceMatcher
 
 csv_filepath = "SP18_all_data.csv"
 activity_filepath = "activity_type.csv"
@@ -55,12 +51,14 @@ for index in range(len(object_types)):
 
 
 #################################################
-#  Generate a string of 0 (interacted) and 1 (experienced), to look for patterns in behaviour.
+#  Generate a string of object-number sequences.
+#  If split = True, breaks up the sequence at long idle times.
 #################################################
-def activity_string_generator_ALL(data_dict, name):
+def activity_string_generator_ALL(data_dict, name, split = False):
 	sorted_dicts = sorted(data_dict, key=lambda k: k["timestamp"])
 	activity_string = name + " "
-	
+	if split == True:
+		split_count = 0
 	start_time = dt.datetime.strptime(sorted_dicts[0]["timestamp"], '%Y-%m-%dT%H:%M:%S')
 	for entry in sorted_dicts:
 		# get current time
@@ -76,7 +74,10 @@ def activity_string_generator_ALL(data_dict, name):
 		# if time taken is greater than 3 hours, add one long idle time
 		elif delta_t >=10800.:
 			activity_string += str(len(object_ref)+2) + " "
-		
+			if split == True:
+				activity_string += "\n"
+				activity_string += name + str(split_count) + " "	
+				split_count +=1		
 		# regardless of how much idle time has been added
 		# the ref_id of the activity must be added too
 		object_id = entry["object_id"]
@@ -91,17 +92,25 @@ def activity_string_generator_ALL(data_dict, name):
 
 def activity_string_generator_byweek(data_dict, name):
 	sorted_dicts = sorted(data_dict, key=lambda k: k["timestamp"])
-	activity_string = name + " "
-	
 	start_time = dt.datetime.strptime(sorted_dicts[0]["timestamp"], '%Y-%m-%dT%H:%M:%S')
+	start_week = start_time.isocalendar()[1]
+	activity_string = name +  "_" + str(start_week) + " "
 	for entry in sorted_dicts:
-		# get current time
+		# get current time / week
 		time_now = dt.datetime.strptime(entry["timestamp"], '%Y-%m-%dT%H:%M:%S')
-		# get total time (in seconds) between last entry and this entry
+		week_now = time_now.isocalendar()[1]
+		#  get total time (in seconds) between last entry and this entry
 		delta_t = (time_now - start_time).total_seconds()	
+		#  get timelapse in weeks between last entry and this entry
+		delta_week = week_now - start_week
+		#  if this week is different to the previous week, create a new line for it.
+		if delta_week >= 1:
+			activity_string += "\n"
+			activity_string += name + "_" + str(week_now) + " "	
+		#  Otherwise, provided this week isn't different, you want to take account for possible idle time.
 		# if time taken is between 30 minutes and 3 hours
 		# add 30 minute blocks of short idle time
-		if delta_t >= 1800. and delta_t <10800.:
+		elif delta_t >= 1800. and delta_t <10800.:
 			while delta_t >900:
 				delta_t += -1800
 				activity_string += str(len(object_ref)+1) + " "
@@ -117,6 +126,7 @@ def activity_string_generator_byweek(data_dict, name):
 		activity_string += object_ref[object_id]["ref_num"] + " "
 		
 		start_time = time_now
+		start_week = week_now
 	
 	return activity_string
 
@@ -134,22 +144,21 @@ def find(lst, key, value):
 entries_by_name = Counter(x['account_name'] for x in processed_data)
 names = entries_by_name.keys()
 values = entries_by_name.values()
-names = [x for _,x in sorted(zip(values, names), reverse=True)][:500]
+names = [x for _,x in sorted(zip(values, names), reverse=True)][:5]
 
 #Generate a list of activity strings, one for each name
-all_data = []
+all_data_byweek = []
 for name in names:
 	indices = find(processed_data, "account_name", name)
 	cut_data = processed_data[indices[0]:indices[-1]+1]
-	new_data = activity_string_generator_ALL(cut_data, name)##, color = color)
-	print(name)
-	print(len(all_data))
-	all_data.append(new_data)
+	new_data = activity_string_generator_byweek(cut_data, name)##, color = color)
+	all_data_byweek.append(new_data)
+
+
 
 
 outputfile = open('sequence.txt', 'w')
 for item in all_data:
-  print(item[0:10])
   outputfile.write("%s\n" % item)
 
 #  To convert each activity string to a list of elements instead:

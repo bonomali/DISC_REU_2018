@@ -4,7 +4,7 @@ To get anything meaningful out of our data, we must first process the raw JSON f
 
 ### Prerequisites
 
-This code makes use of python3.5, though should be backcompatible with python2.7. The modules required are csv, json, datetime.
+This code makes use of python3.5, though should be backcompatible with python2.7. The modules required are csv, json, datetime, numpy and Collections.
 
 ### How to Use
 
