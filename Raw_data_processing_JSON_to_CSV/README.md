@@ -1,4 +1,4 @@
-# Project Title
+# RAW PROCESSING OF THE JSON FILE THROUGH TO COMPLETE SEQUENCE DATA
 
 To get anything meaningful out of our data, we must first process the raw JSON files we've received to create CSV files that have only useful information in them.
 
