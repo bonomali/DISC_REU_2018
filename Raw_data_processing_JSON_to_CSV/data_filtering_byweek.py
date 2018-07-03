@@ -94,7 +94,9 @@ def activity_string_generator_byweek(data_dict, name):
 	sorted_dicts = sorted(data_dict, key=lambda k: k["timestamp"])
 	start_time = dt.datetime.strptime(sorted_dicts[0]["timestamp"], '%Y-%m-%dT%H:%M:%S')
 	start_week = start_time.isocalendar()[1]
-	activity_string = name +  "_" + str(start_week) + " "
+	activity_string = name +  " " 
+	
+	weeks_dict = {}
 	for entry in sorted_dicts:
 		# get current time / week
 		time_now = dt.datetime.strptime(entry["timestamp"], '%Y-%m-%dT%H:%M:%S')
@@ -105,8 +107,9 @@ def activity_string_generator_byweek(data_dict, name):
 		delta_week = week_now - start_week
 		#  if this week is different to the previous week, create a new line for it.
 		if delta_week >= 1:
-			activity_string += "\n"
-			activity_string += name + "_" + str(week_now) + " "	
+			#  Append the completed string of activities that took place this week to the full weeks list
+			weeks_dict[str(week_now)] = activity_string
+			activity_string = name + " "#+ "_" + str(week_now+difference) + " "	
 		#  Otherwise, provided this week isn't different, you want to take account for possible idle time.
 		# if time taken is between 30 minutes and 3 hours
 		# add 30 minute blocks of short idle time
@@ -128,7 +131,7 @@ def activity_string_generator_byweek(data_dict, name):
 		start_time = time_now
 		start_week = week_now
 	
-	return activity_string
+	return weeks_dict
 
 #################################################
 #Find indices corresponding to a key:value pair in a list of dictionaries
@@ -140,13 +143,13 @@ def find(lst, key, value):
 			indices.append(i)
 	return indices
 
-#Only use the first 500 names cos otherwise we get some low-sequence info that isn't very useful
+#  Only use the first 500 names cos otherwise we get some low-sequence info that isn't very useful
 entries_by_name = Counter(x['account_name'] for x in processed_data)
 names = entries_by_name.keys()
 values = entries_by_name.values()
-names = [x for _,x in sorted(zip(values, names), reverse=True)][:5]
+names = [x for _,x in sorted(zip(values, names), reverse=True)][:500]
 
-#Generate a list of activity strings, one for each name
+#  Generate a list of dictionaries of activity strings, one for each name for each week
 all_data_byweek = []
 for name in names:
 	indices = find(processed_data, "account_name", name)
@@ -154,8 +157,30 @@ for name in names:
 	new_data = activity_string_generator_byweek(cut_data, name)##, color = color)
 	all_data_byweek.append(new_data)
 
+#  Collect up keys for each person and find out which weeks you need to check for.
+keys = []
+for dictionary in all_data_byweek:
+	for key in list(dictionary.keys()):
+		keys.append(key)
 
+keys = list(set(keys))
 
+for key in keys:
+	list_byweek = []
+	for dictionary in all_data_byweek:
+		if key in dictionary:
+			list_byweek.append(dictionary[key])
+	outfile_byweek = open('sequence' + key + '.txt', 'w')
+	for item in list_byweek:
+		outfile_byweek.write("%s\n" % item)
+
+#  Generate the master list of all activity strings, one for each name (covering the entire duration
+all_data = []
+for name in names:
+	indices = find(processed_data, "account_name", name)
+	cut_data = processed_data[indices[0]:indices[-1]+1]
+	new_data = activity_string_generator_ALL(cut_data, name)##, color = color)
+	all_data.append(new_data)
 
 outputfile = open('sequence.txt', 'w')
 for item in all_data:
