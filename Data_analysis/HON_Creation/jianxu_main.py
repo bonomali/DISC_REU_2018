@@ -21,7 +21,7 @@ import itertools
 ## Default parameters if no system arguments are given:
 
 ## For each path, the rule extraction process attempts to increase the order until the maximum order is reached. The default value of 5 should be sufficient for most applications. Setting this value as 1 will yield a conventional first-order network. Discussion of this parameter (how it influences the accuracy of representation and the size of the network) is given in the supporting information of the paper.
-MaxOrder = 5
+MaxOrder = 1
 
 ## Observations that are less than min-support are discarded during preprocessing.
 ## For example, if the patter [Shanghai, Singapore] -> [Tokyo] appears 500 times and [Zhenjiang, Shanghai, Singapore] -> [Tokyo] happened only 3 times, and min-support is 10, then [Zhenjiang, Shanghai, Singapore] -> [Tokyo] will not be considered as a higher-order rule.
@@ -31,8 +31,12 @@ MinSupport = 10
 ## Initialize user parameters
 InputFileName = '../../Raw_data_processing_JSON_to_CSV/sequence.txt'
 OutputRulesFile = 'rules-cell.csv'
-OutputNetworkFile = 'network-cell-5thorder-weights.csv'
+OutputNetworkFile = 'network-cell-1storder-weights.csv'
 
+## Vary the output to either frequency type weights (True) or values between 0-1 (False).
+Freq = False
+
+## Try not to touch these unless you REALLY know what you're doing...
 LastStepsHoldOutForTesting = 0
 MinimumLengthForTraining = 1
 InputFileDeliminator = ' '
@@ -148,11 +152,13 @@ def BuildHONfreq(InputFileName, OutputNetworkFile):
 ###########################################
 
 if __name__ == "__main__":
-	print('FREQ mode!!!!!!')
 	RawTrajectories = ReadSequentialData(InputFileName)
 	TrainingTrajectory, TestingTrajectory = BuildTrainingAndTesting(RawTrajectories)
 	VPrint(len(TrainingTrajectory))
-	Rules = jianxu_BuildRulesFastParameterFreeFreq.ExtractRules(TrainingTrajectory, MaxOrder, MinSupport)
+	if Freq == True:
+		Rules = jianxu_BuildRulesFastParameterFreeFreq.ExtractRules(TrainingTrajectory, MaxOrder, MinSupport)
+	else:
+		Rules = jianxu_BuildRulesFastParameterFree.ExtractRules(TrainingTrajectory, MaxOrder, MinSupport)
 	DumpRules(Rules, OutputRulesFile)
 	Network = jianxu_BuildNetwork.BuildNetwork(Rules)
 	DumpNetwork(Network, OutputNetworkFile)

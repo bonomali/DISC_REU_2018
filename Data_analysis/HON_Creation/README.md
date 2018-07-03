@@ -35,3 +35,15 @@ Finally, run the programme from the terminal. No command line arguments are requ
 ```
 $python3 jianxu_main.py 
 ```
+
+IF you would like to include the edge-weights as integer frequency (e.g. 1, 20, 15...) then set the variable
+
+```
+Freq = True
+```
+
+else, if you would like the weights to be set as floats from 0-1 (e.g. 0.12, 1.0, 0.445) then set the variable
+
+```
+Freq = False
+```
