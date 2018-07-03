@@ -47,14 +47,14 @@ def readIn( ifp ):
 		for elem in reader:
 			
 
-			assignment = { 	"week": elem[1] , "date": elem[2] , "time":elem[3] , "name":elem[4] , "url_num":elem[5] , "type":elem[6] }
+			assignment = { "week": elem[1] , "date": elem[2] , "time":elem[3] , "name":elem[4] , "url_num":elem[5] , "type":elem[6] }
 
 			# limit file size for mini set
-			if( len(data.keys()) < 20):
+			if( len(data.keys()) < 1):
 
 				# if there is a new name, create an array of assignment objects for it
 				if( elem[0] not in data.keys() ):
-					data[ elem[0] ] = [ assignment ] 
+					data[ elem[0] ] = [ assignment ]
 					c += 1
 
 				# add on to an existing array
@@ -67,7 +67,7 @@ def writeOut( data ):
 
 	# printing results into the terminal
 	import json
-	with open('episogram_data_mini.json', 'w') as outfile:
+	with open('episogram_data_student.json', 'w') as outfile:
 		json.dump(data, outfile)
 
 	

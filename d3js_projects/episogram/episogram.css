@@ -1,0 +1,19 @@
+svg, table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+}
+
+th {
+    text-align: left;
+}
+
+svg {
+  float: left;
+  width: 70%;
+  padding: 5px;
+}
+
