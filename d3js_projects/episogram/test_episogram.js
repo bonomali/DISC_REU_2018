@@ -30,6 +30,7 @@ const INPUT_WEEKS = "assignments_by_week.json"
 const SPACING = 25;
 const BASE_Y = 400;
 const BASE_NODE_RAD = 7;
+const WEEK_HEIGHT = 200; /* WEEK_HEIGHT must be less than BASE_Y */
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // creates the main semester line given the data object
@@ -42,8 +43,8 @@ function createBaseLine( svg , data ){
 	// add a horizontal line ( should be lower on the svg so data will fit )
 	svg.append("line")
 		.attr("class" , "base_line")
-		.attr("x1" , 0   )
-		.attr("x2" , weeks.length * SPACING ) 
+		.attr("x1" , SPACING  )
+		.attr("x2" , weeks.length * SPACING + SPACING) 
 		.attr("y1" , BASE_Y )
 		.attr("y2" , BASE_Y )
 		.attr("stroke" , "blue")
@@ -55,7 +56,7 @@ function createBaseLine( svg , data ){
 		.data( weeks ).enter()
 		.append("circle")
 		.attr("class" , "base_node")
-		.attr("cx" , week => week * SPACING)
+		.attr("cx" , week => week * SPACING + SPACING)
 		.attr("cy" , BASE_Y)
 		.attr("r" , BASE_NODE_RAD)
 		.attr("fill" , "red");
@@ -93,43 +94,71 @@ function weeksInSemester( data ) {
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// adds vertical week lines to array 
-function addWeekLines( assignsByWeek ){
+// adds vertical week lines to array given a week object
+// that holds an array of assignment data
+function addWeekLine( svg , weekAssigns ){
+
+	const NAME = 4;
 	
-	assignsByWeek.forEach( function( week ){
+	Object.keys(weekAssigns).forEach( function(assign){
 
-		// filter through the assignments that are unique
-		var uniqueAssigns = getUniqueData( week[ Object.keys(week)[0] ] );
-		
-		// add hover data to base week node
-		//
-		//
-		// add nodes for each day
-		//
-		//
-		// 
-
+		// add a vertical line for week
+		svg.append("line")
+			.attr("class" , "week_line")
+			.attr("x1" , parseInt(assign , 10) * SPACING + SPACING)
+			.attr("x2" , parseInt(assign , 10) * SPACING + SPACING)
+			.attr("y1" , BASE_Y - BASE_NODE_RAD)
+			.attr("y2" , BASE_Y - WEEK_HEIGHT)
+			.attr("stroke" , "blue")
+			.attr("stroke-width" , "2");
 	});
 	
 }
 
-
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// given an of array of arrays, will return an array of only unique data
-function getUniqueData( array2D ){
+//
+function updateTableAssigns( weekObj ){
+	
+	const NAME = 4;
 
-	return 0;
+	// clear list
+	d3.selectAll(".assign_node").remove();
 
+	// search for unique assigns in weekObj
+	var assigns = weekObj[ Object.keys( weekObj )[0] ];
+	var uniqueAssigns = []
+
+	assigns.forEach( function(assign){
+		var foundUnique = true;
+
+		if(uniqueAssigns.length === 0)
+			uniqueAssigns.push(assign[NAME]);
+
+		if(assign[NAME] in uniqueAssigns){
+			foundUnique = false;
+		}
+
+		if(foundUnique)
+			uniqueAssigns.push(assign[NAME]);
+
+	});
+
+	// add an unordered list of assigns
+	d3.select("#assigns_list")
+		.data( uniqueAssigns )
+		.enter()
+		.append( "ul" )
+		.attr("class" , "assign_node")
+		.text( name => name );
 
 }
-
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function main(){
 
 	// create an svg element
-	var width = 500,
-		height = 2000;
+	var width = 600,
+		height = 600;
 
 	var epis_svg = d3.select("#episogram").append("svg")
     	.attr("width", width)
@@ -147,7 +176,39 @@ function main(){
 		d3.json(INPUT_WEEKS , function(assignsByWeek){
 			
 			// for each week node, create a line of assignment nodes
-			//addWeekLines();
+			assignsByWeek.forEach( function(week){
+				addWeekLine( epis_svg , week );
+			});
+
+			// add hover data to base week node
+			baseLine.on("click" , function(week_num){
+			
+				/* display summary of week data
+				 * including:
+				 *	unique assignments names
+				 *	number of people that attempted them
+				 */
+
+				// clear data table
+				d3.selectAll(".epis_table").text("");
+				
+				// fill in html table
+				d3.select("#table_week").text(week_num);
+
+				// get correct week data
+				assignsByWeek.forEach(function(week){
+					if( week_num == Object.keys(week)[0] ){
+							
+						// add main assignments
+						updateTableAssigns(week);
+
+					}
+				});
+			});
+	
+
+			// add nodes for each assignment
+			//
 			//
 			// add click/mouseover functionality to assignments
 			//

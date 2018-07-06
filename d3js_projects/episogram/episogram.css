@@ -13,7 +13,10 @@ th {
 
 svg {
   float: left;
-  width: 70%;
   padding: 5px;
 }
 
+#assigns_list {
+  height: 544px;
+  overflow: auto;
+}
