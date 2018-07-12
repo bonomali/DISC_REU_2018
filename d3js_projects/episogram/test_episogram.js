@@ -11,16 +11,12 @@
 
 /*************************************************************************
  * Graph Layout
- *
- *	
- *			   |
- *			   |
- *		assignments done this week
- *		click assign to see data
- *			   #
- *			   |
- *			   |
- *	weeksInSem-*------*--------*--------*--------*----------*----->
+ *			   								  _
+ *			   						|------->|_| grade distribution sankey
+ *			node name				|--/	 |_|
+ *			   |	  |		   |	|----\	 |_|
+ *			   |	  |		   |	|------->|_|
+ *	sequence---*------*--------*--->|--/     |_|
  *
  *************************************************************************/
 
@@ -31,6 +27,41 @@ const SPACING = 25;
 const BASE_Y = 400;
 const BASE_NODE_RAD = 7;
 const WEEK_HEIGHT = 200; /* WEEK_HEIGHT must be less than BASE_Y */
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// creates the line of sequence given a sequence data array
+// returns a the nodes of the line for click/mouseover usage
+function createSequenceLine( svg , sequence ){
+	
+	// add a horizontal line of rects ( should be lower on the svg so data will fit )
+	svg.data( sequence ).enter()
+		.append("rect")
+		.attrs({ class:"seq_rect", 
+				 x: 10, 
+				 y: 10, 
+				 wiidth: 100, 
+				 height: 50 })
+		.attr("fill" , d => d3.scaleOrdinal(d3.schemeCategory20c) * d)
+		.attr("transform" , function(d , i){ return i * 100; })
+
+		// add circles to indicate where the weeks should be
+	var epis_nodes = svg.selectAll( "seq_rect" )
+		.data( weeks ).enter()
+		.append("circle")
+		.attr("class" , "base_node")
+		.attr("cx" , week => week * SPACING + SPACING)
+		.attr("cy" , BASE_Y)
+		.attr("r" , BASE_NODE_RAD)
+		.attr("fill" , "red");
+
+
+  
+	
+	// return the nodes
+	return epis_nodes;
+
+}
+
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // creates the main semester line given the data object
@@ -49,7 +80,6 @@ function createBaseLine( svg , data ){
 		.attr("y2" , BASE_Y )
 		.attr("stroke" , "blue")
 		.attr("stroke-width" , "2");
-
 	
 	// add circles to indicate where the weeks should be
 	var epis_nodes = svg.selectAll( "base_node" )
@@ -60,7 +90,7 @@ function createBaseLine( svg , data ){
 		.attr("cy" , BASE_Y)
 		.attr("r" , BASE_NODE_RAD)
 		.attr("fill" , "red");
-
+  
 	
 	// return the nodes
 	return epis_nodes;

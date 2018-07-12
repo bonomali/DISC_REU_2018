@@ -28,6 +28,7 @@ th {
 
 #sun_path {
   stroke: #fff;
+  stroke-width: 1px;
 }
 
 text {

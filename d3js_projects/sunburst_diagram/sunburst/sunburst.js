@@ -1,3 +1,6 @@
+// adjust scope for full webpage
+function makeSunburst(){
+
 // Set up variables
 var width = 960,
     height = 600,
@@ -41,6 +44,7 @@ d3.json("sunburst_data.json", function(error, root) {
   svg.selectAll("path")
       .data(partition(root).descendants())
     .enter().append("path")
+	  .attr("id" , "sun_path")
       .attr("d", arc)
       .style("fill", function(d) { return color(d.data.name); })
       .on("click", click)
@@ -188,3 +192,7 @@ function mouseleave(d) {
 	d3.selectAll("#active_sequence_data").remove();
 }
 
+
+} // end scope for webpage
+
+makeSunburst();
