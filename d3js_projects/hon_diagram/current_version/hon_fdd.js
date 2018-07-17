@@ -10,7 +10,7 @@
  */
 
 //Define where to look for nodes and where to look for links
-var nodepath = "struc2vec-directed-weighted-classified.csv"
+var nodepath =  "struc2vec-directed-weighted-classified.csv"
 var linkpath = "weights-network-cell.csv"
 
 //Load up pre-defined svg
