@@ -1,0 +1,178 @@
+dtorgers 9 7 100
+cdavin1 9 9 9 9 9 9 31 9 9 34 9 31 9 9 34 9 9 22 34 3 100
+alebron1 9 22 34 3 9 9 9 22 9 9 9 9 9 4 9 9 9 9 22 3 34 9 9 100
+ccooper8 9 9 9 34 9 9 9 9 9 34 9 9 9 9 9 9 9 9 9 9 9 9 9 9 34 9 22 3 9 9 100
+nweindel 9 9 9 9 9 34 9 9 9 9 9 9 9 9 9 9 9 34 22 3 100
+ntownsen 9 7 33 9 9 9 9 9 9 9 34 9 9 9 34 9 9 9 34 9 3 9 9 9 9 9 22 100
+jberg2 9 100
+fhita 9 100
+mmcfarli 9 9 9 9 9 9 9 9 9 9 34 9 9 22 3 9 100
+mlengwin 9 9 9 9 9 9 9 9 9 9 22 3 9 9 34 9 100
+kwurl 9 9 9 9 34 9 9 9 9 9 9 9 9 34 3 22 100
+ccampb20 9 100
+pbrown10 9 3 100
+rdiejoma 9 9 9 9 9 4 22 3 9 34 100
+drogers1 9 9 9 9 9 9 9 9 34 22 3 9 100
+cdelpila 9 4 30 34 9 34 9 9 9 34 9 9 9 34 9 9 31 34 9 9 9 34 3 22 4 9 100
+cbolivar 9 22 3 100
+muhlenbr 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 22 34 3 9 100
+msmith75 9 9 9 34 3 22 9 9 9 34 100
+pmcguir2 9 9 9 9 9 22 3 100
+jstaten 9 9 9 9 4 9 9 9 22 3 9 100
+mgirod 9 100
+zgartenh 9 9 9 9 9 9 9 3 9 9 9 4 9 9 34 3 22 9 100
+alabella 9 9 34 22 3 100
+bferrer1 9 100
+pcataldi 9 100
+aohri 9 9 9 9 9 4 4 9 100
+pklekamp 9 9 100
+amccar10 9 31 34 9 9 9 9 9 22 3 100
+nwamble 9 9 9 9 9 9 9 9 9 100
+wwu5 9 34 22 3 100
+wsuter2 9 9 9 9 9 9 9 22 3 9 100
+thowe1 9 9 9 9 9 9 9 100
+mmian 9 22 31 3 100
+jhouge 9 9 9 9 9 9 31 30 9 9 9 9 9 9 100
+slemaign 9 9 9 9 9 9 9 9 22 3 34 100
+ldamoose 9 34 22 9 3 9 100
+sburnbau 9 9 100
+nwarren 9 9 9 9 9 9 9 9 9 9 34 22 3 100
+bconnol3 9 9 9 9 34 3 22 9 9 100
+rheitkam 9 9 9 9 9 9 9 9 22 34 3 100
+jmullike 9 100
+chickey3 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 100
+athoma24 9 9 9 9 9 9 9 9 34 9 9 9 9 9 9 9 9 22 3 100
+rgensler 9 9 9 9 9 9 9 9 9 9 34 9 9 9 9 34 22 3 100
+kthornt4 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 22 3 9 9 100
+pvlandis 9 22 3 9 100
+mmizraji 9 34 9 9 3 22 9 34 100
+zpavlin 9 9 9 9 9 34 22 3 100
+ydeng3 9 100
+kfox8 9 9 9 9 9 9 9 9 9 22 3 100
+lsulli11 9 9 9 22 3 9 100
+jgorman6 9 9 9 9 9 9 9 100
+enunez 9 100
+jdirksen 9 34 9 9 100
+whornby 9 100
+jwade5 9 100
+mblatt1 9 9 9 9 9 9 9 22 3 100
+jowusuko 9 4 9 4 9 9 9 4 9 34 9 22 3 9 100
+mmang 9 9 9 9 9 100
+waberger 9 34 3 9 22 9 9 100
+llombar2 9 34 22 3 100
+gkaiser 9 30 9 34 22 3 100
+koconn27 9 3 100
+aweishan 9 9 9 34 9 4 9 34 3 22 100
+mcaskey 9 100
+jguarino 9 9 9 9 9 100
+cseymou2 9 9 9 9 9 34 22 3 34 100
+dplagenz 9 9 9 22 34 3 9 3 22 100
+csasso 9 34 22 3 9 9 34 3 22 100
+amccar11 9 100
+yshi6 9 9 34 9 16 9 13 34 9 4 31 9 3 22 9 9 26 1 21 34 1 9 9 14 27 25 34 9 9 9 9 9 9 34 29 24 9 29 24 34 9 9 9 9 11 15 19 9 9 9 9 23 20 18 9 9 9 9 100
+minoue2 9 9 9 9 9 9 34 22 9 34 3 100
+jwinebre 9 34 9 22 3 100
+sgalbens 9 100
+jlazzara 9 22 3 100
+vruesch 9 9 9 4 9 9 9 9 34 9 9 9 9 9 22 3 100
+nniere 9 9 30 9 9 9 33 9 9 9 9 7 9 9 9 9 9 4 100
+ghong 9 9 9 4 22 3 34 100
+bhogan1 9 4 9 9 9 9 9 9 9 9 9 34 22 100
+wdu 9 9 9 9 100
+tmercier 9 9 9 9 9 9 9 34 9 22 3 100
+esunshi1 9 9 9 22 3 9 9 9 9 9 9 9 9 9 4 100
+eevans9 9 9 30 31 9 9 4 9 34 9 9 100
+bkenney1 9 22 3 4 100
+cdieckma 9 3 9 9 4 9 22 3 100
+mcoggins 9 22 9 34 3 100
+lblitzer 9 100
+jdelledo 9 9 9 34 9 22 3 100
+mfreedlu 9 9 9 9 9 9 3 22 9 100
+tprice4 9 100
+lbarret2 9 9 9 9 9 34 9 9 3 9 22 100
+eralph 9 22 3 100
+bhalliga 9 9 22 3 100
+sroennec 31 34 9 34 9 9 34 9 9 9 9 9 22 3 34 100
+jmurph32 9 9 9 9 9 9 34 9 22 3 9 100
+cfrentze 9 9 34 22 3 100
+mnewcome 9 100
+jsitarsk 9 22 3 100
+tpreko 9 9 9 9 9 34 22 9 3 34 22 9 100
+mtreacy 9 9 9 9 22 3 9 100
+ccampb21 9 9 9 9 9 31 9 9 9 9 9 100
+rrivera8 9 3 9 22 9 34 0 34 100
+rblack4 9 9 9 9 9 9 22 3 100
+jwelsch 9 9 22 3 100
+jgately1 9 9 9 3 100
+gdean 9 9 9 9 9 9 9 9 9 9 100
+ewigutow 9 100
+dgibbon2 9 9 9 9 100
+cmorton2 9 100
+mrooney6 9 100
+mmoran12 9 9 9 9 9 9 22 3 9 100
+jwalte10 9 9 9 9 22 3 34 100
+jcarney6 9 9 9 9 3 9 22 34 9 9 9 100
+pmeyer3 9 9 34 9 9 22 3 9 100
+icallaha 9 9 9 9 9 3 34 22 3 100
+dtoth1 9 9 9 9 9 9 9 22 3 100
+kkostola 9 34 22 3 100
+dlee26 9 34 22 3 100
+yying 9 100
+swagy 9 9 9 9 9 9 9 34 9 9 22 100
+rroque1 9 9 9 9 9 9 9 100
+kdantoni 9 34 22 3 100
+wmohler 9 9 22 3 34 9 9 34 100
+lklein1 9 9 9 9 22 3 9 9 100
+jbecker9 9 100
+hrague 9 9 9 9 9 9 9 34 22 3 100
+cott 9 9 22 34 22 3 34 100
+mholzbau 9 3 22 34 100
+mhawkin3 9 9 9 9 34 9 22 34 100
+lharmon 9 9 9 34 9 22 3 100
+elazzaro 9 9 9 9 100
+tburley 9 100
+shenn 9 9 9 9 9 9 9 22 9 9 9 9 9 3 100
+jgomez5 9 9 22 3 9 100
+jfries3 9 22 3 100
+bniemoel 9 31 34 9 34 31 9 9 9 100
+kriordan 9 9 9 9 9 100
+jmurph33 9 22 34 9 9 3 100
+dcorr1 9 9 9 9 100
+cemenalo 9 22 9 3 100
+yjung2 9 9 9 100
+rpappas 9 9 9 9 9 9 22 3 100
+mmerric1 9 100
+mdosch 9 9 4 9 9 100
+jbettag 9 100
+jbernin1 9 22 3 100
+gbruenin 9 4 9 3 22 9 9 100
+ddallava 9 9 9 9 9 9 34 3 9 3 34 22 9 100
+cgamboa 9 9 9 100
+nquartir 9 9 3 9 9 9 22 100
+lfaubion 9 9 100
+cwilso24 9 9 9 9 34 3 22 100
+aursino1 9 9 34 9 100
+msummer2 9 9 9 9 9 22 3 100
+kramm 9 9 22 9 3 100
+jchapple 9 100
+jbonds 9 34 22 3 9 100
+dbirzer 9 100
+cfish 9 9 9 4 3 22 26 25 9 9 3 34 22 9 100
+nholmes1 9 22 3 100
+ngiovino 9 34 22 3 100
+eherber1 9 22 3 100
+cgallag3 9 34 9 9 9 9 22 34 9 3 100
+tzheng2 9 30 31 9 9 9 31 9 100
+mgerber 9 100
+jcolli23 9 34 3 9 9 9 9 22 34 3 9 100
+awalton3 9 100
+vwhitmor 9 9 9 9 9 22 34 3 100
+rpellica 9 34 9 9 3 22 100
+rmyers9 9 9 9 22 3 9 34 100
+mdillon7 9 34 1 100
+jdoerer 9 100
+gbiltz 9 100
+aheck1 9 9 9 9 9 9 34 9 3 22 9 22 100
+ucooper 9 31 9 9 9 9 9 34 22 3 100
+rschill1 9 9 100
+mschlic1 9 4 9 3 100

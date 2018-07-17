@@ -17,7 +17,7 @@ def find(lst, key, value):
 	return indices
 
 
-
+num_students = 200
 
 """
 ####################################################################################################
@@ -67,7 +67,7 @@ for index in range(len(object_types)):
 entries_by_name = Counter(x['account_name'] for x in click_data)
 names = entries_by_name.keys()
 values = entries_by_name.values()
-names = [x for _,x in sorted(zip(values, names), reverse=True)][:100]
+names = [x for _,x in sorted(zip(values, names), reverse=True)][:num_students]
 
 
 ###  Now, load up the assignment submission data (stored in a csv) as another list of dictionaries
@@ -100,7 +100,7 @@ for name in list(submissions_by_name.keys()):
 		sorted_submissions_by_name[name] = submissions_no_duplicates
 	except:
 		## This except statement arises when a student has 0 submissions
-		sorted_submissions_by_name[name] = [{"assignment": "none", "object_id" : "none"}]
+		sorted_submissions_by_name[name] = [{"assignment": None, "object_id" : None, "timestamp": None}]
 
 
 
@@ -152,12 +152,25 @@ def activity_string_generator_ALL(data_dict, name, split = False):
 def activity_string_generator_byassignment(data_dict, submissions_list, name):
 	sorted_dicts = sorted(data_dict, key=lambda k: k["timestamp"])
 	submission_counter = 0
-	strings_dict = {}
-	submission_time = dt.datetime.strptime(submissions_list[0]["timestamp"], '%Y-%m-%dT%H:%M:%S')
-	start_time = dt.datetime.strptime(sorted_dicts[0]["timestamp"], '%Y-%m-%dT%H:%M:%S')	
-	assignment = submissions_list[submission_counter]["assignment"]
-	strings_dict[assignment + "_clicks"] = name +  " " 
-	strings_dict[assignment + "_times"] = name + " "
+	object_id = sorted_dicts[0] ["object_id"]
+	if "Coursework" in object_id:
+		object_id = "Coursework"
+	start_click = object_ref[ object_id ]["ref_num"]
+	
+	if submissions_list[0]["timestamp"] == None:
+		strings_dict = {}
+		submission_time = dt.datetime.max
+		start_time = dt.datetime.strptime(sorted_dicts[0]["timestamp"], '%Y-%m-%dT%H:%M:%S')
+		assignment = "None"
+		strings_dict[assignment + "_clicks"] = name +  " " 
+		strings_dict[assignment + "_times"] = name + " "
+	else:
+		strings_dict = {}
+		submission_time = dt.datetime.strptime(submissions_list[0]["timestamp"], '%Y-%m-%dT%H:%M:%S')
+		start_time = dt.datetime.strptime(sorted_dicts[0]["timestamp"], '%Y-%m-%dT%H:%M:%S')	
+		assignment = submissions_list[submission_counter]["assignment"]
+		strings_dict[assignment + "_clicks"] = name +  " " 
+		strings_dict[assignment + "_times"] = name + " "
 	
 	for entry in sorted_dicts:
 		##  get current time
@@ -166,41 +179,52 @@ def activity_string_generator_byassignment(data_dict, submissions_list, name):
 		
 		##  change submission time when assignment changes
 		if time_now >= submission_time:
-			
 			#  Append the completed string of activities that took place this week to the full weeks list
-			try:
-				strings_dict[assignment + "_clicks"] += 100	
-				strings_dict[assignment + "_times"] += submission_time
+			if submission_counter < len(submissions_list)-1:
+				strings_dict[assignment + "_clicks"] += "100"	
+				strings_dict[assignment + "_times"] += str(submission_time)
 				submission_counter += 1
 				assignment = submissions_list[submission_counter]["assignment"]
 				strings_dict[assignment + "_clicks"] = name + " "	
 				strings_dict[assignment + "_times"] = name + " "
 				submission_time = dt.datetime.strptime(submissions_list[submission_counter]["timestamp"], '%Y-%m-%dT%H:%M:%S')
 				
-			except:
+			else:
 				assignment = "Revision"
 				strings_dict[assignment + "_clicks"] = name + " "
 				strings_dict[assignment + "_times"] = name + " "
 				submission_time = dt.datetime.max 
 		
-		"""## Otherwise, provided this week isn't different, you want to take account for possible idle time.
-		elif delta_t >= 900. and delta_t <1800.:
-			strings_dict[assignment + "_clicks"] += str(len(object_ref)+1) + " "
-			strings_dict[assignment + "_times"] += str(time_now - datetime.timedelta(minutes=15)) + " "
-		## if time taken is greater than 3 hours, add one long idle time
-		elif delta_t >=1800. and delta_t <2700:
-			activity_string += str(len(object_ref)+2) + " "
-		elif delta_t >=1800. and delta_t <2700:
-			activity_string += str(len(object_ref)+2) + " "		
 		## regardless of how much idle time has been added, the ref_id of the activity must be added too
 		object_id = entry["object_id"]
 		if "Coursework" in object_id:
 			object_id = "Coursework"
-		"""
 		
-		strings_dict[assignment + "_clicks"] += object_ref[object_id]["ref_num"] + " "
+		click_now = object_ref[object_id]["ref_num"]
+		
+		strings_dict[assignment + "_clicks"] += click_now + " "
 		strings_dict[assignment + "_times"] += str(time_now) + " "
+		"""if not (click_now == start_click and object_id == "Coursework"):
+			
+			## Otherwise, provided this week isn't different, you want to take account for possible idle time.
+			if delta_t >= 900. and delta_t <1800.:
+				strings_dict[assignment + "_clicks"] += str(len(object_ref)+1) + " "
+				strings_dict[assignment + "_times"] += str(time_now - datetime.timedelta(minutes=15)) + " "
+			## if time taken is greater than 3 hours, add one long idle time
+			elif delta_t >= 1800. and delta_t <2700.:
+				strings_dict[assignment + "_clicks"] += str(len(object_ref)+1) + " "
+				strings_dict[assignment + "_times"] += str(time_now - datetime.timedelta(minutes=30)) + " "
+			elif delta_t >= 2700. and delta_t <3600.:
+				strings_dict[assignment + "_clicks"] += str(len(object_ref)+1) + " "
+				strings_dict[assignment + "_times"] += str(time_now - datetime.timedelta(minutes=45)) + " "
+			elif delta_t >= 3600.:
+				strings_dict[assignment + "_clicks"] += str(len(object_ref)+1) + " "
+				strings_dict[assignment + "_times"] += str(time_now - datetime.timedelta(minutes=60)) + " "
 		
+			strings_dict[assignment + "_clicks"] += click_now + " "
+			strings_dict[assignment + "_times"] += str(time_now) + " "
+		
+		start_click = click_now"""
 		start_time = time_now
 		
 	return strings_dict
@@ -214,6 +238,7 @@ def activity_string_generator_byassignment(data_dict, submissions_list, name):
 #  Generate a list of dictionaries of activity strings, one for each name for each week
 all_data_byassignment = []
 for name in names:
+	print(name)
 	indices = find(click_data, "account_name", name)
 	cut_data = click_data[indices[0]:indices[-1]+1]
 	submissions_list = sorted_submissions_by_name[name]
@@ -231,13 +256,14 @@ keys = list(set(keys))
 
 for key in keys:
 	list_byweek = []
-	for dictionary in all_data_byweek:
+	for dictionary in all_data_byassignment:
 		if key in dictionary:
 			list_byweek.append(dictionary[key])
 	outfile_byweek = open('sequence' + key + '.txt', 'w')
 	for item in list_byweek:
 		outfile_byweek.write("%s\n" % item)
 
+"""
 #  Generate the master list of all activity strings, one for each name (covering the entire duration
 all_data = []
 for name in names:
@@ -253,8 +279,8 @@ for item in all_data:
 #  To convert each activity string to a list of elements instead:
 
 with open('object_ref.csv', 'w') as csv_file:
-    writer = csv.writer(csv_file)
-    for key, value in object_ref.items():
-       writer.writerow([key, value])
+	writer = csv.writer(csv_file)
+	for key, value in object_ref.items():
+		writer.writerow([key, value])
 
-
+"""
