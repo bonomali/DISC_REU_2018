@@ -9,15 +9,15 @@
  *		js file for the higher order network force directed diagram. 
  */
 
+// adjust scope for interactive webpage
+function makeForceDirected(){
+
 //Define where to look for nodes and where to look for links
 var nodepath =  "struc2vec-directed-weighted-classified.csv"
 var linkpath = "weights-network-cell.csv"
 
 //Load up pre-defined svg
 var svg = d3.select("#hon_diagram"),
-	/*.call(d3.zoom().on("zoom", function () {
-        svg.attr("transform", d3.event.transform)
-})),*/
 	width = +svg.attr("width"),
 	height = +svg.attr("height");
 
@@ -46,22 +46,7 @@ var defs = svg.append("svg:defs");
 
 var color = d3.scaleOrdinal(d3.schemeCategory10);
 
-/*
-// Custom implementation of a force applied to only every second node
-var pickyForce = d3.forceManyBody().strength(-50);
-
-// Save the default initialization method
-var init = pickyForce.initialize; 
-
-// Custom implementation of .initialize() calling the saved method with only
-// a subset of nodes
-pickyForce.initialize = function(nodes) {
-    // Filter subset of nodes and delegate to saved initialization.
-    init(nodes.filter(function(n) { return (+n.group != "12"); }));
-    };
-*/
-
-
+// add forces
 var simulation = d3.forceSimulation()
 	.force("link", d3.forceLink().id(function(d) {return d.id; })
 								 .strength(link => link.value)
@@ -74,8 +59,9 @@ var simulation = d3.forceSimulation()
 
 
 
-//Open up node data file function(d) { console.log(d.value); return (d.value); }
+//Open up node data file 
 d3.csv(nodepath, function(nodes_data) {
+
 	//Create empty graph array
 	graph = { "links": [] , "nodes": []};
 
@@ -239,13 +225,6 @@ d3.csv(nodepath, function(nodes_data) {
 			}
 
 
-			/*link.each(function(d) {
-       			var colour = color(d.Gephi);
-				var opacity = d.value;
-       			d3.select(this).style("stroke", colour)
-				   .attr("stroke-opacity", opacity)
-                   .attr("marker-end", marker(colour, opacity));
-			});*/
 		});
 
   node.append("title")
@@ -282,48 +261,6 @@ var linkedByIndex = {};
     function isConnected(a, b) {
         return linkedByIndex[a.index + "," + b.index] || linkedByIndex[b.index + "," + a.index] || a.index == b.index;
     }
-
-    /*// fade nodes on hover
-    function mouseOver(opacity) {
-		console.log("mouseover");
-        return function(d) {
-            // check all other nodes to see if they're connected
-            // to this one. if so, keep the opacity at 1, otherwise
-            // fade
-            node.style("stroke-opacity", function(o) {
-                thisOpacity = isConnected(d, o) ? 1 : 0.1;
-                return thisOpacity;
-            });
-            node.style("fill-opacity", function(o) {
-                thisOpacity = isConnected(d, o) ? 1 : 0.1;
-                return thisOpacity;
-            });
-            // also style link accordingly
-            link.style("stroke-opacity", function(o) {
-                return o.source === d || o.target === d ? 1 : 0.1;
-			});
-
-			link.attr("marker-end", function(o) {
-				return o.source === d || o.target === d ? marker(color(o.group), 1.0) : marker(color(o.group), 0.1);
-            });
-        };
-    }
-
-    function mouseOut() {
-        node.style("stroke-opacity", 1);
-        node.style("fill-opacity", 1);
-        link.style("stroke-opacity", function(d) { return (d.value); });
-        link.style("stroke", "#999");
-		link.each(function(d) {
-            var colour = color(d.group);
-			var opacity = d.value;
-            d3.select(this).style("stroke", colour)
-						   .attr("stroke-opacity", opacity)
-                           .attr("marker-end", marker(colour, opacity));
-        });
-    }*/
-
-
 
 d3.selectAll("input[name=filter]").on("change", function(d){
 
@@ -451,4 +388,6 @@ function dragended(d) {
   d.fy = null;
 }
 
+} // end main function
 
+makeForceDirected();
