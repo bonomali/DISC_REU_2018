@@ -13,8 +13,8 @@
 function makeForceDirected(){
 
 //Define where to look for nodes and where to look for links
-var nodepath =  "struc2vec-directed-weighted-classified.csv"
-var linkpath = "weights-network-cell.csv"
+var nodepath =  "csv_files/struc2vec-directed-weighted-classified.csv"
+var linkpath = "csv_files/weights-network-cell.csv"
 
 //Load up pre-defined svg
 var svg = d3.select("#hon_diagram"),

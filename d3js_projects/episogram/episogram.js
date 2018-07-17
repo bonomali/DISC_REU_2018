@@ -139,7 +139,7 @@ function clearLines(){
 function main(){
 
 	// variables and constants
-	const INPUT_FILE = "episogram_data_mini.json"
+	const INPUT_FILE = "json_files/episogram_data_mini.json"
 
 	var width = 500,
 		height = 2000;

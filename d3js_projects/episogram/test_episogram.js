@@ -21,8 +21,8 @@
  *************************************************************************/
 
 // constants
-const INPUT_FILE = "episogram_data_mini.json";
-const INPUT_WEEKS = "assignments_by_week.json"
+const INPUT_FILE = "json_files/episogram_data_mini.json";
+const INPUT_WEEKS = "json_files/assignments_by_week.json"
 const SPACING = 25;
 const BASE_Y = 400;
 const BASE_NODE_RAD = 7;

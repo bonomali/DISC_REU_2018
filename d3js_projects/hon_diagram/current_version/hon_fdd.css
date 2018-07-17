@@ -23,7 +23,7 @@ svg, table, th, td {
 }
 
 th, td {
-    padding: 15px;
+    padding: 10px;
 }
 
 th {
@@ -39,4 +39,3 @@ svg {
   width: 70%;
   padding: 5px;
 }
-

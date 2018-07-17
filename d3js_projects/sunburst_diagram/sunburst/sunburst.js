@@ -24,6 +24,9 @@ var arc = d3.arc()
     .innerRadius(function(d) { return Math.max(0, y(d.y0)); })
     .outerRadius(function(d) { return Math.max(0, y(d.y1)); });
 
+// center pie chart
+var pieChart = d3.pie().value(function(d) { return 5; });
+
 var sequence = 	d3.select("#active_sequence").append("svg")
 	.attr("width" , 1000)
 	.attr("height" , 50)
@@ -37,15 +40,17 @@ var svg = d3.select("#sunburst_diagram").append("svg")
 
 // load in data
 d3.json("sunburst_data.json", function(error, root) {
+  
   if (error) throw error;
   
   root = d3.hierarchy(root);
+
   root.sum(function(d) { return d.size; });
   svg.selectAll("path")
       .data(partition(root).descendants())
     .enter().append("path")
 	  .attr("id" , "sun_path")
-      .attr("d", arc)
+      .attr("d", arc )
       .style("fill", function(d) { return color(d.data.name); })
       .on("click", click)
 	  .on("mouseover" , mouseover)
@@ -183,6 +188,8 @@ function mouseover(d) {
     		.text(function(e) { return node.data.name; });
 		
 		node = node.parent;
+
+		console.log(node.depth)
 	}
 	
 }
