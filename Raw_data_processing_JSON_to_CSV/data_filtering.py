@@ -153,59 +153,53 @@ def activity_string_generator_byassignment(data_dict, submissions_list, name):
 	sorted_dicts = sorted(data_dict, key=lambda k: k["timestamp"])
 	submission_counter = 0
 	strings_dict = {}
-	
-	try:
-		submission_time = dt.datetime.strptime(submissions_list[0]["timestamp"], '%Y-%m-%dT%H:%M:%S')
-		activity_string = name +  " " 
-		time_string = name + " "
-	except:
-		submission_time = dt.datetime.max
-		activity_
-	start_time = dt.datetime.strptime(sorted_dicts[0]["timestamp"], '%Y-%m-%dT%H:%M:%S')
+	submission_time = dt.datetime.strptime(submissions_list[0]["timestamp"], '%Y-%m-%dT%H:%M:%S')
+	start_time = dt.datetime.strptime(sorted_dicts[0]["timestamp"], '%Y-%m-%dT%H:%M:%S')	
+	assignment = submissions_list[submission_counter]["assignment"]
+	strings_dict[assignment + "_clicks"] = name +  " " 
+	strings_dict[assignment + "_times"] = name + " "
 	
 	for entry in sorted_dicts:
-		# get current time
+		##  get current time
 		time_now = dt.datetime.strptime(entry["timestamp"], '%Y-%m-%dT%H:%M:%S')
-		
-		#  if this assignment is different to the previous week, create a new line for it.
 		delta_t = (time_now - start_time).total_seconds()	
+		
+		##  change submission time when assignment changes
 		if time_now >= submission_time:
+			
 			#  Append the completed string of activities that took place this week to the full weeks list
 			try:
-				assignment = submissions_list[submission_counter]["assignment"]
-				strings_dict[assignment + "_clicks"] = activity_string
-				strings_dict[assignment + "_times"] = time_string
-				
-				activity_string = name + " "	
-				time_string = name + " "
-				submission_time = dt.datetime.strptime(submissions_list[submission_counter]["timestamp"], '%Y-%m-%dT%H:%M:%S')
+				strings_dict[assignment + "_clicks"] += 100	
+				strings_dict[assignment + "_times"] += submission_time
 				submission_counter += 1
+				assignment = submissions_list[submission_counter]["assignment"]
+				strings_dict[assignment + "_clicks"] = name + " "	
+				strings_dict[assignment + "_times"] = name + " "
+				submission_time = dt.datetime.strptime(submissions_list[submission_counter]["timestamp"], '%Y-%m-%dT%H:%M:%S')
 				
 			except:
 				assignment = "Revision"
-				strings_dict[assignment + "_clicks"] = activity_string
-				strings_dict[assignment + "_times"] = time_string
-				
-				activity_string = name + " "	
-				time_string = name + " "
+				strings_dict[assignment + "_clicks"] = name + " "
+				strings_dict[assignment + "_times"] = name + " "
 				submission_time = dt.datetime.max 
-				submission_counter += 1
-		#  Otherwise, provided this week isn't different, you want to take account for possible idle time.
-		# if time taken is between 30 minutes and 3 hours, add 30 minute blocks of short idle time
-		elif delta_t >= 1800. and delta_t <10800.:
-			while delta_t >1800:
-				delta_t += -1800
-				activity_string += str(len(object_ref)+1) + " "
-		# if time taken is greater than 3 hours, add one long idle time
-		elif delta_t >=10800.:
-			activity_string += str(len(object_ref)+2) + " "
 		
-		# regardless of how much idle time has been added, the ref_id of the activity must be added too
+		"""## Otherwise, provided this week isn't different, you want to take account for possible idle time.
+		elif delta_t >= 900. and delta_t <1800.:
+			strings_dict[assignment + "_clicks"] += str(len(object_ref)+1) + " "
+			strings_dict[assignment + "_times"] += str(time_now - datetime.timedelta(minutes=15)) + " "
+		## if time taken is greater than 3 hours, add one long idle time
+		elif delta_t >=1800. and delta_t <2700:
+			activity_string += str(len(object_ref)+2) + " "
+		elif delta_t >=1800. and delta_t <2700:
+			activity_string += str(len(object_ref)+2) + " "		
+		## regardless of how much idle time has been added, the ref_id of the activity must be added too
 		object_id = entry["object_id"]
 		if "Coursework" in object_id:
 			object_id = "Coursework"
-		activity_string += object_ref[object_id]["ref_num"] + " "
-		time_string += str(time_now) + " "
+		"""
+		
+		strings_dict[assignment + "_clicks"] += object_ref[object_id]["ref_num"] + " "
+		strings_dict[assignment + "_times"] += str(time_now) + " "
 		
 		start_time = time_now
 		
@@ -213,7 +207,7 @@ def activity_string_generator_byassignment(data_dict, submissions_list, name):
 
 """
 ###############################################################################################################
-#Call functions to generate output txt sequences
+##                         Call functions to generate output txt sequences
 ###############################################################################################################
 """
 
