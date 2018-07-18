@@ -1,21 +1,19 @@
 /* make an episogram
  * 
- * uses a semester line of weeks
- * each week has 7 days
+ * a line of nodes colored by url
+ * arc surrounding node indicates duration
  * 
- * display the assignements done on that day
- *
- *
  */
 
+function makeEpisogram(){
 
 /*************************************************************************
  * Graph Layout
  *			   								  _
  *			   						|------->|_| grade distribution sankey
  *			node name				|--/	 |_|
- *			   |	  |		   |	|----\	 |_|
- *			   |	  |		   |	|------->|_|
+ *			   |	  		   		|----\	 |_|
+ *			   |	  		   		|------->|_|
  *	sequence---*------*--------*--->|--/     |_|
  *
  *************************************************************************/
@@ -44,7 +42,7 @@ function createSequenceLine( svg , sequence ){
 		.attr("fill" , d => d3.scaleOrdinal(d3.schemeCategory20c) * d)
 		.attr("transform" , function(d , i){ return i * 100; })
 
-		// add circles to indicate where the weeks should be
+	// add circles to indicate where the weeks should be
 	var epis_nodes = svg.selectAll( "seq_rect" )
 		.data( weeks ).enter()
 		.append("circle")
@@ -54,9 +52,21 @@ function createSequenceLine( svg , sequence ){
 		.attr("r" , BASE_NODE_RAD)
 		.attr("fill" , "red");
 
+	// add arcs to the circles indicating duration
+	var duration_arcs = epis_nodes.forEach( function(node){
 
-  
-	
+		d3.arc()
+			.innerRadius(50)
+			.outerRadius(70)
+			.startAngle(45 * (Math.PI/180)) //converting from degs to radians
+			.endAngle(3) //just radians
+
+		vis.append("path")
+			.attr("d", arc)
+			.attr("transform", "translate(200,200)")
+
+	});
+
 	// return the nodes
 	return epis_nodes;
 
@@ -123,6 +133,7 @@ function weeksInSemester( data ) {
 	return weeks;
 }
 
+/*
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // adds vertical week lines to array given a week object
 // that holds an array of assignment data
@@ -144,9 +155,9 @@ function addWeekLine( svg , weekAssigns ){
 	});
 	
 }
+*/
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//
 function updateTableAssigns( weekObj ){
 	
 	const NAME = 4;
@@ -256,9 +267,9 @@ main();
 
 
 
+} // closes makeEpisogram()
 
-
-
+makeEpisogram();
 
 /*************************************************************************
  * Necessary fxns:
