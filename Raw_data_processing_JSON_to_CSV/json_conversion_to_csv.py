@@ -16,7 +16,7 @@ import datetime as dt
 #json_filepath = "SP18RawActivityData/SP18_FYS_10101_activity_03_23.json"
 #csv_filepath = "SP18_03_23.csv"
 json_filepath = "SP18RawActivityData/SP18_FYS_10101_assignments_activity_submission_05_14.json"
-csv_filepath = "SP18_assignments_activty.csv"
+csv_filepath = "SP18CSVData/SP18_assignments_activty.csv"
 
 def raw_data_to_csv(json_filepath, csv_filepath, activity_type = False):
 	f = open(json_filepath, 'r')
