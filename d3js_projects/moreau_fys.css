@@ -1,0 +1,61 @@
+.links line {
+	stroke-width: 2px;
+}
+
+.nodes circle {
+	stroke: black;
+	stroke-width: 0px;
+}
+
+svg, table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+}
+
+th {
+    text-align: left;
+}
+
+#hon_diagram {
+  float: left;
+  width: 70%;
+  padding: 5px;
+}
+
+#sun_path {
+  stroke: #fff;
+  stroke-width: 1px;
+}
+
+text {
+  fill: white;
+  font: 30px sans-serif;
+  text-anchor: end;
+}
+
+#full_sunburst {
+	width: 50%;
+	border-collapse: collapse;
+	display:inline-block;
+}
+
+#dialog-window {
+	float: left;
+	width: 30%;
+  	height: 660px;
+  	border: 1px black solid;
+	display:inline-block;
+}
+
+#non-scrollable-content {
+	height: 100px;
+}
+
+#scrollable-content {
+  height: 544px;
+  overflow: auto;
+}

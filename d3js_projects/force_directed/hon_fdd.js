@@ -17,8 +17,9 @@ const NODE_FILE =  "csv_files/struc2vec-directed-weighted-classified.csv"
 const LINK_FILE = "csv_files/weights-network-cell.csv"
 
 //Load up pre-defined svg
-var svg = d3.select("#hon_diagram"),
-	width = +svg.attr("width"),
+var svg = d3.select("#hon_diagram").select("svg");
+	
+var	width = +svg.attr("width"),
 	height = +svg.attr("height");
 
 
