@@ -170,7 +170,7 @@ def activity_string_generator_byassignment(data_dict, submissions_list, name):
 		start_time = dt.datetime.strptime(sorted_dicts[0]["timestamp"], '%Y-%m-%dT%H:%M:%S')	
 		assignment = submissions_list[submission_counter]["assignment"]
 		strings_dict[assignment + "_clicks"] = name +  " " 
-		strings_dict[assignment + "_times"] = name + " "
+		strings_dict[assignment + "_times"] = name + ","
 	
 	for entry in sorted_dicts:
 		##  get current time
@@ -186,13 +186,13 @@ def activity_string_generator_byassignment(data_dict, submissions_list, name):
 				submission_counter += 1
 				assignment = submissions_list[submission_counter]["assignment"]
 				strings_dict[assignment + "_clicks"] = name + " "	
-				strings_dict[assignment + "_times"] = name + " "
+				strings_dict[assignment + "_times"] = name + ","
 				submission_time = dt.datetime.strptime(submissions_list[submission_counter]["timestamp"], '%Y-%m-%dT%H:%M:%S')
 				
 			else:
 				assignment = "Revision"
 				strings_dict[assignment + "_clicks"] = name + " "
-				strings_dict[assignment + "_times"] = name + " "
+				strings_dict[assignment + "_times"] = name + ","
 				submission_time = dt.datetime.max 
 		
 		## regardless of how much idle time has been added, the ref_id of the activity must be added too
@@ -203,28 +203,28 @@ def activity_string_generator_byassignment(data_dict, submissions_list, name):
 		click_now = object_ref[object_id]["ref_num"]
 		
 		strings_dict[assignment + "_clicks"] += click_now + " "
-		strings_dict[assignment + "_times"] += str(time_now) + " "
-		"""if not (click_now == start_click and object_id == "Coursework"):
+		strings_dict[assignment + "_times"] += str(time_now) + ","
+		if not (click_now == start_click and object_id == "Coursework"):
 			
 			## Otherwise, provided this week isn't different, you want to take account for possible idle time.
-			if delta_t >= 900. and delta_t <1800.:
+			if delta_t >= 15*60. and delta_t <30*60.:
 				strings_dict[assignment + "_clicks"] += str(len(object_ref)+1) + " "
 				strings_dict[assignment + "_times"] += str(time_now - datetime.timedelta(minutes=15)) + " "
 			## if time taken is greater than 3 hours, add one long idle time
-			elif delta_t >= 1800. and delta_t <2700.:
+			elif delta_t >= 30*60. and delta_t <45*60.:
 				strings_dict[assignment + "_clicks"] += str(len(object_ref)+1) + " "
 				strings_dict[assignment + "_times"] += str(time_now - datetime.timedelta(minutes=30)) + " "
-			elif delta_t >= 2700. and delta_t <3600.:
+			elif delta_t >= 45*60. and delta_t <60*60.:
 				strings_dict[assignment + "_clicks"] += str(len(object_ref)+1) + " "
 				strings_dict[assignment + "_times"] += str(time_now - datetime.timedelta(minutes=45)) + " "
-			elif delta_t >= 3600.:
+			elif delta_t >= 60*60.:
 				strings_dict[assignment + "_clicks"] += str(len(object_ref)+1) + " "
 				strings_dict[assignment + "_times"] += str(time_now - datetime.timedelta(minutes=60)) + " "
 		
 			strings_dict[assignment + "_clicks"] += click_now + " "
 			strings_dict[assignment + "_times"] += str(time_now) + " "
 		
-		start_click = click_now"""
+		start_click = click_now
 		start_time = time_now
 		
 	return strings_dict

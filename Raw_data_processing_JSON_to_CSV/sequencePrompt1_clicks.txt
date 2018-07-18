@@ -1,4 +1,4 @@
-dplagenz 9 9 9 13 34 16 100
-ewigutow 9 9 9 9 9 9 9 9 9 9 9 30 100
-dlee26 9 100
-dbirzer 9 9 100
+dplagenz 0 0 0 28 15 24 100
+ewigutow 0 0 0 0 0 0 0 0 0 0 0 33 100
+dlee26 0 100
+dbirzer 0 0 100

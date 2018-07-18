@@ -1,178 +1,178 @@
-dtorgers 9 7 100
-cdavin1 9 9 9 9 9 9 31 9 9 34 9 31 9 9 34 9 9 22 34 3 100
-alebron1 9 22 34 3 9 9 9 22 9 9 9 9 9 4 9 9 9 9 22 3 34 9 9 100
-ccooper8 9 9 9 34 9 9 9 9 9 34 9 9 9 9 9 9 9 9 9 9 9 9 9 9 34 9 22 3 9 9 100
-nweindel 9 9 9 9 9 34 9 9 9 9 9 9 9 9 9 9 9 34 22 3 100
-ntownsen 9 7 33 9 9 9 9 9 9 9 34 9 9 9 34 9 9 9 34 9 3 9 9 9 9 9 22 100
-jberg2 9 100
-fhita 9 100
-mmcfarli 9 9 9 9 9 9 9 9 9 9 34 9 9 22 3 9 100
-mlengwin 9 9 9 9 9 9 9 9 9 9 22 3 9 9 34 9 100
-kwurl 9 9 9 9 34 9 9 9 9 9 9 9 9 34 3 22 100
-ccampb20 9 100
-pbrown10 9 3 100
-rdiejoma 9 9 9 9 9 4 22 3 9 34 100
-drogers1 9 9 9 9 9 9 9 9 34 22 3 9 100
-cdelpila 9 4 30 34 9 34 9 9 9 34 9 9 9 34 9 9 31 34 9 9 9 34 3 22 4 9 100
-cbolivar 9 22 3 100
-muhlenbr 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 22 34 3 9 100
-msmith75 9 9 9 34 3 22 9 9 9 34 100
-pmcguir2 9 9 9 9 9 22 3 100
-jstaten 9 9 9 9 4 9 9 9 22 3 9 100
-mgirod 9 100
-zgartenh 9 9 9 9 9 9 9 3 9 9 9 4 9 9 34 3 22 9 100
-alabella 9 9 34 22 3 100
-bferrer1 9 100
-pcataldi 9 100
-aohri 9 9 9 9 9 4 4 9 100
-pklekamp 9 9 100
-amccar10 9 31 34 9 9 9 9 9 22 3 100
-nwamble 9 9 9 9 9 9 9 9 9 100
-wwu5 9 34 22 3 100
-wsuter2 9 9 9 9 9 9 9 22 3 9 100
-thowe1 9 9 9 9 9 9 9 100
-mmian 9 22 31 3 100
-jhouge 9 9 9 9 9 9 31 30 9 9 9 9 9 9 100
-slemaign 9 9 9 9 9 9 9 9 22 3 34 100
-ldamoose 9 34 22 9 3 9 100
-sburnbau 9 9 100
-nwarren 9 9 9 9 9 9 9 9 9 9 34 22 3 100
-bconnol3 9 9 9 9 34 3 22 9 9 100
-rheitkam 9 9 9 9 9 9 9 9 22 34 3 100
-jmullike 9 100
-chickey3 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 100
-athoma24 9 9 9 9 9 9 9 9 34 9 9 9 9 9 9 9 9 22 3 100
-rgensler 9 9 9 9 9 9 9 9 9 9 34 9 9 9 9 34 22 3 100
-kthornt4 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 22 3 9 9 100
-pvlandis 9 22 3 9 100
-mmizraji 9 34 9 9 3 22 9 34 100
-zpavlin 9 9 9 9 9 34 22 3 100
-ydeng3 9 100
-kfox8 9 9 9 9 9 9 9 9 9 22 3 100
-lsulli11 9 9 9 22 3 9 100
-jgorman6 9 9 9 9 9 9 9 100
-enunez 9 100
-jdirksen 9 34 9 9 100
-whornby 9 100
-jwade5 9 100
-mblatt1 9 9 9 9 9 9 9 22 3 100
-jowusuko 9 4 9 4 9 9 9 4 9 34 9 22 3 9 100
-mmang 9 9 9 9 9 100
-waberger 9 34 3 9 22 9 9 100
-llombar2 9 34 22 3 100
-gkaiser 9 30 9 34 22 3 100
-koconn27 9 3 100
-aweishan 9 9 9 34 9 4 9 34 3 22 100
-mcaskey 9 100
-jguarino 9 9 9 9 9 100
-cseymou2 9 9 9 9 9 34 22 3 34 100
-dplagenz 9 9 9 22 34 3 9 3 22 100
-csasso 9 34 22 3 9 9 34 3 22 100
-amccar11 9 100
-yshi6 9 9 34 9 16 9 13 34 9 4 31 9 3 22 9 9 26 1 21 34 1 9 9 14 27 25 34 9 9 9 9 9 9 34 29 24 9 29 24 34 9 9 9 9 11 15 19 9 9 9 9 23 20 18 9 9 9 9 100
-minoue2 9 9 9 9 9 9 34 22 9 34 3 100
-jwinebre 9 34 9 22 3 100
-sgalbens 9 100
-jlazzara 9 22 3 100
-vruesch 9 9 9 4 9 9 9 9 34 9 9 9 9 9 22 3 100
-nniere 9 9 30 9 9 9 33 9 9 9 9 7 9 9 9 9 9 4 100
-ghong 9 9 9 4 22 3 34 100
-bhogan1 9 4 9 9 9 9 9 9 9 9 9 34 22 100
-wdu 9 9 9 9 100
-tmercier 9 9 9 9 9 9 9 34 9 22 3 100
-esunshi1 9 9 9 22 3 9 9 9 9 9 9 9 9 9 4 100
-eevans9 9 9 30 31 9 9 4 9 34 9 9 100
-bkenney1 9 22 3 4 100
-cdieckma 9 3 9 9 4 9 22 3 100
-mcoggins 9 22 9 34 3 100
-lblitzer 9 100
-jdelledo 9 9 9 34 9 22 3 100
-mfreedlu 9 9 9 9 9 9 3 22 9 100
-tprice4 9 100
-lbarret2 9 9 9 9 9 34 9 9 3 9 22 100
-eralph 9 22 3 100
-bhalliga 9 9 22 3 100
-sroennec 31 34 9 34 9 9 34 9 9 9 9 9 22 3 34 100
-jmurph32 9 9 9 9 9 9 34 9 22 3 9 100
-cfrentze 9 9 34 22 3 100
-mnewcome 9 100
-jsitarsk 9 22 3 100
-tpreko 9 9 9 9 9 34 22 9 3 34 22 9 100
-mtreacy 9 9 9 9 22 3 9 100
-ccampb21 9 9 9 9 9 31 9 9 9 9 9 100
-rrivera8 9 3 9 22 9 34 0 34 100
-rblack4 9 9 9 9 9 9 22 3 100
-jwelsch 9 9 22 3 100
-jgately1 9 9 9 3 100
-gdean 9 9 9 9 9 9 9 9 9 9 100
-ewigutow 9 100
-dgibbon2 9 9 9 9 100
-cmorton2 9 100
-mrooney6 9 100
-mmoran12 9 9 9 9 9 9 22 3 9 100
-jwalte10 9 9 9 9 22 3 34 100
-jcarney6 9 9 9 9 3 9 22 34 9 9 9 100
-pmeyer3 9 9 34 9 9 22 3 9 100
-icallaha 9 9 9 9 9 3 34 22 3 100
-dtoth1 9 9 9 9 9 9 9 22 3 100
-kkostola 9 34 22 3 100
-dlee26 9 34 22 3 100
-yying 9 100
-swagy 9 9 9 9 9 9 9 34 9 9 22 100
-rroque1 9 9 9 9 9 9 9 100
-kdantoni 9 34 22 3 100
-wmohler 9 9 22 3 34 9 9 34 100
-lklein1 9 9 9 9 22 3 9 9 100
-jbecker9 9 100
-hrague 9 9 9 9 9 9 9 34 22 3 100
-cott 9 9 22 34 22 3 34 100
-mholzbau 9 3 22 34 100
-mhawkin3 9 9 9 9 34 9 22 34 100
-lharmon 9 9 9 34 9 22 3 100
-elazzaro 9 9 9 9 100
-tburley 9 100
-shenn 9 9 9 9 9 9 9 22 9 9 9 9 9 3 100
-jgomez5 9 9 22 3 9 100
-jfries3 9 22 3 100
-bniemoel 9 31 34 9 34 31 9 9 9 100
-kriordan 9 9 9 9 9 100
-jmurph33 9 22 34 9 9 3 100
-dcorr1 9 9 9 9 100
-cemenalo 9 22 9 3 100
-yjung2 9 9 9 100
-rpappas 9 9 9 9 9 9 22 3 100
-mmerric1 9 100
-mdosch 9 9 4 9 9 100
-jbettag 9 100
-jbernin1 9 22 3 100
-gbruenin 9 4 9 3 22 9 9 100
-ddallava 9 9 9 9 9 9 34 3 9 3 34 22 9 100
-cgamboa 9 9 9 100
-nquartir 9 9 3 9 9 9 22 100
-lfaubion 9 9 100
-cwilso24 9 9 9 9 34 3 22 100
-aursino1 9 9 34 9 100
-msummer2 9 9 9 9 9 22 3 100
-kramm 9 9 22 9 3 100
-jchapple 9 100
-jbonds 9 34 22 3 9 100
-dbirzer 9 100
-cfish 9 9 9 4 3 22 26 25 9 9 3 34 22 9 100
-nholmes1 9 22 3 100
-ngiovino 9 34 22 3 100
-eherber1 9 22 3 100
-cgallag3 9 34 9 9 9 9 22 34 9 3 100
-tzheng2 9 30 31 9 9 9 31 9 100
-mgerber 9 100
-jcolli23 9 34 3 9 9 9 9 22 34 3 9 100
-awalton3 9 100
-vwhitmor 9 9 9 9 9 22 34 3 100
-rpellica 9 34 9 9 3 22 100
-rmyers9 9 9 9 22 3 9 34 100
-mdillon7 9 34 1 100
-jdoerer 9 100
-gbiltz 9 100
-aheck1 9 9 9 9 9 9 34 9 3 22 9 22 100
-ucooper 9 31 9 9 9 9 9 34 22 3 100
-rschill1 9 9 100
-mschlic1 9 4 9 3 100
+dtorgers 0 30 100
+cdavin1 0 0 0 0 0 0 12 0 0 15 0 12 0 0 15 0 0 32 15 22 100
+alebron1 0 32 15 22 0 0 0 32 0 0 0 0 0 29 0 0 0 0 32 22 15 0 0 100
+ccooper8 0 0 0 15 0 0 0 0 0 15 0 0 0 0 0 0 0 0 0 0 0 0 0 0 15 0 32 22 0 0 100
+nweindel 0 0 0 0 0 15 0 0 0 0 0 0 0 0 0 0 0 15 32 22 100
+ntownsen 0 30 20 0 0 0 0 0 0 0 15 0 0 0 15 0 0 0 15 0 22 0 0 0 0 0 32 100
+jberg2 0 100
+fhita 0 100
+mmcfarli 0 0 0 0 0 0 0 0 0 0 15 0 0 32 22 0 100
+mlengwin 0 0 0 0 0 0 0 0 0 0 32 22 0 0 15 0 100
+kwurl 0 0 0 0 15 0 0 0 0 0 0 0 0 15 22 32 100
+ccampb20 0 100
+pbrown10 0 22 100
+rdiejoma 0 0 0 0 0 29 32 22 0 15 100
+drogers1 0 0 0 0 0 0 0 0 15 32 22 0 100
+cdelpila 0 29 33 15 0 15 0 0 0 15 0 0 0 15 0 0 12 15 0 0 0 15 22 32 29 0 100
+cbolivar 0 32 22 100
+muhlenbr 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 32 15 22 0 100
+msmith75 0 0 0 15 22 32 0 0 0 15 100
+pmcguir2 0 0 0 0 0 32 22 100
+jstaten 0 0 0 0 29 0 0 0 32 22 0 100
+mgirod 0 100
+zgartenh 0 0 0 0 0 0 0 22 0 0 0 29 0 0 15 22 32 0 100
+alabella 0 0 15 32 22 100
+bferrer1 0 100
+pcataldi 0 100
+aohri 0 0 0 0 0 29 29 0 100
+pklekamp 0 0 100
+amccar10 0 12 15 0 0 0 0 0 32 22 100
+nwamble 0 0 0 0 0 0 0 0 0 100
+wwu5 0 15 32 22 100
+wsuter2 0 0 0 0 0 0 0 32 22 0 100
+thowe1 0 0 0 0 0 0 0 100
+mmian 0 32 12 22 100
+jhouge 0 0 0 0 0 0 12 33 0 0 0 0 0 0 100
+slemaign 0 0 0 0 0 0 0 0 32 22 15 100
+ldamoose 0 15 32 0 22 0 100
+sburnbau 0 0 100
+nwarren 0 0 0 0 0 0 0 0 0 0 15 32 22 100
+bconnol3 0 0 0 0 15 22 32 0 0 100
+rheitkam 0 0 0 0 0 0 0 0 32 15 22 100
+jmullike 0 100
+chickey3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 100
+athoma24 0 0 0 0 0 0 0 0 15 0 0 0 0 0 0 0 0 32 22 100
+rgensler 0 0 0 0 0 0 0 0 0 0 15 0 0 0 0 15 32 22 100
+kthornt4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 32 22 0 0 100
+pvlandis 0 32 22 0 100
+mmizraji 0 15 0 0 22 32 0 15 100
+zpavlin 0 0 0 0 0 15 32 22 100
+ydeng3 0 100
+kfox8 0 0 0 0 0 0 0 0 0 32 22 100
+lsulli11 0 0 0 32 22 0 100
+jgorman6 0 0 0 0 0 0 0 100
+enunez 0 100
+jdirksen 0 15 0 0 100
+whornby 0 100
+jwade5 0 100
+mblatt1 0 0 0 0 0 0 0 32 22 100
+jowusuko 0 29 0 29 0 0 0 29 0 15 0 32 22 0 100
+mmang 0 0 0 0 0 100
+waberger 0 15 22 0 32 0 0 100
+llombar2 0 15 32 22 100
+gkaiser 0 33 0 15 32 22 100
+koconn27 0 22 100
+aweishan 0 0 0 15 0 29 0 15 22 32 100
+mcaskey 0 100
+jguarino 0 0 0 0 0 100
+cseymou2 0 0 0 0 0 15 32 22 15 100
+dplagenz 0 0 0 32 15 22 0 22 32 100
+csasso 0 15 32 22 0 0 15 22 32 100
+amccar11 0 100
+yshi6 0 0 15 0 24 0 28 15 0 29 12 0 22 32 0 0 8 3 18 15 3 0 0 34 6 31 15 0 0 0 0 0 0 15 17 4 0 17 4 15 0 0 0 0 21 26 13 0 0 0 0 7 9 14 0 0 0 0 100
+minoue2 0 0 0 0 0 0 15 32 0 15 22 100
+jwinebre 0 15 0 32 22 100
+sgalbens 0 100
+jlazzara 0 32 22 100
+vruesch 0 0 0 29 0 0 0 0 15 0 0 0 0 0 32 22 100
+nniere 0 0 33 0 0 0 20 0 0 0 0 30 0 0 0 0 0 29 100
+ghong 0 0 0 29 32 22 15 100
+bhogan1 0 29 0 0 0 0 0 0 0 0 0 15 32 100
+wdu 0 0 0 0 100
+tmercier 0 0 0 0 0 0 0 15 0 32 22 100
+esunshi1 0 0 0 32 22 0 0 0 0 0 0 0 0 0 29 100
+eevans9 0 0 33 12 0 0 29 0 15 0 0 100
+bkenney1 0 32 22 29 100
+cdieckma 0 22 0 0 29 0 32 22 100
+mcoggins 0 32 0 15 22 100
+lblitzer 0 100
+jdelledo 0 0 0 15 0 32 22 100
+mfreedlu 0 0 0 0 0 0 22 32 0 100
+tprice4 0 100
+lbarret2 0 0 0 0 0 15 0 0 22 0 32 100
+eralph 0 32 22 100
+bhalliga 0 0 32 22 100
+sroennec 12 15 0 15 0 0 15 0 0 0 0 0 32 22 15 100
+jmurph32 0 0 0 0 0 0 15 0 32 22 0 100
+cfrentze 0 0 15 32 22 100
+mnewcome 0 100
+jsitarsk 0 32 22 100
+tpreko 0 0 0 0 0 15 32 0 22 15 32 0 100
+mtreacy 0 0 0 0 32 22 0 100
+ccampb21 0 0 0 0 0 12 0 0 0 0 0 100
+rrivera8 0 22 0 32 0 15 27 15 100
+rblack4 0 0 0 0 0 0 32 22 100
+jwelsch 0 0 32 22 100
+jgately1 0 0 0 22 100
+gdean 0 0 0 0 0 0 0 0 0 0 100
+ewigutow 0 100
+dgibbon2 0 0 0 0 100
+cmorton2 0 100
+mrooney6 0 100
+mmoran12 0 0 0 0 0 0 32 22 0 100
+jwalte10 0 0 0 0 32 22 15 100
+jcarney6 0 0 0 0 22 0 32 15 0 0 0 100
+pmeyer3 0 0 15 0 0 32 22 0 100
+icallaha 0 0 0 0 0 22 15 32 22 100
+dtoth1 0 0 0 0 0 0 0 32 22 100
+kkostola 0 15 32 22 100
+dlee26 0 15 32 22 100
+yying 0 100
+swagy 0 0 0 0 0 0 0 15 0 0 32 100
+rroque1 0 0 0 0 0 0 0 100
+kdantoni 0 15 32 22 100
+wmohler 0 0 32 22 15 0 0 15 100
+lklein1 0 0 0 0 32 22 0 0 100
+jbecker9 0 100
+hrague 0 0 0 0 0 0 0 15 32 22 100
+cott 0 0 32 15 32 22 15 100
+mholzbau 0 22 32 15 100
+mhawkin3 0 0 0 0 15 0 32 15 100
+lharmon 0 0 0 15 0 32 22 100
+elazzaro 0 0 0 0 100
+tburley 0 100
+shenn 0 0 0 0 0 0 0 32 0 0 0 0 0 22 100
+jgomez5 0 0 32 22 0 100
+jfries3 0 32 22 100
+bniemoel 0 12 15 0 15 12 0 0 0 100
+kriordan 0 0 0 0 0 100
+jmurph33 0 32 15 0 0 22 100
+dcorr1 0 0 0 0 100
+cemenalo 0 32 0 22 100
+yjung2 0 0 0 100
+rpappas 0 0 0 0 0 0 32 22 100
+mmerric1 0 100
+mdosch 0 0 29 0 0 100
+jbettag 0 100
+jbernin1 0 32 22 100
+gbruenin 0 29 0 22 32 0 0 100
+ddallava 0 0 0 0 0 0 15 22 0 22 15 32 0 100
+cgamboa 0 0 0 100
+nquartir 0 0 22 0 0 0 32 100
+lfaubion 0 0 100
+cwilso24 0 0 0 0 15 22 32 100
+aursino1 0 0 15 0 100
+msummer2 0 0 0 0 0 32 22 100
+kramm 0 0 32 0 22 100
+jchapple 0 100
+jbonds 0 15 32 22 0 100
+dbirzer 0 100
+cfish 0 0 0 29 22 32 8 31 0 0 22 15 32 0 100
+nholmes1 0 32 22 100
+ngiovino 0 15 32 22 100
+eherber1 0 32 22 100
+cgallag3 0 15 0 0 0 0 32 15 0 22 100
+tzheng2 0 33 12 0 0 0 12 0 100
+mgerber 0 100
+jcolli23 0 15 22 0 0 0 0 32 15 22 0 100
+awalton3 0 100
+vwhitmor 0 0 0 0 0 32 15 22 100
+rpellica 0 15 0 0 22 32 100
+rmyers9 0 0 0 32 22 0 15 100
+mdillon7 0 15 3 100
+jdoerer 0 100
+gbiltz 0 100
+aheck1 0 0 0 0 0 0 15 0 22 32 0 32 100
+ucooper 0 12 0 0 0 0 0 15 32 22 100
+rschill1 0 0 100
+mschlic1 0 29 0 22 100
