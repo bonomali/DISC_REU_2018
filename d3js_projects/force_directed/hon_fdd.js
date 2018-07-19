@@ -13,12 +13,13 @@
 function makeForceDirected(){
 
 //Define where to look for nodes and where to look for links
-var nodepath =  "csv_files/struc2vec-directed-weighted-classified.csv"
-var linkpath = "csv_files/weights-network-cell.csv"
+const NODE_FILE =  "csv_files/struc2vec-directed-weighted-classified.csv"
+const LINK_FILE = "csv_files/weights-network-cell.csv"
 
 //Load up pre-defined svg
-var svg = d3.select("#hon_diagram"),
-	width = +svg.attr("width"),
+var svg = d3.select("#hon_diagram").select("svg");
+	
+var	width = +svg.attr("width"),
 	height = +svg.attr("height");
 
 
@@ -60,7 +61,7 @@ var simulation = d3.forceSimulation()
 
 
 //Open up node data file 
-d3.csv(nodepath, function(nodes_data) {
+d3.csv(NODE_FILE, function(nodes_data) {
 
 	//Create empty graph array
 	graph = { "links": [] , "nodes": []};
@@ -69,7 +70,7 @@ d3.csv(nodepath, function(nodes_data) {
 	nodes_data.forEach(node => graph.nodes.push( { "id":node.sequence , "Gephi":node.Gephi, "Group_15D":node.KMeans_15D, "Group_2D":node.KMeans_2D, "in_size":2., "out_size":2.} ) );
 
 	//Open up the links file, and push link data in too
-	d3.csv(linkpath, function(links_data) {
+	d3.csv(LINK_FILE, function(links_data) {
 		links_data.forEach(link => graph.links.push( link ) );
 
 	//create a "size" argument on the graph.nodes variables
