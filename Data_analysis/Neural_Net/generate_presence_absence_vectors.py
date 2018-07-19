@@ -52,8 +52,7 @@ for node in nodes:
 	node_vector.append(node_sequence)
 
 
-
-##  Generate the results for each assignment for each student
+##  Generate the results for each assignment
 grades_file = "grades.csv"
 grades = {}
 with open('grades.csv', newline='') as grades_file:
@@ -63,16 +62,16 @@ with open('grades.csv', newline='') as grades_file:
 		for key in list(row.keys()):
 			if not key == "NetID":
 				results[key] = row[key]
-		grades[row["NetID"]] = results
+			grades[row["NetID"]] = results
 
-#  Now, scale everything wrt Total
+
 totals = grades["Total"]
-count = 0
-all_count = 0
 names = list(set(names))
 filtered_grades = {}
+name = "hholden"
 for name in list(grades.keys()):
 	if name != "Total":
+		filtered_grades[name] = {}
 		for assignment in list(grades[name].keys()):
 			if grades[name][assignment] != "":
 				score = float(grades[name][assignment])
@@ -83,11 +82,10 @@ for name in list(grades.keys()):
 			if percent != 1.0:
 				count+=1
 			all_count +=1
-			filtered_grades[name] = {}
 			filtered_grades[name][assignment] = percent
 
 
-##  now, generate our presence / absence vector for each entry
+##  Generate our presence / absence vector for each entry
 def vector_gen(sequence, vector):
 	absence_vector = [0]*len(vector)
 	for index in range(len(vector)):
@@ -95,18 +93,23 @@ def vector_gen(sequence, vector):
 			absence_vector[index] = 1
 	return absence_vector 
 
+included = 0
+notincluded = 0
 assignments = {}
 for f in seqfiles:
 	if "clicks" in f:
 		vectors = {}
 		with open(sequence_path + "/" + f, "r") as ins:
 			for line in ins:
-				if name in list(filtered_grades.keys()):
-					name = line.split(" ", 1)[0]
+				name = line.split(" ", 1)[0]
+				assignment = f[8:-11]
+				if name in list(filtered_grades.keys()) and assignment in list(filtered_grades[name].keys()):
+					grade = filtered_grades[name][assignment]
+					if grade != 1.0:
+						print("%.1f" % grade)
 					sequence = " " + line.split(" ", 1)[1][:-1] + " "
-					vectors[name] = vector_gen(sequence, node_vector)
-			assignments[f[8:-11]] = vectors
-			print(assignments)
+					vectors[name] = {"vector":vector_gen(sequence, node_vector), "percentage":"%.1f" % grade}
+		assignments[assignment] = vectors
 
 with open('presence_vectors.json', 'w') as fp:
 	json.dump(assignments, fp, sort_keys=True)
@@ -114,9 +117,6 @@ with open('presence_vectors.json', 'w') as fp:
 master_vector = {"Master":node_vector}
 with open('master_vector.json', 'w') as fp:
 	json.dump(master_vector, fp, sort_keys=True)
-
-
-
 
 
 """
