@@ -1,7 +1,7 @@
 // adjust scope for full webpage
 function makeSunburst(){
 
-const INPUT_FILE = "json_files/sunburst_data.json"
+const INPUT_FILE = "json_files/sunburst_data_struc2vec.json"
 
 // Set up variables
 var width = 960,

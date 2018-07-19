@@ -1,26 +1,117 @@
 /* make an episogram
  * 
- * uses a semester line of weeks
- * each week has 7 days
+ * a line of nodes colored by url
+ * arc surrounding node indicates duration
  * 
- * display the assignements done on that day
- *
- *
  */
 
+function makeEpisogram(){
+
 /*************************************************************************
- * Necessary fxns:
- * 		addHorizLine( className , arrayOfinfo )
- * 			- creates a horizontal line of a certain class using array
+ * Graph Layout
+ *			   								  _
+ *			   						|------->|_| grade distribution sankey
+ *			node name				|--/	 |_|
+ *			   |	  		   		|----\	 |_|
+ *			   |	  		   		|------->|_|
+ *	sequence---*------*--------*--->|--/     |_|
  *
- * 		addVertiLine( className , arrayOfInfo )
- * 			- creates a vertical line of a certain class using array
- *
- * 	Need an array of order of class names
  *************************************************************************/
+
+// constants
+const INPUT_FILE = "json_files/episogram_data_mini.json";
+const INPUT_WEEKS = "json_files/assignments_by_week.json"
+const SPACING = 50;
+const BASE_Y = 400;
+const NODE_RAD = 12;
+const WEEK_HEIGHT = 200; /* WEEK_HEIGHT must be less than BASE_Y */
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// creates the line of sequence given a sequence data array
+// returns a the nodes of the line for click/mouseover usage
+function createSequenceLine( svg , sequence ){
+	
+	// add a horizontal line for nodes to lie on
+	var baseline = svg
+		.append("line")
+			.attr("class" , "base_line")
+			.attr("x1" , SPACING  )
+			.attr("x2" , sequence.length * SPACING) 
+			.attr("y1" , BASE_Y )
+			.attr("y2" , BASE_Y )
+			.attr("stroke" , "blue")
+			.attr("stroke-width" , "2");
+
+	// add circles to indicate where the next node in sequence
+	var epis_nodes = svg.selectAll( "circle" )
+		.data( sequence ).enter()
+		.append("circle")
+			.attr("class" , "seq_node")
+			.attr("cx" , node => sequence.indexOf(node) * SPACING + SPACING)
+			.attr("cy" , BASE_Y)
+			.attr("r" , NODE_RAD)
+			.attr("fill" , "red")
+		.append("title")
+        	.text(function(d, i) { return "Node: " + d; });
+
+	// add arcs for each node to display duration
+	sequence.forEach( function(end_angle , index) {
+		var arc = d3.arc()
+			.innerRadius(NODE_RAD + 1)
+			.outerRadius(NODE_RAD + 3)
+			.startAngle(3) //converting from degs to radians
+			.endAngle( parseInt(end_angle) * (Math.PI/180)); //just radians
+
+		svg.append("path")
+			.attr("d", arc)
+			.attr("transform", function(node){
+				return "translate(" + (index * SPACING + SPACING) + "," + BASE_Y + ")";
+			});
+	});
+
+	// return the nodes
+	return epis_nodes;
+
+}
+
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// creates the main semester line given the data object
+// returns a the nodes of the line for click/mouseover usage
+function createBaseLine( svg , data ){
+
+	// get an array of weeks in the semester
+	var weeks = weeksInSemester(data);
+	
+	// add a horizontal line ( should be lower on the svg so data will fit )
+	svg.append("line")
+		.attr("class" , "base_line")
+		.attr("x1" , SPACING  )
+		.attr("x2" , weeks.length * SPACING + SPACING) 
+		.attr("y1" , BASE_Y )
+		.attr("y2" , BASE_Y )
+		.attr("stroke" , "blue")
+		.attr("stroke-width" , "2");
+	
+	// add circles to indicate where the weeks should be
+	var epis_nodes = svg.selectAll( "base_node" )
+		.data( weeks ).enter()
+		.append("circle")
+		.attr("class" , "base_node")
+		.attr("cx" , week => week * SPACING + SPACING)
+		.attr("cy" , BASE_Y)
+		.attr("r" , BASE_NODE_RAD)
+		.attr("fill" , "red");
+  
+	
+	// return the nodes
+	return epis_nodes;
+
+}
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // find the number of weeks in the semester given the data object
+// returns an array from 1 to number of weeks
 function weeksInSemester( data ) {
 
 	num_weeks = -1;
@@ -36,185 +127,71 @@ function weeksInSemester( data ) {
 		});
 	});
 
-	return num_weeks;
+	// create an array of weeks
+	weeks = [];
+	for( var i = 1; i <= num_weeks; i++ )
+		weeks.push(i);
+
+	return weeks;
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// create the semester line given a certain amount of weeks
-function createSemesterLine( svg , weeks ){
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function updateTableAssigns( weekObj ){
 	
-	// add main semester line
-	svg.append("line")
-		.attr("class" , "semester_line")
-		.attr("x1" , 0)
-		.attr("x2" , 500)
-		.attr("y1" , 50)
-		.attr("y2" , 50)
-		.attr("stroke" , "blue")
-		.attr("stroke-width" , "2")
+	const NAME = 4;
 
-	// create an array from 0 to number of weeks ( for data() )
-	weeks_array = [];
-	for(var i = 1; i <= weeks; i++)
-		weeks_array.push(i);
+	// clear list
+	d3.selectAll(".assign_node").remove();
 
-	// add week nodes
-	var week_nodes = svg.selectAll(".week_node")
-		.data( weeks_array ).enter()
-		.append("circle")
-		.attr("class" , "week_node")
-		.attr("cx" , week => week * 25 - 10)
-		.attr("cy" , 50)
-		.attr("r" , 10)
-		.attr("fill" , "red");
+	// search for unique assigns in weekObj
+	var assigns = weekObj[ Object.keys( weekObj )[0] ];
+	var uniqueAssigns = []
 
-	return week_nodes;
+	assigns.forEach( function(assign){
+		var foundUnique = true;
+
+		if(uniqueAssigns.length === 0)
+			uniqueAssigns.push(assign[NAME]);
+
+		if(assign[NAME] in uniqueAssigns){
+			foundUnique = false;
+		}
+
+		if(foundUnique)
+			uniqueAssigns.push(assign[NAME]);
+
+	});
+
+	// add an unordered list of assigns
+	d3.select("#assigns_list")
+		.data( uniqueAssigns )
+		.enter()
+		.append( "ul" )
+		.attr("class" , "assign_node")
+		.text( name => name );
 
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// when a week node is clicked, a week line should be created with 7 day nodes
-function clickWeekNode( week , data , svg ){
-
-	// clear old lines
-	clearLines();
-
-	// fill in data table
-	d3.select("#table_date").text("");
-	d3.select("#table_week").text(week);
-
-	// add week line going downward
-	svg.append("line")
-		.attr("class" , "week_line")
-		.attr("x1" , week * 25 - 10)
-		.attr("x2" , week * 25 - 10)
-		.attr("y1" , 50)
-		.attr("y2" , 50)
-		.attr("stroke" , "blue")
-		.attr("stroke-width" , "2")
-		.transition()
-		.attr("y2" , 7 * 50 + 50)
-
-	// layering
-	
-
-	// make an array of seven days
-	days = [1 , 2, 3, 4, 5, 6, 7];
-
-	// add day nodes
-	var day_nodes = svg.selectAll(".day_node")
-		.data( days ).enter()
-		.append("circle")
-		.attr("class" , "day_node")
-		.attr("cx" , week * 25 - 10)
-		.attr("cy" , day => day * 50 + 50)
-		.attr("r" , 0)
-		.attr("fill" , "red")
-		.on("click" , day => clickDayNode( day , data , svg ) )
-		.transition()
-		.attr("r" , 10);
-		
-	return day_nodes
-}
-
-function clickDayNode( day , data , svg ){
-
-	// fill in data table
-	d3.select("#table_date").text(day);
-}
-
-function clearLines(){
-	d3.selectAll(".day_node")
-		//.transition()
-		.attr("r" , 0)
-		.remove();
-
-	d3.selectAll(".week_line")
-		.transition()
-		.attr("y2" , 50)
-		.remove();
-}
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function main(){
 
-	// variables and constants
-	const INPUT_FILE = "json_files/episogram_data_mini.json"
+	// create an svg element
+	var width = 600,
+		height = 600;
 
-	var width = 500,
-		height = 2000;
-
-	// set up svg
 	var epis_svg = d3.select("#episogram").append("svg")
     	.attr("width", width)
     	.attr("height", height)
-  		
-	// load in the data
-	d3.json(INPUT_FILE , function(data){
-		
-		// find number of weeks
-		var num_weeks = weeksInSemester(data);
 
-		// create a semester line given number of weeks
-		var semester_line = createSemesterLine( epis_svg , num_weeks );
+	var test_seq = [ "34" , "17" , "25" , "27" , "84" ];
 
-		// on circle clicks, semester line should open up a week line
-		semester_line.on("click" , week => clickWeekNode( week , data , epis_svg ) );
+	createSequenceLine( epis_svg , test_seq );
 
-		// click on day nodes
-		
-
-/*
-		// turn data into array of objects
-		newData = [];
-		Object.keys(data).forEach( function(key){
-			newData.push( data[key] );
-		});
-
-		console.log(newData);
-
-		function getY( newData , student ){
-			console.log(newData.indexOf(student));
-			return newData.indexOf(student) * 50 + 50;
-		}
-
-		function getX( assignment ){
-			console.log(assignment);
-			return assignment.week * 25;
-		}
-
-		// add main timeline of semester
-		var semester_lines = epis_svg
-			.selectAll(".semester_line").data( newData ).enter()
-			.append("line")
-				.attr("class" , "semester_line")
-				.attr("x1" , 0)
-				.attr("x2" , 500)
-				.attr("y1" , student => getY( newData , student ) )
-				.attr("y2" , student => getY( newData , student ) )
-				.attr("stroke" , "blue")
-				.attr("stroke-width" , "2");
-
-		// add timeline of the week
-		for( var i = 0; i < newData.length; i++){
-			
-			var student = newData[i];
-
-			epis_svg
-				.selectAll(".week_line").data( student ).enter()
-				.append("line")
-					.attr("class" , "week_line")
-					.attr("id" , newData.indexOf(student) )
-					.attr("x1" , assignment => getX(assignment) )
-					.attr("x2" , assignment => getX(assignment) )
-					.attr("y1" , student => getY( newData , student ) )
-					.attr("y2" , i * 50 + 50 )
-					.attr("stroke" , "red")
-					.attr("stroke-width" , "2");
-		}
-*/
-	});	
-	
 }
 
 main();
+
+
+
+} // closes makeEpisogram()
+makeEpisogram();
