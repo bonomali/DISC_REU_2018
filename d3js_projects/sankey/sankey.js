@@ -1,7 +1,7 @@
 // adjusts scope for multi graph usage
 function makeSankey(){
 
-const FILENAME = "csv_files/sample.csv";
+const FILENAME = "csv_files/dummy_grades_mini.csv";
 
 var units = "Widgets";
 

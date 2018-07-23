@@ -1,72 +1,34 @@
-// adjust scope for full webpage
-function makeSunburst(){
 
-const INPUT_FILE = "json_files/sunburst_data_struc2vec.json"
-
-// Set up variables
+//----------------------------------------------------------------------------------------------------------------------------------------------//
+//----------------------------------------------------------------------------------------------------------------------------------------------//
+//console.log(node);
 var width = 960,
     height = 600,
-    radius = (Math.min(width, height) / 2) - 10;
-
-var formatNumber = d3.format(",d");
-
+	radius = (Math.min(width, height) / 2) - 10;
 var x = d3.scaleLinear()
     .range([0, 2 * Math.PI]);
 
 var y = d3.scaleSqrt()
     .range([0, radius]);
 
-var color = d3.scaleOrdinal(d3.schemeCategory20c);
+var color2 = d3.scaleOrdinal(d3.schemeCategory20c);
 
 var partition = d3.partition();
-
+var svg2 = d3.select("#sunburst_diagram").append("svg")
+    .attr("width", width)
+    .attr("height", height)
+  .append("g")
+    .attr("transform", "translate(" + width / 2 + "," + (height / 2) + ")");
 var arc = d3.arc()
     .startAngle(function(d) { return Math.max(0, Math.min(2 * Math.PI, x(d.x0))); })
     .endAngle(function(d) { return Math.max(0, Math.min(2 * Math.PI, x(d.x1))); })
     .innerRadius(function(d) { return Math.max(0, y(d.y0)); })
     .outerRadius(function(d) { return Math.max(0, y(d.y1)); });
-
-// active sequence svg
-var sequence = 	d3.select("#active_sequence").append("svg")
-	.attr("width" , 1000)
-	.attr("height" , 50)
-
-// sunburst svg
-var svg = d3.select("#sunburst_diagram").append("svg")
-    .attr("width", width)
-    .attr("height", height)
-  .append("g")
-    .attr("transform", "translate(" + width / 2 + "," + (height / 2) + ")");
-
-// load in data
-d3.json(INPUT_FILE, function(error, root) {
-  
-  if (error) throw error;
-  
-  root = d3.hierarchy(root);
-
-  var num_sections = 0;
-
-  root.sum(function(d) { num_sections++; return d.size; });
-  svg.selectAll("path")
-      .data(partition(root).descendants())
-    .enter().append("path")
-	  .attr("id" , "sun_path")
-      .attr("d", arc )
-      .style("fill", function(d) { return color(d.data.name); })
-      .on("click", click)
-	  .on("mouseover" , mouseover)
-	  .on("mouseout" , mouseleave)
-    .append("title")
-      .text(function(d) { return d.data.name + "\n" + formatNumber(d.value); });
-
-	console.log(num_sections);
-});
-
-function click(d) {
+var path;
+function click2(d) {
 
 	// zoom in feature
-	svg.transition()
+	svg2.transition()
 		.duration(750)
       	.tween("scale", function() {
 			var xd = d3.interpolate(x.domain(), [d.x0, d.x1]),
@@ -75,7 +37,9 @@ function click(d) {
         	return function(t) { x.domain(xd(t)); y.domain(yd(t)).range(yr(t)); };
       	})
     	.selectAll("path")
-      	.attrTween("d", function(d) { return function() { return arc(d); }; });
+      	.attrTween("d", function(d) { return function() { 
+				return arc(d); 
+		}; });
 
 	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	// clear data table
@@ -97,7 +61,28 @@ function click(d) {
 			return name_seq; 
 		});
 
-
+	//construct the name of the node
+	var n = d;
+	var node_name= n.data.name + "|";
+	while(n.parent){
+		n = n.parent;
+		node_name = node_name + n.data.name + ".";
+	}
+	if(node_name[ node_name.length - 6 ] === ".")
+		node_name = node_name.slice(0, -6);
+	else
+		node_name = node_name.slice(0, -5);
+	console.log(node_name);
+	if(flag===true){
+	node.attr("r",  function(d) { 
+		if(d.id == node_name){
+			flag=false;
+			click1(d,false);
+			flag=true;
+		}
+		return 5.; 
+		});
+	}
 	// use the sequence name to find matches
 	// then display in scrollable content
 	d3.csv("sequence.csv" , function(input){
@@ -147,11 +132,7 @@ function click(d) {
 	});
 }
 
-String.prototype.replaceAll = function(str1, str2, ignore) 
-{
-    return this.replace(new RegExp(str1.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g,"\\$&"),(ignore?"gi":"g")),(typeof(str2)=="string")?str2.replace(/\$/g,"$$$$"):str2);
-} 
-
+	
 function getIndicesOf(searchStr, str, caseSensitive) {
     var searchStrLen = searchStr.length;
     if (searchStrLen == 0) {
@@ -169,6 +150,51 @@ function getIndicesOf(searchStr, str, caseSensitive) {
     return indices;
 }
 
+function makeSunburst(){
+
+const INPUT_FILE = "json_files/sunburst_data_struc2vec.json"
+
+// Set up variables
+
+
+var formatNumber = d3.format(",d");
+
+// center pie chart
+var pieChart = d3.pie().value(function(d) { return 5; });
+
+var sequence = 	d3.select("#active_sequence").append("svg")
+	.attr("width" , 1000)
+	.attr("height" , 50)
+
+// add svg element
+
+// load in data
+d3.json(INPUT_FILE, function(error, root) {
+  
+  if (error) throw error;
+  
+  root = d3.hierarchy(root);
+
+  root.sum(function(d) { return d.size; });
+  path = svg2.selectAll("path")
+      .data(partition(root).descendants())
+    .enter().append("path")
+	  .attr("id" , "sun_path")
+      .attr("d", arc )
+      .style("fill", function(d) { return color2(d.data.name); })
+      .on("click", click2)
+	  .on("mouseover" , mouseover)
+	  .on("mouseout" , mouseleave)
+    .append("title")
+      .text(function(d) { return d.data.name + "\n" + formatNumber(d.value); });
+});
+
+
+
+String.prototype.replaceAll = function(str1, str2, ignore) 
+{
+    return this.replace(new RegExp(str1.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g,"\\$&"),(ignore?"gi":"g")),(typeof(str2)=="string")?str2.replace(/\$/g,"$$$$"):str2);
+} 
 
 // Mouse over effects
 function mouseover(d) {
@@ -181,7 +207,7 @@ function mouseover(d) {
 			.attr("id" , "active_sequence_data")
 			.attr("width" , 100)
 			.attr("height" , 50)
-			.style("fill", function(e) { return color(node.data.name); })
+			.style("fill", function(e) { return color2(node.data.name); })
 			.attr("transform" , function(e){ return "translate(" + (node.depth * 100 - 100) + ", 0)"})
 		// add text
 		sequence.append("text")
@@ -192,8 +218,6 @@ function mouseover(d) {
     		.text(function(e) { return node.data.name; });
 		
 		node = node.parent;
-
-		console.log(node.depth)
 	}
 	
 }

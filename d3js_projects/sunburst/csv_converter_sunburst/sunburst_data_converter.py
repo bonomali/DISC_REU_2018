@@ -9,6 +9,7 @@
 #		https://stackoverflow.com/questions/43757965/convert-csv-to-json-tree-structure
 
 import csv
+import json
 from collections import defaultdict
 
 
@@ -32,7 +33,6 @@ def build_leaf(name, leaf):
 	else:
 		res["size"] = 1  # 1 person per node
 	
-
 	return res
 
 def readIn( ifp ):
@@ -54,7 +54,6 @@ def readIn( ifp ):
 			node = elem[0].replace('|' , '.')
 			node = node[ : -1 ] if node[-1] == '.' else node
 			node = node.split('.')
-			#node = node.replace('.' , ',')
 
 			# add to list
 			data.append(node)
@@ -73,6 +72,7 @@ def writeOut( data ):
 	"""
 	tree = ctree()
 
+	# uses enums to iterate ( rowNum and rowData )
 	for rid, row in enumerate(data):
 
 		# skipping first header row. remove this logic if your csv is
@@ -86,43 +86,21 @@ def writeOut( data ):
 		for cid in range(1, len(row)):
 			leaf = leaf[row[cid]]
 
-	
-	"""
-	# NOTE: you need to have test.csv file as neighbor to this file
-	with open('sunburst_data.csv') as csvfile:
-		reader = csv.reader(csvfile)
-		for rid, row in enumerate(reader):
-
-			# skipping first header row. remove this logic if your csv is
-			# headerless
-			if rid == 0:
-				continue
-
-			# usage of python magic to construct dynamic tree structure and
-			# basically grouping csv values under their parents
-			leaf = tree[row[0]]
-			for cid in range(1, len(row)):
-				leaf = leaf[row[cid]]
-
-	"""
-
 	# building a custom tree structure
 	res = []
 	for name, leaf in tree.items():
 		res.append(build_leaf(name, leaf))
-
 	
 	# adding root node
 	res = { "name":"root" , "children":res }
 
 
 	# printing results into the terminal
-	import json
-	with open('sunburst_data_struc2vec.json', 'w') as outfile:
-		json.dump(res, outfile)
+	print json.dumps(res, sort_keys=True, indent=4, separators=(',', ': '))	
 
-	
-
+	with open('sunburst_data_struc2vec_v2.json', 'w') as outfile:
+		json.dumps(res, outfile , sort_keys=True, indent=4, separators=(',', ': '))
+		
 def main():
 
 	# Read in and write out the data from a csv
