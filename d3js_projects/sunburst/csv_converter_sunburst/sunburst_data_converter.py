@@ -118,7 +118,7 @@ def writeOut( data ):
 
 	# printing results into the terminal
 	import json
-	with open('sunburst_data.json', 'w') as outfile:
+	with open('sunburst_data_struc2vec.json', 'w') as outfile:
 		json.dump(res, outfile)
 
 	
@@ -126,7 +126,7 @@ def writeOut( data ):
 def main():
 
 	# Read in and write out the data from a csv
-	writeOut( readIn( "nodes_classified.csv" ) )
+	writeOut( readIn( "struc2vec-directed-weighted-classified.csv" ) )
 
 	
 # so let's roll
