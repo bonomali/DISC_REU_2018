@@ -25,7 +25,9 @@ var arc = d3.arc()
     .innerRadius(function(d) { return Math.max(0, y(d.y0)); })
     .outerRadius(function(d) { return Math.max(0, y(d.y1)); });
 var path;
-function click2(d) {
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function click2(seq_file , d) {
 
 	// zoom in feature
 	svg2.transition()
@@ -85,7 +87,7 @@ function click2(d) {
 	}
 	// use the sequence name to find matches
 	// then display in scrollable content
-	d3.csv("sequence.csv" , function(input){
+	d3.csv(seq_file , function(input){
 		var matching = [];
 
 		// add the matching people to the array
@@ -132,7 +134,7 @@ function click2(d) {
 	});
 }
 
-	
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 function getIndicesOf(searchStr, str, caseSensitive) {
     var searchStrLen = searchStr.length;
     if (searchStrLen == 0) {
@@ -150,13 +152,10 @@ function getIndicesOf(searchStr, str, caseSensitive) {
     return indices;
 }
 
-function makeSunburst(){
-
-const INPUT_FILE = "json_files/sunburst_data_struc2vec.json"
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function makeSunburst( input_flare , seq_file ){
 
 // Set up variables
-
-
 var formatNumber = d3.format(",d");
 
 // center pie chart
@@ -169,9 +168,9 @@ var sequence = 	d3.select("#active_sequence").append("svg")
 // add svg element
 
 // load in data
-d3.json(INPUT_FILE, function(error, root) {
+d3.json(input_flare, function(error, root) {
   
-  if (error) throw error;
+  if (error) console.log(error);
   
   root = d3.hierarchy(root);
 
@@ -182,7 +181,7 @@ d3.json(INPUT_FILE, function(error, root) {
 	  .attr("id" , "sun_path")
       .attr("d", arc )
       .style("fill", function(d) { return color2(d.data.name); })
-      .on("click", click2)
+      .on("click", d => click2(seq_file , d))
 	  .on("mouseover" , mouseover)
 	  .on("mouseout" , mouseleave)
     .append("title")
@@ -196,6 +195,7 @@ String.prototype.replaceAll = function(str1, str2, ignore)
     return this.replace(new RegExp(str1.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g,"\\$&"),(ignore?"gi":"g")),(typeof(str2)=="string")?str2.replace(/\$/g,"$$$$"):str2);
 } 
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Mouse over effects
 function mouseover(d) {
 
@@ -222,6 +222,7 @@ function mouseover(d) {
 	
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // clear mouse over effects
 function mouseleave(d) {
 	d3.selectAll("#active_sequence_data").remove();
@@ -229,5 +230,3 @@ function mouseleave(d) {
 
 
 } // end scope for webpage
-
-makeSunburst();

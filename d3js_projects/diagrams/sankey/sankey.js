@@ -1,7 +1,5 @@
 // adjusts scope for multi graph usage
-function makeSankey(){
-
-const FILENAME = "csv_files/dummy_grades_mini.csv";
+function makeSankey( sankey_data ){
 
 var units = "Widgets";
 
@@ -30,7 +28,7 @@ var sankey = d3.sankey()
 var path = sankey.link();
 
 // load the data (using the timelyportfolio csv method)
-d3.csv(FILENAME, function(error, data) {
+d3.csv(sankey_data, function(error, data) {
 
 	//set up graph in same style as original example but empty
 	graph = {"nodes" : [], "links" : []};
@@ -130,5 +128,3 @@ d3.csv(FILENAME, function(error, data) {
 });
 
 } // closes makeSankey()
-
-makeSankey();

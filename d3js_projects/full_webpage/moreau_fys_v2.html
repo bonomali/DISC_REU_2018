@@ -93,6 +93,25 @@
 
 <script src="https://d3js.org/d3.v4.js"></script>
 <script src="http://d3js.org/d3-selection-multi.v1.js"></script>
-<script type="text/javascript" src="../force_directed/hon_v2.js"></script>
-<script type="text/javascript" src="../sunburst/sunburst_v2.js"></script>
+<script type="text/javascript" src="../diagrams/force_directed/hon_v2.js"></script>
+<script type="text/javascript" src="../diagrams/sunburst/sunburst_v2.js"></script>
+<script>
+
+	/* THIS IS WHERE ALL DATA FILES SHOULD BE DECLARED */
+
+	// force directed files
+	const NODE_FILE = "../csv_files/struc2vec-directed-weighted-classified.csv";
+	const LINK_FILE = "../csv_files/weights-network-cell.csv";
+
+	// sunburst diagram files
+	const FLARE_FILE = "../json_files/sunburst_data_struc2vec.json"
+	const SEQUENCE_FILE = "../csv_files/sequence.csv"
+
+
+	// make the diagrams
+	makeSunburst(FLARE_FILE , SEQUENCE_FILE);
+	makeForceDirected( NODE_FILE , LINK_FILE );
+
+
+</script>
 

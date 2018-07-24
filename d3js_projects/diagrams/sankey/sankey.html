@@ -10,39 +10,21 @@ This was made possible by using:
 <title>SANKEY Experiment</title>
 
 <link rel="stylesheet" type="text/css" href="sankey.css">
-<style>
-
-.node rect {
-cursor: move;
-		fill-opacity: .9;
-		shape-rendering: crispEdges;
-}
-
-.node text {
-		pointer-events: none;
-		text-shadow: 0 1px 0 #fff;
-}
-
-.link {
-fill: none;
-stroke: #000;
-		stroke-opacity: .2;
-}
-
-.link:hover {
-		stroke-opacity: .5;
-}
-
-</style>
 
 <body>
 
-<p id="chart">
+	<p id="chart">
+
 </body>
 
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="sankey_plugin.js"></script>
 <script type="text/javascript" src="sankey.js"></script>
+<script>
+
+	const SANKEY_DATA = "../../csv_files/dummy_grades_mini.csv";
+	makeSankey( SANKEY_DATA );
+
+</script>
 
 </html>
-
