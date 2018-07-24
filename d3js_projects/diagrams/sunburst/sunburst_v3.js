@@ -190,7 +190,7 @@ d3.json(flare_file, function(error, root) {
 	  .attr("id" , "sun_path")
       .attr("d", arc )
       .style("fill", function(d) { return color2(d.data.name); })
-      .on("click", d => click2( d , seq_file )
+      .on("click", d => click2( d , seq_file ) )
 	  .on("mouseover" , mouseover)
 	  .on("mouseout" , mouseleave)
       .append("title")
