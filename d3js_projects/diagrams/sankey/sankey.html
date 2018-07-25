@@ -13,17 +13,17 @@ This was made possible by using:
 
 <body>
 
-	<p id="chart">
+	<div id="sankey_diagram">
 
 </body>
 
-<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/d3.v4.js"></script>
 <script src="sankey_plugin.js"></script>
 <script type="text/javascript" src="sankey.js"></script>
 <script>
 
 	const SANKEY_DATA = "../../csv_files/dummy_grades_mini.csv";
-	makeSankey( SANKEY_DATA );
+	makeSankeyD3V4( SANKEY_DATA );
 
 </script>
 

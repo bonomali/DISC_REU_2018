@@ -12,6 +12,7 @@ Once you have the server active, you will receive a port number, then visit:
 
 Then click on the html file you would like to run.
 
+To close the server, hit "CTRL + C" in the command windo
 
 How to set up local server from scratch: https://unix4lyfe.org/darkhttpd/
 
