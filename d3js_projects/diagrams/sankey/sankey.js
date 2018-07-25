@@ -31,34 +31,97 @@ var path = sankey.link();
 // load the data
 d3.csv(sankey_data, function(error, data) {
  
-  //set up graph in same style as original example but empty
-  graph = {"nodes" : [], "links" : []};
+	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  	//set up graph in same style as original example but empty
+	graph = {"nodes" : [], "links" : []};
 
-  data.forEach(function (d) {
-    graph.nodes.push({ "name": d.source });
-    graph.nodes.push({ "name": d.target });
-    graph.links.push({ "source": d.source,
-                       "target": d.target,
-                       "value": +d.value });
-   });
+  	data.forEach(function (d) {
+    	graph.nodes.push({ "name": d.source });
+    	graph.nodes.push({ "name": d.target });
+    	graph.links.push({ "source": d.source,
+        	               "target": d.target,
+            	           "value": +d.value });
+   	});
 
-  // return only the distinct / unique nodes
-  graph.nodes = d3.keys(d3.nest()
-    .key(function (d) { return d.name; })
-    .object(graph.nodes));
+  	// return only the distinct / unique nodes
+  	graph.nodes = d3.keys(d3.nest()
+    	.key(function (d) { return d.name; })
+    	.object(graph.nodes));
 
-  // loop through each link replacing the text with its index from node
-  graph.links.forEach(function (d, i) {
-    graph.links[i].source = graph.nodes.indexOf(graph.links[i].source);
-    graph.links[i].target = graph.nodes.indexOf(graph.links[i].target);
-  });
+  	// loop through each link replacing the text with its index from node
+  	graph.links.forEach(function (d, i) {
+  		graph.links[i].source = graph.nodes.indexOf(graph.links[i].source);
+    	graph.links[i].target = graph.nodes.indexOf(graph.links[i].target);
+  	});
 
-  // now loop through each nodes to make nodes an array of objects
-  // rather than an array of strings
-  graph.nodes.forEach(function (d, i) {
-    graph.nodes[i] = { "name": d };
-  });
+  	// now loop through each nodes to make nodes an array of objects
+  	// rather than an array of strings
+  	graph.nodes.forEach(function (d, i) {
+    	graph.nodes[i] = { "name": d };
+  	});
 
+	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	// sequence selector
+	
+	// make an array of sequences from data
+	var sequences = [];
+
+	graph.nodes.forEach( function(node){
+
+		// add all nodes that aren't grades to an array
+		switch(node.name){
+
+			// filter out the grade nodes
+			case "A": break;
+			case "B": break;
+			case "C": break;
+			case "D": break;
+			case "F": break;
+
+			// add all sequences to array
+			default:
+				sequences.push( node.name )
+				break;
+		}
+	});
+
+	// add buttons to sequence selector
+	var data_buttons = d3.select("#sankey_sequences_data").selectAll("button")
+		.data(sequences).enter()
+		.append("button")
+			.attr("class" , "sankey_sequence")
+			.text(d => d);
+
+	// add click functionality
+	selected = { "nodes":[] , "links":[] };
+
+	data_buttons.on("click" , function(name){
+
+		// only add items once
+		var needToAdd = true;
+		selected.nodes.forEach( function(node){
+			if(node.name === name) needToAdd = false
+		});
+
+		if(needToAdd){
+
+			// select node of same name
+			graph.nodes.forEach(function(node){
+				if(node.name === name) selected.nodes.push(node)
+			});
+
+			// select link of same name
+			graph.links.forEach(function(link){
+				if(link.source === name) selected.links.push(link)
+			});
+		}
+	});
+
+	/********************************************************************
+	 * DON'T FORGET TO ADD GRADES NODES AND LINKS TO SELECTED
+	 * ******************************************************************/
+	
+  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   sankey
       .nodes(graph.nodes)
       .links(graph.links)
