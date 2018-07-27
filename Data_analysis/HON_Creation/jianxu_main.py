@@ -11,7 +11,10 @@ import itertools
 import csv
 import sys
 
-def fast_build_HON(MaxOrder = 99, MinSupport = 10, Input_Sequence_File = '../../Raw_data_processing_JSON_to_CSV/sequence.txt', Freq = False, out_file_add = ""):
+def fast_build_HON(Input_Sequence_File = '../../Raw_data_processing_JSON_to_CSV/Sequence_Data/sequence.txt', 
+				   OutputNetworkFile = "",
+				   Freq = False, out_file_add = "",
+				   MaxOrder = 99, MinSupport = 10, ):
 	
 	""" Initialise Algorithm Parameters / input or output filenames """
 	## Default parameters if no system arguments are given:
@@ -26,7 +29,8 @@ def fast_build_HON(MaxOrder = 99, MinSupport = 10, Input_Sequence_File = '../../
 	
 	InputFileName = Input_Sequence_File
 	OutputRulesFile = 'rules-cell-' + str(MaxOrder) + str(out_file_add) +'.csv'
-	OutputNetworkFile = 'network-cell-maxorder-'+str(MaxOrder)+ "MinSupport-"+ str(MinSupport) +str(out_file_add) +'.csv'
+	if OutputNetworkFile == "":
+		OutputNetworkFile = 'network-cell-maxorder-'+str(MaxOrder)+ "MinSupport-"+ str(MinSupport) +str(out_file_add) +'.csv'
 	
 	## Try not to touch these unless you REALLY know what you're doing...
 	LastStepsHoldOutForTesting = 0

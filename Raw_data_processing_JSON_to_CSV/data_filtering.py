@@ -62,7 +62,7 @@ for index in range(len(object_types)):
 
 
 ###  Only use the first 500-most-clicks-names
-num_students = 500
+num_students = 1000
 entries_by_name = Counter(x['account_name'] for x in click_data)
 names = [x for _,x in sorted(zip(entries_by_name.values(), entries_by_name.keys()), reverse=True)][:num_students]
 
@@ -110,7 +110,8 @@ def sorted_submissions_by_name(name):
 ###############################################################################################
 """
 
-def activity_string_generator_byassignment(data_dict, submissions_list, name, include_idle = True):
+def activity_string_generator_byassignment(data_dict, submissions_list, name, 
+										   include_idle = True, separate_assignment = True):
 	sorted_dicts = sorted(data_dict, key=lambda k: k["timestamp"])
 	submission_counter = 0
 	object_id = sorted_dicts[0] ["object_id"]
@@ -118,7 +119,6 @@ def activity_string_generator_byassignment(data_dict, submissions_list, name, in
 		object_id = "Coursework"
 	start_click = object_ref[ object_id ]["ref_num"]
 	
-	print(name)
 	if submissions_list[0]["timestamp"] == None:
 		strings_dict = {}
 		submission_time = dt.datetime.max
@@ -130,23 +130,28 @@ def activity_string_generator_byassignment(data_dict, submissions_list, name, in
 		strings_dict = {}
 		submission_time = dt.datetime.strptime(submissions_list[0]["timestamp"], '%Y-%m-%dT%H:%M:%S')
 		start_time = dt.datetime.strptime(sorted_dicts[0]["timestamp"], '%Y-%m-%dT%H:%M:%S')	
-		assignment = submissions_list[submission_counter]["assignment"]
+		if separate_assignment == True:
+			assignment = submissions_list[submission_counter]["assignment"]
+		else:
+			assignment = "All"
 		strings_dict[assignment + "_clicks"] = name +  " " 
 		strings_dict[assignment + "_times"] = name + ","
 	
 	for entry in sorted_dicts:
 		time_now = dt.datetime.strptime(entry["timestamp"], '%Y-%m-%dT%H:%M:%S')
-		delta_t = (time_now - start_time).total_seconds()	
-		
+		delta_t = (time_now - start_time).total_seconds()
 		##  change submission time + change assignment name when assignment changes
 		if time_now >= submission_time:
 			if submission_counter < len(submissions_list)-1:
-				strings_dict[assignment + "_clicks"] += "100"	
+				strings_dict[assignment + "_clicks"] += "100"
 				strings_dict[assignment + "_times"] += str(submission_time)
 				submission_counter += 1
-				assignment = submissions_list[submission_counter]["assignment"]
-				strings_dict[assignment + "_clicks"] = name + " "	
-				strings_dict[assignment + "_times"] = name + ","
+				if separate_assignment == True:
+					assignment = submissions_list[submission_counter]["assignment"]
+					strings_dict[assignment + "_clicks"] = name + " "
+					strings_dict[assignment + "_times"] = name + ","
+				else:
+					strings_dict[assignment + "_clicks"] 
 				submission_time = dt.datetime.strptime(submissions_list[submission_counter]["timestamp"], '%Y-%m-%dT%H:%M:%S')
 				
 			else:
@@ -192,7 +197,7 @@ def activity_string_generator_byassignment(data_dict, submissions_list, name, in
 
 """
 ###############################################################################################################
-##                         Call functions to generate output txt sequences
+#                               Call functions to generate output txt sequences
 ###############################################################################################################
 """
 
@@ -220,5 +225,6 @@ for key in keys:
 		if key in dictionary:
 			list_byweek.append(dictionary[key])
 	outfile_byweek = open("Sequence_Data/"+'sequence' + key + '.txt', 'w')
+	print("Sequence_Data/"+'sequence')
 	for item in list_byweek:
 		outfile_byweek.write("%s\n" % item)

@@ -15,7 +15,7 @@ seqfiles = [f for f in listdir(sequence_path) if isfile(join(sequence_path, f))]
 
 for f in seqfiles:
 	if "clicks" in f:
-		fast_build_HON(MinSupport = 7, MaxOrder= 99, Freq = False, Input_Sequence_File = sequence_path + "/" + f, OutputNetworkFile = "HON_Files/HON_"+f[:-11]+".csv")	
+		fast_build_HON(MinSupport = 10, MaxOrder= 99, Freq = False, Input_Sequence_File = sequence_path + "/" + f, OutputNetworkFile = "HON_Files/HON_"+f[:-11]+".csv")	
 
 ##  Get a list of all nodes
 HON_path = "HON_Files"
@@ -51,7 +51,7 @@ for node in nodes:
 		node_sequence = node_sequence[1:]
 	node_vector.append(node_sequence)
 
-
+print("# nodes = " + str(len(node_vector)))
 ##  Generate the results for each assignment
 grades_file = "grades.csv"
 grades = {}
@@ -66,9 +66,8 @@ with open('grades.csv', newline='') as grades_file:
 
 
 totals = grades["Total"]
-names = list(set(names))
 filtered_grades = {}
-name = "hholden"
+
 for name in list(grades.keys()):
 	if name != "Total":
 		filtered_grades[name] = {}
@@ -79,11 +78,7 @@ for name in list(grades.keys()):
 				score = 0.
 			total = float(totals[assignment])
 			percent = score/total
-			if percent != 1.0:
-				count+=1
-			all_count +=1
 			filtered_grades[name][assignment] = percent
-
 
 ##  Generate our presence / absence vector for each entry
 def vector_gen(sequence, vector):
@@ -93,29 +88,62 @@ def vector_gen(sequence, vector):
 			absence_vector[index] = 1
 	return absence_vector 
 
-included = 0
-notincluded = 0
-assignments = {}
+perfect = 0
+not_perfect = 0
+training_data = {}
+test_data = {}
+
+training_perf = 0
+test_perf = 0
+training_imperf = 0
+test_imperf = 0
+
 for f in seqfiles:
 	if "clicks" in f:
-		vectors = {}
+		vectors_training = {}
+		vectors_test = {}
 		with open(sequence_path + "/" + f, "r") as ins:
 			for line in ins:
 				name = line.split(" ", 1)[0]
 				assignment = f[8:-11]
 				if name in list(filtered_grades.keys()) and assignment in list(filtered_grades[name].keys()):
 					grade = filtered_grades[name][assignment]
-					if grade != 1.0:
-						print("%.1f" % grade)
 					sequence = " " + line.split(" ", 1)[1][:-1] + " "
-					vectors[name] = {"vector":vector_gen(sequence, node_vector), "percentage":"%.1f" % grade}
-		assignments[assignment] = vectors
+					if grade != 1.0:
+						not_perfect +=1
+						if not_perfect == 5:
+							vectors_test[name] = {"vector":vector_gen(sequence, node_vector), "percentage":"%.1f" % grade}
+							not_perfect = 0
+							test_imperf +=1
+						else:
+							vectors_training[name] = {"vector":vector_gen(sequence, node_vector), "percentage":"%.1f" % grade}
+							training_imperf +=1
+					else:
+						perfect += 1
+						if perfect == 5:
+							vectors_test[name] = {"vector":vector_gen(sequence, node_vector), "percentage":"%.1f" % grade}
+							perfect = 0
+							test_perf +=1
+						else:
+							vectors_training[name] = {"vector":vector_gen(sequence, node_vector), "percentage":"%.1f" % grade}
+							training_perf +=1
+		training_data[assignment] = vectors_training
+		test_data[assignment] = vectors_test
 
-with open('presence_vectors.json', 'w') as fp:
-	json.dump(assignments, fp, sort_keys=True)
+print("# 100% training count =" + str(training_perf))
+print("# 100% test count =" + str(test_perf))
+print("# negative training count =" + str(training_imperf))
+print("# negative test count =" + str(test_imperf))
+
+
+with open('training_vectors.json', 'w') as fp:
+	json.dump(training_data, fp, sort_keys=True)
+
+with open("test_vectors.json", "w") as fp:
+	json.dump(test_data, fp, sort_keys = True)
 
 master_vector = {"Master":node_vector}
-with open('master_vector.json', 'w') as fp:
+with open('master_vector_new.json', 'w') as fp:
 	json.dump(master_vector, fp, sort_keys=True)
 
 
