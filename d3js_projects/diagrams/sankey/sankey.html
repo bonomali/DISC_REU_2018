@@ -1,0 +1,30 @@
+<!--
+This was made possible by using:
+	D3:             https://d3js.org/
+	Sankey Plugin:  https://github.com/d3/d3-plugins/blob/master/sankey/sankey.js
+	Sankey Diagram: https://gist.github.com/d3noob/c9b90689c1438f57d649#file-sankey-csv
+-->
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>SANKEY Experiment</title>
+
+<link rel="stylesheet" type="text/css" href="sankey.css">
+
+<body>
+
+	<div id="sankey_diagram">
+
+</body>
+
+<script src="http://d3js.org/d3.v4.js"></script>
+<script src="sankey_plugin.js"></script>
+<script type="text/javascript" src="sankey.js"></script>
+<script>
+
+	const SANKEY_DATA = "../../csv_files/dummy_grades_mini.csv";
+	makeSankeyD3V4( SANKEY_DATA );
+
+</script>
+
+</html>

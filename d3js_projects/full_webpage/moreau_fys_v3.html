@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<title>HON Force-Directed</title>
+<title>All in One</title>
 <link rel="stylesheet" type="text/css" href="moreau_fys.css">
 <!-- <link rel="stylesheet" type="text/css" href="sunburst.css"> -->
 
@@ -83,7 +83,7 @@
 
 	<div id="sankey">
 		
-		<p id="sankey_diagram">	
+		<div id="sankey_diagram">	
 
 	</div>
 
@@ -93,8 +93,10 @@
 
 <script src="https://d3js.org/d3.v4.js"></script>
 <script src="http://d3js.org/d3-selection-multi.v1.js"></script>
-<script type="text/javascript" src="../diagrams/force_directed/hon_v2.js"></script>
-<script type="text/javascript" src="../diagrams/sunburst/sunburst_v2.js"></script>
+<script type="text/javascript" src="../diagrams/force_directed/hon_v3.js"></script>
+<script type="text/javascript" src="../diagrams/sunburst/sunburst_v3.js"></script>
+<script src="../diagrams/sankey/sankey_plugin.js"></script>
+<script type="text/javascript" src="../diagrams/sankey/sankey.js"></script>
 <script>
 
 	/* THIS IS WHERE ALL DATA FILES SHOULD BE DECLARED */
@@ -107,11 +109,12 @@
 	const FLARE_FILE = "../json_files/sunburst_data_struc2vec.json"
 	const SEQUENCE_FILE = "../csv_files/sequence.csv"
 
-
+	// sankey diagram files
+	const SANKEY_DATA = "../../csv_files/dummy_grades_mini.csv";
+	
 	// make the diagrams
 	makeSunburst(FLARE_FILE , SEQUENCE_FILE);
 	makeForceDirected( NODE_FILE , LINK_FILE );
-
+	makeSankeyD3V4( SANKEY_DATA );
 
 </script>
-

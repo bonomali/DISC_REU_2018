@@ -1,5 +1,5 @@
 
-In order to run these diagrams, you need to set up a local server.
+In order to run any diagrams, you need to set up a local server.
 
 To set up a server, go to /DISC_REU_2018/darkhttpd/ , then in command line type:
 
@@ -10,11 +10,11 @@ Once you have the server active, you will receive a port number, then visit:
 
 	http://localhost:<PORT_NUMBER>
 
-Then click on the html file you would like to run.
+in your web browser and click on the html file you would like to run.
 
-To close the server, hit "CTRL + C" in the command windo
+--------------------------------------------------------------------------------------------------------
 
-How to set up local server from scratch: https://unix4lyfe.org/darkhttpd/
+How to set up local server from scratch with darkhttp: https://unix4lyfe.org/darkhttpd/
 
 --------------------------------------------------------------------------------------------------------
 
