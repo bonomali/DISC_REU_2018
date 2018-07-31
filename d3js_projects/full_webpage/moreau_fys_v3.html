@@ -80,41 +80,22 @@
 	</div>
 
 	<!-------------------------------------------------------------------------------------------------------->
-
 	<div id="sankey">
+
+		<div id="sankey_diagram"></div>
+		<p> Choose the node </p>
+		<div id="sankey_button" class="scrollable-content"></div>
+
+  		
 		
-		<div id="sankey_diagram">	
-
 	</div>
-
 	<!-------------------------------------------------------------------------------------------------------->
 
 </body>
 
 <script src="https://d3js.org/d3.v4.js"></script>
 <script src="http://d3js.org/d3-selection-multi.v1.js"></script>
-<script type="text/javascript" src="../diagrams/force_directed/hon_v3.js"></script>
-<script type="text/javascript" src="../diagrams/sunburst/sunburst_v3.js"></script>
-<script src="../diagrams/sankey/sankey_plugin.js"></script>
-<script type="text/javascript" src="../diagrams/sankey/sankey.js"></script>
-<script>
-
-	/* THIS IS WHERE ALL DATA FILES SHOULD BE DECLARED */
-
-	// force directed files
-	const NODE_FILE = "../csv_files/struc2vec-directed-weighted-classified.csv";
-	const LINK_FILE = "../csv_files/weights-network-cell.csv";
-
-	// sunburst diagram files
-	const FLARE_FILE = "../json_files/sunburst_data_struc2vec.json"
-	const SEQUENCE_FILE = "../csv_files/sequence.csv"
-
-	// sankey diagram files
-	const SANKEY_DATA = "../../csv_files/dummy_grades_mini.csv";
-	
-	// make the diagrams
-	makeSunburst(FLARE_FILE , SEQUENCE_FILE);
-	makeForceDirected( NODE_FILE , LINK_FILE );
-	makeSankeyD3V4( SANKEY_DATA );
-
-</script>
+<script type="text/javascript" src="../force_directed/hon_v3.js"></script>
+<script type="text/javascript" src="../sunburst/sunburst_v3.js"></script>
+<script type="text/javascript" src="../sankey/sankey_plugin.js"></script>
+<script type="text/javascript" src="../sankey/sankey.js"></script>
