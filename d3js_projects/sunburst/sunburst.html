@@ -1,0 +1,44 @@
+<!--
+	References:
+		https://bl.ocks.org/mbostock/4348373 on 6/19/18
+		https://bl.ocks.org/maybelinot/5552606564ef37b5de7e47ed2b7dc099 on 6/25/18
+		https://bl.ocks.org/kerryrodden/766f8f6d31f645c39f488a0befa1e3c8 on 6/25/18
+-->
+
+<!DOCTYPE html>
+<html>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta charset="utf-8">
+
+<head>
+	<link rel="stylesheet" type="text/css" href="sunburst.css">
+	<title>Sunburst Diagram</title>
+</head>
+
+<body>
+	
+	<div id="full_sunburst">
+		<div id="active_sequence"></div>
+		<div id="sunburst_diagram"></div>
+	</div>
+
+	<div id="dialog-window">
+		<div id="non-scrollable-content">
+			<p>Showing sequence data for:</p>
+			<p id="node_sequence"></p>
+		</div>
+
+  		<div id="scrollable-content">
+			<table>
+				<tr></tr>
+			</table>
+  		</div>
+  	</div>
+
+
+</body>
+
+<script src="https://d3js.org/d3.v4.js"></script>
+<script type="text/javascript" src="sunburst.js"></script>
+
+
+</html>
