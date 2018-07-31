@@ -21,6 +21,7 @@ var color = d3.scaleOrdinal(d3.schemeCategory10);
 var flag=true;
 var main_node;
 var clicked = false;
+var save = new Array();
 function click1(d){
 	/* highlight travel path for nodes */
 
@@ -29,6 +30,9 @@ function click1(d){
     // fade
 		var sig;
 		clicked = true;
+		pool.forEach(function(d){
+			save.push(d);
+		});
 		node.style("stroke-opacity", function(o) {
 			sig = false;
 			pool.forEach(function(k,i){
@@ -98,54 +102,84 @@ function click1(d){
 		
 		pool.forEach(function(k,i){
 			if(k.id == main_node.id){
-			let table = d3.select("#node_info");
+				let table = d3.select("#node_info");
 
 			// add in data
-			table.select("#id").select("td").text(k.id);
-			table.select("#group").select("td").text(k.Gephi);
-			table.select("#inLinks").select("td").text( (k.in_size - 2) / .5);
-			table.select("#outLinks").select("td").text( (k.out_size - 2) / .5);
+				table.select("#id").select("td").text(k.id);
+				table.select("#group").select("td").text(k.Gephi);
+				table.select("#inLinks").select("td").text( (k.in_size - 2) / .5);
+				table.select("#outLinks").select("td").text( (k.out_size - 2) / .5);
 			}
+			
 		});
 		
-		if(flag===true){
-				var node_name = d.id;
-				if(node_name[node_name.length-1] == '|')
-					node_name = node_name.slice(0,-1);
-				var arr = node_name.replace('|','.').split('.');
-				console.log(arr);
-				var i = arr.length-1;
-				path.attr('id',function(d){
-					var p = d;
-					var j;
-					if( d.data.name != "root") return "sunpath";
-
-					while( i>=0 ){
-						var children = p.children;
-						if(!p.children) {
-							i-=1;
-							continue;
-						}
-						var sig = false;
-						for(j = 0; j<children.length; j++){
-							if( children[j].data.name == arr[i] ){
-								sig = true;
-								p = children[j];
-							}
-						}
-						if( sig === false ) break;
-						console.log(i+ " : " +arr[i]);
-						i-=1;
-					}
-					if(i<0){
-						flag=false;
-						click2(p);
-						flag=true;
-					}
-					return 'sunpath';
+		node.attr("r",  function(k) {
+			var child_name = '.' + main_node.id.replace('|','.');
+			if(child_name[ child_name.length-1 ] == '.')
+				child_name = child_name.slice(0,-1);
+			var idx = k.id.lastIndexOf(child_name);
+			if (k.id == main_node.id)
+				return 10.;
+			else if( idx > 0 ){
+				var node;
+				pool.forEach(function(d){
+					if(d.id === k.id)
+						node = d;
 				});
+				if(node){
+					var tmp = k.id.slice(0,idx);
+					return 10.0 - tmp.replace('|','.').split('.').length;
+				}
+			}
+			else
+				return 5.;
+		});
+		if(flag===true){
+			var p = name2path(d.id);
+			if(p){
+				flag=false;
+				click2(p);
+				click3(d.id);
+				flag=true;
+			}
 		}
 			
+}
+function name2path(name){
+	var node_name = name;
+	if(node_name[node_name.length-1] == '|')
+		node_name = node_name.slice(0,-1);
+	var arr = node_name.replace('|','.').split('.');
+	console.log(arr);
+	var i = arr.length-1;
+	var p;
+	path.attr('id',function(d){
+		var j;
+		if( d.data.name != "root") return "sunpath";
+		p = d;
+		while( i>=0 ){
+			var children = p.children;
+			if(!p.children) {
+				i-=1;
+				continue;
+			}
+			var sig = false;
+			for(j = 0; j<children.length; j++){
+				if( children[j].data.name == arr[i] ){
+					sig = true;
+					p = children[j];
+				}
+			}
+			if( sig === false ) break;
+			console.log(i+ " : " +arr[i]);
+			i-=1;
+		}
+		return "sunpath";
+	});
+	if(i<0)
+		return p;
+	else
+		return null;
 }
 function isConnected(a, b) {
     return linkedByIndex[a.index + "," + b.index] || linkedByIndex[b.index + "," + a.index] || a.index == b.index;
@@ -173,7 +207,7 @@ function marker(color, opacity) {
 function makeForceDirected(){
 
 //Define where to look for nodes and where to look for links
-const NODE_FILE =  "csv_files/struc2vec-directed-weighted-classified.csv"
+const NODE_FILE =  "csv_files/struc2vec-directed-weighted-classified1.csv"
 const LINK_FILE = "csv_files/weights-network-cell.csv"
 
 //Load up pre-defined svg
@@ -185,7 +219,7 @@ var	width = +svg.attr("width"),
 var simulation = d3.forceSimulation()
 	.force("link", d3.forceLink().id(function(d) {return d.id; })
 								 .strength(link => link.value)
-								 .distance(link => 1./link.value))
+								 .distance(link => 1.0/link.value))
 	.force("charge", d3.forceManyBody().strength(-10))
 	//.force("picky centre", pickyForce)
 	.force("collide", d3.forceCollide().radius(6))
@@ -252,10 +286,37 @@ d3.csv(NODE_FILE, function(nodes_data) {
      		//.on("mouseover", mouseOver(.2))
       		//.on("mouseout", mouseOut)
 			node.on("click" , function(d){
+				save.length = 0;
 				pool.push(d);
 				main_node=d;
 				click1(d);
 				pool.length=0;
+			})
+			.on("mouseover",function(d){
+				if(clicked === true){
+					node.style("fill-opacity", function(o) {
+						sig = false;
+						save.forEach(function(k,i){
+							if(isConnected(k, o)) 
+								sig = true;
+						});
+						if(o === d)
+							sig = true;
+						return sig === true? 1: 0.1;
+					});
+				}
+			})
+			.on("mouseout",function(d){
+				if(clicked === true){
+					node.style("fill-opacity", function(o) {
+						sig = false;
+						save.forEach(function(k,i){
+							if(isConnected(k, o)) 
+								sig = true;
+						});
+						return sig === true? 1: 0.1;
+					});
+				}
 			})
 			.call(d3.drag()
           		.on("start", dragstarted)
