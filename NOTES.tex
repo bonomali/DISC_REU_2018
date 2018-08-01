@@ -1,0 +1,249 @@
+% % % % % % % % % % % % % % % % % % % % % % % % % % %
+% IS&T Template 
+% Patrick Vandewalle
+% January 2006
+% % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document class
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[letterpaper,twocolumn,fleqn]{article} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{ist}
+% add other packages here
+\usepackage{mathptmx}
+\usepackage{times}
+\usepackage{url}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{csquotes}
+\usepackage{multirow}
+\usepackage{hhline}
+%\usepackage[usenames, dvipsnames]{color}
+\usepackage{color}
+\definecolor{light-green}{rgb}{0.0,0.6,0.0}
+\definecolor{orange}{rgb}{1,0.5,0}
+\newcommand{\sam}[1]{{\color{red} #1}}
+\newcommand{\justin}[1]{{\color{blue} #1}}
+\newcommand{\denis}[1]{{\color{light-green} #1}}
+\newcommand{\chaoli}[1]{{\color{orange} #1}}
+
+%\usepackage{authblk}
+\pagestyle{empty}                % no page numbers is default
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title and Authors
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{ }
+
+\author{Maggie Celeste
+}
+
+\date{} % date has an empty field.
+
+% correct for bad hyphenation here
+\hyphenation{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Begin document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document} 
+
+\maketitle 
+
+\thispagestyle{empty} % prevents the first page to be numbered
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Abstract
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{abstract}
+OUTLINE WHAT THE PAPER IS ABOUT. ONE PARAGRAPH. WRITE LAST.
+\end{abstract}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Overall Document Guidelines: Head
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-----------------------------------------------------
+\section{Introduction}
+\label{sec:intro}
+
+INTRODUCTION TO THE FIELD, ISSUES PEOPLE HAVE THAT WE CAN FIX
+
+HOW DOES THIS PAPER SOLVE THESE PROBLEMS?
+
+WHERE DOES THE DATA STUDIED COME FROM? WHAT FORMAT IS DATA IN? DEFINITIONS USED THROUGHOUT
+
+1/2 - 1 PAGE
+
+%-----------------------------------------------------
+\section{Related Work}
+1/2 - 1 PAGE
+\label{sec:related}
+
+HOW DO PREVIOUS WORKS RELATE TO OUR RESEARCH? WHICH AREAS?
+
+\subsection{RELATED WORK AREA}
+
+DESCRIBE THE NATURE OF AN AREA OF RELATED WORK
+
+%-----------------------------------------------------
+\section{Task Analysis}
+~1 PAGE
+"Working closely with two domain experts in exploratory rec-
+ommendation interfaces who are also co-authors of this work, we
+identify the following high-level functions or tasks users want to
+have when investigating the CN data:"
+-OK, SO WHO CAN WE TALK TO IN ORDER TO SEE A SIMILAR TAKE?
+\label{sec:ta}
+
+IDENTIFY WHAT FUNCTIONS / TASKS USERS WANT TO HAVE WHEN INVESTIGATING THE DATA: I.E., WHAT CHALLENGES THE DATA VISUALISATION IS BEING USED TO ADDRESS. HOW DID WE COME TO THESE CONCLUSIONS?
+
+{\bf T1.\ Overview of the data.} 
+
+{\bf T2.\ Identification of at risk students} 
+
+{\bf T3.\ Detail exploration of individual student data.} 
+
+
+%-----------------------------------------------------
+\section{Design Requirements}
+~1 PAGE
+\label{sec:dr}
+HOW DOES THE VISUAL DATA SOLVE THE AFOREMENTIONED CHALLENGES?
+
+Our visual analytics tool should meet the following design requirements in order to allow users to perform {\bf T1} to {\bf T7}.
+
+
+%-----------------------------------------------------
+\section{Preliminaries}
+1/2 - 1 PAGE
+
+SEEMS TO BE STUFF YOU SHOULD GET OUT OF THE WAY BEFORE STARTING ON THE NEXT SECTION -- IN PARTICULAR, TECHNICAL ASPECTS OF THE PAPER, E.G. IN THE CN-VIS PAPER THIS COVERED DYNAMIC TOPIC MODELING AND HOW TO DEFINE THE SIMILARITY OR RELEVANCE BETWEEN DOCUMENTS
+%In this section, we briefly introduce dynamic topic modeling and how to define the similarity or relevance between documents. In our scenario, a document is a paper.
+
+
+
+
+%-----------------------------------------------------
+\section{THE ACTUAL VISUALISATION TOOL}
+2-3 PAGES, INCL. FIGURES
+\label{sec:visualization}
+
+%We develop CNVis as a web-based tool for exploring the CN data. The implementation uses D3.js for producing dynamic and interactive data visualizations in web browsers, along with utility functions provided by the jQuery JavaScript library.
+
+%As shown in Figure~\ref{fig:cnvis}, our CNVis is made up of four components: the menu panel, bookmark view, topic view, and keyword view.  The menu panel gives users an interface for interacting with participant, paper, and keyword data, and making comparisons between conference topics over the years.  The bookmark view draws connections, for a given year, between the papers presented at a conference and the conference participants who bookmarked them.  The topic view groups papers into topic areas based on their associated keywords. It displays topic popularity trends for a single conference or compares pairwise topic popularity between two different conferences over the years.  Finally, the keyword view takes a list of keywords associated with a paper or topic and maps their popularity over the years.  All these views are dynamically linked together via standard brushing and linking.  Since the menu panel is self-explanatory, in the following, we only describe the three views in detail. 
+
+\subsection{VIEW TYPE}
+
+{\bf Data Linking.} 
+
+{\bf Interaction.} 
+
+
+%-----------------------------------------------------
+\section{Results and Evaluation}
+\label{sec:results}
+
+Our CNVis tool is released online at: 
+%\url{http://www.nd.edu/~cwang11/cnvis/}.
+\url{http://sites.nd.edu/chaoli-wang/demos/}. 
+To avoid any compatibility issues (known problems include the sorting by popularity), we recommend users to use the Google Chrome browser. In the following, we present three case studies and highlight the insights gleaned. The three studies jointly cover all seven tasks. Then, we report the evaluation we conducted with experts in recommender systems and human-computer interaction. 
+
+\subsection{Case Studies}
+%\sam{Sam: Present several well-thought case studies with each mapped to several tasks in {\bf T1} to {\bf T7} and these case studies together should cover all the tasks.}
+
+{\bf Case Study 1: Overview and Basic Selections.} 
+%This case study addresses the needs of users to gain an overview of the data, select specific subsets of conference participants or papers, and examine detailed information about those specified participants or papers. Tasks {\bf T1}, {\bf T2}, and {\bf T4} are covered here. We note that even though users in this case were only looking for more information on specific papers, the process for getting detailed information about participants is identical to that of papers. The only difference for participants is that clicking a participant in the bookmark view does not populate the keyword view (as participants do not have keywords associated with them).
+
+
+{\bf Case Study 2: View Interactions.} This case study showcases the various interactions between the bookmark and keyword views of CNVis, and how those interactions lead to deeper insights gained from the data. Tasks {\bf T3} and {\bf T5} are covered here.
+
+%Users began this study by selecting a conference, year, and one or more keywords from the "Keywords" tab of the menu panel. Upon this selection, they can then gain insight into the popularity trends of those keywords for the conference selected by viewing them over the years in the keyword view.  Users have further potential to use these past trends to predict the popularity of trends in the future, and by linking these keywords back to the papers they are used in, users can gear future conferences towards paper topic areas that are predicted to draw in larger crowds.
+
+
+{\bf Case Study 3: Conference Comparisons.} %In the last case study, users wanted to compare the topic trends over the years, both within one conference and between two conferences, and to drill down from the overall topic trends to find recommended papers and keyword trends. These could answer why the conference topics were trending in that way.  Tasks {\bf T5}, {\bf T6}, and {\bf T7} are covered here.
+
+
+\subsection{Expert Evaluation}
+
+An expert in developing tools for analyzing data of conferences and research collections performed a heuristic evaluation of  CNVis. Following a structure in the evaluation, the expert assessed the tool in the context of the seven tasks {\bf T1}--{\bf T7}. Afterward, the expert summarized his comments, both positive and critical, in three aspects.
+
+{\bf T1--T4.} When facing a task involving general exploration as well as detailed browsing, I usually expect to find the tool to able to comply with Schneiderman's information seeking mantra ``{\em overview first, zoom and filter, then details-on-demand}"~\cite{Smantra-96}.
+
+\textit{Pros}.
+\textit{Cons}. 
+
+%-----------------------------------------------------
+\section{Discussion}
+\label{sec:dis}
+
+\subsection{Privacy Concern}
+
+When users create an account in Conference Navigator, we disclose our data policy at  \url{http://halley.exp.sis.pitt.edu/cn3/signup.php}, which states that:
+
+{\bf Data Policy.} {\it Conference Navigator is a research platform in which we study the ways to improve community-based and social recommendation systems. Data captured by the system includes your bookmarks, tags, social connections, logs, contributed external links, and metadata provided in your settings page. This data is essential to support social navigation and recommendation functionality of the system. The data will be kept confidential and will not be shared with any third party. No personal identifiers will be mentioned in any publications or dissemination of the research data. You can control information visible to other users of the system under your privacy settings in the profile page.}
+
+Since CNVis is a tool intended to enhance ``{\em social navigation and recommendation functionality}" of Conference Navigator, and we are not sharing users' data with any third party, we consider that we have addressed the potential privacy concerns of users.
+
+\subsection{Tool Validation}
+
+Ideally, the validation of a tool like CNVis should consider several types of evaluations. Following Munzner's nested model for visualization design and validation~\cite{Munzner-TVCG09}, one should consider validations at several levels: the domain problem (L1), data/operation abstraction design (L2), encoding/interaction technique (L3), and algorithm design (L4). In our case, we identified the tasks (L1), observed and interviewed target users (L1),  justified the data/operation (L2) as well as encoding/interaction design (L3). We also  empirically measured the performance of the algorithmic implementation (L4) and conducted an informal usability study (L3). Munzner's recommendation includes performing some validation of higher levels (L3, L2, L1) after implementation. Among them, we are still missing: a lab study to measure time/errors for operation (L3), a field study to document human usage of the deployed systems (L2) and finally, adoption rates (L1). Although these validations are very important, Munzner also states that ``{\em Usually a single paper would only address a subset of these levels, not all of them at once}." In the future, we will conduct these additional validations (lab study, field study, adoption rates) to complete the evaluation of our tool.
+
+%-----------------------------------------------------
+\section{Conclusions and Future Work}
+\label{sec:conc}
+
+We have presented CNVis, a web-based visual analytics tool for exploring the CN data. % encompassing multiple academic conferences, mainly consisting of the papers presented and participants bookmarking papers at the conferences. 
+Through interacting with a visual interface, we enable users to interpret various conference relationships and trends via comparison and recommendation using three coordinated views, namely, the bookmark, topic, and keyword views. The bookmark view allows users to examine, for a given conference of a year, the relationship between the papers presented at the conference and the participants who bookmarked them. The topic view allows for comparison of paper topic areas, either within a single conference or between two different conferences, to reveal the overall conference trends. The keyword view enables the exploration of keyword popularity and their trends over the years for a given conference, either by selecting a specified subset of keywords or selecting one or more papers and viewing their associated keywords. We demonstrate the effectiveness of CNVis with selected case studies, followed by an ad-hoc expert evaluation of our tool.
+
+The general framework of CNVis can be applied to other kinds of bookmark data, such as posts or images liked by social media users, products or services referred by customers, etc. We would like to explore this direction in the future. The key issue that needs to be addressed when extending and applying CNVis to other applications is the scalability (i.e., handling larger data while dealing with limited display). Given the limited screen space, the bookmark view typically could only display up to a few hundred entities. Beyond that, we may need to organize them into multiple levels of hierarchy in a sunburst view as an overview and use the bookmark view as the detailed view. Similar issues need to be addressed for the topic and keyword views, as appropriate. 
+
+%-----------------------------------------------------
+\section{Acknowledgments}
+%add the acknowledgement section here
+This work was supported in part by the U.S.\ National Science Foundation through grants IIS-1456763, IIS-1455886, and IIS-1560363. Denis Parra is supported by Conicyt Research Agency, Grant Fondecyt Nr. 11150783. We thank Lucas Barbosa, Matias Hurtado, Brendan Jones, Yike Ma, Charles Osborne, and Xin'an Zhou who helped with the project. 
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % Reference Preparation
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \section{Reference Preparation}
+% Use the standard LaTeX \emph{cite} command for references in the
+% text. You can then use the standard bibliography command to generate
+% the list of references. Add the command \emph{small} before the
+% bibliography to give it the right font size.  Reference \cite{bib1}
+% style should be used for books, Reference \cite{bib2} style should be
+% used for Journals, and Reference \cite{bib3} style should be used for
+% Proceedings.
+
+% % To start a new column (but not a new page) and help balance the last-page
+% % column length use \vfill\pagebreak.
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % Bibliography
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\small
+\begin{thebibliography}{9}
+% %%use following if all content of bibtex file should be shown
+
+\bibitem{Alexander-VAST14}E. Alexander, J. Kohlmann, R. Valenza, M. Witmore, and M. Gleicher. Serendip: Topic model-driven visual exploration of text corpora. In Proceedings of IEEE Conference on Visual Analytics Science and Technology, pages 173\textemdash182, 2014.
+
+
+\end{thebibliography}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Biography
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{biography}
+
+\noindent \textbf{Samuel M.\ Bailey} is a master student of computer science and engineering at University of Notre Dame. He received BS degrees in computer science and software engineering from Miami University in 2016.\par \bigbreak
+
+\end{biography}
+
+\end{document} 
+
