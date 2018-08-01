@@ -1,0 +1,45 @@
+.node rect {
+cursor: move;
+		fill-opacity: .9;
+		shape-rendering: crispEdges;
+}
+
+.node text {
+		pointer-events: none;
+		text-shadow: 0 1px 0 #fff;
+}
+
+.link {
+fill: none;
+stroke: #000;
+		stroke-opacity: .2;
+}
+
+.link:hover {
+		stroke-opacity: .5;
+}
+.header {
+	height: 100px;
+	border: 1px black solid;
+}
+
+tr {
+	border: 1px black solid;
+}
+
+.scrollable-content {
+  height: 200px;
+  overflow: auto;
+}
+
+svg , #sankey_sequences {
+	float: left;
+  	border: 1px black solid;
+	display:inline-block;
+	height: 600px;
+	width: 800px;
+}
+
+.sankey_sequence {
+  display: block;
+}

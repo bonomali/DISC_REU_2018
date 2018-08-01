@@ -22,7 +22,7 @@ th {
 
 #hon_diagram {
   float: left;
-  width: 70%;
+  width: 75%;
   padding: 5px;
 }
 
@@ -31,7 +31,7 @@ th {
   stroke-width: 1px;
 }
 
-#active_sequence_data {
+text {
   fill: white;
   font: 30px sans-serif;
   text-anchor: end;
@@ -45,7 +45,7 @@ th {
 
 #dialog-window {
 	float: left;
-	width: 30%;
+	width: 35%;
   	height: 660px;
   	border: 1px black solid;
 	display:inline-block;
@@ -59,7 +59,6 @@ th {
   height: 544px;
   overflow: auto;
 }
-
 .node rect {
 cursor: move;
 		fill-opacity: .9;
@@ -68,15 +67,24 @@ cursor: move;
 
 .node text {
 		pointer-events: none;
-		text-shadow: 0 1px 0 #fff;
+		text-shadow: 0 1px 0 #000;
 }
 
 .link {
 fill: none;
 stroke: #000;
-		stroke-opacity: .2;
 }
 
 .link:hover {
 		stroke-opacity: .5;
 }
+
+.scrollable-content {
+  height: 150px;
+  overflow: auto;
+}
+.sankey_sequence {
+  display: block;
+}
+
+
