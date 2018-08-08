@@ -2,119 +2,298 @@
 <meta charset="utf-8">
 <style>
 
-.bar {
-  fill: steelblue;
-}
-
-.axis path {
-  /*display: none;*/
+.axis .domain {
+  display: none;
 }
 
 </style>
+
 <body>
 
-<div id="stackedbars">
-  <h1>Segments</h1>
-  <svg id="stacked" width="600" height="500"></svg></div>
+
+<body>
+    <div id="map"></div>
+    <div id="legend">
+      <h3>Change graph view </h3>
+      <div class="input-group" id="filters">
+		<label><input type="radio" name="filter" value="aggregate">  Compare aggregate data</label><br />
+        <label><input type="radio" name="filter" value="two" checked="checked">  Compare two students</label><br />
+      </div>
+    </div>
 </body>
+
+
+
+<p>
+  <label for="nValue1" 
+         style="display: inline-block; width: 600px; text-align: right">
+         student number 1 = <span id="nValue1-value"></span>
+  </label>
+  <input type="number" min="0" max="943" step="1" value="0" id="nValue1">
+</p>
+
+<p>
+  <label for="nValue2" 
+         style="display: inline-block; width: 600px; text-align: right">
+         student number 2 = <span id="nValue2-value"></span>
+  </label>
+  <input type="number" min="0" max="943" step="1" value="0" id="nValue2">
+</p>
+
+
+<svg width="800" height="400"></svg>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script>
+//This code filters based on name or based on assignment.
+//Adapted from https://bl.ocks.org/mbostock/3886208 , open source example.
 
-var svg = d3.select("#stacked"),
-    margin = {top: 20, right: 180, bottom: 30, left: 40},
+var svg = d3.select("svg"),
+    margin = {top: 20, right: 20, bottom: 30, left: 40},
     width = +svg.attr("width") - margin.left - margin.right,
     height = +svg.attr("height") - margin.top - margin.bottom,
     g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    // var margin = {top: 20, right: 150, bottom: 50, left: 40},
-    //     width = 600 - margin.left - marginStacked.right,
-    //     height = 500 - margin.top - marginStacked.bottom;
-    //
-    //
-    // var svg = d3.select("#stacked").append("svg")
-    //     .attr("width", widthStacked + marginStacked.left + marginStacked.right)
-    //     .attr("height", heightStacked + marginStacked.top + marginStacked.bottom)
-    //   .append("g")
-    //     .attr("transform", "translate(" + marginStacked.left + "," + marginStacked.top + ")");
-
 var x = d3.scaleBand()
     .rangeRound([0, width])
-    .padding(0.3)
-    .align(0.3);
+    .paddingInner(0.05)
+var x1 = d3.scaleBand()
+    .padding(0.05);
 
 var y = d3.scaleLinear()
     .rangeRound([height, 0]);
+var y1 = d3.scaleBand()
 
-var z = d3.scaleOrdinal(d3.schemeCategory20);
-    // .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+var z = d3.scaleOrdinal()
+    .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
 
-var stack = d3.stack();
+var stack = d3.stack()
+    .offset(d3.stackOffsetExpand);
 
-d3.csv("test.csv", type, function(error, data) {
+
+// ** Update student display based on raw input
+
+var nValue1 = 1;
+var nValue2 = 0;
+
+d3.select("#nValue1").on("input", function() {
+  nValue1 = this.value
+  update(+this.value, nValue2);
+});
+
+d3.select("#nValue2").on("input", function() {
+  nValue2 = this.value
+  update(nValue1, +this.value);
+});
+
+// Initial update value 
+update(1, 0);
+
+// adjust the text
+function update(nValue1, nValue2) {
+  var name_number1 = nValue1
+  var name_number2 = nValue2
+  compare_students(name_number1, name_number2)
+}
+
+
+/***************************************************************************
+                              COMPARISON VIEW
+***************************************************************************/
+function compare_students(name_number1, name_number2) {
+d3.selectAll("g > *").remove();
+
+d3.csv("histogram.csv", function(d, i, columns) {
+  for (i = 1, t = 0; i < columns.length; ++i) t += d[columns[i]] = +d[columns[i]];
+  d.total = t;
+  return d;
+  }, function(error, Originaldata) {
   if (error) throw error;
 
-  data.sort(function(a, b) { return b.total - a.total; });
+  var name1 = "student" + name_number1 + "_"
+  var name2 = "student" + name_number2 + "_"
 
-  x.domain(data.map(function(d) { return d.ethnicity; }));
-  y.domain([0, d3.max(data, function(d) { return d.total; })]).nice();
-  z.domain(data.columns.slice(1));
+  function filterCriteria1(d) {
+    return d.student_assignment_grade.includes(name1);
+  }
+  function filterCriteria2(d) {
+    return d.student_assignment_grade.includes(name2);
+  } 
 
-  g.selectAll(".serie")
-    .data(stack.keys(data.columns.slice(1))(data))
+  var data1 = Originaldata.filter(filterCriteria1);
+  var data2 = Originaldata.filter(filterCriteria2);
+
+  var i;
+  for (i = 0; i < data1.length; i++) {
+    data1[i].student_assignment_grade = data1[i].student_assignment_grade.split("_")[1];
+  }
+  for (i = 0; i < data2.length; i++) {
+    data2[i].student_assignment_grade = data2[i].student_assignment_grade.split("_")[1];
+  }
+
+  console.log(data1.length);
+  console.log(data2.length);
+  var keys = Originaldata.columns.slice(1);
+
+  data1.sort(function(a, b) { return b.total - a.total; });
+  x.domain(data1.map(function(d) { return d.student_assignment_grade; }));
+  y.domain([0, d3.max(data1, function(d) { return d.total; })]).nice();
+  z.domain(keys);
+
+  g.append("g")
+    .selectAll("g")
+    .data(d3.stack().keys(keys)(data1))
     .enter().append("g")
-      .attr("class", "serie")
       .attr("fill", function(d) { return z(d.key); })
     .selectAll("rect")
     .data(function(d) { return d; })
     .enter().append("rect")
-      .attr("x", function(d) { return x(d.data.ethnicity); })
+      .attr("x", function(d) { return x(d.data.student_assignment_grade); })
+      .attr("y", function(d) { return y(d[1]); })
+      .attr("height", function(d) { return y(d[0]) - y(d[1]); })
+      .attr("width", x.bandwidth());
+
+  g.append("text")
+        .attr("x", (width / 2))             
+        .attr("y", 0 - (margin.top/3))
+        .attr("text-anchor", "middle")  
+        .style("font-size", "16px") 
+        .style("text-decoration", "underline")  
+        .text(name.slice(0,-1));
+
+  g.append("g")
+      .attr("class", "axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x));
+
+  g.append("g")
+      .attr("class", "axis")
+      .call(d3.axisLeft(y).ticks(null, "s"))
+    .append("text")
+      .attr("x", 2)
+      //.attr("y", y(y.ticks().pop()) + 0.5)
+      .attr("dy", "0.32em")
+      .attr("fill", "#000")
+      .attr("font-weight", "bold")
+      .attr("text-anchor", "start")
+      .text("Number of instances");
+
+  var legend = g.append("g")
+      .attr("font-family", "sans-serif")
+      .attr("font-size", 10)
+      .attr("text-anchor", "end")
+    .selectAll("g")
+    .data(keys.slice().reverse())
+    .enter().append("g")
+      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+  legend.append("rect")
+      .attr("x", width - 19)
+      .attr("width", 19)
+      .attr("height", 19)
+      .attr("fill", z);
+
+  legend.append("text")
+      .attr("x", width - 24)
+      .attr("y", 9.5)
+      .attr("dy", "0.32em")
+      .text(function(d) { return d; });
+});
+};
+
+
+
+/***************************************************************************
+                               AGGREGATE VIEW
+***************************************************************************/
+function aggregate() {
+d3.selectAll("g > *").remove();
+d3.csv("grade_structures.csv", function(d, i, columns) {
+  for (i = 1, t = 0; i < columns.length; ++i) t += d[columns[i]] = +d[columns[i]];
+  d.total = t;
+  return d;
+}, function(error, data) {
+  if (error) throw error;
+  
+  console.log(data)
+  var keys = data.columns.slice(1);
+
+  data.sort(function(a, b) { return b.total - a.total; });
+  x.domain(data.map(function(d) { return d.grade; }));
+  y.domain([0, d3.max(data, function(d) { return d.total; })]).nice();
+  z.domain(keys);
+
+  g.append("g")
+    .selectAll("g")
+    .data(d3.stack().keys(keys)(data))
+    .enter().append("g")
+      .attr("fill", function(d) { return z(d.key); })
+    .selectAll("rect")
+    .data(function(d) { return d; })
+    .enter().append("rect")
+      .attr("x", function(d) { return x(d.data.grade); })
       .attr("y", function(d) { return y(d[1]); })
       .attr("height", function(d) { return y(d[0]) - y(d[1]); })
       .attr("width", x.bandwidth());
 
   g.append("g")
-      .attr("class", "axis axis--x")
+      .attr("class", "axis")
       .attr("transform", "translate(0," + height + ")")
       .call(d3.axisBottom(x));
 
   g.append("g")
-      .attr("class", "axis axis--y")
-      .call(d3.axisLeft(y).ticks(10, "s"))
+      .attr("class", "axis")
+      .call(d3.axisLeft(y).ticks(null, "s"))
     .append("text")
       .attr("x", 2)
-      .attr("y", y(y.ticks(10).pop()))
-      .attr("dy", "0.35em")
-      .attr("text-anchor", "start")
+      //.attr("y", y(y.ticks().pop()) + 0.5)
+      .attr("dy", "0.32em")
       .attr("fill", "#000")
-      .text("Population");
+      .attr("font-weight", "bold")
+      .attr("text-anchor", "start")
+      .text("Number of instances");
 
-  var legend = g.selectAll(".legend")
-    .data(data.columns.slice(1).reverse())
+  var legend = g.append("g")
+      .attr("font-family", "sans-serif")
+      .attr("font-size", 10)
+      .attr("text-anchor", "end")
+    .selectAll("g")
+    .data(keys.slice().reverse())
     .enter().append("g")
-      .attr("class", "legend")
-      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; })
-      .style("font", "10px sans-serif");
+      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
 
   legend.append("rect")
-      .attr("x", width + 18)
-      .attr("width", 18)
-      .attr("height", 18)
+      .attr("x", width - 19)
+      .attr("width", 19)
+      .attr("height", 19)
       .attr("fill", z);
 
   legend.append("text")
-      .attr("x", width + 44)
-      .attr("y", 9)
-      .attr("dy", ".35em")
-      .attr("text-anchor", "start")
+      .attr("x", width - 24)
+      .attr("y", 9.5)
+      .attr("dy", "0.32em")
       .text(function(d) { return d; });
 });
+};
 
-function type(d, i, columns) {
-  for (i = 1, t = 0; i < columns.length; ++i) t += d[columns[i]] = +d[columns[i]];
-  d.total = t;
-  return d;
-}
+
+d3.selectAll("input[name=filter]").on("change", function(d){
+
+  // value of selected radio
+  var value = this.value;
+
+	switch (value) {
+		case "aggregate":
+			aggregate()
+			break;
+		case "two":
+			compare_students(name_number)
+			break;
+	default:
+			aggregate()
+	}
+
+});
+
+// Automatic update for the update button
+
 </script>
-</body>
-</html>
-

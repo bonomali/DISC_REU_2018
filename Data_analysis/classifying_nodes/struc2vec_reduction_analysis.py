@@ -180,8 +180,8 @@ def node2vec_gen(HON_file = "",
 
 
 
-def classifying(MinSupport = 10, MaxOrder = 99, num_clusters = 10, p=1.0, q=1.0, num_communities = 14,
-				HON_file = "weighted-network-all.edge",out = "struc2vec-directed-classified"):
+def classifying(MinSupport = 10, MaxOrder = 99, num_clusters = 4, p=1.0, q=1.0, num_communities = 14,
+				HON_file = "weighted-network-all.edge",out = "struc2vec-directed-classified-4"):
 	node2vec_data = node2vec_gen(HON_file = HON_file, num_clusters = num_communities, p=p, q=q)
 	struc2vec_data = struc2vec_gen(HON_file=HON_file, MinSupport=MinSupport, MaxOrder=MaxOrder, num_clusters=num_clusters)
 	
