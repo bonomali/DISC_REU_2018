@@ -39,7 +39,7 @@ function click1(d){
 				if(isConnected(k, o)) 
 					sig = true;
 			});
-			return sig === true? 1: 0.1;
+			return sig === true? 1: 0.05;
 		});
 		node.style("fill-opacity", function(o) {
 			sig = false;
@@ -47,7 +47,7 @@ function click1(d){
 				if(isConnected(k, o)) 
 					sig = true;
 			});
-			return sig === true? 1: 0.1;
+			return sig === true? 0.7: 0.05;
 		});
 		link.style("stroke-opacity", function(o) {
 			sig = false;
@@ -55,7 +55,7 @@ function click1(d){
 				if(o.source === k || o.target === k) 
 					sig = true;
 			});
-			return sig === true? 1: 0.1;
+			return sig === true? 0.7: 0.05;
 		});
 		switch(Grouping) {
 			case "Gephi":
@@ -65,7 +65,7 @@ function click1(d){
 						if(o.source === k || o.target === k) 
 							sig = true;
 					});
-					return sig === true? marker(color(o.Gephi), 1.0) : marker(color(o.Gephi), 0.1);
+					return sig === true? marker(color(o.Gephi), 1.0) : marker(color(o.Gephi), 0.05);
 				});
 				break;
 			case "D15":
@@ -75,7 +75,7 @@ function click1(d){
 						if(o.source === k || o.target === k) 
 							sig = true;
 					});
-					return sig === true? marker(color(o.Group_15D), 1.0) : marker(color(o.Group_15D), 0.1);
+					return sig === true? marker(color(o.Group_15D), 1.0) : marker(color(o.Group_15D), 0.05);
 				});
 				break;
 			case "D2":
@@ -85,7 +85,7 @@ function click1(d){
 						if(o.source === k || o.target === k) 
 							sig = true;
 					});
-					return sig === true? marker(color(o.Group_2D), 1.0) : marker(color(o.Group_2D), 0.1);
+					return sig === true? marker(color(o.Group_2D), 1.0) : marker(color(o.Group_2D), 0.05);
 				});
 				break;
 			default:
@@ -95,14 +95,14 @@ function click1(d){
 						if(o.source === k || o.target === k) 
 							sig = true;
 					});
-					return sig === true? marker(color(o.Gephi), 1.0) : marker(color(o.Gephi), 0.1);
+					return sig === true? marker(color(o.Gephi), 1.0) : marker(color(o.Gephi), 0.05);
 				});
 				break;
 		}
 		
 		pool.forEach(function(k,i){
 			if(k.id == main_node.id){
-				let table = d3.select("#node_info");
+				var table = d3.select("#node_info");
 
 			// add in data
 				table.select("#id").select("td").text(k.id);
@@ -119,7 +119,7 @@ function click1(d){
 				child_name = child_name.slice(0,-1);
 			var idx = k.id.lastIndexOf(child_name);
 			if (k.id == main_node.id)
-				return 10.;
+				return 7.;
 			else if( idx > 0 ){
 				var node;
 				pool.forEach(function(d){
@@ -128,17 +128,19 @@ function click1(d){
 				});
 				if(node){
 					var tmp = k.id.slice(0,idx);
-					return 10.0 - tmp.replace('|','.').split('.').length;
+					return 7.0 - tmp.replace('|','.').split('.').length;
 				}
 			}
 			else
-				return 5.;
+				return 4;
 		});
+		
 		if(flag===true){
 			var p = name2path(d.id);
 			if(p){
 				flag=false;
 				click2(p);
+				mouseover(p);
 				click3(d.id);
 				flag=true;
 			}
@@ -159,10 +161,7 @@ function name2path(name){
 		p = d;
 		while( i>=0 ){
 			var children = p.children;
-			if(!p.children) {
-				i-=1;
-				continue;
-			}
+			if(!p.children) break;
 			var sig = false;
 			for(j = 0; j<children.length; j++){
 				if( children[j].data.name == arr[i] ){
@@ -223,7 +222,7 @@ var simulation = d3.forceSimulation()
 	.force("charge", d3.forceManyBody().strength(-10))
 	//.force("picky centre", pickyForce)
 	.force("collide", d3.forceCollide().radius(6))
-	.force("center", d3.forceCenter(width / 2, height / 2));
+	.force("center", d3.forceCenter(width , height));
 
 
 
@@ -270,8 +269,7 @@ d3.csv(NODE_FILE, function(nodes_data) {
 			.each(function(d) {
             var colour = color(d.Gephi);
 			var opacity = d.value;
-            d3.select(this).style("stroke", colour)
-						   .attr("stroke-opacity", opacity)
+            d3.select(this).attr("stroke-opacity", opacity)
                            .attr("marker-end", marker(colour, opacity));
         });
 
@@ -280,8 +278,9 @@ d3.csv(NODE_FILE, function(nodes_data) {
     		.selectAll("circle")
     		.data(graph.nodes)
     		.enter().append("circle")
-      		.attr("r",  function(d) { return 5.; } )
+      		.attr("r",  function(d) { return 4; } )
 			.attr("fill", function(d) { return color(d.Gephi); });
+
 
      		//.on("mouseover", mouseOver(.2))
       		//.on("mouseout", mouseOut)
@@ -302,7 +301,7 @@ d3.csv(NODE_FILE, function(nodes_data) {
 						});
 						if(o === d)
 							sig = true;
-						return sig === true? 1: 0.1;
+						return sig === true? 1: 0.05;
 					});
 				}
 			})
@@ -314,7 +313,7 @@ d3.csv(NODE_FILE, function(nodes_data) {
 							if(isConnected(k, o)) 
 								sig = true;
 						});
-						return sig === true? 1: 0.1;
+						return sig === true? 1: 0.05;
 					});
 				}
 			})
@@ -326,39 +325,31 @@ d3.csv(NODE_FILE, function(nodes_data) {
 		// double click anywhere on svg  to un-highlight
 		svg.on("dblclick" , function(d){
 			clicked = false;
-			console.log(clicked);
 			node.style("stroke-opacity", 1);
         	node.style("fill-opacity", 1);
+			node.attr("r", 4);
         	link.style("stroke-opacity", function(c) { return (c.value); });
-        	link.style("stroke", "#999");
+        	link.style("stroke", "gray");
 
 			switch(Grouping) {
 				case "Gephi":
-					link.style("stroke", function(c) {return color(c.Gephi)});
       				link.attr("marker-end", function(o) {
-					return o.source === d || o.target === d ? marker(color(o.Gephi), 1.0) : 
-						marker(color(o.Gephi), d.value);
+					return marker(color(o.Gephi), 1.0);
            		});
 					break;
 				case "D15":
-					link.style("stroke", function(c) {return color(c.Group_15D)})
 					link.attr("marker-end", function(o) {
-					return o.source === d || o.target === d ? marker(color(o.Group_15D), 1.0) : 
-						marker(color(o.Group_15D), d.value);
+					return marker(color(o.Group_15D), 1.0);
            		});
 					break;
 				case "D2":
-					link.style("stroke", function(c) {return color(c.Group_2D)})
 					link.attr("marker-end", function(o) {
-					return o.source === d || o.target === d ? marker(color(o.Group_2D), 1.0) : 
-						marker(color(o.Group_2D), d.value);
+					return marker(color(o.Group_2D), 1.0);
            		});
 					break;
 				default:
-					link.style("stroke", color(d.Gephi));
 					link.attr("marker-end", function(o) {
-					return o.source === d || o.target === d ? marker(color(o.Gephi), 1.0) : 
-						marker(color(o.Gephi), d.value);
+					return marker(color(o.Gephi), 1.0);
            		});
 					break;
 			}
@@ -378,14 +369,14 @@ d3.csv(NODE_FILE, function(nodes_data) {
 
   function ticked() {
     link
-        .attr("x1", function(d) { return d.source.x; })
-        .attr("y1", function(d) { return d.source.y; })
-        .attr("x2", function(d) { return d.target.x; })
-        .attr("y2", function(d) { return d.target.y; });
+        .attr("x1", function(d) { return d.source.x/2; })
+        .attr("y1", function(d) { return d.source.y/2;})
+        .attr("x2", function(d) { return d.target.x/2; })
+        .attr("y2", function(d) { return d.target.y/2; });
 
     node
-        .attr("cx", function(d) { return d.x; })
-        .attr("cy", function(d) { return d.y; });
+        .attr("cx", function(d) { return d.x/2; })
+        .attr("cy", function(d) { return d.y/2; });
   }
 
 
@@ -406,7 +397,7 @@ d3.selectAll("input[name=filter]").on("change", function(d){
 
 	switch (value) {
 		case "none":
-			node.attr("r",  function(d) { return 5.} )
+			node.attr("r",  function(d) { return 4;} )
 			break;
 		case "all":
 			node.attr("r",  function(d) { return d.out_size + d.in_size; } )
@@ -418,7 +409,7 @@ d3.selectAll("input[name=filter]").on("change", function(d){
 			node.attr("r",  function(d) { return d.out_size;} )
 			break;
 		default:
-			node.attr("r",  function(d) { return 5.} )
+			node.attr("r",  function(d) { return 4;} )
 	}
 
 
@@ -526,5 +517,4 @@ function dragended(d) {
 makeForceDirected();
 //----------------------------------------------------------------------------------------------------------------------------------------------//
 //----------------------------------------------------------------------------------------------------------------------------------------------//
-
 
