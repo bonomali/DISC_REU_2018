@@ -1,19 +1,17 @@
 .links line {
 	stroke-width: 2px;
+	stroke: gray;
+
 }
 
 .nodes circle {
-	stroke: black;
-	stroke-width: 0px;
+	stroke: white;
+	stroke-width: 1px;
 }
 
-svg, table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
 
-th, td {
-    padding: 15px;
+th, td ,label, li{
+    padding: 1px;
 }
 
 th {
@@ -22,8 +20,17 @@ th {
 
 #hon_diagram {
   float: left;
-  width: 75%;
-  padding: 5px;
+  width: 32%;
+}
+
+#full_sunburst {
+  float: left;
+  width: 32%;
+}
+
+#sankey_diagram {
+  float: left;
+  width: 32%;
 }
 
 #sun_path {
@@ -33,34 +40,38 @@ th {
 
 text {
   fill: white;
-  font: 30px sans-serif;
+  font: 15px sans-serif;
   text-anchor: end;
+
 }
 
-#full_sunburst {
-	width: 50%;
+#active_sequence {
+	width: 400px;
 	border-collapse: collapse;
 	display:inline-block;
 }
 
 #dialog-window {
 	float: left;
-	width: 35%;
-  	height: 660px;
-  	border: 1px black solid;
+	width: 32%;
+  	height: 475px;
 	display:inline-block;
 }
 
 #non-scrollable-content {
-	height: 100px;
+	height: 75px;
 }
 
 #scrollable-content {
-  height: 544px;
+  height: 400px;
   overflow: auto;
 }
+#hon_info {
+	float: right;
+	width: 32%;
+}
 .node rect {
-cursor: move;
+		cursor: move;
 		fill-opacity: .9;
 		shape-rendering: crispEdges;
 }
@@ -71,8 +82,8 @@ cursor: move;
 }
 
 .link {
-fill: none;
-stroke: #000;
+	fill: none;
+	stroke: #000;
 }
 
 .link:hover {
@@ -80,8 +91,10 @@ stroke: #000;
 }
 
 .scrollable-content {
-  height: 150px;
+  height: 275px;
   overflow: auto;
+  width: 200px;
+  float: left; 
 }
 .sankey_sequence {
   display: block;
