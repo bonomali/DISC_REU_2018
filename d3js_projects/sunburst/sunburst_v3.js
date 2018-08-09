@@ -3,8 +3,8 @@
 //----------------------------------------------------------------------------------------------------------------------------------------------//
 //console.log(node);
 var pool = new Array();
-var width = 960,
-    height = 600,
+var width = 400,
+    height = 400,
 	radius = (Math.min(width, height) / 2) - 10;
 var x = d3.scaleLinear()
     .range([0, 2 * Math.PI]);
@@ -90,8 +90,8 @@ function click2(d) {
 			}
 			return 5.; 
 		});
-		console.log('---------------');
 		flag = false;
+		save.length = 0;
 		click1(pool[0]);
 		pool.length=0;
 		click3(node_name);
@@ -163,7 +163,34 @@ function getIndicesOf(searchStr, str, caseSensitive) {
     }
     return indices;
 }
-
+var sequence = 	d3.select("#active_sequence").append("svg")
+	.attr("width" , 400)
+	.attr("height" , 50);
+	
+function mouseover(d) {
+	d3.selectAll("#active_sequence_data").remove();
+	// display on screen the current sequence
+	var node = d;
+	while(node.parent){
+		// add rectangles
+		sequence.append("rect")
+			.attr("id" , "active_sequence_data")
+			.attr("width" , 70)
+			.attr("height" , 50)
+			.style("fill", function(e) { return color2(node.data.name); })
+			.attr("transform" , function(e){ return "translate(" + (node.depth * 70 - 70) + ", 0)"})
+		// add text
+		sequence.append("text")
+			.attr("id" , "active_sequence_data")
+    		.attr("x", function(e) { return node.depth * 70 - 35; })
+    		.attr("y", 25)
+    		.attr("dy", ".35em")
+    		.text(function(e) { return node.data.name; });
+		
+		node = node.parent;
+	}
+	
+}
 function makeSunburst(){
 
 const INPUT_FILE = "json_files/sunburst_data_struc2vec.json"
@@ -176,9 +203,7 @@ var formatNumber = d3.format(",d");
 // center pie chart
 var pieChart = d3.pie().value(function(d) { return 5; });
 
-var sequence = 	d3.select("#active_sequence").append("svg")
-	.attr("width" , 1000)
-	.attr("height" , 50)
+
 
 // add svg element
 
@@ -198,7 +223,6 @@ d3.json(INPUT_FILE, function(error, root) {
       .style("fill", function(d) { return color2(d.data.name); })
       .on("click", click2)
 	  .on("mouseover" , mouseover)
-	  .on("mouseout" , mouseleave)
       .append("title")
       .text(function(d) { return d.data.name + "\n" + formatNumber(d.value); });
 });
@@ -211,36 +235,8 @@ String.prototype.replaceAll = function(str1, str2, ignore)
 } 
 
 // Mouse over effects
-function mouseover(d) {
-
-	// display on screen the current sequence
-	var node = d;
-	while(node.parent){
-		// add rectangles
-		sequence.append("rect")
-			.attr("id" , "active_sequence_data")
-			.attr("width" , 100)
-			.attr("height" , 50)
-			.style("fill", function(e) { return color2(node.data.name); })
-			.attr("transform" , function(e){ return "translate(" + (node.depth * 100 - 100) + ", 0)"})
-		// add text
-		sequence.append("text")
-			.attr("id" , "active_sequence_data")
-    		.attr("x", function(e) { return node.depth * 100 - 50; })
-    		.attr("y", 25)
-    		.attr("dy", ".35em")
-    		.text(function(e) { return node.data.name; });
-		
-		node = node.parent;
-	}
-	
-}
 
 // clear mouse over effects
-function mouseleave(d) {
-	d3.selectAll("#active_sequence_data").remove();
-}
-
 
 } // end scope for webpage
 
