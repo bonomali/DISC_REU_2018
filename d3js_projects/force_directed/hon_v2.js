@@ -19,166 +19,107 @@ var svg = d3.select("#hon_diagram").select("svg");
 var defs = svg.append("svg:defs");
 var color = d3.scaleOrdinal(d3.schemeCategory10);
 var flag=true;
-var main_node;
-var clicked = false;
-var save = new Array();
 function click1(d){
 	/* highlight travel path for nodes */
 
 	// check all other nodes to see if they're connected
     // to this one. if so, keep the opacity at 1, otherwise
     // fade
-		var sig;
-		clicked = true;
-		pool.forEach(function(d){
-			save.push(d);
-		});
-		node.style("stroke-opacity", function(o) {
-			sig = false;
-			pool.forEach(function(k,i){
-				if(isConnected(k, o)) 
-					sig = true;
-			});
-			return sig === true? 1: 0.05;
-		});
-		node.style("fill-opacity", function(o) {
-			sig = false;
-			pool.forEach(function(k,i){
-				if(isConnected(k, o)) 
-					sig = true;
-			});
-			return sig === true? 1: 0.05;
-		});
-		link.style("stroke-opacity", function(o) {
-			sig = false;
-			pool.forEach(function(k,i){
-				if(o.source === k || o.target === k) 
-					sig = true;
-			});
-			return sig === true? 1: 0.05;
-		});
-		switch(Grouping) {
-			case "Gephi":
-      			link.attr("marker-end", function(o) {
-					sig = false;
-					pool.forEach(function(k,i){
-						if(o.source === k || o.target === k) 
-							sig = true;
-					});
-					return sig === true? marker(color(o.Gephi), 1.0) : marker(color(o.Gephi), 0.05);
-				});
-				break;
-			case "D15":
-				link.attr("marker-end", function(o) {
-					sig = false;
-					pool.forEach(function(k,i){
-						if(o.source === k || o.target === k) 
-							sig = true;
-					});
-					return sig === true? marker(color(o.Group_15D), 1.0) : marker(color(o.Group_15D), 0.05);
-				});
-				break;
-			case "D2":
-				link.attr("marker-end", function(o) {
-					sig = false;
-					pool.forEach(function(k,i){
-						if(o.source === k || o.target === k) 
-							sig = true;
-					});
-					return sig === true? marker(color(o.Group_2D), 1.0) : marker(color(o.Group_2D), 0.05);
-				});
-				break;
-			default:
-				link.attr("marker-end", function(o) {
-					sig = false;
-					pool.forEach(function(k,i){
-						if(o.source === k || o.target === k) 
-							sig = true;
-					});
-					return sig === true? marker(color(o.Gephi), 1.0) : marker(color(o.Gephi), 0.05);
-				});
-				break;
-		}
-		
-		pool.forEach(function(k,i){
-			if(k.id == main_node.id){
-				var table = d3.select("#node_info");
-
-			// add in data
-				table.select("#id").select("td").text(k.id);
-				table.select("#group").select("td").text(k.Gephi);
-				table.select("#inLinks").select("td").text( (k.in_size - 2) / .5);
-				table.select("#outLinks").select("td").text( (k.out_size - 2) / .5);
-			}
-			
-		});
-		
-		node.attr("r",  function(k) {
-			var child_name = '.' + main_node.id.replace('|','.');
-			if(child_name[ child_name.length-1 ] == '.')
-				child_name = child_name.slice(0,-1);
-			var idx = k.id.lastIndexOf(child_name);
-			if (k.id == main_node.id)
-				return 7.;
-			else if( idx > 0 ){
-				var node;
-				pool.forEach(function(d){
-					if(d.id === k.id)
-						node = d;
-				});
-				if(node){
-					var tmp = k.id.slice(0,idx);
-					return 7.0 - tmp.replace('|','.').split('.').length;
-				}
-			}
-			else
-				return 4;
-		});
-		
-		if(flag===true){
-			var p = name2path(d.id);
-			if(p){
-				flag=false;
-				click2(p);
-				mouseover(p);
-				click3(d.id);
-				flag=true;
-			}
-		}
-			
-}
-function name2path(name){
-	var node_name = name;
-	if(node_name[node_name.length-1] == '|')
-		node_name = node_name.slice(0,-1);
-	var arr = node_name.replace('|','.').split('.');
-	console.log(arr);
-	var i = arr.length-1;
-	var p;
-	path.attr('id',function(d){
-		var j;
-		if( d.data.name != "root") return "sunpath";
-		p = d;
-		while( i>=0 ){
-			var children = p.children;
-			if(!p.children) break;
-			var sig = false;
-			for(j = 0; j<children.length; j++){
-				if( children[j].data.name == arr[i] ){
-					sig = true;
-					p = children[j];
-				}
-			}
-			if( sig === false ) break;
-			console.log(i+ " : " +arr[i]);
-			i-=1;
-		}
-		return "sunpath";
+    node.style("stroke-opacity", function(o) {
+		thisOpacity = isConnected(d, o) ? 1 : 0.1;
+		return thisOpacity;
+    });
+    node.style("fill-opacity", function(o) {
+        thisOpacity = isConnected(d, o) ? 1 : 0.1;
+        return thisOpacity;
+    });
+    // also style link accordingly
+    link.style("stroke-opacity", function(o) {
+        return o.source === d || o.target === d ? 1 : 0.1;
 	});
-	if(i<0)
-		return p;
-	else
-		return null;
+
+				
+				switch(Grouping) {
+				case "Gephi":
+      				link.attr("marker-end", function(o) {
+					return o.source === d || o.target === d ? marker(color(o.Gephi), 1.0) : 
+						marker(color(o.Gephi), 0.1);
+           		});
+					break;
+				case "D15":
+					link.attr("marker-end", function(o) {
+					return o.source === d || o.target === d ? marker(color(o.Group_15D), 1.0) : 
+						marker(color(o.Group_15D), 0.1);
+           		});
+					break;
+				case "D2":
+					link.attr("marker-end", function(o) {
+					return o.source === d || o.target === d ? marker(color(o.Group_2D), 1.0) : 
+						marker(color(o.Group_2D), 0.1);
+           		});
+					break;
+				default:
+					link.attr("marker-end", function(o) {
+					return o.source === d || o.target === d ? marker(color(o.Gephi), 1.0) : 
+						marker(color(o.Gephi), 0.1);
+           		});
+					break;
+			}
+				
+
+
+				let table = d3.select("#node_info");
+
+				// add in data
+				table.select("#id").select("td").text(d.id);
+				table.select("#group").select("td").text(d.Gephi);
+				table.select("#inLinks").select("td").text( (d.in_size - 2) / .5);
+				table.select("#outLinks").select("td").text( (d.out_size - 2) / .5);
+				
+		if(flag===true){
+				console.log(path);
+				var node_name = d.id;
+				if(node_name[node_name.length-1] == '|')
+					node_name = node_name.slice(0,-1);
+				var arr = node_name.replace('|','.').split('.');
+				console.log(arr);
+				var i = arr.length-1;
+				path.attr('id',function(d){
+					var p = d;
+					var j;
+					if( d.data.name != "root") return "sunpath";
+
+					while( i>=0 ){
+						if(p.children)
+							var children = p.children;
+						else
+						{
+							i--;
+							continue;
+						}
+						var sig = false;
+						for(j = 0; j<children.length; j++){
+							if( children[j].data.name == arr[i] ){
+								sig = true;
+								p = children[j];
+							}
+						}
+						if( sig === false )
+							break;
+						console.log(i+ " : " +arr[i]);
+						i--;
+					}
+					
+					if(i<0)
+					{
+						flag=false;
+						click2(p);
+						flag=true;
+					}
+					return 'sunpath';
+				});
+		}
+			
 }
 function isConnected(a, b) {
     return linkedByIndex[a.index + "," + b.index] || linkedByIndex[b.index + "," + a.index] || a.index == b.index;
@@ -206,7 +147,7 @@ function marker(color, opacity) {
 function makeForceDirected(){
 
 //Define where to look for nodes and where to look for links
-const NODE_FILE =  "csv_files/struc2vec-directed-weighted-classified1.csv"
+const NODE_FILE =  "csv_files/struc2vec-directed-weighted-classified.csv"
 const LINK_FILE = "csv_files/weights-network-cell.csv"
 
 //Load up pre-defined svg
@@ -218,11 +159,11 @@ var	width = +svg.attr("width"),
 var simulation = d3.forceSimulation()
 	.force("link", d3.forceLink().id(function(d) {return d.id; })
 								 .strength(link => link.value)
-								 .distance(link => 1.0/link.value))
+								 .distance(link => 1./link.value))
 	.force("charge", d3.forceManyBody().strength(-10))
 	//.force("picky centre", pickyForce)
 	.force("collide", d3.forceCollide().radius(6))
-	.force("center", d3.forceCenter(width , height/0.95));
+	.force("center", d3.forceCenter(width / 2, height / 2));
 
 
 
@@ -269,7 +210,8 @@ d3.csv(NODE_FILE, function(nodes_data) {
 			.each(function(d) {
             var colour = color(d.Gephi);
 			var opacity = d.value;
-            d3.select(this).attr("stroke-opacity", opacity)
+            d3.select(this).style("stroke", colour)
+						   .attr("stroke-opacity", opacity)
                            .attr("marker-end", marker(colour, opacity));
         });
 
@@ -278,45 +220,12 @@ d3.csv(NODE_FILE, function(nodes_data) {
     		.selectAll("circle")
     		.data(graph.nodes)
     		.enter().append("circle")
-      		.attr("r",  function(d) { return 4; } )
+      		.attr("r",  function(d) { return 5.; } )
 			.attr("fill", function(d) { return color(d.Gephi); });
-
 
      		//.on("mouseover", mouseOver(.2))
       		//.on("mouseout", mouseOut)
-			node.on("click" , function(d){
-				save.length = 0;
-				pool.push(d);
-				main_node=d;
-				click1(d);
-				pool.length=0;
-			})
-			.on("mouseover",function(d){
-				if(clicked === true){
-					node.style("fill-opacity", function(o) {
-						sig = false;
-						save.forEach(function(k,i){
-							if(isConnected(k, o)) 
-								sig = true;
-						});
-						if(o === d)
-							sig = true;
-						return sig === true? 1: 0.05;
-					});
-				}
-			})
-			.on("mouseout",function(d){
-				if(clicked === true){
-					node.style("fill-opacity", function(o) {
-						sig = false;
-						save.forEach(function(k,i){
-							if(isConnected(k, o)) 
-								sig = true;
-						});
-						return sig === true? 1: 0.05;
-					});
-				}
-			})
+			node.on("click" , click1)
 			.call(d3.drag()
           		.on("start", dragstarted)
           		.on("drag", dragged)
@@ -325,31 +234,39 @@ d3.csv(NODE_FILE, function(nodes_data) {
 		// double click anywhere on svg  to un-highlight
 		svg.on("dblclick" , function(d){
 			clicked = false;
+			console.log(clicked);
 			node.style("stroke-opacity", 1);
         	node.style("fill-opacity", 1);
-			node.attr("r", 4);
         	link.style("stroke-opacity", function(c) { return (c.value); });
-        	link.style("stroke", "gray");
+        	link.style("stroke", "#999");
 
 			switch(Grouping) {
 				case "Gephi":
+					link.style("stroke", function(c) {return color(c.Gephi)});
       				link.attr("marker-end", function(o) {
-					return marker(color(o.Gephi), 1.0);
+					return o.source === d || o.target === d ? marker(color(o.Gephi), 1.0) : 
+						marker(color(o.Gephi), d.value);
            		});
 					break;
 				case "D15":
+					link.style("stroke", function(c) {return color(c.Group_15D)})
 					link.attr("marker-end", function(o) {
-					return marker(color(o.Group_15D), 1.0);
+					return o.source === d || o.target === d ? marker(color(o.Group_15D), 1.0) : 
+						marker(color(o.Group_15D), d.value);
            		});
 					break;
 				case "D2":
+					link.style("stroke", function(c) {return color(c.Group_2D)})
 					link.attr("marker-end", function(o) {
-					return marker(color(o.Group_2D), 1.0);
+					return o.source === d || o.target === d ? marker(color(o.Group_2D), 1.0) : 
+						marker(color(o.Group_2D), d.value);
            		});
 					break;
 				default:
+					link.style("stroke", color(d.Gephi));
 					link.attr("marker-end", function(o) {
-					return marker(color(o.Gephi), 1.0);
+					return o.source === d || o.target === d ? marker(color(o.Gephi), 1.0) : 
+						marker(color(o.Gephi), d.value);
            		});
 					break;
 			}
@@ -369,14 +286,14 @@ d3.csv(NODE_FILE, function(nodes_data) {
 
   function ticked() {
     link
-        .attr("x1", function(d) { return d.source.x/1.98; })
-        .attr("y1", function(d) { return d.source.y/1.98;})
-        .attr("x2", function(d) { return d.target.x/1.98; })
-        .attr("y2", function(d) { return d.target.y/1.98; });
+        .attr("x1", function(d) { return d.source.x; })
+        .attr("y1", function(d) { return d.source.y; })
+        .attr("x2", function(d) { return d.target.x; })
+        .attr("y2", function(d) { return d.target.y; });
 
     node
-        .attr("cx", function(d) { return d.x/1.98; })
-        .attr("cy", function(d) { return d.y/1.98; });
+        .attr("cx", function(d) { return d.x; })
+        .attr("cy", function(d) { return d.y; });
   }
 
 
@@ -397,7 +314,7 @@ d3.selectAll("input[name=filter]").on("change", function(d){
 
 	switch (value) {
 		case "none":
-			node.attr("r",  function(d) { return 4;} )
+			node.attr("r",  function(d) { return 5.} )
 			break;
 		case "all":
 			node.attr("r",  function(d) { return d.out_size + d.in_size; } )
@@ -409,7 +326,7 @@ d3.selectAll("input[name=filter]").on("change", function(d){
 			node.attr("r",  function(d) { return d.out_size;} )
 			break;
 		default:
-			node.attr("r",  function(d) { return 4;} )
+			node.attr("r",  function(d) { return 5.} )
 	}
 
 
@@ -437,7 +354,8 @@ d3.selectAll("input[name=grouping]").on("change", function(d){
 				default: 
 					link.attr("marker-end", function(d) {return marker(color(d.Gephi), d.value)})
 				}
-			node.attr("fill", function(d) { return color(d.Gephi); });
+			link.style("stroke", function(d) {return color(d.Gephi)})
+			node.attr("fill", function(d) { return color(d.Gephi); })
 			break;
 
 		case "D15":
@@ -455,7 +373,9 @@ d3.selectAll("input[name=grouping]").on("change", function(d){
 				default: 
 					link.attr("marker-end", function(d) {return marker(color(d.Group_15D), d.value)})
 				}
-			node.attr("fill", function(d) { return color(d.Group_15D); });		
+			//link.attr("marker-end", function(d) {return marker(color(d.Group_15D), d.value)})
+			link.style("stroke", function(d) {return color(d.Group_15D)})
+			node.attr("fill", function(d) { return color(d.Group_15D); })			
 			break;
 
 		case "D2":
@@ -473,7 +393,10 @@ d3.selectAll("input[name=grouping]").on("change", function(d){
 				default: 
 					link.attr("marker-end", function(d) {return marker(color(d.Group_2D), d.value)})
 				}
-			node.attr("fill", function(d) { return color(d.Group_2D); });
+
+			//link.attr("marker-end", function(d) {return marker(color(d.Group_2D), d.value)})
+			link.style("stroke", function(d) {return color(d.Group_2D)})
+			node.attr("fill", function(d) { return color(d.Group_2D); })	
 			break;
 		default:
 			link.attr("marker-end", function(d) {return marker(color(d.Gephi), d.value)})

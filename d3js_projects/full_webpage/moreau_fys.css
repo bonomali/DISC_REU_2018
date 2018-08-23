@@ -1,7 +1,6 @@
 .links line {
 	stroke-width: 2px;
 	stroke: gray;
-
 }
 
 .nodes circle {
@@ -10,8 +9,9 @@
 }
 
 
-th, td ,label, li{
+#hon_info th,td,label,li{
     padding: 1px;
+	font: 11px sans-serif;
 }
 
 th {
@@ -20,17 +20,14 @@ th {
 
 #hon_diagram {
   float: left;
-  width: 32%;
 }
 
 #full_sunburst {
   float: left;
-  width: 32%;
 }
 
 #sankey_diagram {
   float: left;
-  width: 32%;
 }
 
 #sun_path {
@@ -38,37 +35,51 @@ th {
   stroke-width: 1px;
 }
 
-text {
-  fill: white;
-  font: 15px sans-serif;
-  text-anchor: end;
-
+#histogram text {
+  fill: black;
+  font: 10px sans-serif;
 }
-
+#sankey_info text{
+	fill: black;
+	font: 11px sans-serif;
+}
+#sankey_diagram text{
+	fill: black;
+	font: 13px sans-serif;
+}
+#full_sunburst text{
+	fill: white;
+	font: 15px sans-serif;
+}
 #active_sequence {
-	width: 400px;
+	width: 500px;
 	border-collapse: collapse;
 	display:inline-block;
 }
 
 #dialog-window {
 	float: left;
-	width: 32%;
-  	height: 475px;
+  	height: 350px;
 	display:inline-block;
 }
-
+#url_table{
+	height: 150px;
+	width: 325px;
+	border-style: ridge;
+	border-color: black;
+	overflow:auto;
+	background-color:#f7f7f7;
+}
 #non-scrollable-content {
-	height: 75px;
+	height: 65px;
 }
 
 #scrollable-content {
-  height: 400px;
+  height: 150px;
   overflow: auto;
 }
 #hon_info {
 	float: right;
-	width: 32%;
 }
 .node rect {
 		cursor: move;
@@ -78,7 +89,7 @@ text {
 
 .node text {
 		pointer-events: none;
-		text-shadow: 0 1px 0 #000;
+		fill: black;
 }
 
 .link {
@@ -87,17 +98,19 @@ text {
 }
 
 .link:hover {
-		stroke-opacity: .5;
+	stroke-opacity: .5;
 }
 
 .scrollable-content {
-  height: 275px;
+  height: 180px;
   overflow: auto;
-  width: 200px;
+  width: 180px;
   float: left; 
 }
 .sankey_sequence {
   display: block;
 }
-
+.sankey_sequence text {
+	font: 10px sans-serif;
+}
 

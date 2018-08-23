@@ -3,8 +3,8 @@
 //----------------------------------------------------------------------------------------------------------------------------------------------//
 //console.log(node);
 var pool = new Array();
-var width = 400,
-    height = 400,
+var width = 330,
+    height = 330,
 	radius = (Math.min(width, height) / 2) - 10;
 var x = d3.scaleLinear()
     .range([0, 2 * Math.PI]);
@@ -175,15 +175,15 @@ function mouseover(d) {
 		// add rectangles
 		sequence.append("rect")
 			.attr("id" , "active_sequence_data")
-			.attr("width" , 70)
-			.attr("height" , 50)
+			.attr("width" , 50)
+			.attr("height" , 30)
 			.style("fill", function(e) { return color2(node.data.name); })
-			.attr("transform" , function(e){ return "translate(" + (node.depth * 70 - 70) + ", 0)"})
+			.attr("transform" , function(e){ return "translate(" + (node.depth * 50 - 50) + ", 0)"})
 		// add text
 		sequence.append("text")
 			.attr("id" , "active_sequence_data")
-    		.attr("x", function(e) { return node.depth * 70 - 35; })
-    		.attr("y", 25)
+    		.attr("x", function(e) { return node.depth * 50 - 25; })
+    		.attr("y", 20)
     		.attr("dy", ".35em")
     		.text(function(e) { return node.data.name; });
 		
@@ -233,10 +233,22 @@ String.prototype.replaceAll = function(str1, str2, ignore)
 {
     return this.replace(new RegExp(str1.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g,"\\$&"),(ignore?"gi":"g")),(typeof(str2)=="string")?str2.replace(/\$/g,"$$$$"):str2);
 } 
-
-// Mouse over effects
-
-// clear mouse over effects
+url_file = "csv_files/object_ref_v3.csv";
+d3.csv(url_file,function(error,data){
+	data.sort(function(a, b) { return a.num - b.num; });
+	d3.select("#url_table").style.background = "blue";
+	d3.select("#url_table").select("table").select("tbody")
+		.selectAll("tr")
+		.data(data)
+		.enter()
+		.append("tr")
+		.selectAll("td")
+		.data(function(d){ return [d.num,d.url,d.type]; })
+		.enter()
+		.append("td")
+		.text(function(d){ return d; });
+	
+});
 
 } // end scope for webpage
 

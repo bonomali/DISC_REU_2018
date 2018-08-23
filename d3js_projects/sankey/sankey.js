@@ -3,8 +3,9 @@ function click3(name){
 	selected.nodes.forEach( function(node){
 		if(node.name === name) needToAdd = false;
 	});
-
-	if(needToAdd && selected.nodes.length - 5 <=4){
+	console.log("need:"+name+' '+needToAdd.toString());
+	console.log(selected);
+	if(needToAdd && selected.nodes.length - 5 < 4){
 
 		// select node of same name
 		graph.nodes.forEach(function(node){
@@ -43,7 +44,12 @@ function click3(name){
 	
 	if(!needToAdd && flag==true){
 		graph.nodes.forEach(function(node){
-			if(node.name === name)  selected.nodes.pop(node);
+			if(node.name === name)  {
+				console.log("pop");
+				console.log(node);
+				selected.nodes.pop(node);
+				console.log(selected.nodes);
+			}
 		});
 		graph.links.forEach(function(link){
 			if(link.source.name === name) selected.links.pop(link);
@@ -69,16 +75,19 @@ function click3(name){
 			}
 			return 5;
 		});
+		save.length = 0;
 		click1(pool[0]);
 		pool.length = 0;
 //----------------find the node in graph 2---------------------//
 		var p = name2path(name);
-		if(p)
+		if(p){
+			mouseover(p);
 			click2(p);
+		}
 		flag=true;
 	}
 }
- function dragmove(d) {
+function dragmove(d) {
     d3.select(this)
       .attr("transform", 
             "translate(" 
@@ -92,9 +101,9 @@ function click3(name){
 function draw(data){
 	svg3.selectAll("g").remove();
 	var sankey = d3.sankey()
-		.nodeWidth(56)
-		.nodePadding(40)
-		.size([width, height]);
+		.nodeWidth(75)
+		.nodePadding(25)
+		.size([380, 200]);
 	path3 = sankey.link();
 	sankey
       .nodes(data.nodes)
@@ -109,7 +118,7 @@ function draw(data){
       .attr("d", path3)
 	  .attr("stroke-opacity", 0.2)
       .style("stroke-width", function(d) { return Math.max(1, d.dy); })
-      .sort(function(a, b) { return b.dy - a.dy; });
+      .sort(function(a, b) { return a.dy - b.dy; });
 	
 
   // add the link titles
@@ -138,36 +147,51 @@ function draw(data){
   node.append("rect")
       .attr("height", function(d) { return d.dy; })
       .attr("width", sankey.nodeWidth())
-      .style("fill", function(d) { 
-		  return d.color = color3(d.name.replace(/ .*/, "")); })
+      .style("fill", function(d){
+		  return d.color = color3(d.name.replace(/ .*/, ""));
+		})
       .style("stroke", function(d) { 
 		  return d3.rgb(d.color).darker(2); })
-    .append("title")
+      .append("title")
       .text(function(d) { 
-		  return d.name + "\n" + format(d.value); });
+		  return d.url + "\n" + format(d.value); });
 
   // add in the title for the nodes
-  node.append("text")
-      .attr("x", -6)
+  var text= node.append("text")
+      .attr("x", sankey.nodeWidth())
       .attr("y", function(d) { return d.dy / 2; })
-      .attr("dy", ".35em")
+      .attr("dy", function(d) { return d.dy / 2;})
       .attr("text-anchor", "end")
       .attr("transform", null)
-      .text(function(d) { return d.name; })
-    .filter(function(d) { return d.x < width / 2; })
-      .attr("x", sankey.nodeWidth())
-      .attr("text-anchor", "start");
+      .text(function(d) { 
+		switch(d.name){
+			case "A":
+				return "1.0";
+			case "B":
+				return "0.90-0.99";
+			case "C":
+				return "0.80-0.89";
+			case "D":
+				return "0.70-0.79";
+			case "F":
+				return "0.00-0.69";
+			default:
+				return d.name;
+		}
+	  })
+      .filter(function(d) { return d.x < width / 2; });
+
 }
 var graph = {"nodes" : [], "links" : []};;
 var	selected = { "nodes":[] , "links":[] };
 
 var margin = {top: 10, right: 10, bottom: 10, left: 10},
-    width = 700 - margin.left - margin.right,
-    height = 300 - margin.top - margin.bottom;
+    width = 400 - margin.left - margin.right,
+    height = 250;
 var svg3 = d3.select("#sankey_diagram").append("svg")
     .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-  .append("g")
+    .attr("height", height)
+    .append("g")
     .attr("transform", 
           "translate(" + margin.left + "," + margin.top + ")");
 var path3;
@@ -180,9 +204,10 @@ var color3 = d3.scaleOrdinal(d3.schemeCategory20);
 
 function makeSankeyD3V4(){
 
-var sankey_data = "csv_files/dummy_grades.csv";
-
+var sankey_data = "csv_files/dummy_grades_v2.csv";
+var url_file = "csv_files/object_ref_v2.csv";
 // load the data
+d3.csv(url_file, function(e , url_data){
 d3.csv(sankey_data, function(error, data) {
  
 	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -190,16 +215,15 @@ d3.csv(sankey_data, function(error, data) {
 	graph = {"nodes" : [], "links" : []};
 
   	data.forEach(function (d) {
-    	graph.nodes.push({ "name": d.source });
-    	graph.nodes.push({ "name": d.target });
+    	graph.nodes.push({ "name": d.source});
+    	graph.nodes.push({ "name": d.target});
     	graph.links.push({ "source": d.source,
         	               "target": d.target,
             	           "value": +d.value });
    	});
 
   	// return only the distinct / unique nodes
-  	graph.nodes = d3.keys(d3.nest()
-    	.key(function (d) { return d.name; })
+  	graph.nodes = d3.keys(d3.nest().key(function (d) { return d.name; })
     	.object(graph.nodes));
 
   	// loop through each link replacing the text with its index from node
@@ -210,9 +234,20 @@ d3.csv(sankey_data, function(error, data) {
 
   	// now loop through each nodes to make nodes an array of objects
   	// rather than an array of strings
-  	graph.nodes.forEach(function (d, i) {
-    	graph.nodes[i] = { "name": d };
-  	});
+	graph.nodes.forEach(function (d, i) {
+		var url_name = "";
+		var arr = d.replace('|','.').split('.');
+		arr.reverse();
+		arr.forEach(function(number){
+			url_data.forEach(function(line){
+				if(line.num == number)
+					url_name = url_name + line.url + '-->';
+			});
+		});
+		url_name = url_name.slice(0,-3);
+		graph.nodes[i] = { "name": d, "url":url_name };
+	});
+  	
 
 	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	// sequence selector
@@ -238,12 +273,22 @@ d3.csv(sankey_data, function(error, data) {
 				break;
 		}
 	});
-
+	
+var special = ["18|37.13", "37|12", "18|36.18.37.29","18|37.12","37|13","36|6.34"]
 	// add buttons to sequence selector
 	var data_buttons = d3.select("#sankey_button").selectAll("button")
 		.data(sequences).enter()
 		.append("button")
 			.attr("class" , "sankey_sequence")
+			.style("background", function(d){
+				var sig = false;
+				special.forEach(function(name){if(name===d) sig=true; });
+				if(sig===true){
+					return "red";
+				}
+				else
+					return "white";
+			})
 			.text(d => d);
 
 
@@ -255,42 +300,25 @@ d3.csv(sankey_data, function(error, data) {
 	
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	draw(graph);
-	var	demo = { "nodes":[] , "links":[] };
 	var i;
-	for(i = 0;i < 4;i+=1){
+	flag = false;
+	for(i = 0;i < 3;i+=1){
 		var r = Math.floor(Math.random()*502);
-		demo.nodes.push(graph.nodes[r]);
+		click3(graph.nodes[r].name);
 	}
-	graph.nodes.forEach(function(node){
-
-			if(node.name == "A") {
-				demo.nodes.push(node);
-			}
-			if(node.name == "B") {
-				demo.nodes.push(node);
-			}
-			if(node.name == "C") {
-				demo.nodes.push(node);
-			}
-			if(node.name == "D") {
-				demo.nodes.push(node);
-			}
-			if(node.name == "F") {
-				demo.nodes.push(node);
-			}
-			
-	});
-	demo.nodes.forEach(function(node){
-		
-		graph.links.forEach(function(link){
-			if(link.source === node) demo.links.push(link);
-		});
-	});
-	draw(demo);
-
+	flag = true;
+	draw(selected);
+	selected.nodes.length = 0;
+	selected.links.length = 0;
+	signal.A = 0;
+	signal.B = 0;
+	signal.C = 0;
+	signal.D = 0;
+	signal.F = 0;
+	
 });
 
-
+});
 }
 makeSankeyD3V4();
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
