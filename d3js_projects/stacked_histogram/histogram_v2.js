@@ -1,5 +1,9 @@
 function makeHistogram(){
-
+	
+var dict = {"Capstone":0,"ePortfolio Link":1,"Integration3":2,"Prompt1":3,"Prompt2":4,
+  "Prompt3":5,"Prompt4":6,"Prompt5":7,"Prompt6":8,"Prompt7":9,"Prompt8":10,
+  "Prompt9":11,"Prompt10":12,"Prompt11":13};
+var Originaldata;
 var svg4 = d3.select('#histogram').select("svg"),
     margin = {top: 10, right: 0, bottom: 20, left: 0},
     width = +svg4.attr("width") - margin.left - margin.right,
@@ -27,8 +31,16 @@ var nValue1 = 1;
 var nValue2 = 1;
 
 d3.select("#nValue1").on("input", function() {
-  nValue1 = this.value
-  update(+this.value, nValue2);
+  nValue1 = this.value;
+  distance_file = "csv_files/distance.csv";
+  d3.csv(distance_file,function(error, data){
+	data.forEach(function(d){
+		if(d.number == nValue1){
+			update(nValue1,d.farest);
+			d3.select("#nValue2").attr("value",d.farest);
+		}
+	});
+  });
 });
 
 d3.select("#nValue2").on("input", function() {
@@ -36,8 +48,16 @@ d3.select("#nValue2").on("input", function() {
   update(nValue1, +this.value);
 });
 
-// Initial update value 
-update(1, 1);
+d3.csv("csv_files/histogram.csv", function(d, i, columns) {
+  for (i = 1, t = 0; i < columns.length; ++i) t += d[columns[i]] = +d[columns[i]];
+  d.total = t;
+  return d;
+  }, 
+  function(error, data) {
+	Originaldata = data;
+	// Initial update value 
+	update(1, 1);
+});
 
 
 // adjust the text
@@ -55,12 +75,6 @@ function compare_students(name_number1, name_number2) {
 d3.select("#histogram").selectAll("g>*").remove();
 console.log("num1="+name_number1.toString());
 console.log("num2="+name_number2.toString());
-d3.csv("csv_files/histogram.csv", function(d, i, columns) {
-  for (i = 1, t = 0; i < columns.length; ++i) t += d[columns[i]] = +d[columns[i]];
-  d.total = t;
-  return d;
-  }, function(error, Originaldata) {
-  if (error) throw error;
 
   var name1 = "student" + name_number1 + "_"
   var name2 = "student" + name_number2 + "_"
@@ -72,11 +86,9 @@ d3.csv("csv_files/histogram.csv", function(d, i, columns) {
     return d.student_assignment_grade.includes(name2);
   } 
  
-  var data1 = Originaldata.filter(filterCriteria1);
-  var data2 = Originaldata.filter(filterCriteria2);
-  var dict = {"Capstone":0,"ePortfolio Link":1,"Integration3":2,"Prompt1":3,"Prompt2":4,
-  "Prompt3":5,"Prompt4":6,"Prompt5":7,"Prompt6":8,"Prompt7":9,"Prompt8":10,
-  "Prompt9":11,"Prompt10":12,"Prompt11":13};
+  var data1 = JSON.parse(JSON.stringify(Originaldata.filter(filterCriteria1)));
+  var data2 = JSON.parse(JSON.stringify(Originaldata.filter(filterCriteria2)));
+
   var i;
   for (i = 0; i < data1.length; i++) {
 	var tmp = data1[i].student_assignment_grade;
@@ -85,7 +97,7 @@ d3.csv("csv_files/histogram.csv", function(d, i, columns) {
 	data1[i].grade = arr[2];
 	data1[i].no = dict[arr[1]];
   }
-  if (name_number1 != name_number2){
+
 	for (i = 0; i < data2.length; i++) {
 		var tmp = data2[i].student_assignment_grade;
 		var arr = tmp.split('_');
@@ -93,20 +105,22 @@ d3.csv("csv_files/histogram.csv", function(d, i, columns) {
 		data2[i].grade = arr[2];
 		data2[i].no = dict[arr[1]];
 	}
-  }
+
   var assign_name = ["A0","A1","A2","A3","A4","A5","A6","A7","A8","A9","A10","A11","A12","A13"];
   var keys = Originaldata.columns.slice(1);
   data1.sort(function(a,b){ return a.no - b.no; });
   data2.sort(function(a,b){ return a.no - b.no; });
   console.log(data1);
   console.log(data2);
-  x.domain([0, d3.max(data1, function(d){return d.total; })+5]);
-  x1.domain([0, d3.max(data2, function(d){return d.total; })+5]);
+  a = d3.max(data1, function(d){return d.total; });
+  b = d3.max(data2, function(d){return d.total; });
+  c = a>b?a:b;
+  x.domain([0, c+5]);
+  x1.domain([0, c+5]);
   y.domain(assign_name);
   z.domain(keys);
   d = d3.stack().keys(keys)(data1);
   d1 = d3.stack().keys(keys)(data2);
-  console.log(d);
   
    g.append("g")
     .selectAll("g")
@@ -207,7 +221,6 @@ d3.csv("csv_files/histogram.csv", function(d, i, columns) {
 	  .attr("y", 9.5)
       .attr("dy", "0.32em")
       .text(function(d) { return d; });
-});
 };
 
 
@@ -301,7 +314,7 @@ d3.select("#histogram_info").selectAll("input[name=filter]").on("change", functi
 			aggregate();
 			break;
 		case "two":
-			compare_students(nValue1, nValue2);
+			compare_students(nValue1,nValue2);
 			break;
 	default:
 			aggregate();
