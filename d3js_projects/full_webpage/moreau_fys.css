@@ -9,11 +9,13 @@
 }
 
 
-#hon_info th,td,label,li{
+td,label,li{
     padding: 1px;
 	font: 11px sans-serif;
 }
-
+#hon_info {
+	float: right;
+}
 th {
     text-align: left;
 }
@@ -78,9 +80,7 @@ th {
   height: 150px;
   overflow: auto;
 }
-#hon_info {
-	float: right;
-}
+
 .node rect {
 		cursor: move;
 		fill-opacity: .9;
