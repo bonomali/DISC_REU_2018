@@ -27,7 +27,6 @@ var arc = d3.arc()
     .outerRadius(function(d) { return Math.max(0, y(d.y1)); });
 var path;
 function click2(d) {
-
 	// zoom in feature
 	svg2.transition()
 		.duration(750)
@@ -41,7 +40,7 @@ function click2(d) {
       	.attrTween("d", function(d) { return function() { 
 				return arc(d); 
 		}; });
-
+	if(d.data.name === "root") { dbclick();return; }
 	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	// clear data table
 	d3.select("#scrollable-content").select("table").select("tbody").selectAll("tr").remove();
@@ -195,11 +194,6 @@ function makeSunburst(){
 
 const INPUT_FILE = "json_files/sunburst_data_struc2vec.json"
 
-// Set up variables
-
-
-var formatNumber = d3.format(",d");
-
 // center pie chart
 var pieChart = d3.pie().value(function(d) { return 5; });
 
@@ -224,7 +218,7 @@ d3.json(INPUT_FILE, function(error, root) {
       .on("click", click2)
 	  .on("mouseover" , mouseover)
       .append("title")
-      .text(function(d) { return d.data.name + "\n" + formatNumber(d.value); });
+      .text(function(d) { return "name: " + d.data.name + "\n" + d.value.toString() + " times"; });
 });
 
 
@@ -243,7 +237,7 @@ d3.csv(url_file,function(error,data){
 		.enter()
 		.append("tr")
 		.selectAll("td")
-		.data(function(d){ return [d.num,d.url,d.type]; })
+		.data(function(d){ return [d.num,d.url,d.type,d.week]; })
 		.enter()
 		.append("td")
 		.text(function(d){ return d; });

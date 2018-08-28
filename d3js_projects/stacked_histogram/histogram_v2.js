@@ -18,8 +18,8 @@ var y = d3.scaleBand()
     .rangeRound([0, height])
 	.paddingInner(0.05);
 
-var z = d3.scaleOrdinal()
-    .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+var z = d3.scaleOrdinal(d3.schemeCategory10);
+
 
 var stack = d3.stack()
     .offset(d3.stackOffsetExpand);
@@ -30,22 +30,23 @@ var stack = d3.stack()
 var nValue1 = 1;
 var nValue2 = 1;
 
-d3.select("#nValue1").on("input", function() {
+d3.select("#nValue1").on("change", function() {
   nValue1 = this.value;
   distance_file = "csv_files/distance.csv";
   d3.csv(distance_file,function(error, data){
 	data.forEach(function(d){
-		if(d.number == nValue1){
+		if(d.number === nValue1){
+			nValue2 = d.farest;
+			document.getElementById("nValue2").value = nValue2;
 			update(nValue1,d.farest);
-			d3.select("#nValue2").attr("value",d.farest);
 		}
 	});
   });
 });
 
-d3.select("#nValue2").on("input", function() {
-  nValue2 = this.value
-  update(nValue1, +this.value);
+d3.select("#nValue2").on("change", function() {
+  nValue2 = this.value;
+  update(nValue1, nValue2);
 });
 
 d3.csv("csv_files/histogram.csv", function(d, i, columns) {
@@ -119,6 +120,7 @@ console.log("num2="+name_number2.toString());
   x1.domain([0, c+5]);
   y.domain(assign_name);
   z.domain(keys);
+  console.log(z("struc0"));
   d = d3.stack().keys(keys)(data1);
   d1 = d3.stack().keys(keys)(data2);
   
@@ -201,7 +203,7 @@ console.log("num2="+name_number2.toString());
       .attr("text-anchor", "end")
       .text("Number of instances");
 
-  var legend = g.append("g")
+ /* var legend = g.append("g")
       .attr("font-family", "sans-serif")
       .attr("font-size", 10)
       .attr("text-anchor", "end")
@@ -220,7 +222,7 @@ console.log("num2="+name_number2.toString());
       .attr("x", width - 19)
 	  .attr("y", 9.5)
       .attr("dy", "0.32em")
-      .text(function(d) { return d; });
+      .text(function(d) { return d; });*/
 };
 
 
@@ -237,15 +239,14 @@ d3.csv("csv_files/grade_structures.csv", function(d, i, columns) {
 }, function(error, data) {
   if (error) throw error;
   
-  console.log(data);
   var keys = data.columns.slice(1);
   var x = d3.scaleBand()
-    .rangeRound([0, width])
+    .rangeRound([20, width])
     .paddingInner(0.05);
   var y = d3.scaleLinear()
     .rangeRound([height, 0]);
 	
-  data.sort(function(a, b) { return b.total - a.total; });
+  data.sort(function(a, b) { return b.grade - a.grade; });
   x.domain(data.map(function(d) { return d.grade; }));
   y.domain([0, d3.max(data, function(d) { return d.total; })]).nice();
   z.domain(keys);
@@ -270,6 +271,7 @@ d3.csv("csv_files/grade_structures.csv", function(d, i, columns) {
 
   g.append("g")
       .attr("class", "axis")
+	  .attr("transform", "translate(" + 20 + ",0)")
       .call(d3.axisLeft(y).ticks(null, "s"))
     .append("text")
       .attr("x", 2)
@@ -304,20 +306,20 @@ d3.csv("csv_files/grade_structures.csv", function(d, i, columns) {
 };
 
 
-d3.select("#histogram_info").selectAll("input[name=filter]").on("change", function(d){
+d3.select("#histogram_info").selectAll("input[name=filter2]").on("change", function(d){
 
   // value of selected radio
   var value = this.value;
   console.log(value);
 	switch (value) {
 		case "aggregate":
+			console.log("aggregate");
 			aggregate();
 			break;
 		case "two":
+			console.log("two");
 			compare_students(nValue1,nValue2);
 			break;
-	default:
-			aggregate();
 	}
 
 });

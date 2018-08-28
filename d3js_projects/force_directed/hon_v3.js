@@ -18,6 +18,9 @@ var linkedByIndex = {};
 var svg = d3.select("#hon_diagram").select("svg");
 var defs = svg.append("svg:defs");
 var color = d3.scaleOrdinal(d3.schemeCategory10);
+color.domain([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]);
+//keep the colors right
+
 var flag=true;
 var main_node;
 var clicked = false;
@@ -55,7 +58,7 @@ function click1(d){
 				if(o.source === k || o.target === k) 
 					sig = true;
 			});
-			return sig === true? 1: 0.05;
+			return sig === true? 0.6: 0.05;
 		});
 		switch(Grouping) {
 			case "Gephi":
@@ -152,7 +155,6 @@ function name2path(name){
 	if(node_name[node_name.length-1] == '|')
 		node_name = node_name.slice(0,-1);
 	var arr = node_name.replace('|','.').split('.');
-	console.log(arr);
 	var i = arr.length-1;
 	var p;
 	path.attr('id',function(d){
@@ -170,7 +172,6 @@ function name2path(name){
 				}
 			}
 			if( sig === false ) break;
-			console.log(i+ " : " +arr[i]);
 			i-=1;
 		}
 		return "sunpath";
@@ -202,13 +203,43 @@ function marker(color, opacity) {
         
         return "url(" + color + opacity + ")";
 }
+function dbclick(){
+			clicked = false;
+			node.style("stroke-opacity", 1);
+        	node.style("fill-opacity", 1);
+			node.attr("r", 4);
+        	link.style("stroke-opacity", function(c) { return (c.value); });
+        	link.style("stroke", "gray");
 
+			switch(Grouping) {
+				case "Gephi":
+      				link.attr("marker-end", function(o) {
+					return marker(color(o.Gephi), 1.0);
+           		});
+					break;
+				case "D15":
+					link.attr("marker-end", function(o) {
+					return marker(color(o.Group_15D), 1.0);
+           		});
+					break;
+				case "D2":
+					link.attr("marker-end", function(o) {
+					return marker(color(o.Group_2D), 1.0);
+           		});
+					break;
+				default:
+					link.attr("marker-end", function(o) {
+					return marker(color(o.Gephi), 1.0);
+           		});
+					break;
+			}
+
+}
 function makeForceDirected(){
 
 //Define where to look for nodes and where to look for links
 const NODE_FILE =  "csv_files/struc2vec-directed-weighted-classified1.csv"
 const LINK_FILE = "csv_files/weights-network-cell.csv"
-
 //Load up pre-defined svg
 
 var	width = +svg.attr("width"),
@@ -323,39 +354,7 @@ d3.csv(NODE_FILE, function(nodes_data) {
           		.on("end", dragended));
 
 		// double click anywhere on svg  to un-highlight
-		svg.on("dblclick" , function(d){
-			clicked = false;
-			node.style("stroke-opacity", 1);
-        	node.style("fill-opacity", 1);
-			node.attr("r", 4);
-        	link.style("stroke-opacity", function(c) { return (c.value); });
-        	link.style("stroke", "gray");
-
-			switch(Grouping) {
-				case "Gephi":
-      				link.attr("marker-end", function(o) {
-					return marker(color(o.Gephi), 1.0);
-           		});
-					break;
-				case "D15":
-					link.attr("marker-end", function(o) {
-					return marker(color(o.Group_15D), 1.0);
-           		});
-					break;
-				case "D2":
-					link.attr("marker-end", function(o) {
-					return marker(color(o.Group_2D), 1.0);
-           		});
-					break;
-				default:
-					link.attr("marker-end", function(o) {
-					return marker(color(o.Gephi), 1.0);
-           		});
-					break;
-			}
-
-
-		});
+		svg.on("dblclick" ,dbclick);
 
   node.append("title")
       .text(function(d) { return d.id; });
@@ -411,8 +410,6 @@ d3.selectAll("input[name=filter]").on("change", function(d){
 		default:
 			node.attr("r",  function(d) { return 4;} )
 	}
-
-
 });
 
 
@@ -441,19 +438,20 @@ d3.selectAll("input[name=grouping]").on("change", function(d){
 			break;
 
 		case "D15":
-			Grouping = "D15"
+			Grouping = "D15";
 			switch(clicked) {
 				case true:
 					link.attr("marker-end", function(o) {
 					return o.source === d || o.target === d ? marker(color(o.Group_15D), 1.0) : 
 						marker(color(o.Gephi), 0.1);
 				});
+			
 				break;
 				case false:
-					link.attr("marker-end", function(d) {return marker(color(d.Group_15D), d.value)})
+					link.attr("marker-end", function(d) {return marker(color(d.Group_15D), d.value)});
 				break;
 				default: 
-					link.attr("marker-end", function(d) {return marker(color(d.Group_15D), d.value)})
+					link.attr("marker-end", function(d) {return marker(color(d.Group_15D), d.value)});
 				}
 			node.attr("fill", function(d) { return color(d.Group_15D); });		
 			break;
@@ -480,8 +478,6 @@ d3.selectAll("input[name=grouping]").on("change", function(d){
 			link.style("stroke", function(d) {return color(d.Gephi)})
 			node.attr("fill", function(d) { return color(d.Gephi); })
 	}
-
-
 });
 
 

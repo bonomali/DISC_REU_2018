@@ -13,8 +13,9 @@ td,label,li{
     padding: 1px;
 	font: 11px sans-serif;
 }
-#hon_info {
-	float: right;
+#node_info th{
+	padding: 1px;
+	font: 11px sans-serif;
 }
 th {
     text-align: left;

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<title>All in One</title>
+<title>CCVis</title>
 <link rel="stylesheet" type="text/css" href="moreau_fys.css">
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <!-- <link rel="stylesheet" type="text/css" href="sunburst.css"> -->
@@ -12,7 +12,7 @@
 	<div class = "row">
 		
 		<div class = "col-md-2" id = "hon_info">
-			<h6>Click node for data:</h6>
+			<b>Click node for data:</b>
 			<table id="node_info">
 				<tr id="id">		<th>NODE:</th>		<td></td>	</tr>
 				<tr id="group">		<th>GROUP:</th>		<td></td>	</tr>
@@ -22,18 +22,18 @@
 		
 
 			<br>
-      		<h6>Change node size:</h6>
+      		<b>Change node size:</b>
       		<div class="input-group" id="filters">
-				<label><input type="radio" name="filter" value="none">None (uniform size)</label><br />
-        		<label><input type="radio" name="filter" value="all">All links</label><br />
-        		<label><input type="radio" name="filter" value="in">Links in</label><br />
-        		<label><input type="radio" name="filter" value="out">Links out</label><br />
+				<label><input type="radio" name="filter" value="none" checked="true">None (uniform size)</label><br />
+        		<label><input type="radio" name="filter" value="all">All links </label><br />
+        		<label><input type="radio" name="filter" value="in">Links in  </label><br />
+        		<label><input type="radio" name="filter" value="out">Links out </label><br />
       		</div>
 			
 			<br>
-    	  	<h6>Change group coloring:</h6>
+    	  	<b>Change group coloring:</b>
       		<div class="input-group" id="groupings">
-				<label><input type="radio" name="grouping" value="gephi">HON Community groupings</label><br />
+				<label><input type="radio" name="grouping" value="gephi" checked="checked">HON Community groupings</label><br />
         		<label><input type="radio" name="grouping" value="D15">15-D Struc2Vec clusters</label><br />
         		<label><input type="radio" name="grouping" value="D2">2-D T-SNE Struc2Vec clusters</label><br />
       		</div>
@@ -57,6 +57,7 @@
 						<th>id</th>
 						<th>content</th>
 						<th>type</th>
+						<th>week</th>
 					</thead>
 					<tbody></tbody>
 				</table>
@@ -83,9 +84,9 @@
 		<div class = "col-md-2" id = "histogram_info">
 			<div id="legend">
 				<h6>Change comparison: </h6>
-				<div class="input-group" id="filters">
-					<label><input type="radio" name="filter" value="aggregate">  Compare aggregate data</label><br />
-					<label><input type="radio" name="filter" value="two" checked="checked">  Compare two students</label><br />
+				<div class="input-group" id="filters2">
+					<label><input type="radio" name="filter2" value="aggregate">  Aggregate data</label><br />
+					<label><input type="radio" name="filter2" value="two" checked="checked">  Two students data</label><br />
 				</div>
 			</div>
 			
@@ -95,10 +96,12 @@
 			</label>
 			<input type="number" min="1" max="934" step="1" value="1" id="nValue1">
 			
+			
 			<label for="nValue2" style="display: inline-block; width: 200px; text-align: left">
 				student number 2 = <span id="nValue2-value"></span>
 			</label>
 			<input type="number" min="1" max="934" step="1" value="1" id="nValue2">
+			
 		</div>
 		
 		<div class = "col-md-4" id = "histogram">	

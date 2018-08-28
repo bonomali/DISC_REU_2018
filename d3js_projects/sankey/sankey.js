@@ -3,8 +3,6 @@ function click3(name){
 	selected.nodes.forEach( function(node){
 		if(node.name === name) needToAdd = false;
 	});
-	console.log("need:"+name+' '+needToAdd.toString());
-	console.log(selected);
 	if(needToAdd && selected.nodes.length - 5 < 4){
 
 		// select node of same name
@@ -41,19 +39,15 @@ function click3(name){
 		});
 		
 	}
-	
 	if(!needToAdd && flag==true){
-		graph.nodes.forEach(function(node){
-			if(node.name === name)  {
-				console.log("pop");
-				console.log(node);
-				selected.nodes.pop(node);
-				console.log(selected.nodes);
-			}
-		});
-		graph.links.forEach(function(link){
-			if(link.source.name === name) selected.links.pop(link);
-		});
+		for(let i = selected.nodes.length-1;i>=0;i--){
+			if(selected.nodes[i].name === name)
+				selected.nodes.splice(i,1);
+		}
+		for(let i = selected.links.length-1;i>=0;i--){
+			if(selected.links[i].source.name === name)
+				selected.links.splice(i,1);
+		}
 		draw(selected);
 		return;
 	}
@@ -87,17 +81,7 @@ function click3(name){
 		flag=true;
 	}
 }
-function dragmove(d) {
-    d3.select(this)
-      .attr("transform", 
-            "translate(" 
-               + d.x + "," 
-               + (d.y = Math.max(
-                  0, Math.min(height - d.dy, d3.event.y))
-                 ) + ")");
-    sankey.relayout();
-    link.attr("d", path);
-}
+
 function draw(data){
 	svg3.selectAll("g").remove();
 	var sankey = d3.sankey()
@@ -130,7 +114,7 @@ function draw(data){
   // add in the nodes
   var node = svg3.append("g").selectAll(".node")
       .data(data.nodes)
-    .enter().append("g")
+      .enter().append("g")
       .attr("class", "node")
       .attr("transform", function(d) { 
 		  return "translate(" + d.x + "," + d.y + ")"; })
@@ -141,7 +125,8 @@ function draw(data){
         .on("start", function() {
           this.parentNode.appendChild(this);
         })
-        .on("drag", dragmove));
+        .on("drag", dragmove))
+		.on("click", function(d){ click3(d.name); })
 
   // add the rectangles for the nodes
   node.append("rect")
@@ -155,6 +140,7 @@ function draw(data){
       .append("title")
       .text(function(d) { 
 		  return d.url + "\n" + format(d.value); });
+
 
   // add in the title for the nodes
   var text= node.append("text")
@@ -181,6 +167,12 @@ function draw(data){
 	  })
       .filter(function(d) { return d.x < width / 2; });
 
+	function dragmove(d) {
+		d3.select(this)
+        .attr("transform", "translate(" + d.x + "," + (d.y = Math.max(0, Math.min(height - d.dy, d3.event.y)) ) + ")");
+		sankey.relayout();
+		link.attr("d", path);
+    }
 }
 var graph = {"nodes" : [], "links" : []};;
 var	selected = { "nodes":[] , "links":[] };
@@ -273,8 +265,8 @@ d3.csv(sankey_data, function(error, data) {
 				break;
 		}
 	});
-	
-var special = ["18|37.13", "37|12", "18|36.18.37.29","18|37.12","37|13","36|6.34"]
+	sequences.sort(function(a,b){ return a>b?true:false; });
+	var special = ["18|37.13", "37|12", "18|36.18.37.29","18|37.12","37|13","36|6.34"]
 	// add buttons to sequence selector
 	var data_buttons = d3.select("#sankey_button").selectAll("button")
 		.data(sequences).enter()
