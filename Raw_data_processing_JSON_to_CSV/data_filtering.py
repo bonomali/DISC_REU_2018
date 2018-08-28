@@ -62,7 +62,7 @@ for index in range(len(object_types)):
 
 
 ###  Only use the first 500-most-clicks-names
-num_students = 1000
+num_students = 2000
 entries_by_name = Counter(x['account_name'] for x in click_data)
 names = [x for _,x in sorted(zip(entries_by_name.values(), entries_by_name.keys()), reverse=True)][:num_students]
 

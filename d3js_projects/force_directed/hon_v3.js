@@ -206,8 +206,8 @@ function marker(color, opacity) {
 function makeForceDirected(){
 
 //Define where to look for nodes and where to look for links
-const NODE_FILE =  "csv_files/struc2vec-directed-weighted-classified1.csv"
-const LINK_FILE = "csv_files/weights-network-cell.csv"
+const NODE_FILE =  "csv_files/fdd_nodes.csv"
+const LINK_FILE = "csv_files/fdd_links.csv"
 
 //Load up pre-defined svg
 
@@ -219,7 +219,7 @@ var simulation = d3.forceSimulation()
 	.force("link", d3.forceLink().id(function(d) {return d.id; })
 								 .strength(link => link.value)
 								 .distance(link => 1.0/link.value))
-	.force("charge", d3.forceManyBody().strength(-10))
+	.force("charge", d3.forceManyBody().strength(-40))
 	//.force("picky centre", pickyForce)
 	.force("collide", d3.forceCollide().radius(6))
 	.force("center", d3.forceCenter(width , height/0.95));
@@ -234,7 +234,7 @@ d3.csv(NODE_FILE, function(nodes_data) {
 	graph = { "links": [] , "nodes": []};
 
 	//Push in node data (both ID and class) from nodepath
-	nodes_data.forEach(node => graph.nodes.push( { "id":node.sequence , "Gephi":node.Gephi, "Group_15D":node.KMeans_15D, "Group_2D":node.KMeans_2D, "in_size":2., "out_size":2.} ) );
+	nodes_data.forEach(node => graph.nodes.push( { "id":node.sequence , "Gephi":node.node2vec128D, "Group_15D":node.struc2vec128D, "Group_2D":node.struc2vec2D, "in_size":1., "out_size":1.} ) );
 
 	//Open up the links file, and push link data in too
 	d3.csv(LINK_FILE, function(links_data) {
@@ -245,13 +245,13 @@ d3.csv(NODE_FILE, function(nodes_data) {
 		for (i = 0; i < graph.nodes.length; i++) {
 			for (j =0; j < graph.links.length; j++) {
 				if (graph.nodes[i].id === graph.links[j].source) {
-					graph.nodes[i].out_size += 0.5
+					graph.nodes[i].out_size += 0.3
 					graph.links[j].Gephi = graph.nodes[i].Gephi
 					graph.links[j].Group_15D = graph.nodes[i].Group_15D
 					graph.links[j].Group_2D = graph.nodes[i].Group_2D
 			}; 
 				if (graph.nodes[i].id === graph.links[j].target) {
-					graph.nodes[i].in_size += 0.5
+					graph.nodes[i].in_size += 0.3
 			};
 			};
 			};
@@ -400,13 +400,13 @@ d3.selectAll("input[name=filter]").on("change", function(d){
 			node.attr("r",  function(d) { return 4;} )
 			break;
 		case "all":
-			node.attr("r",  function(d) { return d.out_size + d.in_size; } )
+			node.attr("r",  function(d) { return Math.min(d.out_size + d.in_size, 40.0); } )
 			break;
 		case "in":
-			node.attr("r",  function(d) { return d.in_size; } )
+			node.attr("r",  function(d) { return Math.min(d.in_size, 40.0); } )
 			break;
 		case "out":
-			node.attr("r",  function(d) { return d.out_size;} )
+			node.attr("r",  function(d) { return Math.min(d.out_size, 40.0);} )
 			break;
 		default:
 			node.attr("r",  function(d) { return 4;} )

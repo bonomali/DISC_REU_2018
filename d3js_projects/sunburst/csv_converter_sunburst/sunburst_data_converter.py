@@ -127,7 +127,7 @@ def writeOut( data ):
 def main():
 
 	# Read in and write out the data from a csv
-	writeOut( readIn( "struc2vec-directed-weighted-classified.csv" ) )
+	writeOut( readIn( "fdd_links.csv" ) )
 
 	
 # so let's roll

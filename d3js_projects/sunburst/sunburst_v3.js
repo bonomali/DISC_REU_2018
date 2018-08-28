@@ -12,7 +12,10 @@ var x = d3.scaleLinear()
 var y = d3.scaleSqrt()
     .range([0, radius]);
 
-var color2 = d3.scaleOrdinal(d3.schemeCategory20c);
+//var color2 = d3.scaleOrdinal(d3.schemeCategory20c);
+var color2 = d3.scaleOrdinal()
+      .domain(['29','0','1','34','2','3','7','9','10','11','14','19','22','24','25','26','21','28','30','5','31',     '4','6','8','12','15','16','17','20','13','23','27','32','33',         '36','37','38','39','40',      '18'])
+      .range([ "#3f0000","#4c0000","#600000","#700000","#7f0000","#930000","#a50000","#b20000","#c60000","#d80000", "#ff0000","#ff1919","#ff2626","#ff3232","#ff4242","#ff5454","#ff6868","#ff8282","#ff9999","#ffb2b2","#ffc1c1", "#33006b","#3c007c","#43008c","#4c009e","#5900ba","#6800d8","#7b00ff","#8819ff","#9532ff","#9c3fff","#a551ff","#b168ff","#bf84ff",                     "#d1b100","#ffd800","#ffe138","#ffe65e","#ffeb7a",              "#63ff4f" ]);
 
 var partition = d3.partition();
 var svg2 = d3.select("#sunburst_diagram").append("svg")
@@ -179,6 +182,7 @@ function mouseover(d) {
 			.attr("height" , 30)
 			.style("fill", function(e) { return color2(node.data.name); })
 			.attr("transform" , function(e){ return "translate(" + (node.depth * 50 - 50) + ", 0)"})
+		console.log(node.data.name)
 		// add text
 		sequence.append("text")
 			.attr("id" , "active_sequence_data")
@@ -233,7 +237,7 @@ String.prototype.replaceAll = function(str1, str2, ignore)
 {
     return this.replace(new RegExp(str1.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g,"\\$&"),(ignore?"gi":"g")),(typeof(str2)=="string")?str2.replace(/\$/g,"$$$$"):str2);
 } 
-url_file = "csv_files/object_ref_v3.csv";
+url_file = "csv_files/object_ref_types.csv";
 d3.csv(url_file,function(error,data){
 	data.sort(function(a, b) { return a.num - b.num; });
 	d3.select("#url_table").style.background = "blue";

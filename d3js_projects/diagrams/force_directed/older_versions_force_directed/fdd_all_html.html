@@ -80,8 +80,8 @@ svg {
 
 <script>
 //Define where to look for nodes and where to look for links
-var nodepath = "nodes_classified.csv"
-var linkpath = "weights-network-cell.csv"
+var nodepath = "fdd_nodes.csv"
+var linkpath = "fdd_links.csv"
 
 //Load up pre-defined svg
 var svg = d3.select("#hon_diagram"),
@@ -151,7 +151,7 @@ d3.csv(nodepath, function(nodes_data) {
 	graph = { "links": [] , "nodes": []};
 
 	//Push in node data (both ID and class) from nodepath
-	nodes_data.forEach(node => graph.nodes.push( { "id":node.Id , "group":node.modularity_class, "in_size":2., "out_size":2.} ) );
+	nodes_data.forEach(node => graph.nodes.push( { "id":node.sequence , "group":node.struc2vec128D, "in_size":2., "out_size":2.} ) );
 
 	//Open up the links file, and push link data in too
 	d3.csv(linkpath, function(links_data) {
