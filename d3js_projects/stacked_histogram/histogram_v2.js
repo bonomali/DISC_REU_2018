@@ -48,8 +48,9 @@ d3.select("#nValue2").on("change", function() {
   nValue2 = this.value;
   update(nValue1, nValue2);
 });
-
-d3.csv("csv_files/histogram.csv", function(d, i, columns) {
+//histogram_structure.csv contains the histogram csv for the structure view
+//histogram_community.csv for gephi classes
+d3.csv("csv_files/histogram_community.csv", function(d, i, columns) {
   for (i = 1, t = 0; i < columns.length; ++i) t += d[columns[i]] = +d[columns[i]];
   d.total = t;
   return d;
@@ -232,7 +233,9 @@ console.log("num2="+name_number2.toString());
 ***************************************************************************/
 function aggregate() {
 d3.select("#histogram").selectAll("g>*").remove();
-d3.csv("csv_files/grade_structures.csv", function(d, i, columns) {
+//grades_structure.csv for struc2vec classes
+//grades_community.csv for gephi classes
+d3.csv("csv_files/grades_community.csv", function(d, i, columns) {
   for (i = 1, t = 0; i < columns.length; ++i) t += d[columns[i]] = +d[columns[i]];
   d.total = t;
   return d;
