@@ -121,7 +121,7 @@ def community_gen(gephi_file = "modularity_classes.csv"):
 
 ###  Runs community_gen and struc2vec_gen
 def classifying(MinSupport=10, MaxOrder=99, num_clusters=4,
-				HON_file="weighted-network-all.edge", out="fdd_nodes", gephi_file="modularity_classes.csv"):
+				HON_file="weighted-network-all.csv", out="fdd_nodes", gephi_file="modularity_classes.csv"):
 	community_data = community_gen(gephi_file=gephi_file)
 	struc2vec_data = struc2vec_gen(HON_file=HON_file, MinSupport=MinSupport, MaxOrder=MaxOrder, num_clusters=num_clusters)
 	
@@ -176,7 +176,7 @@ for index in range(1,len(network_files)):
 		H.add_edge(left_node, right_node, weight= weight)	
 	G = nx.compose(H, G)
 
-nx.write_weighted_edgelist(G, "weighted-network-all.edge")
+nx.write_weighted_edgelist(G, "weighted-network-all.csv")
 
 classifying()
 

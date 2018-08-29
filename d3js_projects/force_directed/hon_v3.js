@@ -234,7 +234,7 @@ d3.csv(NODE_FILE, function(nodes_data) {
 	graph = { "links": [] , "nodes": []};
 
 	//Push in node data (both ID and class) from nodepath
-	nodes_data.forEach(node => graph.nodes.push( { "id":node.sequence , "Gephi":node.node2vec128D, "Group_15D":node.struc2vec128D, "Group_2D":node.struc2vec2D, "in_size":1., "out_size":1.} ) );
+	nodes_data.forEach(node => graph.nodes.push( { "id":node.sequence , "Gephi":node.community, "Group_15D":node.struc2vec128D, "Group_2D":node.struc2vec2D, "in_size":1., "out_size":1.} ) );
 
 	//Open up the links file, and push link data in too
 	d3.csv(LINK_FILE, function(links_data) {
