@@ -48,7 +48,7 @@ d3.select("#nValue2").on("input", function() {
   update(nValue1, +this.value);
 });
 
-d3.csv("csv_files/histogram.csv", function(d, i, columns) {
+d3.csv("csv_files/histogram_communities.csv", function(d, i, columns) {
   for (i = 1, t = 0; i < columns.length; ++i) t += d[columns[i]] = +d[columns[i]];
   d.total = t;
   return d;
@@ -230,7 +230,7 @@ console.log("num2="+name_number2.toString());
 ***************************************************************************/
 function aggregate() {
 d3.select("#histogram").selectAll("g>*").remove();
-d3.csv("csv_files/grade_structures.csv", function(d, i, columns) {
+d3.csv("csv_files/grades_communities.csv", function(d, i, columns) {
   for (i = 1, t = 0; i < columns.length; ++i) t += d[columns[i]] = +d[columns[i]];
   d.total = t;
   return d;
