@@ -84,7 +84,7 @@ def write_stacked_histogram_files(students_data, nature = "structure"):
 		header += "," + "struc"+struc_vector[index]
 
 	###  Now, rewrite data in the correct format for the stacked histogram, i.e. in a csv table
-	with open('grades_structures.csv','w') as f:
+	with open('grades_'+nature+'.csv','w') as f:
 		f.write(header)
 		f.write("\n")
 		for grade in sorted(list(average_data.keys())):
@@ -107,7 +107,7 @@ community = []
 data = {}
 
 ##  Load up HON nodes and classifications
-data_path = "../classifying_nodes/fdd_nodes"
+data_path = "../classifying_nodes/fdd_nodes.csv"
 sequence_path = "../../Raw_data_processing_JSON_to_CSV/Sequence_Data"
 seqfiles = [f for f in listdir(sequence_path) if isfile(join(sequence_path, f))]
 
@@ -119,7 +119,7 @@ with open(data_path,'r') as f:
 		nodes.append(row["sequence"])
 		struc2vec128D.append(row["struc2vec128D"])
 		community.append(row["community"])
-		data[row["sequence"]] = {struc2vec128D":row["struc2vec128D"], "community":row["community"]}
+		data[row["sequence"]] = {"struc2vec128D":row["struc2vec128D"], "community":row["community"]}
 
 
 ##  Use set() to remove duplicate entries. Will use these vectors to generate presence / absence vectors to sum up for histogram.
@@ -243,13 +243,13 @@ for	assignment in list(training_data.keys()):
 		grade = student_data["percentage"]
 		structures = student_data["struc_vector"]
 		communities = student_data["community_vector"]
-	try:
-		arranged_data[student][assignment] = {"grade":grade}
-	except:
-		arranged_data[student] = {}
-		arranged_data[student][assignment] = {"grade":grade}
-	arranged_data[student][assignment]["structure"] = structures
-	arranged_data[student][assignment]["community"] = communities
+		try:
+			arranged_data[student][assignment] = {"grade":grade}
+		except:
+			arranged_data[student] = {}
+			arranged_data[student][assignment] = {"grade":grade}
+		arranged_data[student][assignment]["structure"] = structures
+		arranged_data[student][assignment]["community"] = communities
 
 
 
