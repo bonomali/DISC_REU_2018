@@ -1,6 +1,7 @@
 from scipy.stats import entropy
 import numpy as np
 import csv
+import json
 dict = {"Capstone":0,"ePortfolio Link":1,"Integration3":2,"Prompt1":3,"Prompt2":4,
   "Prompt3":5,"Prompt4":6,"Prompt5":7,"Prompt6":8,"Prompt7":9,"Prompt8":10,
   "Prompt9":11,"Prompt10":12,"Prompt11":13}
@@ -25,7 +26,7 @@ def JSD(P,Q):
 	return 0.5 * (entropy(_P, _M) + entropy(_Q, _M))
 
 n = 934	
-f = open("histogram.csv","r")
+f = open("histogram_4cluster.csv","r")
 file = csv.reader(f)
 file_data = []
 for line in file:
@@ -46,10 +47,14 @@ for i in range(0,n):
 		q = X[j]
 		Dist[i, j] = JSD(p, q)
 print(Dist)	
-f = open("distance.csv","w")
-f.write("number,farest\n")
+f = open("distance_4cluster.json","w")
+dict = {}
 for i in range(0,n):
+	tmp = []
 	l = list(Dist[i])
-	idx = l.index(max(l))
-	f.write(str(i+1)+','+str(idx+1)+'\n')
+	tmp.append(l.index(max(l))+1)
+	tmp.append(max(l))
+	tmp.append(l)
+	dict[str(i+1)] = tmp
+json.dump(dict,f)
 	

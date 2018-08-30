@@ -74,11 +74,11 @@ th {
 	background-color:#f7f7f7;
 }
 #non-scrollable-content {
-	height: 65px;
+	height: 30px;
 }
 
 #scrollable-content {
-  height: 150px;
+  height: 180px;
   overflow: auto;
 }
 

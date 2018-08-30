@@ -65,13 +65,17 @@
 			
 			<br>
 			<div id="non-scrollable-content">
-				<p>Show sequence data for:</p>
-				<p id="node_sequence"></p>
+				<p>Show sequence data for: <label id="node_sequence">-</label> </p>
 			</div>
 
   			<div id="scrollable-content">
 				<table>
-					<tr></tr>
+				    <thead>
+						<th>No.</th>
+						<th>Frequency</th>
+						<th>Sequence</th>
+					</thead>
+					<tbody></tbody>
 				</table>
   			</div>
 
@@ -101,7 +105,8 @@
 				student number 2 = <span id="nValue2-value"></span>
 			</label>
 			<input type="number" min="1" max="934" step="1" value="1" id="nValue2">
-			
+			<br>
+			<p>dist = <label id="dist">0.0</label></p>
 		</div>
 		
 		<div class = "col-md-4" id = "histogram">	
@@ -121,8 +126,10 @@
 
 <script src="https://d3js.org/d3.v4.js"></script>
 <script src="http://d3js.org/d3-selection-multi.v1.js"></script>
-<script type="text/javascript" src="../force_directed/hon_v4.js"></script>
-<script type="text/javascript" src="../sunburst/sunburst_v4.js"></script>
-<script type="text/javascript" src="../sankey/sankey_plugin.js"></script>
-<script type="text/javascript" src="../sankey/sankey.js"></script>
-<script type="text/javascript" src="../stacked_histogram/histogram_v2.js"></script>
+
+
+<script type="text/javascript" src="hon_v3.js"></script>
+<script type="text/javascript" src="sunburst_v3.js"></script>
+<script type="text/javascript" src="sankey_plugin.js"></script>
+<script type="text/javascript" src="sankey.js"></script>
+<script type="text/javascript" src="histogram_v2.js"></script>
