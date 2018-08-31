@@ -45,7 +45,7 @@ def write_stacked_histogram_files(students_data, nature = "structure"):
 		header += "," + "struc"+struc_vector[index]
 	
 	name_number = 0
-	with open('histogram_'+nature+'.csv','w') as f:
+	with open('histogram_all_no100'+nature+'.csv','w') as f:
 		f.write(header)
 		f.write("\n")
 		for name in list(students_data.keys()):
@@ -84,7 +84,7 @@ def write_stacked_histogram_files(students_data, nature = "structure"):
 		header += "," + "struc"+struc_vector[index]
 
 	###  Now, rewrite data in the correct format for the stacked histogram, i.e. in a csv table
-	with open('grades_'+nature+'.csv','w') as f:
+	with open('grades_all_no100'+nature+'.csv','w') as f:
 		f.write(header)
 		f.write("\n")
 		for grade in sorted(list(average_data.keys())):
@@ -107,12 +107,12 @@ community = []
 data = {}
 
 ##  Load up HON nodes and classifications
-data_path = "../classifying_nodes/fdd_nodes.csv"
+data_path = "../classifying_nodes/fdd_nodes_all_no100.csv"
 sequence_path = "../../Raw_data_processing_JSON_to_CSV/Sequence_Data"
 seqfiles = [f for f in listdir(sequence_path) if isfile(join(sequence_path, f))]
 
 with open(data_path,'r') as f:
-	fieldnames = ['sequence', 'struc2vec128D', 'struc2vec2D', 'community']
+	fieldnames = ['sequence', 'struc2vec128D', 'community']
 	reader = csv.DictReader(f, fieldnames=fieldnames, )
 	next(reader, None)
 	for row in reader:
@@ -191,7 +191,7 @@ training_imperf = 0
 test_imperf = 0
 
 for f in seqfiles:
-	if "clicks" in f:
+	if "clicks" in f and "All" not in f:
 		vectors_training = {}
 		vectors_test = {}
 		with open(sequence_path + "/" + f, "r") as ins:

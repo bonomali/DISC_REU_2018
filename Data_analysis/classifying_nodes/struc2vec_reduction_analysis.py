@@ -16,9 +16,12 @@ from sklearn.cluster import KMeans
 import replace_sequence_str_int as str_to_int
 import main
 import sys
+sys.path.append("../HON_Creation/")
 
 from os import listdir
 from os.path import isfile, join
+from jianxu_main import fast_build_HON
+
 
 ### Function to generate struc2vec vectors
 def struc2vec_gen(HON_file = "",
@@ -66,40 +69,16 @@ def struc2vec_gen(HON_file = "",
 	bounds = np.linspace(0,num_clusters,num_clusters+1)
 	norm = mpl.colors.BoundaryNorm(bounds, cmap.N)
 	
-	#Define colors by k-means clusters
+	#Define classes by k-means clusters
 	estimator = KMeans(n_clusters = num_clusters)
 	estimator.fit(node_vectors)
 	labels = estimator.labels_
-	
-	
-	#Apply T-SNE to visualise
-	tsne = TSNE(n_components=2, verbose=1, perplexity=8, early_exaggeration=3, n_iter=1000)
-	tsne_results = tsne.fit_transform(node_vectors)
-	
-	tsne_one = tsne_results[:,0]
-	tsne_two = tsne_results[:,1]
-	
-	#Then apply the same KMeans to 2-D data
-	est = KMeans(n_clusters = num_clusters)
-	est.fit(tsne_results)
-	labls = est.labels_
-	
-	#Plot T-SNE results
-	fig, axes = plt.subplots(1,2, figsize=(5,3.5))
-	scat = axes[0].scatter(tsne_one,tsne_two,c=labels,cmap=cmap, norm=norm)
-	axes[0].set_title("KMeans applied first, then T-SNE")
-	scat = axes[1].scatter(tsne_one, tsne_two, c=labls, cmap=cmap, norm=norm)
-	axes[1].set_title("T-SNE applied first, then KMeans")
-	
-	ax2 = fig.add_axes([0.9, 0.1, 0.03, 0.8])
-	cb = mpl.colorbar.ColorbarBase(ax2, cmap=cmap, norm=norm, spacing='proportional', ticks=bounds, boundaries=bounds, format='%1i')
-	
+		
 	csv_data = []
 	for index in range(len(node_sequences)):
 		sequence = list(node_sequences)[index]
-		Kmeans_15D = labels[index]
-		Kmeans_2D = labls[index]
-		line_dict = {'sequence':str(sequence), 'struc2vec128D': str(Kmeans_15D), 'struc2vec2D' : str(Kmeans_2D)}
+		Kmeans = labels[index]
+		line_dict = {'sequence':str(sequence), 'struc2vec128D': str(Kmeans)}
 		csv_data.append(line_dict)
 	
 	return(csv_data)
@@ -121,7 +100,7 @@ def community_gen(gephi_file = "modularity_classes.csv"):
 
 ###  Runs community_gen and struc2vec_gen
 def classifying(MinSupport=10, MaxOrder=99, num_clusters=4,
-				HON_file="weighted-network-all.csv", out="fdd_nodes", gephi_file="modularity_classes.csv"):
+				HON_file="weighted-network-all.csv", out="fdd_nodes_all", gephi_file="modularity_classes.csv"):
 	community_data = community_gen(gephi_file=gephi_file)
 	struc2vec_data = struc2vec_gen(HON_file=HON_file, MinSupport=MinSupport, MaxOrder=MaxOrder, num_clusters=num_clusters)
 	
@@ -130,14 +109,13 @@ def classifying(MinSupport=10, MaxOrder=99, num_clusters=4,
 		sequence = struc2vec_data[index]["sequence"]
 		community = community_data[struc2vec_data[index]["sequence"]]
 		struc2vec128D = struc2vec_data[index]["struc2vec128D"]
-		struc2vec2D = struc2vec_data[index]["struc2vec2D"]
-		full_dict = {'sequence':str(sequence), "community":community, "struc2vec128D":struc2vec128D,"struc2vec2D":struc2vec2D}
+		full_dict = {'sequence':str(sequence), "community":community, "struc2vec128D":struc2vec128D}
 		full_dicts.append(full_dict)
 	
 	out_file = out + str(MaxOrder) + ".csv"
 	
 	with open(out_file,'w') as resultFile:
-		fieldnames = ['sequence', 'struc2vec128D', 'struc2vec2D', 'community']
+		fieldnames = ['sequence', 'struc2vec128D', 'community']
 		writer = csv.DictWriter(resultFile, fieldnames=fieldnames)
 		writer.writeheader()
 		writer.writerows(full_dicts)	
@@ -148,10 +126,11 @@ def classifying(MinSupport=10, MaxOrder=99, num_clusters=4,
 
 	
 ##  Combine all sub-HON graphs into a single HON graph
-sequence_path = "../Neural_Net/HON_Files"
-network_files = [f for f in listdir(sequence_path) if isfile(join(sequence_path, f))]
+sequence_path = "../../Raw_data_processing_JSON_to_CSV/Sequence_Data/sequenceAll_no100_clicks.txt"
+output = "HON_all_no100.csv"
+fast_build_HON(MinSupport = 50, MaxOrder= 6, Freq = False, Input_Sequence_File=sequence_path, OutputNetworkFile=output)
 
-network_data = np.genfromtxt(sequence_path+"/"+network_files[0], delimiter=',',dtype=('U100', 'U100', float), skip_header = 1)	
+network_data = np.genfromtxt(output, delimiter=',',dtype=('U100', 'U100', float), skip_header = 1)	
 weights=[]
 G = nx.DiGraph()
 for line in network_data:
@@ -162,22 +141,8 @@ for line in network_data:
 	G.add_edge(left_node, right_node, weight= weight)
 
 
-for index in range(1,len(network_files)):
-	network = network_files[index]
-	network_data = np.genfromtxt(sequence_path+"/"+network, delimiter=',',dtype=('U100', 'U100', float), skip_header = 1)
-	
-	weights=[]
-	H = nx.DiGraph()
-	for line in network_data:
-		left_node = line[0]
-		right_node = line[1]
-		weight = float(line[2])
-		weights.append(weight)
-		H.add_edge(left_node, right_node, weight= weight)	
-	G = nx.compose(H, G)
-
 nx.write_weighted_edgelist(G, "weighted-network-all.csv")
 
-classifying()
+classifying(MinSupport = 50, MaxOrder= 6)
 
 plt.show()

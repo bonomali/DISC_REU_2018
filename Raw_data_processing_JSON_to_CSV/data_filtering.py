@@ -9,7 +9,6 @@ import sys
 import numpy as np
 
 import json_conversion_to_csv as json_converter
-import csv_joiner
 
 #  Function to get dictionary key from value (i.e. opposite of usual)
 def find(lst, key, value):
@@ -60,9 +59,16 @@ for index in range(len(object_types)):
 	week = activity_dict["week"]
 	object_ref[object_id] = {"ref_num":ref_num, "activity_type": activity, "week":week}
 
+with open('object_ref_all_no100.csv','w') as f:
+	f.write("url,num,type")
+	f.write("\n")
+	for key in sorted(list(object_ref.keys())):
+		line = str(key[91:] + ","+str(object_ref[key]["ref_num"]) + ","+str(object_ref[key]["activity_type"]))
+		f.write(line)
+		f.write('\n')
 
 ###  Only use the first 500-most-clicks-names
-num_students = 1000
+num_students = 2000
 entries_by_name = Counter(x['account_name'] for x in click_data)
 names = [x for _,x in sorted(zip(entries_by_name.values(), entries_by_name.keys()), reverse=True)][:num_students]
 
@@ -133,7 +139,7 @@ def activity_string_generator_byassignment(data_dict, submissions_list, name,
 		if separate_assignment == True:
 			assignment = submissions_list[submission_counter]["assignment"]
 		else:
-			assignment = "All"
+			assignment = "All_no100"
 		strings_dict[assignment + "_clicks"] = name +  " " 
 		strings_dict[assignment + "_times"] = name + ","
 	
@@ -143,8 +149,8 @@ def activity_string_generator_byassignment(data_dict, submissions_list, name,
 		##  change submission time + change assignment name when assignment changes
 		if time_now >= submission_time:
 			if submission_counter < len(submissions_list)-1:
-				strings_dict[assignment + "_clicks"] += "100"
-				strings_dict[assignment + "_times"] += str(submission_time)
+				#strings_dict[assignment + "_clicks"] += "100 "
+				#strings_dict[assignment + "_times"] += str(submission_time)
 				submission_counter += 1
 				if separate_assignment == True:
 					assignment = submissions_list[submission_counter]["assignment"]
@@ -171,22 +177,16 @@ def activity_string_generator_byassignment(data_dict, submissions_list, name,
 		if not (click_now == start_click and object_id == "Coursework" and include_idle == True):
 			
 			## Account for idle time
-			if delta_t >= 15*60. and delta_t <30*60.:
+			if delta_t >= 15*60. and delta_t <30*60.:	#36: 15-30 mins
 				strings_dict[assignment + "_clicks"] += str(len(object_ref)+1) + " "
 				strings_dict[assignment + "_times"] += str(time_now - dt.timedelta(minutes=15)) + " "
-			elif delta_t >= 30*60. and delta_t <45*60.:
+			elif delta_t >= 30*60. and delta_t <60*120.:	#37: 30-120 mins
 				strings_dict[assignment + "_clicks"] += str(len(object_ref)+2) + " "
 				strings_dict[assignment + "_times"] += str(time_now - dt.timedelta(minutes=30)) + " "
-			elif delta_t >= 45*60. and delta_t <60*60.:
-				strings_dict[assignment + "_clicks"] += str(len(object_ref)+3) + " "
-				strings_dict[assignment + "_times"] += str(time_now - dt.timedelta(minutes=45)) + " "
-			elif delta_t >= 60*60. and delta_t < 60*120:
-				strings_dict[assignment + "_clicks"] += str(len(object_ref)+4) + " "
-				strings_dict[assignment + "_times"] += str(time_now - dt.timedelta(minutes=60)) + " "
-			elif delta_t >= 60*120.:
+			elif delta_t >= 60*120.:						#38: >2 hrs
 				strings_dict[assignment + "_clicks"] += str(len(object_ref)+5) + " "
 				strings_dict[assignment + "_times"] += str(time_now - dt.timedelta(minutes=60)) + " "
-		
+			
 			strings_dict[assignment + "_clicks"] += click_now + " "
 			strings_dict[assignment + "_times"] += str(time_now) + " "
 		
@@ -207,7 +207,7 @@ for name in names:
 	indices = find(click_data, "account_name", name)
 	cut_data = click_data[indices[0]:indices[-1]+1]
 	submissions_list = sorted_submissions_by_name(name)
-	new_data = activity_string_generator_byassignment(cut_data, submissions_list, name)##, color = color)
+	new_data = activity_string_generator_byassignment(cut_data, submissions_list, name, separate_assignment=False)##, color = color)
 	all_data_byassignment.append(new_data)
 
 

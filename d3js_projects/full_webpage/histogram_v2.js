@@ -1,7 +1,7 @@
-var cluster4_file = "csv_files/histogram_4cluster.csv";
-var cluster16_file = "csv_files/histogram_16cluster.csv";
-var cluster4_aggr = "csv_files/grade_structures_4cluster.csv";
-var cluster16_aggr = "csv_files/grade_structures_16cluster.csv";
+var cluster4_file = "csv_files/histogram_all_no100structure.csv";
+var cluster16_file = "csv_files/histogram_all_no100community.csv";
+var cluster4_aggr = "csv_files/grades_all_no100structure.csv";
+var cluster16_aggr = "csv_files/grades_all_no100community.csv";
 var value4 = "two";
 var dict = {"Capstone":0,"ePortfolio Link":1,"Integration3":2,"Prompt1":3,"Prompt2":4,
   "Prompt3":5,"Prompt4":6,"Prompt5":7,"Prompt6":8,"Prompt7":9,"Prompt8":10,
