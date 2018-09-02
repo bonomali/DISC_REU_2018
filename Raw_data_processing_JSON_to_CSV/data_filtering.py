@@ -40,6 +40,26 @@ with open(activity_filepath) as fp:
 	activity_type = [{k: str(v) for k, v in row.items()}
 	for row in csv.DictReader(fp, skipinitialspace=True)]
 
+
+
+
+############################ REMOVE THIS ONCE YOU PROPERLY UPDATE BACK TO THE ORIGINAL FILE #############################
+with open("object_ref_types.csv") as fp:
+	original_object_ref = [{k: str(v) for k, v in row.items()}
+	for row in csv.DictReader(fp, skipinitialspace=True)]
+
+
+original_objects_ref = {}
+urls = []
+for dictionary in original_object_ref:
+	url = dictionary["url"]
+	original_objects_ref[url] = dictionary["num"]
+	urls.append(url)
+
+
+print(original_objects_ref)
+##########################################################################################################################
+
 ##  Now, generate object_ref file
 objects = []
 for dictionary in click_data:
@@ -49,7 +69,19 @@ for dictionary in click_data:
 	objects.append(object_id)
 
 object_types = list(set(objects))
+for entry in object_types:
+	print(entry)
 object_ref = {}
+
+for object_url in object_types:
+	for url in urls:
+		if url in object_url:
+			object_ref[object_url] = {"ref_num":original_objects_ref[url]}
+
+print(object_ref)
+
+"""
+### PUT THIS BACK ONCE YOU'VE REVERTED BACK TO THE ORIGINAL FILE
 for index in range(len(object_types)):
 	object_id = object_types[index]
 	ref_num = str(index)
@@ -59,13 +91,14 @@ for index in range(len(object_types)):
 	week = activity_dict["week"]
 	object_ref[object_id] = {"ref_num":ref_num, "activity_type": activity, "week":week}
 
-with open('object_ref_all_no100.csv','w') as f:
+print(object_ref)
+with open('object_ref_original','w') as f:
 	f.write("url,num,type")
 	f.write("\n")
 	for key in sorted(list(object_ref.keys())):
 		line = str(key[91:] + ","+str(object_ref[key]["ref_num"]) + ","+str(object_ref[key]["activity_type"]))
 		f.write(line)
-		f.write('\n')
+		f.write('\n')"""
 
 ###  Only use the first 500-most-clicks-names
 num_students = 2000
@@ -177,13 +210,19 @@ def activity_string_generator_byassignment(data_dict, submissions_list, name,
 		if not (click_now == start_click and object_id == "Coursework" and include_idle == True):
 			
 			## Account for idle time
-			if delta_t >= 15*60. and delta_t <30*60.:	#36: 15-30 mins
+			if delta_t >= 15*60. and delta_t <30*60.:
 				strings_dict[assignment + "_clicks"] += str(len(object_ref)+1) + " "
 				strings_dict[assignment + "_times"] += str(time_now - dt.timedelta(minutes=15)) + " "
-			elif delta_t >= 30*60. and delta_t <60*120.:	#37: 30-120 mins
+			elif delta_t >= 30*60. and delta_t <45*60.:
 				strings_dict[assignment + "_clicks"] += str(len(object_ref)+2) + " "
 				strings_dict[assignment + "_times"] += str(time_now - dt.timedelta(minutes=30)) + " "
-			elif delta_t >= 60*120.:						#38: >2 hrs
+			elif delta_t >= 45*60. and delta_t <60*60.:
+				strings_dict[assignment + "_clicks"] += str(len(object_ref)+3) + " "
+				strings_dict[assignment + "_times"] += str(time_now - dt.timedelta(minutes=45)) + " "
+			elif delta_t >= 60*60. and delta_t < 60*120:
+				strings_dict[assignment + "_clicks"] += str(len(object_ref)+4) + " "
+				strings_dict[assignment + "_times"] += str(time_now - dt.timedelta(minutes=60)) + " "
+			elif delta_t >= 60*120.:
 				strings_dict[assignment + "_clicks"] += str(len(object_ref)+5) + " "
 				strings_dict[assignment + "_times"] += str(time_now - dt.timedelta(minutes=60)) + " "
 			
@@ -207,7 +246,7 @@ for name in names:
 	indices = find(click_data, "account_name", name)
 	cut_data = click_data[indices[0]:indices[-1]+1]
 	submissions_list = sorted_submissions_by_name(name)
-	new_data = activity_string_generator_byassignment(cut_data, submissions_list, name, separate_assignment=False)##, color = color)
+	new_data = activity_string_generator_byassignment(cut_data, submissions_list, name, separate_assignment=True)##, color = color)
 	all_data_byassignment.append(new_data)
 
 

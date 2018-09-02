@@ -1,17 +1,31 @@
-dplagenz 18 18 18 8 8 14 14 22 22 100
-ewigutow 18 18 18 18 18 18 18 18 18 18 18 27 27 100
-dlee26 18 39 18 100
-dbirzer 18 18 100
-eclapp 18 40 18 18 100
-kbiladea 18 18 14 14 100
-imurrer 18 18 18 100
-edownin1 18 18 18 18 18 18 18 100
-apeter14 18 18 100
-garboled 18 40 18 18 100
-cdunlea1 18 40 18 100
-aosorio 18 100
-mgorman5 18 36 18 1 1 100
-cholmes6 18 18 18 18 18 18 18 18 100
-nbest1 18 100
-dkolkebe 18 100
-tmcguir2 18 18 18 18 18 22 22 18 36 18 18 8 8 100
+dplagenz 18 18 18 2 2 24 24 10 10 
+ewigutow 18 18 18 18 18 18 18 18 18 18 18 3 3 
+dlee26 18 39 18 
+dbirzer 18 18 
+eclapp 18 40 18 18 
+kbiladea 18 18 24 24 
+imurrer 18 18 18 
+edownin1 18 18 18 18 18 18 18 
+apeter14 18 18 
+garboled 18 40 18 18 
+cdunlea1 18 40 18 
+aosorio 18 
+mgorman5 18 36 18 5 5 
+cholmes6 18 18 18 18 18 18 18 18 
+nbest1 18 
+dkolkebe 18 
+tmcguir2 18 18 18 18 18 10 10 18 36 18 18 2 2 
+kstraub 18 36 18 3 3 
+jappleby 18 38 18 18 2 2 
+eshanno4 18 40 18 18 
+spantano 18 18 18 18 
+mjames11 18 18 18 18 18 18 18 18 
+mgilber5 18 
+cdonnel4 18 18 18 18 2 2 18 40 18 
+maguillo 18 18 18 18 18 18 
+mqueal 18 40 18 
+tmoyniha 18 3 3 18 40 18 
+thintz1 18 5 5 3 3 18 40 18 
+eolmanso 18 
+nyano 18 36 18 
+tleytham 18 18 5 5 3 3 24 24 

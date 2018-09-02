@@ -239,8 +239,8 @@ function dbclick(){
 function makeForceDirected(){
 
 //Define where to look for nodes and where to look for links
-const NODE_FILE =  "csv_files/fdd_nodes_all_no100.csv"
-const LINK_FILE = "csv_files/fdd_links_all_no100.csv"
+const NODE_FILE =  "csv_files/struc2vec-directed-weighted-classified1.csv"
+const LINK_FILE = "csv_files/weights-network-cell.csv"
 //Load up pre-defined svg
 
 var	width = +svg.attr("width"),
@@ -251,7 +251,7 @@ var simulation = d3.forceSimulation()
 	.force("link", d3.forceLink().id(function(d) {return d.id; })
 								 .strength(link => link.value)
 								 .distance(link => 1.0/link.value))
-	.force("charge", d3.forceManyBody().strength(-20))
+	.force("charge", d3.forceManyBody().strength(-10))
 	//.force("picky centre", pickyForce)
 	.force("collide", d3.forceCollide().radius(6))
 	.force("center", d3.forceCenter(width , height/0.95));
@@ -266,7 +266,7 @@ d3.csv(NODE_FILE, function(nodes_data) {
 	graph = { "links": [] , "nodes": []};
 
 	//Push in node data (both ID and class) from nodepath
-	nodes_data.forEach(node => graph.nodes.push( { "id":node.sequence , "Gephi":node.community, "Group_15D":node.struc2vec128D, "Group_2D":node.struc2vec128D, "in_size":2., "out_size":2.} ) );
+	nodes_data.forEach(node => graph.nodes.push( { "id":node.sequence , "Gephi":node.Gephi, "Group_15D":node.KMeans_15D, "Group_2D":node.KMeans_2D, "in_size":2., "out_size":2.} ) );
 
 	//Open up the links file, and push link data in too
 	d3.csv(LINK_FILE, function(links_data) {
@@ -519,4 +519,5 @@ function dragended(d) {
 makeForceDirected();
 //----------------------------------------------------------------------------------------------------------------------------------------------//
 //----------------------------------------------------------------------------------------------------------------------------------------------//
+
 

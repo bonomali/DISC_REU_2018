@@ -1,1567 +1,1567 @@
-dtorgers 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 0 0 21 21 5 37 5 5 12 12 4 4 5 5 5 5 5 5 5 5 5 5 5 5 5 5 21 37 21 5 40 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 29 29 21 21 5 37 5 5 5 5 5 5 5 5 5 5 5 
-cdavin1 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-alebron1 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-ccooper8 5 36 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-nweindel 5 5 5 5 5 5 29 29 5 5 5 5 5 5 5 5 5 5 5 5 5 
-ntownsen 5 37 5 5 5 15 15 5 5 1 1 22 22 3 3 4 4 32 32 5 36 5 17 36 17 5 37 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-jberg2 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-fhita 5 5 5 5 22 37 22 5 36 5 5 5 5 5 5 22 22 12 12 5 40 5 5 5 5 5 5 5 5 5 5 
-mmcfarli 5 36 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-mlengwin 5 5 5 5 5 5 5 5 
-kwurl 5 40 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-ccampb20 5 40 5 5 33 33 5 40 5 30 30 3 3 32 40 32 5 40 5 5 5 5 5 5 29 29 5 40 5 5 29 29 5 40 5 5 29 29 5 40 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-pbrown10 5 5 5 29 29 5 5 15 36 15 5 5 5 16 16 5 40 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-rdiejoma 5 36 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-drogers1 5 5 5 5 5 5 5 5 5 5 5 5 
-cdelpila 5 5 5 29 29 5 40 5 5 5 5 5 5 5 5 
-cbolivar 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-muhlenbr 5 5 5 5 5 5 5 
-msmith75 5 5 5 5 5 26 26 5 40 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-pmcguir2 5 5 5 5 5 5 
-jstaten 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-mgirod 5 5 5 5 5 5 5 5 5 5 
-zgartenh 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-alabella 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-bferrer1 5 40 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-pcataldi 5 40 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-aohri 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-pklekamp 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-amccar10 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-nwamble 5 5 5 5 5 5 5 5 5 5 5 5 5 
-wwu5 5 5 5 5 5 5 5 5 5 5 5 5 
-wsuter2 5 5 29 29 5 40 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-thowe1 5 40 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-mmian 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-jhouge 5 
-slemaign 5 5 5 5 5 5 5 5 5 5 5 5 
-ldamoose 5 5 5 5 29 29 5 40 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-sburnbau 5 40 5 5 5 5 5 5 5 5 5 5 5 29 29 5 40 5 5 29 29 5 40 5 5 5 5 5 5 5 5 5 12 12 13 13 5 36 5 5 5 5 5 5 5 5 
-nwarren 5 40 5 5 5 5 5 5 5 5 5 
-bconnol3 5 40 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-rheitkam 5 40 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-jmullike 5 5 5 5 30 30 33 33 32 32 3 3 5 40 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-chickey3 5 32 32 33 33 3 3 5 36 5 5 5 5 5 5 
-athoma24 5 40 5 5 5 5 5 5 5 5 5 5 5 
-rgensler 5 5 5 5 5 
-kthornt4 5 40 5 5 5 
-pvlandis 5 5 5 29 29 5 40 5 5 5 5 5 5 5 5 5 
-mmizraji 5 5 26 26 12 12 1 1 5 40 5 5 5 5 5 5 5 
-zpavlin 5 40 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-ydeng3 5 5 5 5 29 29 
-kfox8 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-lsulli11 5 5 5 5 5 5 5 
-jgorman6 5 12 12 29 29 5 40 5 5 5 5 5 5 5 5 
-enunez 5 5 5 5 5 
-jdirksen 5 36 5 29 29 5 40 5 5 5 5 5 5 5 5 5 5 5 
-whornby 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-jwade5 5 5 5 5 5 5 29 29 5 40 5 5 5 
-mblatt1 5 
-jowusuko 5 5 5 5 30 30 5 5 5 5 5 5 5 5 5 5 5 
-mmang 5 13 13 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-waberger 5 29 29 5 40 5 5 5 5 
-llombar2 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-gkaiser 5 5 5 5 5 5 5 5 5 5 5 5 
-koconn27 5 29 29 5 40 5 5 5 5 5 19 19 26 26 22 22 8 8 5 5 5 5 5 5 5 5 5 5 5 14 14 16 16 15 15 5 40 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-aweishan 5 40 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-mcaskey 5 5 29 29 5 40 5 5 5 5 
-jguarino 5 36 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-cseymou2 5 5 5 29 29 5 5 5 5 5 5 5 5 5 5 5 
-dplagenz 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-csasso 5 40 5 29 29 5 37 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-amccar11 5 40 5 5 5 5 5 5 5 5 5 5 5 
-yshi6 5 5 29 29 26 26 19 19 8 36 8 14 14 33 37 33 3 3 13 13 5 40 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-minoue2 5 40 5 5 5 5 5 5 5 5 
-jwinebre 5 5 29 29 5 40 5 5 5 5 5 5 5 5 5 5 5 5 5 
-sgalbens 5 5 5 5 5 5 5 5 5 5 5 5 5 
-jlazzara 5 5 5 5 5 5 5 5 
-vruesch 5 5 5 
-nniere 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-ghong 5 5 5 5 5 5 
-bhogan1 5 40 5 5 5 5 5 5 5 5 
-wdu 5 5 5 5 5 5 5 5 5 5 5 
-tmercier 5 40 5 5 
-esunshi1 5 5 5 
-eevans9 5 40 5 5 
-bkenney1 5 26 36 26 14 14 18 18 22 22 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-cdieckma 5 5 5 
-mcoggins 5 5 5 5 5 5 5 5 5 5 
-lblitzer 5 5 5 5 5 5 5 5 5 5 5 5 
-jdelledo 5 5 5 5 5 5 5 5 5 5 5 5 
-mfreedlu 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-tprice4 5 40 5 5 5 5 24 24 5 5 5 22 22 11 11 34 34 5 5 5 6 6 13 13 31 31 5 5 16 16 18 18 5 40 5 5 14 14 15 15 5 37 5 5 29 29 5 37 5 5 
-lbarret2 5 5 5 5 5 5 5 5 5 5 
-eralph 5 5 5 5 5 5 5 5 5 
-bhalliga 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-sroennec 5 40 5 5 5 5 5 
-jmurph32 5 5 5 5 5 5 
-cfrentze 5 5 5 5 5 5 5 5 5 5 5 
-mnewcome 5 40 5 5 24 40 24 5 40 5 5 5 
-jsitarsk 5 5 5 13 13 31 31 6 6 3 40 3 5 40 5 5 5 29 29 5 36 5 5 13 36 13 5 40 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-tpreko 5 40 5 5 5 5 5 5 5 5 
-mtreacy 5 40 5 5 5 5 5 5 5 5 5 5 5 
-ccampb21 5 5 5 5 5 5 5 
-rrivera8 5 5 
-rblack4 5 37 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-jwelsch 5 5 5 5 5 5 5 5 
-jgately1 5 40 5 5 5 5 5 5 
-gdean 5 5 
-ewigutow 5 40 5 5 5 5 5 5 5 5 5 
-dgibbon2 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-cmorton2 5 5 5 5 5 5 
-mrooney6 5 5 
-mmoran12 5 40 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-jwalte10 5 40 5 22 22 12 12 5 40 5 5 5 5 5 5 12 12 5 40 5 5 5 5 5 5 
-jcarney6 5 5 5 
-pmeyer3 5 5 5 29 29 5 40 5 5 5 5 5 5 
-icallaha 5 37 5 5 5 
-dtoth1 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 29 29 5 40 5 5 5 5 
-kkostola 5 29 29 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-dlee26 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-yying 5 40 5 5 5 5 5 5 29 29 
-swagy 5 5 5 5 5 5 5 5 5 5 
-rroque1 5 29 29 14 14 6 6 13 13 31 31 5 40 5 5 5 5 5 5 5 5 5 
-kdantoni 5 40 5 29 29 19 36 19 22 22 27 27 12 37 12 5 5 29 29 31 31 5 40 5 5 29 29 5 40 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-wmohler 5 5 5 5 5 5 
-lklein1 5 40 5 5 29 29 5 40 5 5 5 5 5 5 
-jbecker9 5 37 5 30 30 5 40 5 5 5 5 29 29 5 40 5 26 26 12 12 10 10 31 31 22 22 19 19 18 18 5 40 5 20 40 20 5 37 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-hrague 5 5 5 5 5 
-cott 5 5 5 5 5 
-mholzbau 5 5 5 5 5 5 5 5 5 5 
-mhawkin3 5 5 29 29 5 40 5 5 5 5 
-lharmon 5 5 5 5 5 5 5 
-elazzaro 5 40 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-tburley 5 5 5 5 5 5 5 
-shenn 5 29 29 5 36 5 5 29 29 5 40 5 5 
-jgomez5 5 5 5 5 5 5 5 5 5 5 5 5 
-jfries3 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-bniemoel 5 37 5 5 5 5 5 5 5 5 5 5 
-kriordan 13 13 31 31 6 6 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-jmurph33 5 5 5 5 5 5 5 5 5 5 5 
-dcorr1 5 5 5 5 5 5 5 5 5 5 
-cemenalo 5 5 5 
-yjung2 5 5 5 5 5 5 5 
-rpappas 5 40 5 5 5 5 5 5 5 5 5 
-mmerric1 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-mdosch 5 
-jbettag 5 5 5 5 5 5 
-jbernin1 5 5 5 5 5 5 5 5 5 5 5 
-gbruenin 5 5 
-ddallava 5 5 5 5 
-cgamboa 5 40 5 5 5 
-nquartir 22 40 22 24 24 8 8 20 20 5 40 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-lfaubion 5 5 5 5 5 5 5 
-cwilso24 5 5 24 24 27 27 18 18 5 40 5 5 5 5 29 29 5 40 5 5 5 5 
-aursino1 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-msummer2 5 5 5 5 5 5 5 5 5 5 
-kramm 5 5 5 5 5 5 5 5 5 5 5 5 5 
-jchapple 5 5 5 5 5 5 5 5 5 
-jbonds 5 40 5 5 5 5 29 29 5 40 5 29 29 5 40 5 29 29 5 40 5 5 5 5 5 5 
-dbirzer 5 22 22 5 40 5 26 26 5 40 5 5 5 19 19 16 16 18 18 2 2 9 9 5 40 5 5 15 15 5 40 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-cfish 5 40 5 5 5 
-nholmes1 5 40 5 29 29 5 5 5 
-ngiovino 5 5 5 5 5 5 
-eherber1 5 40 5 5 5 5 5 5 5 
-cgallag3 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-tzheng2 5 
-mgerber 5 40 5 5 5 5 5 
-jcolli23 5 5 
-awalton3 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-vwhitmor 5 37 5 
-rpellica 5 37 5 5 5 5 5 5 5 5 5 5 5 
-rmyers9 5 3 3 22 22 15 15 5 40 5 5 5 5 5 5 5 
-mdillon7 5 40 5 
-jdoerer 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-gbiltz 5 40 5 5 5 5 5 5 5 5 
-aheck1 5 40 5 5 
-ucooper 5 5 5 5 5 5 5 5 
-rschill1 5 40 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-mschlic1 5 5 5 5 5 5 5 5 5 
-mperry6 5 5 5 
-jfenton1 5 5 5 5 5 5 5 5 5 
-csauder 5 40 5 5 5 5 5 5 5 
-alowney 5 40 5 
-zkagalw1 5 40 5 5 5 5 5 5 
-swilkin4 5 21 21 5 40 5 5 5 5 5 5 5 5 5 5 5 5 
-imarx 5 5 5 5 5 5 29 29 5 37 5 17 17 28 28 29 40 29 9 9 5 36 5 5 5 12 12 5 40 5 5 5 5 5 5 5 5 5 
-cschmid7 5 37 5 5 5 
-awang4 5 40 5 
-abenavi3 5 5 5 5 5 5 5 
-sweyhmil 5 40 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-sgenz 5 5 5 5 5 5 5 5 5 5 5 5 
-mwu4 5 5 5 5 30 30 22 36 22 13 37 13 5 5 26 26 19 19 5 40 5 5 5 26 36 26 22 22 5 36 5 5 5 5 5 5 5 5 5 5 26 26 5 40 5 
-jleporte 5 36 5 5 
-adichris 5 5 29 29 5 5 5 
-scrotty1 5 40 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-pfarring 5 5 5 5 5 5 5 22 22 17 37 17 5 5 5 5 
-pdesousa 5 40 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-mkuehl 5 40 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-lfitter 5 5 5 5 5 5 5 
-kenriett 5 5 5 5 5 5 5 5 5 
-hzahour 5 32 32 3 3 5 40 5 5 5 30 30 5 40 5 29 29 5 40 5 5 5 5 5 5 5 5 
-emostyn 5 5 5 5 
-amellert 5 5 29 29 5 40 5 5 5 5 5 5 5 5 5 5 5 
-aandrade 5 5 5 5 5 5 5 5 5 5 
-tdann 5 29 29 5 37 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-sielusic 5 40 5 5 5 5 
-mlicursi 5 5 5 
-mdrake2 5 5 5 5 5 
-lhe3 5 5 
-inegroro 5 40 5 5 29 29 5 40 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-afonash 5 5 5 5 5 5 
-obarnard 5 5 5 5 5 5 5 5 5 5 5 
-nbenz 5 
-lhuang3 5 5 26 26 5 40 5 15 15 27 27 13 13 14 14 5 5 5 5 5 5 5 5 5 5 5 5 
-jwessele 5 5 29 29 5 40 5 5 
-jmastron 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-dmarino 5 5 5 
-cpickfor 5 5 5 5 5 
-obaitlot 5 5 5 5 5 5 5 5 5 
-kmollenk 5 40 5 5 5 5 5 5 5 
-ccarlso2 5 40 5 
-bmoreno1 5 5 5 5 5 5 5 5 5 5 
-smanriqu 5 5 29 29 5 40 5 5 
-mmillado 5 5 5 5 5 5 5 5 5 
-mferrel2 5 40 5 5 
-ldougla3 5 5 5 5 5 5 5 5 
-jmcconn1 5 37 5 5 5 5 
-ecahill 5 5 
-dshaw4 5 5 5 5 5 
-alucche1 5 
-odonnel1 5 5 5 5 
-mpirko 5 5 5 5 5 5 
-mlyden1 5 5 5 5 5 5 
-eschnaut 5 5 29 29 5 5 5 5 5 5 5 29 29 5 40 5 5 5 5 5 15 15 8 8 5 40 5 5 5 5 5 
-esalina1 5 29 29 19 40 19 26 26 7 36 7 5 40 5 29 29 5 40 5 5 5 5 5 5 5 
-adiederi 5 5 5 5 5 5 5 5 
-sholtz1 5 5 5 5 5 5 5 5 5 
-sdann 5 5 5 5 5 5 
-pkolek 5 5 
-nhaymond 5 40 5 5 5 5 5 29 29 5 40 5 5 5 5 5 5 
-kmuha 5 5 5 5 5 5 5 5 5 5 5 5 5 
-kfeehan 5 5 5 5 5 5 5 
-kalme 5 40 5 5 5 5 
-ivaldess 5 5 5 
-esmith30 5 40 5 5 5 
-ctoudouz 5 32 32 33 33 3 3 5 40 5 
-sreddy4 5 
-rboylan 5 5 5 5 5 5 
-ncheng 5 40 5 5 
-jzelinsk 5 5 5 5 5 5 5 5 
-jcuji 5 5 
-gworthin 5 40 5 5 5 5 
-dfabrega 5 5 5 5 5 5 5 5 5 5 5 5 
-angov 5 5 5 5 5 5 5 5 
-adunniga 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-skolda 5 5 5 5 
-scrippes 5 29 29 5 40 5 5 29 29 33 33 5 5 5 5 5 5 5 5 5 5 5 5 5 
-mschutze 5 40 5 5 5 29 29 22 36 22 5 37 5 5 5 5 
-mpavloff 5 5 5 5 5 5 5 5 5 5 5 
-lnixon1 5 5 
-kmurray7 5 5 5 5 5 5 5 5 5 5 
-jshard 5 40 5 5 
-hthomps4 5 5 5 5 5 5 5 5 
-ewood1 5 19 19 26 26 22 22 6 6 18 18 5 5 5 5 5 5 5 5 5 5 5 
-estrouse 5 5 5 5 5 5 5 5 
-sekanay1 5 5 29 29 5 40 5 5 
-odegnim 5 5 5 5 5 5 5 5 5 5 
-kcox5 5 5 5 5 5 
-kborotho 5 5 5 5 5 5 5 5 5 5 5 5 
-jbertram 5 5 5 5 5 
-hbyrne 5 40 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-ggulyas 5 5 6 6 6 6 31 31 31 31 13 13 13 13 30 30 30 30 5 36 5 5 5 30 30 3 3 33 40 33 32 32 5 40 5 5 5 5 
-ekeuler 5 5 5 
-egeyer1 5 40 5 5 5 5 5 5 5 5 
-dlong2 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-bpierpoi 5 5 
-apavelka 5 5 5 5 5 5 5 5 
-rbartle1 5 5 5 
-nyusko1 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-motten1 5 40 5 5 5 5 5 5 
-molsen3 5 5 
-mdambros 5 40 5 
-kmountf1 5 5 5 
-jeversol 5 40 5 5 5 5 5 5 5 5 5 5 5 5 
-etorrent 5 40 5 5 
-ereynol5 5 40 5 32 32 33 33 3 3 5 40 5 29 29 5 40 5 5 5 22 22 5 37 5 5 5 24 24 5 37 5 5 29 29 5 40 5 5 5 
-epark5 5 5 5 29 29 5 36 5 22 22 5 40 5 29 29 5 40 5 5 5 5 5 5 5 5 5 
-dpatel2 5 5 5 5 
-cmoreno5 5 29 29 5 40 5 5 29 29 5 40 5 5 5 
-bgawel 5 5 
-bconlon 5 40 5 12 12 22 22 7 36 7 28 37 28 22 40 22 5 40 5 5 5 
-apanousi 5 5 5 5 5 5 5 5 
-tdasso 5 40 5 
-rwittmer 5 40 5 5 5 5 5 5 5 5 5 
-rvazza 5 40 5 5 5 5 
-nhong 5 5 5 5 5 
-mrohling 5 5 5 5 5 
-dsmith53 5 5 5 5 
-cdowicz 5 29 29 5 40 5 5 5 5 5 5 5 5 
-bnakfoor 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-akhemani 5 40 5 5 5 5 
-ahughes8 5 5 5 5 5 5 5 5 5 
-tperey 5 5 5 5 5 5 5 5 5 5 5 5 5 
-pbetz 5 8 8 5 5 14 14 15 15 5 40 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 29 29 5 40 5 
-mmccor15 5 5 5 5 5 5 5 5 5 5 5 
-mgray10 5 5 29 29 5 40 5 5 5 5 5 
-mfraizer 5 5 5 5 5 5 
-lherna11 5 5 5 5 5 5 
-jmolumph 5 5 5 5 5 5 5 5 
-hzweberl 5 40 5 
-dserafin 5 40 5 5 5 
-bpowell4 5 40 5 5 5 
-mdownin1 5 40 5 5 5 5 5 
-lduggan 5 5 23 36 23 18 18 2 2 13 37 13 5 40 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-kmclaug3 5 37 5 29 29 5 5 5 5 5 5 
-kbulleit 5 40 5 
-jplas 5 40 5 5 
-jbrown36 5 40 5 5 
-dkim30 5 40 5 5 5 5 5 5 5 5 5 5 5 
-cpantin 5 37 5 29 29 5 40 5 
-cmyers11 5 37 5 5 26 26 1 1 4 37 4 24 36 24 5 40 5 5 12 40 12 6 37 6 3 3 13 13 29 40 29 5 40 5 5 5 5 5 5 5 5 5 
-amora2 5 13 13 31 31 6 6 5 5 5 5 5 32 32 33 33 3 3 5 36 5 5 5 5 5 29 29 5 40 5 5 5 5 5 5 5 
-xtsai 31 31 6 6 5 40 5 5 5 5 5 29 29 5 40 5 5 5 5 29 29 5 40 5 5 5 5 
-wbaer 5 5 5 5 5 5 5 5 5 5 2 2 4 4 9 9 5 40 5 17 17 23 36 23 5 5 5 5 28 28 5 37 5 5 21 21 23 40 23 5 40 5 5 21 21 5 5 5 5 5 21 21 5 40 5 5 12 12 22 22 5 40 5 5 5 5 5 14 14 8 8 15 15 5 40 5 5 5 5 11 11 34 36 34 24 24 5 40 5 5 24 24 27 27 5 40 5 7 7 5 40 5 5 5 5 5 5 5 5 5 5 33 33 3 3 5 5 5 29 29 5 40 5 5 5 5 5 31 31 5 40 5 5 32 32 5 40 5 5 5 5 29 29 5 40 5 5 29 29 5 40 5 5 5 5 
-nisakson 5 40 5 
-kmurph44 5 40 5 5 5 5 5 5 5 
-ibushue 5 5 5 5 5 
-enichol4 5 40 5 5 
-egroth 5 5 5 5 
-aheinzma 5 
-adecker1 5 40 5 5 5 5 5 5 
-aameen 5 40 5 5 
-zwall 5 5 5 
-smonaha1 5 5 5 29 29 5 40 5 5 
-sdeschne 5 5 5 
-mowen 5 40 5 5 5 5 5 5 5 
-lwatts1 5 5 26 26 12 12 3 3 23 23 5 40 5 5 
-krochefo 5 5 5 5 5 5 5 5 
-evandier 5 5 5 5 5 5 5 
-eclapp 5 5 5 5 5 5 5 5 5 5 5 5 
-awaldsch 5 5 5 5 5 5 
-adevito1 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-tsilva1 5 40 5 5 5 
-oivan 5 5 
-mmarti45 5 40 5 5 
-mjorden 5 40 5 5 5 5 
-ldorenko 5 5 5 
-ktracey 5 40 5 5 5 5 5 5 5 
-krothmey 5 40 5 29 29 
-kbiladea 5 5 5 
-jweas 5 
-jgoldsch 5 40 5 
-jdraves 5 
-gotte1 5 
-etruesda 5 40 5 5 5 5 5 5 
-emeara 5 40 5 5 5 5 5 5 
-cnilsen 5 5 5 5 5 5 5 
-bmurph24 5 40 5 5 5 
-azammit 5 5 5 5 
-arabbitt 5 40 5 29 29 23 37 23 14 14 2 2 5 5 5 5 4 4 5 5 5 5 5 5 5 5 5 5 5 5 5 
-wcheong 5 5 5 5 5 
-kmoran11 5 29 29 0 0 5 40 5 5 5 26 26 19 19 5 40 5 5 5 5 5 5 
-kgalla21 5 
-kgalla20 5 5 5 5 5 5 5 5 
-kfranz1 5 5 5 
-jsutton3 5 40 5 30 30 33 37 33 5 40 5 5 29 29 5 37 5 5 5 5 29 29 5 37 5 5 5 5 
-jhegart2 5 
-japplew1 5 5 5 29 29 5 40 5 
-imurrer 5 
-fschemel 5 40 5 5 5 5 
-fprimozi 5 5 5 5 5 5 5 5 5 5 5 
-elinares 5 5 5 5 5 5 5 
-cmulshin 5 5 5 5 5 5 5 5 
-cmagnuss 5 40 5 5 
-ccleary1 5 40 5 5 5 
-abohling 5 5 5 5 5 5 5 5 5 
-mscanish 5 40 5 5 5 5 5 5 5 
-mkirven 5 5 5 5 5 5 5 5 29 29 5 40 5 5 5 
-lkim3 5 
-lgrabows 5 40 5 5 5 5 5 5 
-lcaffar1 5 5 5 5 5 5 5 
-kliang2 5 5 
-jnowak4 5 5 5 5 5 5 
-hcheng1 5 5 
-bmerrick 5 5 5 5 
-bgagnon 5 5 5 5 
-tmansell 5 5 
-rrocco 5 5 5 5 5 
-rpuno 5 40 5 
-lyan4 5 5 5 5 
-kpresteg 5 5 5 5 
-jbaines 5 40 5 5 5 5 5 
-aromano2 5 29 29 5 40 5 29 29 5 40 5 5 5 5 
-alongsta 5 40 5 5 
-szachari 5 40 5 5 5 5 
-spalumb1 5 5 5 5 5 5 5 5 
-pcamara 5 13 13 32 32 3 3 5 40 5 5 5 5 5 29 29 5 40 5 5 29 29 5 5 5 5 5 5 5 5 5 5 5 
-operez2 5 40 5 5 5 
-nvincent 5 
-ldomenel 5 5 
-lcho 5 5 5 5 5 
-jpaul2 5 40 5 5 5 5 5 5 
-ischmitz 5 5 5 5 5 5 5 
-eeagle 5 40 5 5 
-dallen13 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-cdenzel 5 
-asowell 5 5 5 5 5 5 5 5 5 
-yzou2 5 5 5 
-pmcmonag 5 
-kpaulsen 5 40 5 
-kjacoby1 5 5 
-jruane 5 36 5 5 5 
-jdodig 5 5 5 5 5 5 5 5 5 5 5 5 
-gcramer1 5 5 5 5 
-everhey 5 40 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-esoller 5 5 5 29 29 5 37 5 5 5 5 5 5 5 5 
-ckotseos 5 40 5 5 5 5 5 
-cganley 5 
-asweet 5 5 5 5 
-apaik 5 
-thuber1 5 5 5 5 5 5 5 5 
-sincera 5 40 5 
-phennes2 5 5 5 5 5 5 5 5 5 5 
-msahd 5 5 5 5 
-mcabrer1 5 40 5 5 
-kkolleck 5 
-jgonnard 5 5 5 5 5 5 5 5 5 5 5 5 5 
-hsarkey 5 5 5 5 
-hholden 5 5 5 5 
-epil 5 5 5 5 
-awitte 5 5 5 
-trogers6 5 5 31 40 31 6 6 5 40 5 5 29 29 29 40 29 19 40 19 5 40 5 22 22 16 37 16 5 40 5 5 5 5 29 29 5 40 5 
-tfross 5 40 5 5 5 
-taguirre 5 5 5 5 
-kcockrel 5 5 5 5 
-jmarino6 5 
-eguenthe 5 5 5 5 5 5 5 5 
-ecaradon 5 40 5 5 5 5 19 19 24 24 27 27 8 8 14 14 15 15 5 5 
-creid4 5 40 5 5 5 5 5 
-carizama 5 5 5 5 5 5 5 
-anataraj 5 
-svukovit 5 5 5 
-msteph11 5 40 5 
-mraster 5 40 5 
-lbognar1 5 5 29 29 5 37 5 5 29 29 34 36 34 18 18 5 5 5 
-lbakke 5 40 5 
-jzacher 5 40 5 
-jheath3 5 40 5 5 5 5 
-hduan 5 5 
-epuntill 5 40 5 5 5 5 5 5 
-eallgaie 5 5 
-dlipa 5 22 22 13 13 29 29 26 26 5 5 5 21 21 5 40 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-clowney1 5 5 29 29 
-bsailer1 5 5 5 5 15 15 19 19 5 40 5 5 5 
-bburger 5 40 5 5 5 
-bbishop2 5 5 5 5 5 29 29 5 40 5 5 
-alifka 5 5 
-ttarkles 5 40 5 5 
-tkhong 5 40 5 5 29 29 5 5 5 
-sschmit1 5 5 
-rsulli13 5 40 5 5 29 29 5 40 5 
-plally 5 40 5 5 5 
-mwhelan3 5 5 5 
-mmccabe6 5 
-mkeller6 5 5 5 5 5 5 5 
-mdadamio 5 5 5 5 5 5 5 5 5 5 5 
-khinish 5 13 13 31 31 6 6 30 30 33 40 33 3 3 5 40 5 29 29 5 40 5 5 5 5 5 5 29 29 5 40 5 5 5 
-hschwart 5 40 5 29 29 5 40 5 5 5 5 5 
-hparkhil 5 5 5 5 5 
-dnaquin 5 5 5 
-abenedic 5 5 
-wdefaria 5 40 5 5 5 5 5 5 
-tcomer 5 40 5 5 5 5 5 5 
-tcarnes 5 5 5 5 5 5 5 
-rpowlus1 5 5 5 5 5 12 12 5 40 5 5 5 30 30 5 40 5 5 8 8 15 15 14 14 5 40 5 11 11 34 34 10 10 12 12 22 22 14 36 14 12 36 12 10 10 5 36 5 5 5 5 5 5 5 5 5 5 5 13 13 13 13 31 31 31 31 6 6 6 6 5 37 5 5 5 5 5 29 29 5 40 5 5 5 29 29 5 37 5 5 
-rduffy3 5 5 
-narmbrus 5 5 5 5 
-mritten 5 5 
-mdonne10 5 36 5 5 5 5 5 5 5 
-kperez4 5 5 30 30 22 37 22 18 18 19 19 5 40 5 5 5 5 5 5 5 
-jsuttman 5 5 5 5 5 
-jgriff12 5 40 5 5 
-jables 5 40 5 5 24 37 24 5 5 16 16 5 40 5 5 
-eforbes1 5 5 5 5 5 5 29 29 5 40 5 
-ccorse 5 5 5 5 
-asmith56 5 32 32 33 33 3 3 5 40 5 5 5 5 5 5 5 
-acook8 5 
-abojczuk 5 40 5 5 5 
-zliang3 5 40 5 
-ychen30 5 40 5 5 5 5 5 5 5 
-tkacius 5 40 5 5 5 5 5 5 5 5 5 5 
-szabala 5 40 5 5 5 5 
-swallac3 5 5 29 29 5 40 5 5 5 5 5 5 
-sbattali 5 40 5 5 5 5 5 5 
-ojacobse 5 
-npatidar 5 40 5 5 
-ngiannot 5 5 5 5 
-mstebbi1 29 29 5 40 5 5 5 5 5 5 
-mkelley9 5 
-kwhite14 5 40 5 
-kconese 5 20 20 5 40 5 5 5 5 5 5 5 5 5 5 5 5 
-jslaugh2 5 40 5 5 30 30 32 37 32 5 40 5 5 5 5 5 5 5 5 5 
-gwilson6 5 40 5 5 5 5 5 5 5 5 
-gpernico 5 5 5 
-drea 5 5 29 29 5 37 5 5 5 5 5 5 5 5 
-dkelly13 5 5 5 
-cschust4 5 40 5 5 5 
-bdzubara 3 3 33 33 32 32 5 40 5 5 5 5 5 5 5 5 
-akurz 5 5 5 5 5 5 5 5 5 
-acrowle1 5 40 5 5 
-zzovko 5 5 5 5 5 5 5 3 3 30 30 5 5 13 13 5 40 5 5 5 5 
-ztulausk 5 36 5 29 29 14 40 14 22 37 22 24 40 24 31 31 5 40 5 5 
-tfolwell 5 40 5 
-sharri11 5 5 5 5 5 5 5 5 
-mphelan5 5 29 40 29 
-mkocher2 5 5 
-ksteenvo 5 33 33 17 17 5 37 5 5 29 29 5 40 5 5 5 5 
-kmehta2 5 5 5 5 5 5 5 
-jrhiling 5 40 5 5 5 5 5 
-jmcclin1 5 5 5 
-eolsen2 5 40 5 5 5 5 
-egrammer 5 40 5 5 
-dngo2 5 29 29 13 40 13 5 40 5 5 5 5 5 
-czhou4 5 5 
-csedore 5 5 5 5 5 5 5 5 5 5 5 5 5 
-astaresi 5 5 
-areymer 5 5 5 5 
-abatkoff 5 5 5 5 5 5 
-xzhang24 5 5 
-skoo1 5 40 5 
-rsong 5 5 5 5 
-rbanuelo 5 40 5 5 5 29 29 5 40 5 19 19 26 26 22 22 28 28 16 16 29 40 29 5 37 5 5 
-psansone 5 
-npassina 5 
-mlarson3 5 40 5 5 5 5 5 5 5 5 
-mhagan2 5 5 5 5 
-mcrawf10 5 40 5 30 30 5 40 5 5 
-jbelluc2 5 40 5 5 5 5 5 5 5 5 5 5 
-jander21 5 5 5 5 5 
-ioteroto 5 
-ejones15 5 5 5 
-ecummin2 5 5 
-ccastil4 5 36 5 5 
-cbarahon 5 5 5 5 5 5 5 5 
-zeggers 5 37 5 5 5 5 5 5 5 5 5 5 
-skeller5 5 40 5 
-nholmes2 5 5 5 5 5 
-mtagovai 5 5 5 5 5 5 5 5 
-mryan32 5 24 24 4 4 26 26 30 30 22 22 14 14 5 40 5 5 5 5 5 5 5 5 
-mmatusk1 5 5 
-mflanag8 5 40 5 
-mdoyle19 5 40 5 
-lfalquez 5 40 5 5 5 5 5 5 
-jmarvin2 5 40 5 5 
-hchoudhu 5 40 5 5 5 5 5 
-edell 5 36 5 5 32 40 32 3 40 3 5 40 5 5 5 29 29 5 40 5 5 
-delwell 5 40 5 5 
-cpawelek 5 5 5 5 5 5 5 5 5 5 
-ccasper 5 40 5 5 5 5 5 5 5 5 5 5 5 5 5 
-bbrown14 5 40 5 5 
-ychen31 5 5 5 5 5 5 5 5 
-vkareh 5 5 5 
-rwilso18 5 40 5 5 5 29 29 5 40 5 
-rmelotik 5 40 5 5 
-pkollma1 5 5 5 5 5 5 5 5 5 5 
-phaley1 5 5 
-mzakowsk 5 5 5 
-mmoufawa 5 5 5 5 5 5 5 5 
-mmaldona 5 5 29 29 5 40 5 5 29 29 5 36 5 5 5 5 5 5 5 5 5 
-mlake2 5 40 5 5 5 5 
-mcurlis2 5 40 5 5 5 
-kround 5 40 5 5 
-kmoeinva 5 5 
-jsong3 5 5 5 5 5 5 
-jnagle7 5 40 5 5 5 5 5 5 
-jmullen6 5 
-jhuber4 5 5 5 5 
-gvonuhle 5 40 5 
-esienko 5 36 5 5 30 30 32 32 5 40 5 5 
-ekiszla 5 40 5 29 29 
-ekenney1 5 40 5 11 11 5 40 5 5 5 5 5 5 
-edoyal 5 
-dmikovit 5 40 5 
-dkim28 5 5 
-clink4 5 5 5 5 5 5 5 
-bferris1 5 5 5 
-syi3 5 
-swolfe1 5 40 5 5 5 
-shatfie1 5 40 5 
-rtaraboc 5 5 5 
-nllauro 5 40 5 5 5 
-mvander4 5 
-mtapp 5 5 5 5 5 
-mmirer 5 5 5 5 5 5 5 
-mesteve 5 5 5 5 
-mbutle14 5 37 5 29 29 5 37 5 21 37 21 5 40 5 5 5 5 5 
-mbutle13 5 40 5 5 
-lrodrig6 5 40 5 
-kkubik 5 40 5 5 
-jcorbin2 5 40 5 
-ihornung 5 40 5 29 29 12 40 12 22 22 7 36 7 24 24 5 40 5 
-gpetrosi 5 5 5 
-edownin1 5 40 5 5 5 12 12 5 40 5 5 5 5 5 
-coleary2 5 5 5 5 5 
-cmeyers3 5 5 
-cfitzgib 5 40 5 
-apeter14 5 40 5 5 5 
-aander27 5 5 5 5 
-yfeng3 5 5 5 5 5 5 5 
-risrael1 5 40 5 5 5 5 5 
-piannell 5 5 5 5 
-nmattei1 5 40 5 
-mvondras 5 5 5 
-mretoske 5 40 5 5 29 29 
-mplante 5 37 5 
-mlegersk 5 40 5 5 5 5 5 5 5 
-mjohns57 5 5 
-mheli 5 5 5 5 5 
-mbianco 5 5 
-lstephe3 5 5 5 
-kmccahan 5 
-jriver11 5 5 5 5 5 5 
-jmrozek 5 5 
-jhirshor 5 5 
-jgarci22 5 5 5 5 5 5 5 
-gnguyen 5 
-eriojas 5 5 5 5 
-ebrown20 5 40 5 
-dadams13 5 40 5 5 5 5 5 5 
-cdito 5 40 5 5 5 
-alaboe 5 5 5 5 5 5 5 
-ablanch2 5 40 5 5 5 5 5 5 5 
-yhe9 5 40 5 5 5 5 5 5 
-wzhu2 5 40 5 
-tkoewler 5 40 5 5 5 
-scannova 5 33 33 3 3 32 32 5 37 5 5 5 5 5 29 29 27 37 27 5 40 5 5 17 17 5 36 5 5 5 5 29 29 5 40 5 
-samezqui 5 5 
-rchan3 5 40 5 5 5 
-poconno6 5 40 5 5 
-ohatch 5 40 5 
-nho1 5 13 13 29 29 31 31 32 32 5 5 33 33 3 3 5 36 5 5 29 36 29 5 40 5 5 5 5 5 5 
-mwinche1 5 40 5 
-msteeves 5 5 5 5 5 5 
-mmccans 5 40 5 5 5 
-mhanley1 5 40 5 5 5 
-mguggenb 5 5 5 5 
-mcasasga 5 
-kthomp21 5 40 5 5 
-kmccabe4 5 40 5 5 5 5 22 22 5 5 10 10 5 37 5 
-khuffert 5 40 5 
-jxu9 5 37 5 5 29 29 5 40 5 5 5 5 5 
-jstellon 5 29 29 5 5 5 5 5 5 5 5 5 5 5 
-jboateng 5 5 5 5 
-iedgar 5 
-ekeefe2 5 5 5 5 5 5 
-eheidenr 5 
-cpalor 5 
-ccahill6 5 40 5 5 5 5 5 5 
-bgrier 5 
-bdrummo1 5 5 
-bcarmody 5 5 5 5 5 5 5 
-amurph14 5 5 5 5 5 5 5 5 5 
-afemrite 5 40 5 5 5 
-tpagessa 5 1 1 30 30 5 40 5 
-tjohns29 5 
-pbald 5 5 5 
-mnieves1 5 37 5 23 23 5 40 5 29 29 5 37 5 5 5 5 5 
-mbrombac 5 5 5 
-mbeinlic 5 5 5 5 
-lmedinab 5 40 5 5 5 5 5 5 5 5 
-lmcphill 5 5 
-kwoodwa3 5 5 5 20 20 5 5 17 17 22 22 14 14 5 40 5 5 5 
-kperry7 5 24 24 27 27 8 36 8 15 15 14 14 5 5 5 5 5 5 5 5 29 29 5 40 5 5 29 29 5 40 5 5 29 29 5 40 5 
-kmoran10 5 
-kmessier 5 5 
-kabe1 5 10 36 10 19 19 26 26 27 37 27 5 40 5 5 5 12 12 22 22 33 33 24 24 5 37 5 7 7 5 40 5 5 5 
-jusher 5 5 29 29 5 40 5 5 5 29 29 5 40 5 21 21 22 22 34 34 5 40 5 5 
-jmusema 5 
-jhall15 5 5 5 5 29 29 
-jcharbon 5 5 5 5 5 5 5 5 5 5 
-gverfurt 5 
-gmcdermo 5 29 29 5 37 5 5 5 5 5 5 5 
-eyeager 5 40 5 
-esulli14 5 5 5 5 5 
-edewane 5 40 5 
-dmoran5 5 40 5 5 
-dbodewig 5 5 
-aseketa 5 40 5 5 5 5 5 5 5 5 5 5 5 5 
-amitch13 5 5 
-amarti54 5 5 5 5 
-zwang17 5 40 5 5 5 5 5 5 5 
-rmcclain 5 
-pmcgee 5 5 5 5 
-olombard 5 40 5 
-myoung12 5 40 5 5 5 29 29 
-mmoreno3 5 37 5 26 37 26 3 3 12 37 12 5 40 5 
-mmcelro2 5 36 5 5 5 5 5 5 5 5 
-mgroark 5 5 5 5 5 5 5 5 29 29 
-mcurrie2 5 5 5 5 5 
-lschwar2 5 5 
-labreha 5 40 5 5 5 5 5 
-kmullan4 5 40 5 5 
-jstuppy 5 40 5 5 5 5 5 5 5 5 5 5 5 5 5 
-jluk 5 40 5 5 
-jigiede 5 40 5 
-jhlavin 5 5 5 5 5 5 5 
-jgripens 5 40 5 29 29 5 40 5 5 10 10 5 40 5 5 5 29 29 12 12 19 19 22 22 27 27 18 18 34 34 5 5 12 37 12 21 21 26 26 5 36 5 5 5 5 
-jfabreg2 5 40 5 5 5 5 29 29 5 40 5 5 5 5 
-jedward4 5 
-jburhann 5 40 5 30 30 5 40 5 5 29 29 5 40 5 5 5 
-hfertitt 5 5 5 5 5 5 5 5 
-edidonat 5 5 5 5 
-ealbi 5 5 
-dharvey1 5 13 13 31 31 6 6 5 5 5 5 
-crichte2 5 36 5 5 5 5 5 5 5 
-cdunlea1 5 5 
-awolfe4 5 12 12 8 8 5 40 5 5 29 29 5 40 5 5 5 5 5 5 
-aturzai 5 40 5 5 5 5 5 5 5 
-aosorio 5 40 5 
-aherna13 5 29 29 5 40 5 5 5 5 
-zhan1 5 5 29 29 
-tsong2 5 
-smurph19 5 40 5 5 
-sjo 5 5 5 
-sbsales 5 5 
-rpozasg1 5 5 
-rhughes7 5 37 5 
-rbarnes2 5 40 5 5 
-msimon6 5 5 5 5 
-mgorman5 5 5 
-jwoods8 5 5 5 
-jlehn 5 5 5 5 21 37 21 29 29 22 22 5 40 5 5 5 5 
-jdemarc1 5 5 
-hstone3 5 5 
-ezahoric 5 
-elopez7 5 
-ddelliso 5 5 29 29 5 40 5 5 5 5 
-cwhalen2 5 
-cjacobs3 5 5 5 5 5 5 5 5 5 5 5 5 
-blyons1 5 40 5 
-bklaus 5 5 
-zsurma 5 5 5 5 5 5 
-tpopps 5 40 5 
-tissa 5 
-svorne 5 5 5 5 
-sryan9 5 5 
-pgorman2 5 5 
-nmunozol 5 5 
-nkelly3 5 40 5 5 5 5 
-nferguso 5 
-mhawit 29 29 5 5 5 5 5 5 29 29 5 37 5 5 5 
-jzepf 5 40 5 5 
-jgirardo 5 
-jfrane 5 5 5 5 5 5 5 5 5 5 
-iroberts 5 5 5 5 
-hferrero 5 5 5 5 5 5 5 5 5 5 
-ginglis 5 
-ellano1 5 5 5 22 37 22 2 2 5 37 5 5 5 5 5 5 
-dreynoso 5 
-ctsevis 5 
-clangle1 5 5 5 5 
-apines1 5 5 
-amcfadd1 5 
-abiondo 5 26 26 12 12 5 37 5 5 5 29 29 5 40 5 29 29 5 5 23 23 5 36 5 5 5 
-thartle 5 5 
-tbendeck 5 40 5 5 
-ssitarsk 5 
-sdutta2 5 40 5 5 5 5 5 
-pjohns21 5 29 29 5 5 
-pjachim 5 40 5 5 5 
-mpenn1 5 21 21 5 40 5 5 5 
-mgabouer 5 5 
-lwukie 5 40 5 
-lsimon2 5 5 
-ldevito 5 5 
-layuyao 5 5 
-kdiggin1 5 40 5 
-kbockhol 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-jswift2 5 40 5 5 5 5 
-jmoawad 5 
-jduffy8 5 5 5 5 
-jchandle 5 40 5 5 
-jbrunne1 5 
-jbordall 5 23 23 5 40 5 5 
-ielizond 5 5 5 
-hwakelin 5 5 5 5 5 5 5 5 5 5 5 5 5 
-gcampoli 5 5 5 5 
-eutley 5 
-esagun 5 30 30 13 13 31 31 6 6 5 5 32 32 33 33 3 3 5 40 5 29 29 5 40 5 
-eobrie14 5 
-dgarci18 5 5 
-csmith72 5 40 5 5 5 
-cholmes6 5 5 5 5 
-cgrunha2 5 
-cdelane2 5 5 
-btournat 5 5 
-akeller5 5 5 5 
-adaniele 5 40 5 29 29 5 40 5 
-aclark13 5 40 5 5 
-aboyd2 5 5 29 29 5 40 5 5 19 19 26 26 5 40 5 
-wfine 5 37 5 5 5 5 5 5 5 5 
-srodawig 5 37 5 5 29 29 5 40 5 5 5 
-slee51 5 5 5 5 5 5 5 29 29 5 40 5 5 5 
-rmcgove1 5 
-pwasuwan 5 5 
-ojazbuti 5 5 5 5 5 5 
-nskora 5 40 5 5 5 
-nmarti12 5 5 5 5 5 5 5 
-nhelm 5 40 5 5 5 
-mpaulran 5 
-jminor1 5 5 5 5 
-jesposi2 5 40 5 5 5 5 
-igese 5 40 5 5 5 5 
-hsun2 5 
-emangels 5 5 5 5 5 
-eleahy1 5 40 5 5 
-ebrady7 5 
-dkolkebe 5 40 5 19 19 20 20 5 5 5 20 20 5 5 5 5 5 
-clewis13 5 40 5 5 
-chanzel 5 5 5 5 
-cbowden 5 5 29 29 5 40 5 5 5 5 5 5 
-cbartlet 5 
-bsoaresd 5 5 5 
-bknarr 5 40 5 
-bdages 5 5 5 
-asood1 5 5 5 5 5 5 
-alehanka 5 5 
-vzona 5 
-vdavis1 5 5 5 
-tmcguir2 5 5 5 5 5 5 
-tlynch3 5 5 5 5 21 37 21 15 40 15 5 40 5 
-sfore 5 5 5 29 29 5 40 5 29 29 5 40 5 5 5 5 
-rsabnani 5 5 5 5 5 
-rkenyon 5 5 
-rhughes8 5 5 5 5 
-mzachlin 5 40 5 17 17 5 40 5 5 
-moconn20 5 
-mmaron 5 
-mhepbur1 5 40 5 
-jyu7 5 5 
-jrombals 5 5 5 5 5 5 5 5 5 5 
-icorreia 5 5 5 5 
-gklaus 5 5 5 5 5 5 
-eromero3 5 40 5 5 
-eeschwei 5 5 
-ebabcoc1 5 5 5 
-dyefreme 5 40 5 5 
-dpark5 5 5 
-dobrie13 5 40 5 
-dkenned7 5 
-crodri12 5 
-coakley2 5 
-cgreeley 5 22 22 23 23 18 18 16 16 5 40 5 5 
-cgehan 5 36 5 5 
-cdulal 5 40 5 
-cdiallo 5 
-bcahill2 5 40 5 
-astensby 5 5 
-aslevin 5 5 29 29 5 40 5 24 24 5 40 5 5 5 29 29 10 36 10 11 11 34 34 5 40 5 5 
-alindema 5 40 5 5 
-ahachigi 5 5 5 5 5 29 29 5 40 5 5 5 5 5 5 5 5 5 5 
-agraham2 5 5 5 5 5 
-sgonzal8 5 40 5 
-sebben 5 5 5 5 
-pzibelli 5 5 
-nhammer 5 5 
-mzepf1 5 29 29 
-mlee39 5 40 5 29 29 
-mdolan5 5 5 5 5 5 5 
-mbaumbac 5 
-kstraub 5 32 32 33 33 3 36 3 5 40 5 5 29 29 5 40 5 5 5 5 
-khilbert 5 
-jpeacoc1 5 5 5 5 5 5 5 
-jomeara3 5 5 29 29 5 40 5 5 29 29 5 40 5 5 
-jmeek1 5 5 5 5 5 5 5 5 5 
-jklein6 5 3 40 3 5 40 5 5 29 29 5 40 5 5 29 29 14 14 20 20 12 12 5 40 5 5 5 5 5 5 5 5 5 5 
-jkidwel1 5 5 29 29 5 40 5 
-jguckenb 5 5 5 
-jfox13 5 40 5 5 21 40 21 4 40 4 5 40 5 5 
-jbialou1 5 40 5 5 5 5 5 5 5 
-jarmstr2 5 36 5 31 31 5 5 13 13 5 40 5 5 29 29 5 40 5 5 5 29 29 5 36 5 5 5 5 30 40 30 5 40 5 5 5 5 5 
-gtrindad 5 3 3 5 40 5 5 
-ggasper 5 5 5 
-fharris2 5 40 5 5 
-eziegle1 5 40 5 5 5 5 
-etravnik 5 5 
-etighe 5 
-bpapiern 5 40 5 5 5 5 
-ajarosik 5 
-zyin4 5 40 5 
-zprender 5 40 5 5 
-trobinet 5 
-smcconv1 5 40 5 5 5 
-shannon3 5 40 5 
-phoward1 5 5 
-msheil 5 
-mmccabe7 5 5 
-mkranz 5 40 5 5 
-messner 5 
-jspence7 5 37 5 5 5 
-jmeagher 5 5 5 5 5 
-jcrawfo8 5 5 5 5 5 5 
-jconway7 5 40 5 5 5 
-ecottril 5 
-dgregor5 5 
-csalcedo 5 40 5 31 31 18 18 
-coatway 5 5 
-clutz 5 5 5 5 5 5 5 5 5 5 
-ckenny2 5 
-cesheric 5 24 24 7 7 34 36 34 5 37 5 5 5 5 
-athill1 5 37 5 5 5 
-aachecar 5 5 5 
-ykim22 5 5 
-sleyden 5 5 5 5 
-scole4 5 40 5 
-sbraynar 5 40 5 
-rtanczos 5 40 5 
-rreutima 5 5 5 5 5 5 5 
-pphoa 5 23 23 5 5 5 6 6 5 40 5 17 17 5 5 5 5 29 29 5 5 5 
-omarcian 5 5 5 5 5 5 5 
-ocoyle 5 5 5 5 
-nfenton 5 5 5 
-mvanblun 5 5 5 
-mpiccone 5 5 29 29 26 26 5 36 5 22 22 
-mmarti44 5 5 
-mfoley9 5 40 5 5 5 5 5 
-mdrennan 5 29 36 29 
-mbursch 5 
-lyoo1 5 5 5 22 22 5 40 5 
-kpurk 5 5 5 5 5 5 
-kkula 5 5 5 5 5 
-kebert 5 5 5 5 
-jzimlich 5 5 5 5 5 
-jpellic1 5 
-jappleby 5 
-gbreslin 5 5 
-emaginn 5 40 5 5 
-ebrown19 5 5 5 5 5 
-dgomez5 5 40 5 5 5 
-cvisnic 5 
-csofrona 5 40 5 5 5 5 
-csamagal 5 
-btompole 5 40 5 5 5 5 5 5 5 5 
-bscholl1 5 5 5 5 
-awellen 5 5 5 
-ashields 5 5 5 5 5 29 29 
-aleahy 5 6 6 32 32 33 33 5 40 5 5 
-ajamies1 5 5 5 
-znunez 5 40 5 5 
-tmacmill 5 40 5 
-tford6 5 40 5 5 5 
-tcaffrey 5 40 5 5 5 
-smunson 5 40 5 5 
-rscott5 5 40 5 5 
-onisbet 5 5 5 5 5 5 5 5 5 5 
-ohollowa 5 
-mschmi17 5 5 33 33 5 37 5 5 32 32 3 3 5 40 5 5 5 5 
-mmcghee3 5 29 29 19 37 19 5 40 5 18 18 22 22 5 40 5 5 
-mmcdon16 5 5 5 5 
-mmarotta 5 36 5 5 
-mburbano 5 40 5 
-kvidoure 5 5 5 5 5 
-kkleise1 5 5 5 5 5 5 5 5 5 
-kjin2 5 5 
-kfoley3 5 5 
-kerhardt 5 40 5 5 5 5 5 
-jplaza 5 40 5 5 
-iwan 5 5 
-gdibono 5 5 
-dgarda 5 40 5 
-cviracol 5 40 5 5 5 5 5 
-cmille39 5 5 29 29 5 40 5 5 12 12 5 5 5 34 34 5 40 5 5 5 5 29 29 5 40 5 
-cllanter 5 
-clawlor1 5 
-clachena 5 40 5 5 5 5 5 5 5 
-chu3 5 5 5 
-bjohns22 5 40 5 5 5 5 
-bhogan2 5 40 5 5 
-barmstea 5 
-aviducic 5 
-skeene 5 5 
-sbaker8 5 
-rcriqui 5 5 
-nruiz2 5 
-mmesecar 5 5 5 5 
-mlee38 5 
-mkramer7 5 5 5 
-mhowat1 5 
-mfuetter 5 5 
-lstone1 5 5 5 5 26 36 26 1 1 24 37 24 31 31 23 36 23 5 40 5 5 5 5 
-kfulk1 5 5 5 
-kfliotso 5 40 5 
-kborisia 5 40 5 
-jpesola 5 
-jenochs 5 
-jbrooks6 5 40 5 5 
-jagosti1 5 40 5 5 
-htoner 5 40 5 29 29 5 40 5 5 
-gmatting 5 5 
-ehansen4 5 40 5 
-eevans8 5 
-claracey 5 40 5 5 
-cbontra1 5 29 29 5 37 5 7 7 5 40 5 
-bmorrell 5 5 5 29 29 5 40 5 5 13 13 5 40 5 5 5 5 5 
-bgriffi3 5 
-aconway 5 5 5 5 5 
-zzhang14 5 5 19 19 5 40 5 5 5 29 29 19 19 5 40 5 
-scarlino 5 5 5 5 5 
-sbryant4 5 
-rnavin 5 40 5 29 29 5 37 5 29 29 18 37 18 5 40 5 10 10 5 40 5 29 29 23 37 23 5 40 5 29 29 5 40 5 5 5 5 5 5 5 5 
-rarroyo 5 5 
-psainagh 5 40 5 5 
-pkinkopf 5 40 5 5 
-mshackl2 5 40 5 5 5 5 
-mroddy 5 40 5 5 5 5 5 
-mlamber7 5 5 
-lcarrol3 5 5 
-kmehari 5 40 5 5 5 
-klawren4 5 40 5 
-jstump1 32 32 3 3 5 40 5 5 
-jkeenan4 5 
-eshanno4 5 40 5 
-elipnick 5 
-dmarque4 5 5 5 5 
-dlee27 5 5 
-dewell 5 5 5 5 29 29 5 40 5 
-cyoun 5 5 5 5 5 5 5 5 5 5 5 
-ckuehl 5 5 5 5 
-cking9 5 5 
-blefkowi 5 
-bbatas 5 26 36 26 32 40 32 
-aveon 5 5 5 5 5 5 5 5 
-abeacom 5 5 
-wtumbela 5 40 5 
-wbona 5 22 22 5 36 5 
-spantano 5 40 5 5 5 
-sgay 5 5 
-rschaef1 5 5 5 5 5 
-mschierl 5 37 5 
-mramsey1 5 5 5 5 
-mmaransk 5 5 5 5 5 5 
-mlink3 5 40 5 5 
-mkirchmi 5 40 5 5 5 
-meisenme 5 5 5 
-lrubino 5 5 
-llingle1 5 5 5 5 
-lfraser 5 37 5 18 18 5 40 5 5 5 5 5 
-khermann 5 32 32 3 3 5 5 5 
-kbaile11 5 5 
-jlee73 5 5 5 29 29 5 5 5 22 22 5 40 5 5 5 5 
-jknowle1 5 40 5 
-jgambard 5 40 5 
-gzhang6 5 40 5 
-fkenney 5 
-dbender 5 5 5 5 
-cgorrie 5 11 11 
-cchen10 5 5 
-bxie 5 5 5 
-bwatson3 5 5 
-avanblun 5 5 
-aritten 5 5 5 5 
-amorcus 5 5 5 
-afulwide 5 5 5 5 5 
-treynoso 5 5 5 
-slouden 5 40 5 29 29 5 37 5 5 26 26 5 40 5 5 29 29 
-rdesouza 5 5 5 5 5 
-pdelcamp 5 5 
-nbaumer 5 40 5 5 5 5 5 
-mstanfo1 5 
-mryan33 5 
-mmille51 5 40 5 
-mkoshi 5 5 29 29 5 40 5 29 29 5 5 5 
-mkonshie 5 5 5 
-mhoran 5 5 5 
-mgaborek 5 
-mechols 5 5 5 5 5 5 5 5 5 5 5 
-mboehner 5 29 29 5 40 5 
-lkesic 5 5 32 36 32 33 33 3 3 5 5 5 5 5 
-lcapuano 5 5 5 5 
-kadlaka1 5 29 29 5 40 5 22 37 22 13 13 5 40 5 29 29 19 19 26 26 5 36 5 5 5 5 5 29 29 
-gumunyan 5 5 19 19 22 36 22 4 37 4 
-gjohanne 5 32 32 33 36 33 3 36 3 5 40 5 5 
-esteigau 5 5 5 
-eascoles 5 40 5 5 
-cquast 5 40 5 5 5 
-clink3 5 5 5 5 5 5 
-clee30 5 5 5 12 12 26 36 26 5 40 5 
-cfennel1 5 32 32 33 33 3 3 5 36 5 29 29 5 40 5 
-cfamular 5 
-bkeanemu 5 5 
-bcartwri 5 
-ahollow2 5 
-abellm 5 5 5 5 5 
-tmurphy7 5 40 5 5 
-swagner4 5 40 5 
-sshaw3 5 37 5 32 32 5 40 5 5 
-slauber 5 40 5 5 
-reubanks 5 
-phalpin 5 40 5 5 5 5 5 
-pgould 5 40 5 5 5 5 5 5 
-moleary9 5 
-mhorvat8 5 
-kseidle1 5 29 29 5 40 5 5 5 
-kcasey11 5 40 5 
-jvirzi 5 5 
-jquinn13 5 
-jgalden1 5 32 32 3 3 33 33 5 40 5 5 5 5 5 5 5 5 5 5 5 5 5 
-hlevinsk 5 40 5 5 5 5 
-gstephe2 5 40 5 
-esmith36 5 40 5 
-ekinyon 5 40 5 5 
-dsimonsa 5 37 5 5 5 
-dnelso12 5 40 5 5 29 29 5 40 5 29 29 5 40 5 5 5 29 29 5 5 5 5 
-csport 5 37 5 
-cmarrder 5 5 5 
-bhasara 5 
-bdusling 5 
-afeda 5 5 
-acavuto 5 
-acatao 5 5 
-zyeadon 5 5 29 29 5 40 5 20 36 20 
-tchalmer 5 
-slarkin 5 40 5 5 5 
-rwester 5 40 5 5 
-rgao2 5 5 
-potoole3 5 5 
-pmccabe2 5 
-pardila1 5 
-nviner 5 5 5 5 5 5 
-msagasta 5 32 32 33 33 3 3 5 40 5 5 5 5 5 24 24 5 37 5 14 14 5 40 5 15 15 
-mpfeiffe 5 5 5 5 
-meiseman 5 40 5 5 5 
-mdugan1 5 5 5 5 5 5 12 12 22 22 5 40 5 
-jzhang17 5 29 29 5 40 5 5 5 5 
-jsennati 5 5 5 
-jpassman 5 40 5 
-jmille76 5 5 
-jmahone7 5 5 5 5 5 5 5 
-jlembo 5 
-jirwin3 5 5 5 
-jhuang14 5 40 5 
-jdspain 5 40 5 5 29 29 
-jcaggian 5 5 5 
-ggallant 5 29 29 5 40 5 29 29 5 40 5 5 5 29 29 
-elauer1 5 40 5 5 5 5 5 5 5 
-eglendon 5 40 5 
-ebrigham 5 
-cosulli2 5 
-cmacclar 5 40 5 
-bcopp 5 
-azawojsk 5 40 5 
-ahymes 5 5 5 5 
-wmoyers 5 40 5 5 5 
-wblocher 5 40 5 
-vtrombet 5 5 26 26 22 22 24 24 
-sjohnsto 5 5 5 5 5 
-shopkin3 5 5 5 5 5 5 5 1 1 
-rsmith53 5 
-rbarber 5 5 
-mmetersk 5 40 5 
-mjames11 5 5 5 
-melliot3 5 5 
-kmalik1 5 5 5 5 5 5 5 
-jmonthio 5 40 5 5 10 10 22 22 2 37 2 5 5 5 5 5 5 5 5 5 5 
-jjarvis2 5 
-hchristm 5 5 5 5 
-fhernan7 5 
-fbirch 5 
-egilber1 5 5 
-csabers 5 40 5 
-cnobuhar 5 5 
-cfranke1 5 40 5 
-bwright7 5 
-bsabey 5 5 5 
-akokot 5 
-aguerra2 5 5 5 5 5 5 5 
-afinster 5 40 5 5 
-ydwyer 5 
-twilso15 5 31 31 13 13 5 5 5 5 5 29 29 5 40 5 29 29 5 40 5 5 29 29 5 40 5 5 5 
-scascio 5 40 5 5 
-saragon 5 5 
-rkenny1 5 
-ptaylor3 5 40 5 
-niovino 5 40 5 5 
-ndeely 5 40 5 5 5 
-mroche3 5 5 5 5 
-mnowotar 5 5 5 5 
-mmarsh11 5 
-mgrandmo 5 5 5 5 
-mfay3 5 22 40 22 12 40 12 29 29 5 40 5 29 29 5 40 5 5 5 
-mcamacho 5 
-kcarey4 5 
-jweston 5 37 5 5 5 
-jtopor 5 40 5 5 5 5 5 5 
-jsuh3 5 5 5 
-jolmanso 5 5 5 5 5 5 5 5 
-jeberha2 5 40 5 5 
-jcasama1 5 40 5 5 5 5 5 5 
-jbertsch 5 5 5 22 22 0 0 26 26 
-jandrad2 5 40 5 5 
-eradomsk 5 5 5 5 5 5 5 
-dsaloome 5 
-dfritz1 5 
-dberg 5 5 5 
-ctrujil4 5 5 5 5 5 
-cmcmenem 5 
-cmcdono6 5 5 
-blumb 5 5 5 5 
-bheather 5 5 
-awagner6 5 5 11 11 
-aokon 5 1 1 22 22 32 32 14 40 14 16 37 16 26 36 26 3 3 2 37 2 15 15 23 36 23 33 33 12 36 12 5 40 5 5 
-akeys 5 40 5 
-ahapp 5 5 5 
-agegen 5 40 5 
-aalexan9 5 
-rfiegeli 5 5 
-psconzo 5 5 5 
-nsimon1 5 
-ngodfrey 5 40 5 
-mshanno5 13 13 31 31 6 6 5 40 5 
-mhilger 5 32 32 3 3 5 40 5 29 29 22 37 22 12 12 18 37 18 5 40 5 5 5 5 
-mheredi2 5 
-mgilber5 5 5 5 
-mbrannan 5 40 5 
-lalvey 5 5 5 5 
-kragan 5 
-kmacdon6 5 40 5 5 5 5 5 5 
-kduffy5 5 5 
-kcoogan 5 37 5 5 5 5 29 29 3 3 33 33 32 32 5 40 5 5 29 29 5 40 5 
-kbosma 5 5 
-kbellasc 5 40 5 5 
-jzinsky 5 5 
-johara1 5 13 13 31 31 32 32 3 3 5 40 5 29 29 5 40 5 22 22 5 40 5 5 
-jlawren5 5 29 29 5 40 5 5 29 29 5 40 5 5 5 
-hhentges 5 18 18 
-hdopico 5 40 5 5 5 
-fzornow 5 5 
-egardne3 5 40 5 
-edoyle8 5 5 
-ealvarad 5 5 5 
-dsun2 5 5 
-cribera 5 29 29 5 40 5 5 29 29 
-cmitche8 5 5 
-cdanos 5 
-cchiment 5 
-belder 5 5 
-aszpynda 5 5 5 5 5 
-wjackobo 5 5 5 5 5 5 5 
-rwong3 5 29 29 14 36 14 15 15 1 1 27 36 27 11 36 11 5 40 5 5 29 29 
-rquintal 5 5 5 5 
-pwerling 5 5 
-pjones8 5 40 5 
-ogonzal3 5 40 5 
-nspring1 5 40 5 
-mebberwe 5 40 5 
-mdonahu4 5 40 5 
-kriggs1 5 5 5 5 5 5 5 5 
-koshea2 5 40 5 5 5 
-kewart 5 40 5 
-jlipka 5 5 5 5 5 5 5 5 
-jcroddic 5 40 5 29 29 
-gmarti12 5 
-gdiederi 5 40 5 5 5 5 5 
-fsegura1 5 29 29 5 40 5 5 5 5 5 5 29 29 5 40 5 5 5 
-eburke7 5 40 5 5 
-eadams6 5 5 5 5 5 29 29 5 40 5 
-cocallag 5 40 5 5 
-btrosse1 5 5 
-apreda 5 
-zenciso 5 5 
-yyoshiok 31 31 13 13 5 40 5 
-smanfred 5 
-rgarret2 5 5 5 
-rfedison 5 5 
-rciamarr 5 32 32 5 5 33 33 3 36 3 
-pharris5 5 
-ooleshch 5 
-oguntin 5 5 5 
-msasse 5 29 29 5 5 5 5 5 
-minteria 5 40 5 5 5 
-mcoffey1 5 
-madamo 5 
-ksmith69 5 
-kmendiol 5 40 5 5 
-kkobaya2 32 32 33 33 3 3 5 40 5 29 29 29 29 5 40 5 5 
-kbaten 5 
-kbaert 5 
-jtanaka2 5 5 5 
-jsumantr 5 5 5 
-jburton2 5 29 29 5 40 5 5 
-eunebasa 5 5 
-ddelp 5 5 5 5 5 
-dabdulra 5 
-chemm 5 5 
-bhart5 5 5 
-bbuscher 5 40 5 5 5 5 
-adinovo 5 40 5 
-wsogge 5 40 5 5 5 5 5 5 
-whanley 5 32 32 3 3 5 36 5 5 29 29 5 40 5 26 26 1 1 7 7 5 5 5 5 
-wcole1 31 31 5 40 5 29 29 5 37 5 5 5 5 5 5 
-twine 5 
-rsernel 5 5 5 
-rklevens 5 40 5 5 
-rburns6 5 
-ralliso1 5 40 5 
-owright 5 5 
-nitkin 5 29 29 5 40 5 5 5 
-ncateris 5 40 5 29 29 5 40 5 12 12 4 37 4 5 40 5 5 
-nargilag 5 5 
-msitzer 5 5 
-mqueal 5 5 29 29 5 40 5 5 
-mmclau21 5 
-mduffey1 5 5 5 5 5 
-maubourg 5 13 13 31 31 6 6 5 40 5 29 29 5 40 5 5 5 5 5 5 
-lpolster 5 5 5 5 
-ksiefker 5 5 5 
-jmaier3 5 
-jhelmkam 5 5 29 29 5 40 5 
-jandrew5 5 29 29 5 40 5 5 
-hbaldwi2 5 5 
-gbarthel 5 40 5 15 36 15 5 40 5 
-ejoyce2 5 
-ecastil2 5 29 29 5 40 5 5 5 5 
-dshah2 5 5 
-dhaseno1 5 5 
-cmurillo 5 
-ckmet 5 29 29 5 40 5 5 1 1 5 40 5 5 5 5 5 5 5 5 
-cjaskows 5 40 5 5 
-cfayne 5 
-tvail 5 5 5 5 5 5 5 5 5 
-tpero 5 5 5 5 
-tmccoy1 5 
-sbuzdon 5 
-pgota 5 40 5 
-penglis2 5 5 5 
-mshan 5 40 5 
-mschmi18 5 
-mneal2 5 40 5 5 32 32 5 40 5 
-mkozak3 5 5 5 5 
-mhowe 5 40 5 
-mguilfoi 5 30 30 6 6 3 3 5 40 5 
-lmolinel 5 5 5 30 30 21 21 29 29 5 37 5 
-jshaw7 5 40 5 5 5 5 5 
-gfernand 5 5 5 
-egardey 5 
-ecook4 26 36 26 22 22 8 8 5 36 5 5 27 27 5 40 5 12 12 14 14 22 22 5 36 5 
-dchatfie 5 5 5 5 5 5 5 
-avilleg1 5 5 
-astokes2 5 29 29 5 40 5 5 29 29 5 40 5 5 5 5 
-tandrew3 5 40 5 
-shwang5 5 40 5 29 40 29 5 40 5 5 
-ntoroczk 5 
-msloan1 5 40 5 5 5 5 5 5 5 
-mfeldma2 5 40 5 
-mburns10 5 5 5 5 
-kwood11 5 
-koneill9 5 
-kkoehnen 5 37 5 30 30 8 8 5 5 5 5 5 5 5 
-kjamsek 5 40 5 
-khenges2 5 5 5 
-keichler 5 
-jperretg 5 
-jmoss1 5 5 
-jfollans 5 5 
-jbaca1 5 5 
-ejaques 5 
-dliggio 5 5 5 5 5 
-cedmond3 5 
-cduggan 5 5 
-cassam 5 5 5 
-btello 5 5 5 5 
-agaraton 5 5 5 
-adarrow 5 29 29 5 40 5 5 5 5 5 
-aaldave 5 5 32 32 5 36 5 3 3 5 40 5 29 29 5 40 5 5 
-zmieczko 5 40 5 
-wcumberl 5 
-vkaranja 5 5 5 
-thintz1 5 5 
-swaltrip 5 40 5 5 5 
-sbaker7 5 40 5 
-rdesaint 5 5 5 5 5 5 
-prothroc 5 40 5 
-pconway3 5 
-ogallahu 5 
-nvadutha 5 5 5 5 5 5 5 5 5 
-nsow 5 
-mgouldin 5 
-ksolarz 5 
-jdachill 5 
-ilickona 5 
-gpalmer 5 40 5 5 
-eodrobin 5 
-ebarron3 5 40 5 
-dlavelle 5 
-dgriffi6 5 
-cminetos 5 
-chyry 5 40 5 
-cfagan4 5 5 5 5 5 5 
-bverrecc 5 33 33 5 40 5 5 29 29 5 40 5 
-asteven4 5 29 29 
-acoury 5 
-acontre3 5 5 5 5 5 5 
-abanks3 5 5 29 29 5 40 5 
-zdesch 5 5 
-sstenge1 5 5 29 29 
-rziegler 5 40 5 5 5 
-ntownley 5 40 5 
-msteure1 5 
-kmarston 5 5 5 5 5 5 5 
-jrohan 5 
-jmiles7 5 5 5 
-hpellegr 5 40 5 
-eolmanso 5 29 29 5 37 5 
-cwagne12 5 5 5 
-cragsdal 5 40 5 5 
-cdyke 5 
-amille43 5 5 5 
-acastano 5 5 
-abakeis 5 40 5 5 
-wtjaden 5 5 5 
-tphilli7 5 29 29 5 40 5 26 26 1 1 33 33 13 13 22 22 12 12 
-sbrady9 5 5 5 5 5 5 
-rmille26 5 5 
-omagdale 5 5 
-nschoenb 5 5 5 
-nsaladin 5 
-nmungan 5 
-nlukesh 5 40 5 
-mwooten 11 36 11 34 34 10 10 5 40 5 5 5 5 5 5 
-lortiz3 5 5 5 5 5 5 
-jtang1 5 31 31 13 13 5 40 5 5 5 5 5 5 5 5 5 
-drottenb 5 
-csweene8 5 
-crivers 5 37 5 5 5 5 
-clogo 5 5 5 
-cgrunha1 5 40 5 5 
-amoran6 5 5 
-trobbin1 5 40 5 29 29 22 37 22 5 37 5 18 18 4 4 5 40 5 5 5 5 30 30 
-tmarvin 5 5 
-teiden 5 30 30 
-sratigan 5 40 5 29 29 5 40 5 29 29 5 40 5 
-sfisher6 5 
-orubin 5 27 27 5 40 5 5 
-nyano 5 4 4 8 8 22 22 13 36 13 27 27 18 18 28 28 5 40 5 5 
-nskolds 5 
-npratt 5 29 29 5 40 5 5 5 5 
-mwinton 5 40 5 
-mtrinh 5 29 29 5 40 5 5 5 
-klacosta 5 37 5 5 30 30 30 30 24 24 24 24 7 7 7 7 27 27 27 27 5 40 5 5 5 5 29 29 5 40 5 5 5 
-jzaarour 5 40 5 5 4 4 5 40 5 29 29 5 40 5 
-jtrzask1 5 
-jsheeha9 5 29 29 5 40 5 5 
-jirwin2 5 
-jhoeksem 5 
-jboyle8 5 5 12 12 5 36 5 5 5 5 5 5 5 5 5 
-hfoley 5 
-amurra10 5 
-amurph15 5 5 
-aeiteljo 5 30 30 31 31 13 13 6 6 5 5 33 40 33 5 40 5 5 5 5 29 29 5 36 5 22 40 22 
-abernocc 5 
-tdinh 5 13 13 31 31 6 6 5 40 5 13 13 31 31 6 6 5 40 5 5 5 5 29 29 5 40 5 5 5 
-shunt3 5 40 5 5 
-rmille27 5 29 29 5 40 5 5 
-nwebste1 5 5 23 23 5 40 5 18 18 5 37 5 
-nsanford 5 5 
-ncasal 5 40 5 
-mseida 5 5 5 5 5 5 5 
-mbenz1 5 
-eshea2 5 29 29 5 40 5 
-ebaker11 5 
-dspalins 5 31 31 3 40 3 5 40 5 5 5 5 29 29 22 37 22 12 12 9 9 26 26 5 40 5 5 5 
-csusco 5 5 5 
-camstut1 5 29 29 14 14 5 40 5 5 5 5 
-aschomog 5 5 5 
-aescobar 5 5 5 
-tleytham 5 5 5 5 
-rsmith54 5 
-rondrula 5 29 29 5 40 5 5 5 
-pflemin1 5 40 5 5 5 
-mtcheuka 5 40 5 5 
-msponem 5 40 5 5 5 5 5 
-mnguye18 5 5 30 30 
-mmassar1 5 40 5 
-mmacdon4 5 5 5 5 5 
-mhellick 5 40 5 5 
-mgorski2 5 5 
-kdeye 5 5 5 5 
-jsheehy1 5 
-jharnes1 5 5 5 
-jgorman7 5 
-jbotek 5 5 5 5 
-eoduro 5 40 5 29 29 
-dobryan3 5 40 5 
-ddelafe 5 34 34 
-dbryck 5 13 13 31 31 5 40 5 29 29 5 40 5 5 
-clance1 5 5 5 5 5 5 
-cdevoto 5 5 
-cbert 5 5 5 5 
-zdreznin 5 
-teckel 5 40 5 
-tconnor6 5 40 5 29 29 5 40 5 18 18 
-srodrig8 5 
-spelayom 5 29 29 5 40 5 
-rcole5 5 5 13 36 13 31 37 31 5 40 5 5 5 5 5 
-mreisel 5 
-mpiotrow 5 
-mparson5 5 
-mmccor14 5 
-mderane1 5 5 
-lwesteme 5 40 5 5 5 5 5 5 
-kcalhou3 5 
-epatton2 5 40 5 5 
-eflynn5 5 
-efitzge4 5 40 5 
-dtong 5 
-cfreema5 5 5 13 13 5 40 5 5 5 5 5 5 5 
-aleos 5 
-tdicker1 5 40 5 
-sperez3 5 
-smeyer5 5 40 5 
-rbeebe1 5 
-oegbuonu 5 5 
-mdeboske 5 
-kweingar 5 40 5 
-jhenige 5 5 5 
-imckinne 5 37 5 
-gsilva1 5 40 5 5 5 5 5 
-gkim 5 
-dpalmer4 5 40 5 5 5 29 29 14 36 14 4 4 5 5 5 29 29 
-cmaher3 5 40 5 
-chartma2 5 5 
-cbotta 5 29 29 5 40 5 32 32 5 40 5 5 5 5 5 5 
-aurquijo 5 5 5 29 29 5 40 5 5 5 29 29 
-aherman2 5 32 32 5 40 5 5 5 
-tsheeha1 5 40 5 5 5 
-rstewar6 5 40 5 5 
-rbrutvan 5 5 5 5 5 
-ralban 5 40 5 
-msicili1 5 29 29 5 40 5 5 5 
-mquinn9 5 40 5 5 
-jknipe 5 5 5 5 29 29 5 40 5 5 
-hvita 5 40 5 5 24 24 27 27 7 7 5 5 5 5 5 13 13 31 31 6 6 5 5 5 5 5 29 29 5 40 5 
-eospeck 5 36 5 5 
-dmorris7 5 29 29 5 40 5 
-dlagios 5 
-csardi 5 40 5 
-tcantway 5 5 5 5 5 5 5 5 
-kmichael 5 
-khogan6 5 
-jhallenb 5 5 5 
-gdoughe1 5 29 29 5 40 5 5 5 
-cyounkle 5 5 
-chult 5 40 5 
-braimann 5 5 
-bhuls 5 40 5 5 34 34 5 40 5 5 
-wolafsso 5 
-rcook4 5 40 5 29 29 5 40 5 5 
-ppilawsk 5 5 
-ngaines 5 37 5 5 5 
-kfarr1 5 5 
-jzhao5 31 31 
-ddonnel1 5 40 5 5 
-cmorin2 5 40 5 
-areardon 5 5 
-acohen1 5 5 31 31 13 13 5 5 
-tmaloney 5 40 5 5 29 29 5 40 5 29 29 
-smyers5 5 29 29 5 40 5 5 
-shayes6 5 
+dtorgers 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 14 14 29 29 18 37 18 18 22 22 21 21 18 18 18 18 18 18 18 18 18 18 18 18 18 18 29 37 29 18 40 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 19 19 29 29 18 39 18 18 18 18 18 18 18 18 18 18 18 
+cdavin1 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+alebron1 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+ccooper8 18 36 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+nweindel 18 18 18 18 18 18 19 19 18 18 18 18 18 18 18 18 18 18 18 18 18 
+ntownsen 18 39 18 18 18 8 8 18 18 3 3 9 9 7 7 21 21 15 15 18 36 18 23 36 23 18 38 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+jberg2 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+fhita 18 18 18 18 9 39 9 18 36 18 18 18 18 18 18 9 9 22 22 18 40 18 18 18 18 18 18 18 18 18 18 
+mmcfarli 18 36 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+mlengwin 18 18 18 18 18 18 18 18 
+kwurl 18 40 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+ccampb20 18 40 18 18 25 25 18 40 18 24 24 7 7 15 40 15 18 40 18 18 18 18 18 18 19 19 18 40 18 18 19 19 18 40 18 18 19 19 18 40 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+pbrown10 18 18 18 19 19 18 18 8 36 8 18 18 18 6 6 18 40 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+rdiejoma 18 36 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+drogers1 18 18 18 18 18 18 18 18 18 18 18 18 
+cdelpila 18 18 18 19 19 18 40 18 18 18 18 18 18 18 18 
+cbolivar 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+muhlenbr 18 18 18 18 18 18 18 
+msmith75 18 18 18 18 18 5 5 18 40 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+pmcguir2 18 18 18 18 18 18 
+jstaten 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+mgirod 18 18 18 18 18 18 18 18 18 18 
+zgartenh 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+alabella 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+bferrer1 18 40 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+pcataldi 18 40 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+aohri 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+pklekamp 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+amccar10 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+nwamble 18 18 18 18 18 18 18 18 18 18 18 18 18 
+wwu5 18 18 18 18 18 18 18 18 18 18 18 18 
+wsuter2 18 18 19 19 18 40 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+thowe1 18 40 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+mmian 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+jhouge 18 
+slemaign 18 18 18 18 18 18 18 18 18 18 18 18 
+ldamoose 18 18 18 18 19 19 18 40 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+sburnbau 18 40 18 18 18 18 18 18 18 18 18 18 18 19 19 18 40 18 18 19 19 18 40 18 18 18 18 18 18 18 18 18 22 22 0 0 18 36 18 18 18 18 18 18 18 18 
+nwarren 18 40 18 18 18 18 18 18 18 18 18 
+bconnol3 18 40 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+rheitkam 18 40 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+jmullike 18 18 18 18 24 24 25 25 15 15 7 7 18 40 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+chickey3 18 15 15 25 25 7 7 18 36 18 18 18 18 18 18 
+athoma24 18 40 18 18 18 18 18 18 18 18 18 18 18 
+rgensler 18 18 18 18 18 
+kthornt4 18 40 18 18 18 
+pvlandis 18 18 18 19 19 18 40 18 18 18 18 18 18 18 18 18 
+mmizraji 18 18 5 5 22 22 3 3 18 40 18 18 18 18 18 18 18 
+zpavlin 18 40 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+ydeng3 18 18 18 18 19 19 
+kfox8 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+lsulli11 18 18 18 18 18 18 18 
+jgorman6 18 22 22 19 19 18 40 18 18 18 18 18 18 18 18 
+enunez 18 18 18 18 18 
+jdirksen 18 36 18 19 19 18 40 18 18 18 18 18 18 18 18 18 18 18 
+whornby 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+jwade5 18 18 18 18 18 18 19 19 18 40 18 18 18 
+mblatt1 18 
+jowusuko 18 18 18 18 24 24 18 18 18 18 18 18 18 18 18 18 18 
+mmang 18 0 0 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+waberger 18 19 19 18 40 18 18 18 18 
+llombar2 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+gkaiser 18 18 18 18 18 18 18 18 18 18 18 18 
+koconn27 18 19 19 18 40 18 18 18 18 18 10 10 5 5 9 9 30 30 18 18 18 18 18 18 18 18 18 18 18 13 13 6 6 8 8 18 40 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+aweishan 18 40 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+mcaskey 18 18 19 19 18 40 18 18 18 18 
+jguarino 18 36 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+cseymou2 18 18 18 19 19 18 18 18 18 18 18 18 18 18 18 18 
+dplagenz 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+csasso 18 40 18 19 19 18 39 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+amccar11 18 40 18 18 18 18 18 18 18 18 18 18 18 
+yshi6 18 18 19 19 5 5 10 10 30 36 30 13 13 25 37 25 7 7 0 0 18 40 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+minoue2 18 40 18 18 18 18 18 18 18 18 
+jwinebre 18 18 19 19 18 40 18 18 18 18 18 18 18 18 18 18 18 18 18 
+sgalbens 18 18 18 18 18 18 18 18 18 18 18 18 18 
+jlazzara 18 18 18 18 18 18 18 18 
+vruesch 18 18 18 
+nniere 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+ghong 18 18 18 18 18 18 
+bhogan1 18 40 18 18 18 18 18 18 18 18 
+wdu 18 18 18 18 18 18 18 18 18 18 18 
+tmercier 18 40 18 18 
+esunshi1 18 18 18 
+eevans9 18 40 18 18 
+bkenney1 18 5 36 5 13 13 6 6 9 9 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+cdieckma 18 18 18 
+mcoggins 18 18 18 18 18 18 18 18 18 18 
+lblitzer 18 18 18 18 18 18 18 18 18 18 18 18 
+jdelledo 18 18 18 18 18 18 18 18 18 18 18 18 
+mfreedlu 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+tprice4 18 40 18 18 18 18 17 17 18 18 18 9 9 12 12 27 27 18 18 18 20 20 0 0 11 11 18 18 6 6 6 6 18 40 18 18 13 13 8 8 18 38 18 18 19 19 18 39 18 18 
+lbarret2 18 18 18 18 18 18 18 18 18 18 
+eralph 18 18 18 18 18 18 18 18 18 
+bhalliga 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+sroennec 18 40 18 18 18 18 18 
+jmurph32 18 18 18 18 18 18 
+cfrentze 18 18 18 18 18 18 18 18 18 18 18 
+mnewcome 18 40 18 18 17 40 17 18 40 18 18 18 
+jsitarsk 18 18 18 0 0 11 11 20 20 7 40 7 18 40 18 18 18 19 19 18 36 18 18 0 36 0 18 40 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+tpreko 18 40 18 18 18 18 18 18 18 18 
+mtreacy 18 40 18 18 18 18 18 18 18 18 18 18 18 
+ccampb21 18 18 18 18 18 18 18 
+rrivera8 18 18 
+rblack4 18 38 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+jwelsch 18 18 18 18 18 18 18 18 
+jgately1 18 40 18 18 18 18 18 18 
+gdean 18 18 
+ewigutow 18 40 18 18 18 18 18 18 18 18 18 
+dgibbon2 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+cmorton2 18 18 18 18 18 18 
+mrooney6 18 18 
+mmoran12 18 40 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+jwalte10 18 40 18 9 9 22 22 18 40 18 18 18 18 18 18 22 22 18 40 18 18 18 18 18 18 
+jcarney6 18 18 18 
+pmeyer3 18 18 18 19 19 18 40 18 18 18 18 18 18 
+icallaha 18 39 18 18 18 
+dtoth1 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 19 19 18 40 18 18 18 18 
+kkostola 18 19 19 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+dlee26 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+yying 18 40 18 18 18 18 18 18 19 19 
+swagy 18 18 18 18 18 18 18 18 18 18 
+rroque1 18 19 19 13 13 20 20 0 0 11 11 18 40 18 18 18 18 18 18 18 18 18 
+kdantoni 18 40 18 19 19 10 36 10 9 9 31 31 22 39 22 18 18 19 19 11 11 18 40 18 18 19 19 18 40 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+wmohler 18 18 18 18 18 18 
+lklein1 18 40 18 18 19 19 18 40 18 18 18 18 18 18 
+jbecker9 18 37 18 24 24 18 40 18 18 18 18 19 19 18 40 18 5 5 22 22 28 28 11 11 9 9 10 10 6 6 18 40 18 2 40 2 18 37 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+hrague 18 18 18 18 18 
+cott 18 18 18 18 18 
+mholzbau 18 18 18 18 18 18 18 18 18 18 
+mhawkin3 18 18 19 19 18 40 18 18 18 18 
+lharmon 18 18 18 18 18 18 18 
+elazzaro 18 40 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+tburley 18 18 18 18 18 18 18 
+shenn 18 19 19 18 36 18 18 19 19 18 40 18 18 
+jgomez5 18 18 18 18 18 18 18 18 18 18 18 18 
+jfries3 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+bniemoel 18 39 18 18 18 18 18 18 18 18 18 18 
+kriordan 0 0 11 11 20 20 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+jmurph33 18 18 18 18 18 18 18 18 18 18 18 
+dcorr1 18 18 18 18 18 18 18 18 18 18 
+cemenalo 18 18 18 
+yjung2 18 18 18 18 18 18 18 
+rpappas 18 40 18 18 18 18 18 18 18 18 18 
+mmerric1 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+mdosch 18 
+jbettag 18 18 18 18 18 18 
+jbernin1 18 18 18 18 18 18 18 18 18 18 18 
+gbruenin 18 18 
+ddallava 18 18 18 18 
+cgamboa 18 40 18 18 18 
+nquartir 9 40 9 17 17 30 30 2 2 18 40 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+lfaubion 18 18 18 18 18 18 18 
+cwilso24 18 18 17 17 31 31 6 6 18 40 18 18 18 18 19 19 18 40 18 18 18 18 
+aursino1 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+msummer2 18 18 18 18 18 18 18 18 18 18 
+kramm 18 18 18 18 18 18 18 18 18 18 18 18 18 
+jchapple 18 18 18 18 18 18 18 18 18 
+jbonds 18 40 18 18 18 18 19 19 18 40 18 19 19 18 40 18 19 19 18 40 18 18 18 18 18 18 
+dbirzer 18 9 9 18 40 18 5 5 18 40 18 18 18 10 10 6 6 6 6 4 4 33 33 18 40 18 18 8 8 18 40 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+cfish 18 40 18 18 18 
+nholmes1 18 40 18 19 19 18 18 18 
+ngiovino 18 18 18 18 18 18 
+eherber1 18 40 18 18 18 18 18 18 18 
+cgallag3 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+tzheng2 18 
+mgerber 18 40 18 18 18 18 18 
+jcolli23 18 18 
+awalton3 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+vwhitmor 18 37 18 
+rpellica 18 38 18 18 18 18 18 18 18 18 18 18 18 
+rmyers9 18 7 7 9 9 8 8 18 40 18 18 18 18 18 18 18 
+mdillon7 18 40 18 
+jdoerer 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+gbiltz 18 40 18 18 18 18 18 18 18 18 
+aheck1 18 40 18 18 
+ucooper 18 18 18 18 18 18 18 18 
+rschill1 18 40 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+mschlic1 18 18 18 18 18 18 18 18 18 
+mperry6 18 18 18 
+jfenton1 18 18 18 18 18 18 18 18 18 
+csauder 18 40 18 18 18 18 18 18 18 
+alowney 18 40 18 
+zkagalw1 18 40 18 18 18 18 18 18 
+swilkin4 18 29 29 18 40 18 18 18 18 18 18 18 18 18 18 18 18 
+imarx 18 18 18 18 18 18 19 19 18 39 18 23 23 16 16 19 40 19 33 33 18 36 18 18 18 22 22 18 40 18 18 18 18 18 18 18 18 18 
+cschmid7 18 39 18 18 18 
+awang4 18 40 18 
+abenavi3 18 18 18 18 18 18 18 
+sweyhmil 18 40 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+sgenz 18 18 18 18 18 18 18 18 18 18 18 18 
+mwu4 18 18 18 18 24 24 9 36 9 0 39 0 18 18 5 5 10 10 18 40 18 18 18 5 36 5 9 9 18 36 18 18 18 18 18 18 18 18 18 18 5 5 18 40 18 
+jleporte 18 36 18 18 
+adichris 18 18 19 19 18 18 18 
+scrotty1 18 40 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+pfarring 18 18 18 18 18 18 18 9 9 23 37 23 18 18 18 18 
+pdesousa 18 40 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+mkuehl 18 40 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+lfitter 18 18 18 18 18 18 18 
+kenriett 18 18 18 18 18 18 18 18 18 
+hzahour 18 15 15 7 7 18 40 18 18 18 24 24 18 40 18 19 19 18 40 18 18 18 18 18 18 18 18 
+emostyn 18 18 18 18 
+amellert 18 18 19 19 18 40 18 18 18 18 18 18 18 18 18 18 18 
+aandrade 18 18 18 18 18 18 18 18 18 18 
+tdann 18 19 19 18 37 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+sielusic 18 40 18 18 18 18 
+mlicursi 18 18 18 
+mdrake2 18 18 18 18 18 
+lhe3 18 18 
+inegroro 18 40 18 18 19 19 18 40 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+afonash 18 18 18 18 18 18 
+obarnard 18 18 18 18 18 18 18 18 18 18 18 
+nbenz 18 
+lhuang3 18 18 5 5 18 40 18 8 8 31 31 0 0 13 13 18 18 18 18 18 18 18 18 18 18 18 18 
+jwessele 18 18 19 19 18 40 18 18 
+jmastron 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+dmarino 18 18 18 
+cpickfor 18 18 18 18 18 
+obaitlot 18 18 18 18 18 18 18 18 18 
+kmollenk 18 40 18 18 18 18 18 18 18 
+ccarlso2 18 40 18 
+bmoreno1 18 18 18 18 18 18 18 18 18 18 
+smanriqu 18 18 19 19 18 40 18 18 
+mmillado 18 18 18 18 18 18 18 18 18 
+mferrel2 18 40 18 18 
+ldougla3 18 18 18 18 18 18 18 18 
+jmcconn1 18 39 18 18 18 18 
+ecahill 18 18 
+dshaw4 18 18 18 18 18 
+alucche1 18 
+odonnel1 18 18 18 18 
+mpirko 18 18 18 18 18 18 
+mlyden1 18 18 18 18 18 18 
+eschnaut 18 18 19 19 18 18 18 18 18 18 18 19 19 18 40 18 18 18 18 18 8 8 30 30 18 40 18 18 18 18 18 
+esalina1 18 19 19 10 40 10 5 5 32 36 32 18 40 18 19 19 18 40 18 18 18 18 18 18 18 
+adiederi 18 18 18 18 18 18 18 18 
+sholtz1 18 18 18 18 18 18 18 18 18 
+sdann 18 18 18 18 18 18 
+pkolek 18 18 
+nhaymond 18 40 18 18 18 18 18 19 19 18 40 18 18 18 18 18 18 
+kmuha 18 18 18 18 18 18 18 18 18 18 18 18 18 
+kfeehan 18 18 18 18 18 18 18 
+kalme 18 40 18 18 18 18 
+ivaldess 18 18 18 
+esmith30 18 40 18 18 18 
+ctoudouz 18 15 15 25 25 7 7 18 40 18 
+sreddy4 18 
+rboylan 18 18 18 18 18 18 
+ncheng 18 40 18 18 
+jzelinsk 18 18 18 18 18 18 18 18 
+jcuji 18 18 
+gworthin 18 40 18 18 18 18 
+dfabrega 18 18 18 18 18 18 18 18 18 18 18 18 
+angov 18 18 18 18 18 18 18 18 
+adunniga 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+skolda 18 18 18 18 
+scrippes 18 19 19 18 40 18 18 19 19 25 25 18 18 18 18 18 18 18 18 18 18 18 18 18 
+mschutze 18 40 18 18 18 19 19 9 36 9 18 39 18 18 18 18 
+mpavloff 18 18 18 18 18 18 18 18 18 18 18 
+lnixon1 18 18 
+kmurray7 18 18 18 18 18 18 18 18 18 18 
+jshard 18 40 18 18 
+hthomps4 18 18 18 18 18 18 18 18 
+ewood1 18 10 10 5 5 9 9 20 20 6 6 18 18 18 18 18 18 18 18 18 18 18 
+estrouse 18 18 18 18 18 18 18 18 
+sekanay1 18 18 19 19 18 40 18 18 
+odegnim 18 18 18 18 18 18 18 18 18 18 
+kcox5 18 18 18 18 18 
+kborotho 18 18 18 18 18 18 18 18 18 18 18 18 
+jbertram 18 18 18 18 18 
+hbyrne 18 40 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+ggulyas 18 18 20 20 20 20 11 11 11 11 0 0 0 0 24 24 24 24 18 36 18 18 18 24 24 7 7 25 40 25 15 15 18 40 18 18 18 18 
+ekeuler 18 18 18 
+egeyer1 18 40 18 18 18 18 18 18 18 18 
+dlong2 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+bpierpoi 18 18 
+apavelka 18 18 18 18 18 18 18 18 
+rbartle1 18 18 18 
+nyusko1 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+motten1 18 40 18 18 18 18 18 18 
+molsen3 18 18 
+mdambros 18 40 18 
+kmountf1 18 18 18 
+jeversol 18 40 18 18 18 18 18 18 18 18 18 18 18 18 
+etorrent 18 40 18 18 
+ereynol5 18 40 18 15 15 25 25 7 7 18 40 18 19 19 18 40 18 18 18 9 9 18 39 18 18 18 17 17 18 39 18 18 19 19 18 40 18 18 18 
+epark5 18 18 18 19 19 18 36 18 9 9 18 40 18 19 19 18 40 18 18 18 18 18 18 18 18 18 
+dpatel2 18 18 18 18 
+cmoreno5 18 19 19 18 40 18 18 19 19 18 40 18 18 18 
+bgawel 18 18 
+bconlon 18 40 18 22 22 9 9 32 36 32 16 37 16 9 40 9 18 40 18 18 18 
+apanousi 18 18 18 18 18 18 18 18 
+tdasso 18 40 18 
+rwittmer 18 40 18 18 18 18 18 18 18 18 18 
+rvazza 18 40 18 18 18 18 
+nhong 18 18 18 18 18 
+mrohling 18 18 18 18 18 
+dsmith53 18 18 18 18 
+cdowicz 18 19 19 18 40 18 18 18 18 18 18 18 18 
+bnakfoor 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+akhemani 18 40 18 18 18 18 
+ahughes8 18 18 18 18 18 18 18 18 18 
+tperey 18 18 18 18 18 18 18 18 18 18 18 18 18 
+pbetz 18 30 30 18 18 13 13 8 8 18 40 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 19 19 18 40 18 
+mmccor15 18 18 18 18 18 18 18 18 18 18 18 
+mgray10 18 18 19 19 18 40 18 18 18 18 18 
+mfraizer 18 18 18 18 18 18 
+lherna11 18 18 18 18 18 18 
+jmolumph 18 18 18 18 18 18 18 18 
+hzweberl 18 40 18 
+dserafin 18 40 18 18 18 
+bpowell4 18 40 18 18 18 
+mdownin1 18 40 18 18 18 18 18 
+lduggan 18 18 26 36 26 6 6 4 4 0 39 0 18 40 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+kmclaug3 18 38 18 19 19 18 18 18 18 18 18 
+kbulleit 18 40 18 
+jplas 18 40 18 18 
+jbrown36 18 40 18 18 
+dkim30 18 40 18 18 18 18 18 18 18 18 18 18 18 
+cpantin 18 39 18 19 19 18 40 18 
+cmyers11 18 38 18 18 5 5 3 3 21 37 21 17 36 17 18 40 18 18 22 40 22 20 37 20 7 7 0 0 19 40 19 18 40 18 18 18 18 18 18 18 18 18 
+amora2 18 0 0 11 11 20 20 18 18 18 18 18 15 15 25 25 7 7 18 36 18 18 18 18 18 19 19 18 40 18 18 18 18 18 18 18 
+xtsai 11 11 20 20 18 40 18 18 18 18 18 19 19 18 40 18 18 18 18 19 19 18 40 18 18 18 18 
+wbaer 18 18 18 18 18 18 18 18 18 18 4 4 21 21 33 33 18 40 18 23 23 26 36 26 18 18 18 18 16 16 18 39 18 18 29 29 26 40 26 18 40 18 18 29 29 18 18 18 18 18 29 29 18 40 18 18 22 22 9 9 18 40 18 18 18 18 18 13 13 30 30 8 8 18 40 18 18 18 18 12 12 27 36 27 17 17 18 40 18 18 17 17 31 31 18 40 18 32 32 18 40 18 18 18 18 18 18 18 18 18 18 25 25 7 7 18 18 18 19 19 18 40 18 18 18 18 18 11 11 18 40 18 18 15 15 18 40 18 18 18 18 19 19 18 40 18 18 19 19 18 40 18 18 18 18 
+nisakson 18 40 18 
+kmurph44 18 40 18 18 18 18 18 18 18 
+ibushue 18 18 18 18 18 
+enichol4 18 40 18 18 
+egroth 18 18 18 18 
+aheinzma 18 
+adecker1 18 40 18 18 18 18 18 18 
+aameen 18 40 18 18 
+zwall 18 18 18 
+smonaha1 18 18 18 19 19 18 40 18 18 
+sdeschne 18 18 18 
+mowen 18 40 18 18 18 18 18 18 18 
+lwatts1 18 18 5 5 22 22 7 7 26 26 18 40 18 18 
+krochefo 18 18 18 18 18 18 18 18 
+evandier 18 18 18 18 18 18 18 
+eclapp 18 18 18 18 18 18 18 18 18 18 18 18 
+awaldsch 18 18 18 18 18 18 
+adevito1 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+tsilva1 18 40 18 18 18 
+oivan 18 18 
+mmarti45 18 40 18 18 
+mjorden 18 40 18 18 18 18 
+ldorenko 18 18 18 
+ktracey 18 40 18 18 18 18 18 18 18 
+krothmey 18 40 18 19 19 
+kbiladea 18 18 18 
+jweas 18 
+jgoldsch 18 40 18 
+jdraves 18 
+gotte1 18 
+etruesda 18 40 18 18 18 18 18 18 
+emeara 18 40 18 18 18 18 18 18 
+cnilsen 18 18 18 18 18 18 18 
+bmurph24 18 40 18 18 18 
+azammit 18 18 18 18 
+arabbitt 18 40 18 19 19 26 37 26 13 13 4 4 18 18 18 18 21 21 18 18 18 18 18 18 18 18 18 18 18 18 18 
+wcheong 18 18 18 18 18 
+kmoran11 18 19 19 14 14 18 40 18 18 18 5 5 10 10 18 40 18 18 18 18 18 18 
+kgalla21 18 
+kgalla20 18 18 18 18 18 18 18 18 
+kfranz1 18 18 18 
+jsutton3 18 40 18 24 24 25 39 25 18 40 18 18 19 19 18 38 18 18 18 18 19 19 18 39 18 18 18 18 
+jhegart2 18 
+japplew1 18 18 18 19 19 18 40 18 
+imurrer 18 
+fschemel 18 40 18 18 18 18 
+fprimozi 18 18 18 18 18 18 18 18 18 18 18 
+elinares 18 18 18 18 18 18 18 
+cmulshin 18 18 18 18 18 18 18 18 
+cmagnuss 18 40 18 18 
+ccleary1 18 40 18 18 18 
+abohling 18 18 18 18 18 18 18 18 18 
+mscanish 18 40 18 18 18 18 18 18 18 
+mkirven 18 18 18 18 18 18 18 18 19 19 18 40 18 18 18 
+lkim3 18 
+lgrabows 18 40 18 18 18 18 18 18 
+lcaffar1 18 18 18 18 18 18 18 
+kliang2 18 18 
+jnowak4 18 18 18 18 18 18 
+hcheng1 18 18 
+bmerrick 18 18 18 18 
+bgagnon 18 18 18 18 
+tmansell 18 18 
+rrocco 18 18 18 18 18 
+rpuno 18 40 18 
+lyan4 18 18 18 18 
+kpresteg 18 18 18 18 
+jbaines 18 40 18 18 18 18 18 
+aromano2 18 19 19 18 40 18 19 19 18 40 18 18 18 18 
+alongsta 18 40 18 18 
+szachari 18 40 18 18 18 18 
+spalumb1 18 18 18 18 18 18 18 18 
+pcamara 18 0 0 15 15 7 7 18 40 18 18 18 18 18 19 19 18 40 18 18 19 19 18 18 18 18 18 18 18 18 18 18 18 
+operez2 18 40 18 18 18 
+nvincent 18 
+ldomenel 18 18 
+lcho 18 18 18 18 18 
+jpaul2 18 40 18 18 18 18 18 18 
+ischmitz 18 18 18 18 18 18 18 
+eeagle 18 40 18 18 
+dallen13 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+cdenzel 18 
+asowell 18 18 18 18 18 18 18 18 18 
+yzou2 18 18 18 
+pmcmonag 18 
+kpaulsen 18 40 18 
+kjacoby1 18 18 
+jruane 18 36 18 18 18 
+jdodig 18 18 18 18 18 18 18 18 18 18 18 18 
+gcramer1 18 18 18 18 
+everhey 18 40 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+esoller 18 18 18 19 19 18 39 18 18 18 18 18 18 18 18 
+ckotseos 18 40 18 18 18 18 18 
+cganley 18 
+asweet 18 18 18 18 
+apaik 18 
+thuber1 18 18 18 18 18 18 18 18 
+sincera 18 40 18 
+phennes2 18 18 18 18 18 18 18 18 18 18 
+msahd 18 18 18 18 
+mcabrer1 18 40 18 18 
+kkolleck 18 
+jgonnard 18 18 18 18 18 18 18 18 18 18 18 18 18 
+hsarkey 18 18 18 18 
+hholden 18 18 18 18 
+epil 18 18 18 18 
+awitte 18 18 18 
+trogers6 18 18 11 40 11 20 20 18 40 18 18 19 19 19 40 19 10 40 10 18 40 18 9 9 6 39 6 18 40 18 18 18 18 19 19 18 40 18 
+tfross 18 40 18 18 18 
+taguirre 18 18 18 18 
+kcockrel 18 18 18 18 
+jmarino6 18 
+eguenthe 18 18 18 18 18 18 18 18 
+ecaradon 18 40 18 18 18 18 10 10 17 17 31 31 30 30 13 13 8 8 18 18 
+creid4 18 40 18 18 18 18 18 
+carizama 18 18 18 18 18 18 18 
+anataraj 18 
+svukovit 18 18 18 
+msteph11 18 40 18 
+mraster 18 40 18 
+lbognar1 18 18 19 19 18 37 18 18 19 19 27 36 27 6 6 18 18 18 
+lbakke 18 40 18 
+jzacher 18 40 18 
+jheath3 18 40 18 18 18 18 
+hduan 18 18 
+epuntill 18 40 18 18 18 18 18 18 
+eallgaie 18 18 
+dlipa 18 9 9 0 0 19 19 5 5 18 18 18 29 29 18 40 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+clowney1 18 18 19 19 
+bsailer1 18 18 18 18 8 8 10 10 18 40 18 18 18 
+bburger 18 40 18 18 18 
+bbishop2 18 18 18 18 18 19 19 18 40 18 18 
+alifka 18 18 
+ttarkles 18 40 18 18 
+tkhong 18 40 18 18 19 19 18 18 18 
+sschmit1 18 18 
+rsulli13 18 40 18 18 19 19 18 40 18 
+plally 18 40 18 18 18 
+mwhelan3 18 18 18 
+mmccabe6 18 
+mkeller6 18 18 18 18 18 18 18 
+mdadamio 18 18 18 18 18 18 18 18 18 18 18 
+khinish 18 0 0 11 11 20 20 24 24 25 40 25 7 7 18 40 18 19 19 18 40 18 18 18 18 18 18 19 19 18 40 18 18 18 
+hschwart 18 40 18 19 19 18 40 18 18 18 18 18 
+hparkhil 18 18 18 18 18 
+dnaquin 18 18 18 
+abenedic 18 18 
+wdefaria 18 40 18 18 18 18 18 18 
+tcomer 18 40 18 18 18 18 18 18 
+tcarnes 18 18 18 18 18 18 18 
+rpowlus1 18 18 18 18 18 22 22 18 40 18 18 18 24 24 18 40 18 18 30 30 8 8 13 13 18 40 18 12 12 27 27 28 28 22 22 9 9 13 36 13 22 36 22 28 28 18 36 18 18 18 18 18 18 18 18 18 18 18 0 0 0 0 11 11 11 11 20 20 20 20 18 37 18 18 18 18 18 19 19 18 40 18 18 18 19 19 18 39 18 18 
+rduffy3 18 18 
+narmbrus 18 18 18 18 
+mritten 18 18 
+mdonne10 18 36 18 18 18 18 18 18 18 
+kperez4 18 18 24 24 9 38 9 6 6 10 10 18 40 18 18 18 18 18 18 18 
+jsuttman 18 18 18 18 18 
+jgriff12 18 40 18 18 
+jables 18 40 18 18 17 39 17 18 18 6 6 18 40 18 18 
+eforbes1 18 18 18 18 18 18 19 19 18 40 18 
+ccorse 18 18 18 18 
+asmith56 18 15 15 25 25 7 7 18 40 18 18 18 18 18 18 18 
+acook8 18 
+abojczuk 18 40 18 18 18 
+zliang3 18 40 18 
+ychen30 18 40 18 18 18 18 18 18 18 
+tkacius 18 40 18 18 18 18 18 18 18 18 18 18 
+szabala 18 40 18 18 18 18 
+swallac3 18 18 19 19 18 40 18 18 18 18 18 18 
+sbattali 18 40 18 18 18 18 18 18 
+ojacobse 18 
+npatidar 18 40 18 18 
+ngiannot 18 18 18 18 
+mstebbi1 19 19 18 40 18 18 18 18 18 18 
+mkelley9 18 
+kwhite14 18 40 18 
+kconese 18 2 2 18 40 18 18 18 18 18 18 18 18 18 18 18 18 
+jslaugh2 18 40 18 18 24 24 15 39 15 18 40 18 18 18 18 18 18 18 18 18 
+gwilson6 18 40 18 18 18 18 18 18 18 18 
+gpernico 18 18 18 
+drea 18 18 19 19 18 39 18 18 18 18 18 18 18 18 
+dkelly13 18 18 18 
+cschust4 18 40 18 18 18 
+bdzubara 7 7 25 25 15 15 18 40 18 18 18 18 18 18 18 18 
+akurz 18 18 18 18 18 18 18 18 18 
+acrowle1 18 40 18 18 
+zzovko 18 18 18 18 18 18 18 7 7 24 24 18 18 0 0 18 40 18 18 18 18 
+ztulausk 18 36 18 19 19 13 40 13 9 39 9 17 40 17 11 11 18 40 18 18 
+tfolwell 18 40 18 
+sharri11 18 18 18 18 18 18 18 18 
+mphelan5 18 19 40 19 
+mkocher2 18 18 
+ksteenvo 18 25 25 23 23 18 39 18 18 19 19 18 40 18 18 18 18 
+kmehta2 18 18 18 18 18 18 18 
+jrhiling 18 40 18 18 18 18 18 
+jmcclin1 18 18 18 
+eolsen2 18 40 18 18 18 18 
+egrammer 18 40 18 18 
+dngo2 18 19 19 0 40 0 18 40 18 18 18 18 18 
+czhou4 18 18 
+csedore 18 18 18 18 18 18 18 18 18 18 18 18 18 
+astaresi 18 18 
+areymer 18 18 18 18 
+abatkoff 18 18 18 18 18 18 
+xzhang24 18 18 
+skoo1 18 40 18 
+rsong 18 18 18 18 
+rbanuelo 18 40 18 18 18 19 19 18 40 18 10 10 5 5 9 9 16 16 6 6 19 40 19 18 39 18 18 
+psansone 18 
+npassina 18 
+mlarson3 18 40 18 18 18 18 18 18 18 18 
+mhagan2 18 18 18 18 
+mcrawf10 18 40 18 24 24 18 40 18 18 
+jbelluc2 18 40 18 18 18 18 18 18 18 18 18 18 
+jander21 18 18 18 18 18 
+ioteroto 18 
+ejones15 18 18 18 
+ecummin2 18 18 
+ccastil4 18 36 18 18 
+cbarahon 18 18 18 18 18 18 18 18 
+zeggers 18 39 18 18 18 18 18 18 18 18 18 18 
+skeller5 18 40 18 
+nholmes2 18 18 18 18 18 
+mtagovai 18 18 18 18 18 18 18 18 
+mryan32 18 17 17 21 21 5 5 24 24 9 9 13 13 18 40 18 18 18 18 18 18 18 18 
+mmatusk1 18 18 
+mflanag8 18 40 18 
+mdoyle19 18 40 18 
+lfalquez 18 40 18 18 18 18 18 18 
+jmarvin2 18 40 18 18 
+hchoudhu 18 40 18 18 18 18 18 
+edell 18 36 18 18 15 40 15 7 40 7 18 40 18 18 18 19 19 18 40 18 18 
+delwell 18 40 18 18 
+cpawelek 18 18 18 18 18 18 18 18 18 18 
+ccasper 18 40 18 18 18 18 18 18 18 18 18 18 18 18 18 
+bbrown14 18 40 18 18 
+ychen31 18 18 18 18 18 18 18 18 
+vkareh 18 18 18 
+rwilso18 18 40 18 18 18 19 19 18 40 18 
+rmelotik 18 40 18 18 
+pkollma1 18 18 18 18 18 18 18 18 18 18 
+phaley1 18 18 
+mzakowsk 18 18 18 
+mmoufawa 18 18 18 18 18 18 18 18 
+mmaldona 18 18 19 19 18 40 18 18 19 19 18 36 18 18 18 18 18 18 18 18 18 
+mlake2 18 40 18 18 18 18 
+mcurlis2 18 40 18 18 18 
+kround 18 40 18 18 
+kmoeinva 18 18 
+jsong3 18 18 18 18 18 18 
+jnagle7 18 40 18 18 18 18 18 18 
+jmullen6 18 
+jhuber4 18 18 18 18 
+gvonuhle 18 40 18 
+esienko 18 36 18 18 24 24 15 15 18 40 18 18 
+ekiszla 18 40 18 19 19 
+ekenney1 18 40 18 12 12 18 40 18 18 18 18 18 18 
+edoyal 18 
+dmikovit 18 40 18 
+dkim28 18 18 
+clink4 18 18 18 18 18 18 18 
+bferris1 18 18 18 
+syi3 18 
+swolfe1 18 40 18 18 18 
+shatfie1 18 40 18 
+rtaraboc 18 18 18 
+nllauro 18 40 18 18 18 
+mvander4 18 
+mtapp 18 18 18 18 18 
+mmirer 18 18 18 18 18 18 18 
+mesteve 18 18 18 18 
+mbutle14 18 37 18 19 19 18 38 18 29 39 29 18 40 18 18 18 18 18 
+mbutle13 18 40 18 18 
+lrodrig6 18 40 18 
+kkubik 18 40 18 18 
+jcorbin2 18 40 18 
+ihornung 18 40 18 19 19 22 40 22 9 9 32 36 32 17 17 18 40 18 
+gpetrosi 18 18 18 
+edownin1 18 40 18 18 18 22 22 18 40 18 18 18 18 18 
+coleary2 18 18 18 18 18 
+cmeyers3 18 18 
+cfitzgib 18 40 18 
+apeter14 18 40 18 18 18 
+aander27 18 18 18 18 
+yfeng3 18 18 18 18 18 18 18 
+risrael1 18 40 18 18 18 18 18 
+piannell 18 18 18 18 
+nmattei1 18 40 18 
+mvondras 18 18 18 
+mretoske 18 40 18 18 19 19 
+mplante 18 37 18 
+mlegersk 18 40 18 18 18 18 18 18 18 
+mjohns57 18 18 
+mheli 18 18 18 18 18 
+mbianco 18 18 
+lstephe3 18 18 18 
+kmccahan 18 
+jriver11 18 18 18 18 18 18 
+jmrozek 18 18 
+jhirshor 18 18 
+jgarci22 18 18 18 18 18 18 18 
+gnguyen 18 
+eriojas 18 18 18 18 
+ebrown20 18 40 18 
+dadams13 18 40 18 18 18 18 18 18 
+cdito 18 40 18 18 18 
+alaboe 18 18 18 18 18 18 18 
+ablanch2 18 40 18 18 18 18 18 18 18 
+yhe9 18 40 18 18 18 18 18 18 
+wzhu2 18 40 18 
+tkoewler 18 40 18 18 18 
+scannova 18 25 25 7 7 15 15 18 37 18 18 18 18 18 19 19 31 39 31 18 40 18 18 23 23 18 36 18 18 18 18 19 19 18 40 18 
+samezqui 18 18 
+rchan3 18 40 18 18 18 
+poconno6 18 40 18 18 
+ohatch 18 40 18 
+nho1 18 0 0 19 19 11 11 15 15 18 18 25 25 7 7 18 36 18 18 19 36 19 18 40 18 18 18 18 18 18 
+mwinche1 18 40 18 
+msteeves 18 18 18 18 18 18 
+mmccans 18 40 18 18 18 
+mhanley1 18 40 18 18 18 
+mguggenb 18 18 18 18 
+mcasasga 18 
+kthomp21 18 40 18 18 
+kmccabe4 18 40 18 18 18 18 9 9 18 18 28 28 18 39 18 
+khuffert 18 40 18 
+jxu9 18 39 18 18 19 19 18 40 18 18 18 18 18 
+jstellon 18 19 19 18 18 18 18 18 18 18 18 18 18 18 
+jboateng 18 18 18 18 
+iedgar 18 
+ekeefe2 18 18 18 18 18 18 
+eheidenr 18 
+cpalor 18 
+ccahill6 18 40 18 18 18 18 18 18 
+bgrier 18 
+bdrummo1 18 18 
+bcarmody 18 18 18 18 18 18 18 
+amurph14 18 18 18 18 18 18 18 18 18 
+afemrite 18 40 18 18 18 
+tpagessa 18 3 3 24 24 18 40 18 
+tjohns29 18 
+pbald 18 18 18 
+mnieves1 18 39 18 26 26 18 40 18 19 19 18 39 18 18 18 18 18 
+mbrombac 18 18 18 
+mbeinlic 18 18 18 18 
+lmedinab 18 40 18 18 18 18 18 18 18 18 
+lmcphill 18 18 
+kwoodwa3 18 18 18 2 2 18 18 23 23 9 9 13 13 18 40 18 18 18 
+kperry7 18 17 17 31 31 30 36 30 8 8 13 13 18 18 18 18 18 18 18 18 19 19 18 40 18 18 19 19 18 40 18 18 19 19 18 40 18 
+kmoran10 18 
+kmessier 18 18 
+kabe1 18 28 36 28 10 10 5 5 31 39 31 18 40 18 18 18 22 22 9 9 25 25 17 17 18 39 18 32 32 18 40 18 18 18 
+jusher 18 18 19 19 18 40 18 18 18 19 19 18 40 18 29 29 9 9 27 27 18 40 18 18 
+jmusema 18 
+jhall15 18 18 18 18 19 19 
+jcharbon 18 18 18 18 18 18 18 18 18 18 
+gverfurt 18 
+gmcdermo 18 19 19 18 39 18 18 18 18 18 18 18 
+eyeager 18 40 18 
+esulli14 18 18 18 18 18 
+edewane 18 40 18 
+dmoran5 18 40 18 18 
+dbodewig 18 18 
+aseketa 18 40 18 18 18 18 18 18 18 18 18 18 18 18 
+amitch13 18 18 
+amarti54 18 18 18 18 
+zwang17 18 40 18 18 18 18 18 18 18 
+rmcclain 18 
+pmcgee 18 18 18 18 
+olombard 18 40 18 
+myoung12 18 40 18 18 18 19 19 
+mmoreno3 18 39 18 5 39 5 7 7 22 37 22 18 40 18 
+mmcelro2 18 36 18 18 18 18 18 18 18 18 
+mgroark 18 18 18 18 18 18 18 18 19 19 
+mcurrie2 18 18 18 18 18 
+lschwar2 18 18 
+labreha 18 40 18 18 18 18 18 
+kmullan4 18 40 18 18 
+jstuppy 18 40 18 18 18 18 18 18 18 18 18 18 18 18 18 
+jluk 18 40 18 18 
+jigiede 18 40 18 
+jhlavin 18 18 18 18 18 18 18 
+jgripens 18 40 18 19 19 18 40 18 18 28 28 18 40 18 18 18 19 19 22 22 10 10 9 9 31 31 6 6 27 27 18 18 22 39 22 29 29 5 5 18 36 18 18 18 18 
+jfabreg2 18 40 18 18 18 18 19 19 18 40 18 18 18 18 
+jedward4 18 
+jburhann 18 40 18 24 24 18 40 18 18 19 19 18 40 18 18 18 
+hfertitt 18 18 18 18 18 18 18 18 
+edidonat 18 18 18 18 
+ealbi 18 18 
+dharvey1 18 0 0 11 11 20 20 18 18 18 18 
+crichte2 18 36 18 18 18 18 18 18 18 
+cdunlea1 18 18 
+awolfe4 18 22 22 30 30 18 40 18 18 19 19 18 40 18 18 18 18 18 18 
+aturzai 18 40 18 18 18 18 18 18 18 
+aosorio 18 40 18 
+aherna13 18 19 19 18 40 18 18 18 18 
+zhan1 18 18 19 19 
+tsong2 18 
+smurph19 18 40 18 18 
+sjo 18 18 18 
+sbsales 18 18 
+rpozasg1 18 18 
+rhughes7 18 38 18 
+rbarnes2 18 40 18 18 
+msimon6 18 18 18 18 
+mgorman5 18 18 
+jwoods8 18 18 18 
+jlehn 18 18 18 18 29 39 29 19 19 9 9 18 40 18 18 18 18 
+jdemarc1 18 18 
+hstone3 18 18 
+ezahoric 18 
+elopez7 18 
+ddelliso 18 18 19 19 18 40 18 18 18 18 
+cwhalen2 18 
+cjacobs3 18 18 18 18 18 18 18 18 18 18 18 18 
+blyons1 18 40 18 
+bklaus 18 18 
+zsurma 18 18 18 18 18 18 
+tpopps 18 40 18 
+tissa 18 
+svorne 18 18 18 18 
+sryan9 18 18 
+pgorman2 18 18 
+nmunozol 18 18 
+nkelly3 18 40 18 18 18 18 
+nferguso 18 
+mhawit 19 19 18 18 18 18 18 18 19 19 18 39 18 18 18 
+jzepf 18 40 18 18 
+jgirardo 18 
+jfrane 18 18 18 18 18 18 18 18 18 18 
+iroberts 18 18 18 18 
+hferrero 18 18 18 18 18 18 18 18 18 18 
+ginglis 18 
+ellano1 18 18 18 9 37 9 4 4 18 37 18 18 18 18 18 18 
+dreynoso 18 
+ctsevis 18 
+clangle1 18 18 18 18 
+apines1 18 18 
+amcfadd1 18 
+abiondo 18 5 5 22 22 18 39 18 18 18 19 19 18 40 18 19 19 18 18 26 26 18 36 18 18 18 
+thartle 18 18 
+tbendeck 18 40 18 18 
+ssitarsk 18 
+sdutta2 18 40 18 18 18 18 18 
+pjohns21 18 19 19 18 18 
+pjachim 18 40 18 18 18 
+mpenn1 18 29 29 18 40 18 18 18 
+mgabouer 18 18 
+lwukie 18 40 18 
+lsimon2 18 18 
+ldevito 18 18 
+layuyao 18 18 
+kdiggin1 18 40 18 
+kbockhol 18 18 18 18 18 18 18 18 18 18 18 18 18 18 
+jswift2 18 40 18 18 18 18 
+jmoawad 18 
+jduffy8 18 18 18 18 
+jchandle 18 40 18 18 
+jbrunne1 18 
+jbordall 18 26 26 18 40 18 18 
+ielizond 18 18 18 
+hwakelin 18 18 18 18 18 18 18 18 18 18 18 18 18 
+gcampoli 18 18 18 18 
+eutley 18 
+esagun 18 24 24 0 0 11 11 20 20 18 18 15 15 25 25 7 7 18 40 18 19 19 18 40 18 
+eobrie14 18 
+dgarci18 18 18 
+csmith72 18 40 18 18 18 
+cholmes6 18 18 18 18 
+cgrunha2 18 
+cdelane2 18 18 
+btournat 18 18 
+akeller5 18 18 18 
+adaniele 18 40 18 19 19 18 40 18 
+aclark13 18 40 18 18 
+aboyd2 18 18 19 19 18 40 18 18 10 10 5 5 18 40 18 
+wfine 18 39 18 18 18 18 18 18 18 18 
+srodawig 18 39 18 18 19 19 18 40 18 18 18 
+slee51 18 18 18 18 18 18 18 19 19 18 40 18 18 18 
+rmcgove1 18 
+pwasuwan 18 18 
+ojazbuti 18 18 18 18 18 18 
+nskora 18 40 18 18 18 
+nmarti12 18 18 18 18 18 18 18 
+nhelm 18 40 18 18 18 
+mpaulran 18 
+jminor1 18 18 18 18 
+jesposi2 18 40 18 18 18 18 
+igese 18 40 18 18 18 18 
+hsun2 18 
+emangels 18 18 18 18 18 
+eleahy1 18 40 18 18 
+ebrady7 18 
+dkolkebe 18 40 18 10 10 2 2 18 18 18 2 2 18 18 18 18 18 
+clewis13 18 40 18 18 
+chanzel 18 18 18 18 
+cbowden 18 18 19 19 18 40 18 18 18 18 18 18 
+cbartlet 18 
+bsoaresd 18 18 18 
+bknarr 18 40 18 
+bdages 18 18 18 
+asood1 18 18 18 18 18 18 
+alehanka 18 18 
+vzona 18 
+vdavis1 18 18 18 
+tmcguir2 18 18 18 18 18 18 
+tlynch3 18 18 18 18 29 39 29 8 40 8 18 40 18 
+sfore 18 18 18 19 19 18 40 18 19 19 18 40 18 18 18 18 
+rsabnani 18 18 18 18 18 
+rkenyon 18 18 
+rhughes8 18 18 18 18 
+mzachlin 18 40 18 23 23 18 40 18 18 
+moconn20 18 
+mmaron 18 
+mhepbur1 18 40 18 
+jyu7 18 18 
+jrombals 18 18 18 18 18 18 18 18 18 18 
+icorreia 18 18 18 18 
+gklaus 18 18 18 18 18 18 
+eromero3 18 40 18 18 
+eeschwei 18 18 
+ebabcoc1 18 18 18 
+dyefreme 18 40 18 18 
+dpark5 18 18 
+dobrie13 18 40 18 
+dkenned7 18 
+crodri12 18 
+coakley2 18 
+cgreeley 18 9 9 26 26 6 6 6 6 18 40 18 18 
+cgehan 18 36 18 18 
+cdulal 18 40 18 
+cdiallo 18 
+bcahill2 18 40 18 
+astensby 18 18 
+aslevin 18 18 19 19 18 40 18 17 17 18 40 18 18 18 19 19 28 36 28 12 12 27 27 18 40 18 18 
+alindema 18 40 18 18 
+ahachigi 18 18 18 18 18 19 19 18 40 18 18 18 18 18 18 18 18 18 18 
+agraham2 18 18 18 18 18 
+sgonzal8 18 40 18 
+sebben 18 18 18 18 
+pzibelli 18 18 
+nhammer 18 18 
+mzepf1 18 19 19 
+mlee39 18 40 18 19 19 
+mdolan5 18 18 18 18 18 18 
+mbaumbac 18 
+kstraub 18 15 15 25 25 7 36 7 18 40 18 18 19 19 18 40 18 18 18 18 
+khilbert 18 
+jpeacoc1 18 18 18 18 18 18 18 
+jomeara3 18 18 19 19 18 40 18 18 19 19 18 40 18 18 
+jmeek1 18 18 18 18 18 18 18 18 18 
+jklein6 18 7 40 7 18 40 18 18 19 19 18 40 18 18 19 19 13 13 2 2 22 22 18 40 18 18 18 18 18 18 18 18 18 18 
+jkidwel1 18 18 19 19 18 40 18 
+jguckenb 18 18 18 
+jfox13 18 40 18 18 29 40 29 21 40 21 18 40 18 18 
+jbialou1 18 40 18 18 18 18 18 18 18 
+jarmstr2 18 36 18 11 11 18 18 0 0 18 40 18 18 19 19 18 40 18 18 18 19 19 18 36 18 18 18 18 24 40 24 18 40 18 18 18 18 18 
+gtrindad 18 7 7 18 40 18 18 
+ggasper 18 18 18 
+fharris2 18 40 18 18 
+eziegle1 18 40 18 18 18 18 
+etravnik 18 18 
+etighe 18 
+bpapiern 18 40 18 18 18 18 
+ajarosik 18 
+zyin4 18 40 18 
+zprender 18 40 18 18 
+trobinet 18 
+smcconv1 18 40 18 18 18 
+shannon3 18 40 18 
+phoward1 18 18 
+msheil 18 
+mmccabe7 18 18 
+mkranz 18 40 18 18 
+messner 18 
+jspence7 18 39 18 18 18 
+jmeagher 18 18 18 18 18 
+jcrawfo8 18 18 18 18 18 18 
+jconway7 18 40 18 18 18 
+ecottril 18 
+dgregor5 18 
+csalcedo 18 40 18 11 11 6 6 
+coatway 18 18 
+clutz 18 18 18 18 18 18 18 18 18 18 
+ckenny2 18 
+cesheric 18 17 17 32 32 27 36 27 18 39 18 18 18 18 
+athill1 18 39 18 18 18 
+aachecar 18 18 18 
+ykim22 18 18 
+sleyden 18 18 18 18 
+scole4 18 40 18 
+sbraynar 18 40 18 
+rtanczos 18 40 18 
+rreutima 18 18 18 18 18 18 18 
+pphoa 18 26 26 18 18 18 20 20 18 40 18 23 23 18 18 18 18 19 19 18 18 18 
+omarcian 18 18 18 18 18 18 18 
+ocoyle 18 18 18 18 
+nfenton 18 18 18 
+mvanblun 18 18 18 
+mpiccone 18 18 19 19 5 5 18 36 18 9 9 
+mmarti44 18 18 
+mfoley9 18 40 18 18 18 18 18 
+mdrennan 18 19 36 19 
+mbursch 18 
+lyoo1 18 18 18 9 9 18 40 18 
+kpurk 18 18 18 18 18 18 
+kkula 18 18 18 18 18 
+kebert 18 18 18 18 
+jzimlich 18 18 18 18 18 
+jpellic1 18 
+jappleby 18 
+gbreslin 18 18 
+emaginn 18 40 18 18 
+ebrown19 18 18 18 18 18 
+dgomez5 18 40 18 18 18 
+cvisnic 18 
+csofrona 18 40 18 18 18 18 
+csamagal 18 
+btompole 18 40 18 18 18 18 18 18 18 18 
+bscholl1 18 18 18 18 
+awellen 18 18 18 
+ashields 18 18 18 18 18 19 19 
+aleahy 18 20 20 15 15 25 25 18 40 18 18 
+ajamies1 18 18 18 
+znunez 18 40 18 18 
+tmacmill 18 40 18 
+tford6 18 40 18 18 18 
+tcaffrey 18 40 18 18 18 
+smunson 18 40 18 18 
+rscott5 18 40 18 18 
+onisbet 18 18 18 18 18 18 18 18 18 18 
+ohollowa 18 
+mschmi17 18 18 25 25 18 37 18 18 15 15 7 7 18 40 18 18 18 18 
+mmcghee3 18 19 19 10 37 10 18 40 18 6 6 9 9 18 40 18 18 
+mmcdon16 18 18 18 18 
+mmarotta 18 36 18 18 
+mburbano 18 40 18 
+kvidoure 18 18 18 18 18 
+kkleise1 18 18 18 18 18 18 18 18 18 
+kjin2 18 18 
+kfoley3 18 18 
+kerhardt 18 40 18 18 18 18 18 
+jplaza 18 40 18 18 
+iwan 18 18 
+gdibono 18 18 
+dgarda 18 40 18 
+cviracol 18 40 18 18 18 18 18 
+cmille39 18 18 19 19 18 40 18 18 22 22 18 18 18 27 27 18 40 18 18 18 18 19 19 18 40 18 
+cllanter 18 
+clawlor1 18 
+clachena 18 40 18 18 18 18 18 18 18 
+chu3 18 18 18 
+bjohns22 18 40 18 18 18 18 
+bhogan2 18 40 18 18 
+barmstea 18 
+aviducic 18 
+skeene 18 18 
+sbaker8 18 
+rcriqui 18 18 
+nruiz2 18 
+mmesecar 18 18 18 18 
+mlee38 18 
+mkramer7 18 18 18 
+mhowat1 18 
+mfuetter 18 18 
+lstone1 18 18 18 18 5 36 5 3 3 17 37 17 11 11 26 36 26 18 40 18 18 18 18 
+kfulk1 18 18 18 
+kfliotso 18 40 18 
+kborisia 18 40 18 
+jpesola 18 
+jenochs 18 
+jbrooks6 18 40 18 18 
+jagosti1 18 40 18 18 
+htoner 18 40 18 19 19 18 40 18 18 
+gmatting 18 18 
+ehansen4 18 40 18 
+eevans8 18 
+claracey 18 40 18 18 
+cbontra1 18 19 19 18 39 18 32 32 18 40 18 
+bmorrell 18 18 18 19 19 18 40 18 18 0 0 18 40 18 18 18 18 18 
+bgriffi3 18 
+aconway 18 18 18 18 18 
+zzhang14 18 18 10 10 18 40 18 18 18 19 19 10 10 18 40 18 
+scarlino 18 18 18 18 18 
+sbryant4 18 
+rnavin 18 40 18 19 19 18 39 18 19 19 6 39 6 18 40 18 28 28 18 40 18 19 19 26 37 26 18 40 18 19 19 18 40 18 18 18 18 18 18 18 18 
+rarroyo 18 18 
+psainagh 18 40 18 18 
+pkinkopf 18 40 18 18 
+mshackl2 18 40 18 18 18 18 
+mroddy 18 40 18 18 18 18 18 
+mlamber7 18 18 
+lcarrol3 18 18 
+kmehari 18 40 18 18 18 
+klawren4 18 40 18 
+jstump1 15 15 7 7 18 40 18 18 
+jkeenan4 18 
+eshanno4 18 40 18 
+elipnick 18 
+dmarque4 18 18 18 18 
+dlee27 18 18 
+dewell 18 18 18 18 19 19 18 40 18 
+cyoun 18 18 18 18 18 18 18 18 18 18 18 
+ckuehl 18 18 18 18 
+cking9 18 18 
+blefkowi 18 
+bbatas 18 5 36 5 15 40 15 
+aveon 18 18 18 18 18 18 18 18 
+abeacom 18 18 
+wtumbela 18 40 18 
+wbona 18 9 9 18 36 18 
+spantano 18 40 18 18 18 
+sgay 18 18 
+rschaef1 18 18 18 18 18 
+mschierl 18 39 18 
+mramsey1 18 18 18 18 
+mmaransk 18 18 18 18 18 18 
+mlink3 18 40 18 18 
+mkirchmi 18 40 18 18 18 
+meisenme 18 18 18 
+lrubino 18 18 
+llingle1 18 18 18 18 
+lfraser 18 37 18 6 6 18 40 18 18 18 18 18 
+khermann 18 15 15 7 7 18 18 18 
+kbaile11 18 18 
+jlee73 18 18 18 19 19 18 18 18 9 9 18 40 18 18 18 18 
+jknowle1 18 40 18 
+jgambard 18 40 18 
+gzhang6 18 40 18 
+fkenney 18 
+dbender 18 18 18 18 
+cgorrie 18 12 12 
+cchen10 18 18 
+bxie 18 18 18 
+bwatson3 18 18 
+avanblun 18 18 
+aritten 18 18 18 18 
+amorcus 18 18 18 
+afulwide 18 18 18 18 18 
+treynoso 18 18 18 
+slouden 18 40 18 19 19 18 37 18 18 5 5 18 40 18 18 19 19 
+rdesouza 18 18 18 18 18 
+pdelcamp 18 18 
+nbaumer 18 40 18 18 18 18 18 
+mstanfo1 18 
+mryan33 18 
+mmille51 18 40 18 
+mkoshi 18 18 19 19 18 40 18 19 19 18 18 18 
+mkonshie 18 18 18 
+mhoran 18 18 18 
+mgaborek 18 
+mechols 18 18 18 18 18 18 18 18 18 18 18 
+mboehner 18 19 19 18 40 18 
+lkesic 18 18 15 36 15 25 25 7 7 18 18 18 18 18 
+lcapuano 18 18 18 18 
+kadlaka1 18 19 19 18 40 18 9 39 9 0 0 18 40 18 19 19 10 10 5 5 18 36 18 18 18 18 18 19 19 
+gumunyan 18 18 10 10 9 36 9 21 37 21 
+gjohanne 18 15 15 25 36 25 7 36 7 18 40 18 18 
+esteigau 18 18 18 
+eascoles 18 40 18 18 
+cquast 18 40 18 18 18 
+clink3 18 18 18 18 18 18 
+clee30 18 18 18 22 22 5 36 5 18 40 18 
+cfennel1 18 15 15 25 25 7 7 18 36 18 19 19 18 40 18 
+cfamular 18 
+bkeanemu 18 18 
+bcartwri 18 
+ahollow2 18 
+abellm 18 18 18 18 18 
+tmurphy7 18 40 18 18 
+swagner4 18 40 18 
+sshaw3 18 39 18 15 15 18 40 18 18 
+slauber 18 40 18 18 
+reubanks 18 
+phalpin 18 40 18 18 18 18 18 
+pgould 18 40 18 18 18 18 18 18 
+moleary9 18 
+mhorvat8 18 
+kseidle1 18 19 19 18 40 18 18 18 
+kcasey11 18 40 18 
+jvirzi 18 18 
+jquinn13 18 
+jgalden1 18 15 15 7 7 25 25 18 40 18 18 18 18 18 18 18 18 18 18 18 18 18 
+hlevinsk 18 40 18 18 18 18 
+gstephe2 18 40 18 
+esmith36 18 40 18 
+ekinyon 18 40 18 18 
+dsimonsa 18 39 18 18 18 
+dnelso12 18 40 18 18 19 19 18 40 18 19 19 18 40 18 18 18 19 19 18 18 18 18 
+csport 18 39 18 
+cmarrder 18 18 18 
+bhasara 18 
+bdusling 18 
+afeda 18 18 
+acavuto 18 
+acatao 18 18 
+zyeadon 18 18 19 19 18 40 18 2 36 2 
+tchalmer 18 
+slarkin 18 40 18 18 18 
+rwester 18 40 18 18 
+rgao2 18 18 
+potoole3 18 18 
+pmccabe2 18 
+pardila1 18 
+nviner 18 18 18 18 18 18 
+msagasta 18 15 15 25 25 7 7 18 40 18 18 18 18 18 17 17 18 38 18 13 13 18 40 18 8 8 
+mpfeiffe 18 18 18 18 
+meiseman 18 40 18 18 18 
+mdugan1 18 18 18 18 18 18 22 22 9 9 18 40 18 
+jzhang17 18 19 19 18 40 18 18 18 18 
+jsennati 18 18 18 
+jpassman 18 40 18 
+jmille76 18 18 
+jmahone7 18 18 18 18 18 18 18 
+jlembo 18 
+jirwin3 18 18 18 
+jhuang14 18 40 18 
+jdspain 18 40 18 18 19 19 
+jcaggian 18 18 18 
+ggallant 18 19 19 18 40 18 19 19 18 40 18 18 18 19 19 
+elauer1 18 40 18 18 18 18 18 18 18 
+eglendon 18 40 18 
+ebrigham 18 
+cosulli2 18 
+cmacclar 18 40 18 
+bcopp 18 
+azawojsk 18 40 18 
+ahymes 18 18 18 18 
+wmoyers 18 40 18 18 18 
+wblocher 18 40 18 
+vtrombet 18 18 5 5 9 9 17 17 
+sjohnsto 18 18 18 18 18 
+shopkin3 18 18 18 18 18 18 18 3 3 
+rsmith53 18 
+rbarber 18 18 
+mmetersk 18 40 18 
+mjames11 18 18 18 
+melliot3 18 18 
+kmalik1 18 18 18 18 18 18 18 
+jmonthio 18 40 18 18 28 28 9 9 4 39 4 18 18 18 18 18 18 18 18 18 18 
+jjarvis2 18 
+hchristm 18 18 18 18 
+fhernan7 18 
+fbirch 18 
+egilber1 18 18 
+csabers 18 40 18 
+cnobuhar 18 18 
+cfranke1 18 40 18 
+bwright7 18 
+bsabey 18 18 18 
+akokot 18 
+aguerra2 18 18 18 18 18 18 18 
+afinster 18 40 18 18 
+ydwyer 18 
+twilso15 18 11 11 0 0 18 18 18 18 18 19 19 18 40 18 19 19 18 40 18 18 19 19 18 40 18 18 18 
+scascio 18 40 18 18 
+saragon 18 18 
+rkenny1 18 
+ptaylor3 18 40 18 
+niovino 18 40 18 18 
+ndeely 18 40 18 18 18 
+mroche3 18 18 18 18 
+mnowotar 18 18 18 18 
+mmarsh11 18 
+mgrandmo 18 18 18 18 
+mfay3 18 9 40 9 22 40 22 19 19 18 40 18 19 19 18 40 18 18 18 
+mcamacho 18 
+kcarey4 18 
+jweston 18 38 18 18 18 
+jtopor 18 40 18 18 18 18 18 18 
+jsuh3 18 18 18 
+jolmanso 18 18 18 18 18 18 18 18 
+jeberha2 18 40 18 18 
+jcasama1 18 40 18 18 18 18 18 18 
+jbertsch 18 18 18 9 9 14 14 5 5 
+jandrad2 18 40 18 18 
+eradomsk 18 18 18 18 18 18 18 
+dsaloome 18 
+dfritz1 18 
+dberg 18 18 18 
+ctrujil4 18 18 18 18 18 
+cmcmenem 18 
+cmcdono6 18 18 
+blumb 18 18 18 18 
+bheather 18 18 
+awagner6 18 18 12 12 
+aokon 18 3 3 9 9 15 15 13 40 13 6 37 6 5 36 5 7 7 4 38 4 8 8 26 36 26 25 25 22 36 22 18 40 18 18 
+akeys 18 40 18 
+ahapp 18 18 18 
+agegen 18 40 18 
+aalexan9 18 
+rfiegeli 18 18 
+psconzo 18 18 18 
+nsimon1 18 
+ngodfrey 18 40 18 
+mshanno5 0 0 11 11 20 20 18 40 18 
+mhilger 18 15 15 7 7 18 40 18 19 19 9 37 9 22 22 6 39 6 18 40 18 18 18 18 
+mheredi2 18 
+mgilber5 18 18 18 
+mbrannan 18 40 18 
+lalvey 18 18 18 18 
+kragan 18 
+kmacdon6 18 40 18 18 18 18 18 18 
+kduffy5 18 18 
+kcoogan 18 39 18 18 18 18 19 19 7 7 25 25 15 15 18 40 18 18 19 19 18 40 18 
+kbosma 18 18 
+kbellasc 18 40 18 18 
+jzinsky 18 18 
+johara1 18 0 0 11 11 15 15 7 7 18 40 18 19 19 18 40 18 9 9 18 40 18 18 
+jlawren5 18 19 19 18 40 18 18 19 19 18 40 18 18 18 
+hhentges 18 6 6 
+hdopico 18 40 18 18 18 
+fzornow 18 18 
+egardne3 18 40 18 
+edoyle8 18 18 
+ealvarad 18 18 18 
+dsun2 18 18 
+cribera 18 19 19 18 40 18 18 19 19 
+cmitche8 18 18 
+cdanos 18 
+cchiment 18 
+belder 18 18 
+aszpynda 18 18 18 18 18 
+wjackobo 18 18 18 18 18 18 18 
+rwong3 18 19 19 13 36 13 8 8 3 3 31 36 31 12 36 12 18 40 18 18 19 19 
+rquintal 18 18 18 18 
+pwerling 18 18 
+pjones8 18 40 18 
+ogonzal3 18 40 18 
+nspring1 18 40 18 
+mebberwe 18 40 18 
+mdonahu4 18 40 18 
+kriggs1 18 18 18 18 18 18 18 18 
+koshea2 18 40 18 18 18 
+kewart 18 40 18 
+jlipka 18 18 18 18 18 18 18 18 
+jcroddic 18 40 18 19 19 
+gmarti12 18 
+gdiederi 18 40 18 18 18 18 18 
+fsegura1 18 19 19 18 40 18 18 18 18 18 18 19 19 18 40 18 18 18 
+eburke7 18 40 18 18 
+eadams6 18 18 18 18 18 19 19 18 40 18 
+cocallag 18 40 18 18 
+btrosse1 18 18 
+apreda 18 
+zenciso 18 18 
+yyoshiok 11 11 0 0 18 40 18 
+smanfred 18 
+rgarret2 18 18 18 
+rfedison 18 18 
+rciamarr 18 15 15 18 18 25 25 7 36 7 
+pharris5 18 
+ooleshch 18 
+oguntin 18 18 18 
+msasse 18 19 19 18 18 18 18 18 
+minteria 18 40 18 18 18 
+mcoffey1 18 
+madamo 18 
+ksmith69 18 
+kmendiol 18 40 18 18 
+kkobaya2 15 15 25 25 7 7 18 40 18 19 19 19 19 18 40 18 18 
+kbaten 18 
+kbaert 18 
+jtanaka2 18 18 18 
+jsumantr 18 18 18 
+jburton2 18 19 19 18 40 18 18 
+eunebasa 18 18 
+ddelp 18 18 18 18 18 
+dabdulra 18 
+chemm 18 18 
+bhart5 18 18 
+bbuscher 18 40 18 18 18 18 
+adinovo 18 40 18 
+wsogge 18 40 18 18 18 18 18 18 
+whanley 18 15 15 7 7 18 36 18 18 19 19 18 40 18 5 5 3 3 32 32 18 18 18 18 
+wcole1 11 11 18 40 18 19 19 18 39 18 18 18 18 18 18 
+twine 18 
+rsernel 18 18 18 
+rklevens 18 40 18 18 
+rburns6 18 
+ralliso1 18 40 18 
+owright 18 18 
+nitkin 18 19 19 18 40 18 18 18 
+ncateris 18 40 18 19 19 18 40 18 22 22 21 37 21 18 40 18 18 
+nargilag 18 18 
+msitzer 18 18 
+mqueal 18 18 19 19 18 40 18 18 
+mmclau21 18 
+mduffey1 18 18 18 18 18 
+maubourg 18 0 0 11 11 20 20 18 40 18 19 19 18 40 18 18 18 18 18 18 
+lpolster 18 18 18 18 
+ksiefker 18 18 18 
+jmaier3 18 
+jhelmkam 18 18 19 19 18 40 18 
+jandrew5 18 19 19 18 40 18 18 
+hbaldwi2 18 18 
+gbarthel 18 40 18 8 36 8 18 40 18 
+ejoyce2 18 
+ecastil2 18 19 19 18 40 18 18 18 18 
+dshah2 18 18 
+dhaseno1 18 18 
+cmurillo 18 
+ckmet 18 19 19 18 40 18 18 3 3 18 40 18 18 18 18 18 18 18 18 
+cjaskows 18 40 18 18 
+cfayne 18 
+tvail 18 18 18 18 18 18 18 18 18 
+tpero 18 18 18 18 
+tmccoy1 18 
+sbuzdon 18 
+pgota 18 40 18 
+penglis2 18 18 18 
+mshan 18 40 18 
+mschmi18 18 
+mneal2 18 40 18 18 15 15 18 40 18 
+mkozak3 18 18 18 18 
+mhowe 18 40 18 
+mguilfoi 18 24 24 20 20 7 7 18 40 18 
+lmolinel 18 18 18 24 24 29 29 19 19 18 38 18 
+jshaw7 18 40 18 18 18 18 18 
+gfernand 18 18 18 
+egardey 18 
+ecook4 5 36 5 9 9 30 30 18 36 18 18 31 31 18 40 18 22 22 13 13 9 9 18 36 18 
+dchatfie 18 18 18 18 18 18 18 
+avilleg1 18 18 
+astokes2 18 19 19 18 40 18 18 19 19 18 40 18 18 18 18 
+tandrew3 18 40 18 
+shwang5 18 40 18 19 40 19 18 40 18 18 
+ntoroczk 18 
+msloan1 18 40 18 18 18 18 18 18 18 
+mfeldma2 18 40 18 
+mburns10 18 18 18 18 
+kwood11 18 
+koneill9 18 
+kkoehnen 18 37 18 24 24 30 30 18 18 18 18 18 18 18 
+kjamsek 18 40 18 
+khenges2 18 18 18 
+keichler 18 
+jperretg 18 
+jmoss1 18 18 
+jfollans 18 18 
+jbaca1 18 18 
+ejaques 18 
+dliggio 18 18 18 18 18 
+cedmond3 18 
+cduggan 18 18 
+cassam 18 18 18 
+btello 18 18 18 18 
+agaraton 18 18 18 
+adarrow 18 19 19 18 40 18 18 18 18 18 
+aaldave 18 18 15 15 18 36 18 7 7 18 40 18 19 19 18 40 18 18 
+zmieczko 18 40 18 
+wcumberl 18 
+vkaranja 18 18 18 
+thintz1 18 18 
+swaltrip 18 40 18 18 18 
+sbaker7 18 40 18 
+rdesaint 18 18 18 18 18 18 
+prothroc 18 40 18 
+pconway3 18 
+ogallahu 18 
+nvadutha 18 18 18 18 18 18 18 18 18 
+nsow 18 
+mgouldin 18 
+ksolarz 18 
+jdachill 18 
+ilickona 18 
+gpalmer 18 40 18 18 
+eodrobin 18 
+ebarron3 18 40 18 
+dlavelle 18 
+dgriffi6 18 
+cminetos 18 
+chyry 18 40 18 
+cfagan4 18 18 18 18 18 18 
+bverrecc 18 25 25 18 40 18 18 19 19 18 40 18 
+asteven4 18 19 19 
+acoury 18 
+acontre3 18 18 18 18 18 18 
+abanks3 18 18 19 19 18 40 18 
+zdesch 18 18 
+sstenge1 18 18 19 19 
+rziegler 18 40 18 18 18 
+ntownley 18 40 18 
+msteure1 18 
+kmarston 18 18 18 18 18 18 18 
+jrohan 18 
+jmiles7 18 18 18 
+hpellegr 18 40 18 
+eolmanso 18 19 19 18 38 18 
+cwagne12 18 18 18 
+cragsdal 18 40 18 18 
+cdyke 18 
+amille43 18 18 18 
+acastano 18 18 
+abakeis 18 40 18 18 
+wtjaden 18 18 18 
+tphilli7 18 19 19 18 40 18 5 5 3 3 25 25 0 0 9 9 22 22 
+sbrady9 18 18 18 18 18 18 
+rmille26 18 18 
+omagdale 18 18 
+nschoenb 18 18 18 
+nsaladin 18 
+nmungan 18 
+nlukesh 18 40 18 
+mwooten 12 36 12 27 27 28 28 18 40 18 18 18 18 18 18 
+lortiz3 18 18 18 18 18 18 
+jtang1 18 11 11 0 0 18 40 18 18 18 18 18 18 18 18 18 
+drottenb 18 
+csweene8 18 
+crivers 18 39 18 18 18 18 
+clogo 18 18 18 
+cgrunha1 18 40 18 18 
+amoran6 18 18 
+trobbin1 18 40 18 19 19 9 37 9 18 39 18 6 6 21 21 18 40 18 18 18 18 24 24 
+tmarvin 18 18 
+teiden 18 24 24 
+sratigan 18 40 18 19 19 18 40 18 19 19 18 40 18 
+sfisher6 18 
+orubin 18 31 31 18 40 18 18 
+nyano 18 21 21 30 30 9 9 0 36 0 31 31 6 6 16 16 18 40 18 18 
+nskolds 18 
+npratt 18 19 19 18 40 18 18 18 18 
+mwinton 18 40 18 
+mtrinh 18 19 19 18 40 18 18 18 
+klacosta 18 37 18 18 24 24 24 24 17 17 17 17 32 32 32 32 31 31 31 31 18 40 18 18 18 18 19 19 18 40 18 18 18 
+jzaarour 18 40 18 18 21 21 18 40 18 19 19 18 40 18 
+jtrzask1 18 
+jsheeha9 18 19 19 18 40 18 18 
+jirwin2 18 
+jhoeksem 18 
+jboyle8 18 18 22 22 18 36 18 18 18 18 18 18 18 18 18 
+hfoley 18 
+amurra10 18 
+amurph15 18 18 
+aeiteljo 18 24 24 11 11 0 0 20 20 18 18 25 40 25 18 40 18 18 18 18 19 19 18 36 18 9 40 9 
+abernocc 18 
+tdinh 18 0 0 11 11 20 20 18 40 18 0 0 11 11 20 20 18 40 18 18 18 18 19 19 18 40 18 18 18 
+shunt3 18 40 18 18 
+rmille27 18 19 19 18 40 18 18 
+nwebste1 18 18 26 26 18 40 18 6 6 18 37 18 
+nsanford 18 18 
+ncasal 18 40 18 
+mseida 18 18 18 18 18 18 18 
+mbenz1 18 
+eshea2 18 19 19 18 40 18 
+ebaker11 18 
+dspalins 18 11 11 7 40 7 18 40 18 18 18 18 19 19 9 37 9 22 22 33 33 5 5 18 40 18 18 18 
+csusco 18 18 18 
+camstut1 18 19 19 13 13 18 40 18 18 18 18 
+aschomog 18 18 18 
+aescobar 18 18 18 
+tleytham 18 18 18 18 
+rsmith54 18 
+rondrula 18 19 19 18 40 18 18 18 
+pflemin1 18 40 18 18 18 
+mtcheuka 18 40 18 18 
+msponem 18 40 18 18 18 18 18 
+mnguye18 18 18 24 24 
+mmassar1 18 40 18 
+mmacdon4 18 18 18 18 18 
+mhellick 18 40 18 18 
+mgorski2 18 18 
+kdeye 18 18 18 18 
+jsheehy1 18 
+jharnes1 18 18 18 
+jgorman7 18 
+jbotek 18 18 18 18 
+eoduro 18 40 18 19 19 
+dobryan3 18 40 18 
+ddelafe 18 27 27 
+dbryck 18 0 0 11 11 18 40 18 19 19 18 40 18 18 
+clance1 18 18 18 18 18 18 
+cdevoto 18 18 
+cbert 18 18 18 18 
+zdreznin 18 
+teckel 18 40 18 
+tconnor6 18 40 18 19 19 18 40 18 6 6 
+srodrig8 18 
+spelayom 18 19 19 18 40 18 
+rcole5 18 18 0 36 0 11 37 11 18 40 18 18 18 18 18 
+mreisel 18 
+mpiotrow 18 
+mparson5 18 
+mmccor14 18 
+mderane1 18 18 
+lwesteme 18 40 18 18 18 18 18 18 
+kcalhou3 18 
+epatton2 18 40 18 18 
+eflynn5 18 
+efitzge4 18 40 18 
+dtong 18 
+cfreema5 18 18 0 0 18 40 18 18 18 18 18 18 18 
+aleos 18 
+tdicker1 18 40 18 
+sperez3 18 
+smeyer5 18 40 18 
+rbeebe1 18 
+oegbuonu 18 18 
+mdeboske 18 
+kweingar 18 40 18 
+jhenige 18 18 18 
+imckinne 18 39 18 
+gsilva1 18 40 18 18 18 18 18 
+gkim 18 
+dpalmer4 18 40 18 18 18 19 19 13 36 13 21 21 18 18 18 19 19 
+cmaher3 18 40 18 
+chartma2 18 18 
+cbotta 18 19 19 18 40 18 15 15 18 40 18 18 18 18 18 18 
+aurquijo 18 18 18 19 19 18 40 18 18 18 19 19 
+aherman2 18 15 15 18 40 18 18 18 
+tsheeha1 18 40 18 18 18 
+rstewar6 18 40 18 18 
+rbrutvan 18 18 18 18 18 
+ralban 18 40 18 
+msicili1 18 19 19 18 40 18 18 18 
+mquinn9 18 40 18 18 
+jknipe 18 18 18 18 19 19 18 40 18 18 
+hvita 18 40 18 18 17 17 31 31 32 32 18 18 18 18 18 0 0 11 11 20 20 18 18 18 18 18 19 19 18 40 18 
+eospeck 18 36 18 18 
+dmorris7 18 19 19 18 40 18 
+dlagios 18 
+csardi 18 40 18 
+tcantway 18 18 18 18 18 18 18 18 
+kmichael 18 
+khogan6 18 
+jhallenb 18 18 18 
+gdoughe1 18 19 19 18 40 18 18 18 
+cyounkle 18 18 
+chult 18 40 18 
+braimann 18 18 
+bhuls 18 40 18 18 27 27 18 40 18 18 
+wolafsso 18 
+rcook4 18 40 18 19 19 18 40 18 18 
+ppilawsk 18 18 
+ngaines 18 37 18 18 18 
+kfarr1 18 18 
+jzhao5 11 11 
+ddonnel1 18 40 18 18 
+cmorin2 18 40 18 
+areardon 18 18 
+acohen1 18 18 11 11 0 0 18 18 
+tmaloney 18 40 18 18 19 19 18 40 18 19 19 
+smyers5 18 19 19 18 40 18 18 
+shayes6 18 
