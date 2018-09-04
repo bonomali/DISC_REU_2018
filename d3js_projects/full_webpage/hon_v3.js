@@ -19,7 +19,7 @@ var Grouping = "Gephi";
 var linkedByIndex = {};
 var svg = d3.select("#hon_diagram").select("svg");
 var defs = svg.append("svg:defs");
-var color = d3.scaleOrdinal(d3.schemeCategory10);
+var color = d3.scaleOrdinal(d3.schemeCategory20);
 color.domain([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]);
 //keep the colors right
 var flag=true;

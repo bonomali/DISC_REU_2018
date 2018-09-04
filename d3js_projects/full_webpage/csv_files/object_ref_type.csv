@@ -34,8 +34,5 @@ career_development_guide,5,reading,2
 i_am_not_your_asian_stereotype,32,video,10
 st_andre_bessette,33,video,4
 the_girl_next_door,31,reading,10
-15-30mins,36,idle_time,-
-30-45mins,37,idle_time,-
-45-60mins,38,idle_time,-
-1-2hrs,39,idle_time,-
-2hrs+,40,idle_time,-
+Short Idle Time,36,idle_time,-
+Long Idle Time,37,idle_time,-

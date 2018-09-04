@@ -14,7 +14,7 @@ var svg4 = d3.select('#histogram').select("svg"),
 
 var nValue1 = 1;
 var nValue2 = 1;
-var z = d3.scaleOrdinal(d3.schemeCategory10);
+var z = d3.scaleOrdinal(d3.schemeCategory20);
 
 function compare_students(name_number1, name_number2,file_name) {
 	

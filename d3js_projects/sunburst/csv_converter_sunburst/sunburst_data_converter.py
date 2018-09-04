@@ -127,7 +127,7 @@ def writeOut( data ):
 def main():
 
 	# Read in and write out the data from a csv
-	writeOut( readIn( "fdd_links.csv" ) )
+	writeOut( readIn( "weights-network-cell.csv" ) )
 
 	
 # so let's roll
