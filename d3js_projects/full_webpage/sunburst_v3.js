@@ -125,7 +125,7 @@ function click2(d) {
 		rows.enter()
 			.append('tr')
 			.selectAll("td")
-			.data(function (d) {return ["Student"+d.no.toString(),d.num_seq, d.sequence];})
+			.data(function (d) {return [d.no.toString(),d.num_seq, d.sequence];})
 			.enter()
 			.append("td")
 			.text(function(d) { return d; });
@@ -133,7 +133,7 @@ function click2(d) {
 		rows.exit().remove();
 
 		var cells = rows.selectAll('td')
-			.data(function (d) {return ["Student"+d.no.toString(),d.num_seq, d.sequence];})
+			.data(function (d) {return [d.no.toString(),d.num_seq, d.sequence];})
 			.text(function (d) {return d;});
 
 		cells.enter()
