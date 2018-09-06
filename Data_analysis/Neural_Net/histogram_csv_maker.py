@@ -251,6 +251,48 @@ for	assignment in list(training_data.keys()):
 		arranged_data[student][assignment]["structure"] = structures
 		arranged_data[student][assignment]["community"] = communities
 
+### Write a new file to record the average across all assignments, and set to be student 1 manually
+
+average_data = {}
+for	assignment in list(training_data.keys()):
+	print(assignment)
+	student_count = 0
+	data = training_data[assignment]
+	for student in list(data.keys()):
+		student_count +=1
+		student_data = data[student]
+		grade = student_data["percentage"]
+		structures = np.asarray(list(map(int, student_data["struc_vector"])))
+		communities =  np.asarray(list(map(int, student_data["community_vector"])))
+		try:
+			average_data[assignment]["grade"] += float(grade)
+			average_data[assignment]["structure"] += structures
+			average_data[assignment]["community"] += communities
+		except:
+			average_data[assignment] = {}
+			average_data[assignment]["grade"] = float(grade)
+			average_data[assignment]["structure"] = structures
+			average_data[assignment]["community"] = communities
+	average_data[assignment]["structure"] = average_data[assignment]["structure"]/student_count
+	average_data[assignment]["grade"] = average_data[assignment]["grade"]/student_count
+	average_data[assignment]["community"] = average_data[assignment]["community"]/student_count
+
+with open('average_results_structure.csv','w') as f:
+	for assignment in list(average_data.keys()):
+		line = "student0_"+assignment+"_"+str(average_data[assignment]["grade"])[:4]
+		for item in list(average_data[assignment]["structure"]):
+			line+=","+str(item)
+		f.write(line)
+		f.write('\n')
+
+with open('average_results_community.csv','w') as f:
+	for assignment in list(average_data.keys()):
+		line = "student0_"+assignment+"_"+str(average_data[assignment]["grade"])[:4]
+		for item in list(average_data[assignment]["community"]):
+			line+=","+str(item)
+		f.write(line)
+		f.write('\n')
+
 
 
 write_stacked_histogram_files(arranged_data, nature = "structure")

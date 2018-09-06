@@ -3,9 +3,9 @@ var cluster16_file = "csv_files/histogram_original_community.csv";
 var cluster4_aggr = "csv_files/grades_original_structure.csv";
 var cluster16_aggr = "csv_files/grades_original_community.csv";
 var value4 = "two";
-var dict = {"Capstone":0,"ePortfolio Link":1,"Integration3":2,"Prompt1":3,"Prompt2":4,
-  "Prompt3":5,"Prompt4":6,"Prompt5":7,"Prompt6":8,"Prompt7":9,"Prompt8":10,
-  "Prompt9":11,"Prompt10":12,"Prompt11":13};
+var dict = {"Capstone":13,"ePortfolioLink":0,"Integration3":6,"Prompt1":1,"Prompt2":2,
+  "Prompt3":3,"Prompt4":4,"Prompt5":5,"Prompt6":7,"Prompt7":8,"Prompt8":9,
+  "Prompt9":10,"Prompt10":11,"Prompt11":12};
 var svg4 = d3.select('#histogram').select("svg"),
     margin = {top: 10, right: 0, bottom: 20, left: 0},
     width = +svg4.attr("width") - margin.left - margin.right,
