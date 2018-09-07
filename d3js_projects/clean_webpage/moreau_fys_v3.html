@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>CCVis</title>
+<link rel="stylesheet" type="text/css" href="moreau_fys.css">
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<!-- <link rel="stylesheet" type="text/css" href="sunburst.css"> -->
+
+<body>
+
+	<!-------------------------------------------------------------------------------------------------------->
+
+	<div class = "row">
+		
+		<div class = "col-md-2" id = "hon_info">
+			<b>Click node for data:</b>
+			<table id="node_info">
+				<tr id="id">		<th>NODE:</th>		<td></td>	</tr>
+				<tr id="group">		<th>GROUP:</th>		<td></td>	</tr>
+				<tr id="inLinks">	<th>LINKS IN:</th>	<td></td>	</tr>
+				<tr id="outLinks">	<th>LINKS OUT:</th>	<td></td>	</tr>
+			</table>
+		
+
+			<br>
+      		<b>Change node size:</b>
+      		<div class="input-group" id="filters">
+				<label><input type="radio" name="filter" value="none" checked="true">None (uniform size)</label><br />
+        		<label><input type="radio" name="filter" value="all">All links </label><br />
+        		<label><input type="radio" name="filter" value="in">Links in  </label><br />
+        		<label><input type="radio" name="filter" value="out">Links out </label><br />
+      		</div>
+			
+			<br>
+    	  	<b>Change group coloring:</b>
+      		<div class="input-group" id="groupings">
+				<label><input type="radio" name="grouping" value="gephi" checked="checked">HON Community groupings</label><br />
+        		<label><input type="radio" name="grouping" value="D15">Struc2Vec clusters</label><br />
+      		</div>
+			
+		</div>
+		<div class = "col-md-4" id = "hon_diagram">
+			<svg class="column" width = "370" height = "370" ></svg>
+		</div>
+		
+		<div class = "col-md-3" id = "full_sunburst">
+			<div id="active_sequence"></div>
+			<div id="sunburst_diagram"></div>
+		</div>
+		
+		
+		<div class = "col-md-3" id = "dialog-window">
+					
+		    <div id = "url_table">
+				<table>
+					<thead>
+						<th>id</th>
+						<th>content</th>
+						<th>type</th>
+						<th>week</th>
+					</thead>
+					<tbody></tbody>
+				</table>
+			</div>
+			
+			<br>
+			<div id="non-scrollable-content">
+				<p>Show sequence data for: <label id="node_sequence">-</label> </p>
+			</div>
+
+  			<div id="scrollable-content">
+				<table>
+				    <thead>
+						<th>No.</th>
+						<th>Freq.</th>
+						<th>Sequence</th>
+					</thead>
+					<tbody></tbody>
+				</table>
+  			</div>
+
+		</div>
+		
+	</div>
+	
+	<div class = "row">
+		
+		<div class = "col-md-2" id = "histogram_info">
+			<div id="legend">
+				<h6>Change comparison: </h6>
+				<div class="input-group" id="filters2">
+					<label><input type="radio" name="filter2" value="aggregate">  Aggregate data</label><br />
+					<label><input type="radio" name="filter2" value="two" checked="checked">  Two students data</label><br />
+				</div>
+			</div>
+			
+			
+			<label for="nValue1" style="display: inline-block; width: 200px; text-align: left">
+				student number 1 = <span id="nValue1-value"></span>
+			</label>
+			<input type="number" min="1" max="934" step="1" value="1" id="nValue1">
+			
+			
+			<label for="nValue2" style="display: inline-block; width: 200px; text-align: left">
+				student number 2 = <span id="nValue2-value"></span>
+			</label>
+			<input type="number" min="1" max="934" step="1" value="1" id="nValue2">
+			<br>
+			<p>dist = <label id="dist">0.0</label></p>
+		</div>
+		
+		<div class = "col-md-4" id = "histogram">	
+			<svg width="460" height="220"></svg>
+		</div>
+
+
+		<div class = "col-md-4" id = "sankey_diagram"></div>
+		<div class = "col-md-2" id = "sankey_info">
+			<p> Choose node: </p>
+			<div id="sankey_button" class="scrollable-content" ></div>
+		</div>
+		
+	</div>
+
+</body>
+
+<script src="https://d3js.org/d3.v4.js"></script>
+<script src="http://d3js.org/d3-selection-multi.v1.js"></script>
+
+
+<script type="text/javascript" src="hon_v3.js"></script>
+<script type="text/javascript" src="sunburst_v3.js"></script>
+<script type="text/javascript" src="sankey_plugin.js"></script>
+<script type="text/javascript" src="sankey.js"></script>
+<script type="text/javascript" src="histogram_v2.js"></script>

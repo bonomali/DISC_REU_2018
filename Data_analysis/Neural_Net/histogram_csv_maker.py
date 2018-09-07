@@ -76,7 +76,7 @@ def write_stacked_histogram_files(students_data, nature = "structure"):
 	average_data = {}
 	for grade in list(summed_data.keys()):
 		#Need at least five entries in a grade band to include it; otherwise you'll get data that isn't very useful.
-		if grade_counts[grade] >=5:
+		if grade_counts[grade] >=50:
 			average_data[grade] = summed_data[grade]/grade_counts[grade]#sum(summed_data[grade])
 
 	header = "grade"
