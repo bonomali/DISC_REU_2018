@@ -81,8 +81,12 @@ function click3(name){
 		flag=true;
 	}
 }
-
+var color3 = d3.scaleOrdinal(d3.schemeCategory10);
+color3.domain([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]);
+var num_of_cluster = 16;
+var	selected = { "nodes":[] , "links":[] };
 function draw(data){
+	console.log("draw");
 	svg3.selectAll("g").remove();
 	var sankey = d3.sankey()
 		.nodeWidth(75)
@@ -132,15 +136,20 @@ function draw(data){
   node.append("rect")
       .attr("height", function(d) { return d.dy; })
       .attr("width", sankey.nodeWidth())
-      .style("fill", function(d){
-		  return d.color = color3(d.name.replace(/ .*/, ""));
-		})
       .style("stroke", function(d) { 
 		  return d3.rgb(d.color).darker(2); })
       .append("title")
       .text(function(d) { 
 		  return d.url + "\n" + format(d.value); });
 
+		if(num_of_cluster === 4)
+			node.style("fill",function(d){
+				return color3(d.Group15D);
+			});
+		else if (num_of_cluster === 16)
+			node.style("fill",function(d){
+				return color3(d.Gephi);
+			});
 
   // add in the title for the nodes
   var text= node.append("text")
@@ -175,7 +184,6 @@ function draw(data){
     }
 }
 var graph = {"nodes" : [], "links" : []};;
-var	selected = { "nodes":[] , "links":[] };
 
 var margin = {top: 10, right: 10, bottom: 10, left: 10},
     width = 400 - margin.left - margin.right,
@@ -192,7 +200,6 @@ var signal = {"A":0,"B":0,"C":0,"D":0,"F":0};
 var units = "Students";
 var formatNumber = d3.format(",.0f"),    // zero decimal places
     format = function(d) { return formatNumber(d) + " " + units; };
-var color3 = d3.scaleOrdinal(d3.schemeCategory20); 
 
 function makeSankeyD3V4(){
 
@@ -201,7 +208,8 @@ var url_file = "csv_files/object_ref_v2.csv";
 // load the data
 d3.csv(url_file, function(e , url_data){
 d3.csv(sankey_data, function(error, data) {
- 
+d3.csv("csv_files/struc2vec-directed-weighted-classified1.csv",function(error,cluster_data){
+
 	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   	//set up graph in same style as original example but empty
 	graph = {"nodes" : [], "links" : []};
@@ -228,6 +236,8 @@ d3.csv(sankey_data, function(error, data) {
   	// rather than an array of strings
 	graph.nodes.forEach(function (d, i) {
 		var url_name = "";
+		var Gephi;
+		var Group15D;
 		var arr = d.replace('|','.').split('.');
 		arr.reverse();
 		arr.forEach(function(number){
@@ -236,8 +246,14 @@ d3.csv(sankey_data, function(error, data) {
 					url_name = url_name + line.url + '-->';
 			});
 		});
+		cluster_data.forEach(function(n){
+			if(n.sequence === d){
+				Gephi = n.Gephi;
+				Group15D = n.KMeans_15D;
+			}
+		});
 		url_name = url_name.slice(0,-3);
-		graph.nodes[i] = { "name": d, "url":url_name };
+		graph.nodes[i] = { "name": d, "url":url_name,"Gephi":Gephi,"Group15D":Group15D };
 	});
   	
 
@@ -299,7 +315,7 @@ d3.csv(sankey_data, function(error, data) {
 		click3(graph.nodes[r].name);
 	}
 	flag = true;
-	draw(selected);
+
 	selected.nodes.length = 0;
 	selected.links.length = 0;
 	signal.A = 0;
@@ -309,7 +325,7 @@ d3.csv(sankey_data, function(error, data) {
 	signal.F = 0;
 	
 });
-
+});
 });
 }
 makeSankeyD3V4();

@@ -12,8 +12,10 @@ var x = d3.scaleLinear()
 var y = d3.scaleSqrt()
     .range([0, radius]);
 
-var color2 = d3.scaleOrdinal(d3.schemeCategory20c);
-
+//var color2 = d3.scaleOrdinal(d3.schemeCategory20c);
+var color2 = d3.scaleOrdinal()
+      .domain(['29','0','1','34','2','3','7','9','10','11','14','19','22','24','25','26','21','28','30','5','31',     '4','6','8','12','15','16','17','20','13','23','27','32','33',         '36','37',      '18'])
+      .range([ "#56b4e9","#56b4e9","#56b4e9","#56b4e9","#56b4e9","#56b4e9","#56b4e9","#56b4e9","#56b4e9","#56b4e9","#56b4e9","#56b4e9","#56b4e9","#56b4e9","#56b4e9","#56b4e9","#56b4e9","#56b4e9","#56b4e9","#56b4e9","#56b4e9", "#0072b2","#0072b2","#0072b2","#0072b2","#0072b2","#0072b2","#0072b2","#0072b2","#0072b2","#0072b2","#0072b2","#0072b2","#0072b2",                   "#e69f00","#e69f00",              "#d55e00" ]);
 var partition = d3.partition();
 var svg2 = d3.select("#sunburst_diagram").append("svg")
     .attr("width", width)
@@ -49,17 +51,16 @@ function click2(d) {
 	
 	// display name of sequence
 	var name_seq = "";
-	d3.select("#node_sequence")
-		.text( function(e){ 
-			var node = d;
-			while(node.parent){
-				name_seq = node.data.name + "-" + name_seq;
-				node = node.parent;
-			}
-			if(name_seq[ name_seq.length - 1 ] === "-")
-				name_seq = name_seq.slice(0, -1);
-			return name_seq; 
-		});
+
+	var tmp_node = d;
+	while(tmp_node.parent){
+		name_seq = tmp_node.data.name + "-" + name_seq;
+		tmp_node = tmp_node.parent;
+	}
+	if(name_seq[ name_seq.length - 1 ] === "-")
+		name_seq = name_seq.slice(0, -1);
+
+	document.getElementById("node_sequence").innerHTML = name_seq;
 	if(flag===true){
 	//construct the name of the node
 	var n = d;
@@ -98,27 +99,25 @@ function click2(d) {
 	}
 	// use the sequence name to find matches
 	// then display in scrollable content
-	d3.csv("sequence.csv" , function(input){
+	d3.csv("csv_files/sequence.csv" , function(input){
 		var matching = [];
 
 		// add the matching people to the array
-		input.forEach( function(object){
+		input.forEach( function(object,i){
 
 			var seq_indices = getIndicesOf(name_seq , object.sequence);
 
 			if( seq_indices.length > 0 ){
 				newObj = object;
 				newObj.num_seq = seq_indices.length;
-				
+				newObj.no = i+1;
 				seq_indices.forEach( function(i){
 					newObj.sequence = newObj.sequence.replaceAll( name_seq , '...' )
 				});
-
-
 				matching.push(newObj);
 			}
 		});
-
+		matching.sort(function(a,b){ return a.num_seq > b.num_seq?false:true; });
 		// display data in scrolllable table		
  		var rows = d3.select("#scrollable-content").select("table").select("tbody").selectAll("tr")
 			.data(matching, function (d) {return d;});
@@ -126,7 +125,7 @@ function click2(d) {
 		rows.enter()
 			.append('tr')
 			.selectAll("td")
-			.data(function (d) {return [d.num_seq, d.sequence];})
+			.data(function (d) {return [d.no.toString(),d.num_seq, d.sequence];})
 			.enter()
 			.append("td")
 			.text(function(d) { return d; });
@@ -134,7 +133,7 @@ function click2(d) {
 		rows.exit().remove();
 
 		var cells = rows.selectAll('td')
-			.data(function (d) {return [d.num_seq, d.sequence];})
+			.data(function (d) {return [d.no.toString(),d.num_seq, d.sequence];})
 			.text(function (d) {return d;});
 
 		cells.enter()
@@ -227,7 +226,7 @@ String.prototype.replaceAll = function(str1, str2, ignore)
 {
     return this.replace(new RegExp(str1.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g,"\\$&"),(ignore?"gi":"g")),(typeof(str2)=="string")?str2.replace(/\$/g,"$$$$"):str2);
 } 
-url_file = "csv_files/object_ref_v3.csv";
+url_file = "csv_files/object_ref_type.csv";
 d3.csv(url_file,function(error,data){
 	data.sort(function(a, b) { return a.num - b.num; });
 	d3.select("#url_table").style.background = "blue";
