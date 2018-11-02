@@ -13,14 +13,15 @@
 // adjust scope for interactive webpage
 var node;
 var link;
+
 var Grouping = "Gephi";
+
 var linkedByIndex = {};
 var svg = d3.select("#hon_diagram").select("svg");
 var defs = svg.append("svg:defs");
-var color = d3.scaleOrdinal(d3.schemeCategory10);
+var color = d3.scaleOrdinal(d3.schemeCategory20);
 color.domain([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]);
 //keep the colors right
-
 var flag=true;
 var main_node;
 var clicked = false;
@@ -435,6 +436,12 @@ d3.selectAll("input[name=grouping]").on("change", function(d){
 					link.attr("marker-end", function(d) {return marker(color(d.Gephi), d.value)})
 				}
 			node.attr("fill", function(d) { return color(d.Gephi); });
+			num_of_cluster = 16;
+			if(value4 === "aggregate")
+				aggregate(cluster16_aggr);
+			else if(value4 === "two")
+				compare_students(nValue1,nValue2,cluster16_file);
+			draw(selected);
 			break;
 
 		case "D15":
@@ -443,9 +450,8 @@ d3.selectAll("input[name=grouping]").on("change", function(d){
 				case true:
 					link.attr("marker-end", function(o) {
 					return o.source === d || o.target === d ? marker(color(o.Group_15D), 1.0) : 
-						marker(color(o.Gephi), 0.1);
+						marker(color(o.Group_15D), 0.1);
 				});
-			
 				break;
 				case false:
 					link.attr("marker-end", function(d) {return marker(color(d.Group_15D), d.value)});
@@ -454,6 +460,12 @@ d3.selectAll("input[name=grouping]").on("change", function(d){
 					link.attr("marker-end", function(d) {return marker(color(d.Group_15D), d.value)});
 				}
 			node.attr("fill", function(d) { return color(d.Group_15D); });		
+			num_of_cluster = 4;
+			if(value4 === "aggregate")
+				aggregate(cluster4_aggr);
+			else if(value4 === "two")
+				compare_students(nValue1,nValue2,cluster4_file);
+			draw(selected);
 			break;
 
 		case "D2":
@@ -507,4 +519,5 @@ function dragended(d) {
 makeForceDirected();
 //----------------------------------------------------------------------------------------------------------------------------------------------//
 //----------------------------------------------------------------------------------------------------------------------------------------------//
+
 

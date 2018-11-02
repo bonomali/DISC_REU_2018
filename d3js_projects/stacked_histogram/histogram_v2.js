@@ -1,83 +1,39 @@
-function makeHistogram(){
-	
-var dict = {"Capstone":0,"ePortfolio Link":1,"Integration3":2,"Prompt1":3,"Prompt2":4,
-  "Prompt3":5,"Prompt4":6,"Prompt5":7,"Prompt6":8,"Prompt7":9,"Prompt8":10,
-  "Prompt9":11,"Prompt10":12,"Prompt11":13};
-var Originaldata;
+var cluster4_file = "csv_files/histogram_original_structure.csv";
+var cluster16_file = "csv_files/histogram_original_community.csv";
+var cluster4_aggr = "csv_files/grades_original_structure.csv";
+var cluster16_aggr = "csv_files/grades_original_community.csv";
+var value4 = "two";
+var dict = {"Capstone":13,"ePortfolioLink":0,"Integration3":6,"Prompt1":1,"Prompt2":2,
+  "Prompt3":3,"Prompt4":4,"Prompt5":5,"Prompt6":7,"Prompt7":8,"Prompt8":9,
+  "Prompt9":10,"Prompt10":11,"Prompt11":12};
 var svg4 = d3.select('#histogram').select("svg"),
     margin = {top: 10, right: 0, bottom: 20, left: 0},
     width = +svg4.attr("width") - margin.left - margin.right,
     height = +svg4.attr("height") - margin.top - margin.bottom,
-    g = svg4.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-var x = d3.scaleLinear()
-    .rangeRound([width/2, width]);
-var x1 = d3.scaleLinear()
-	.rangeRound([width/2, 0]);
-
-var y = d3.scaleBand()
-    .rangeRound([0, height])
-	.paddingInner(0.05);
-
-var z = d3.scaleOrdinal(d3.schemeCategory10);
-
-
-var stack = d3.stack()
-    .offset(d3.stackOffsetExpand);
-
-
-// ** Update student display based on raw input
+    g4 = svg4.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 var nValue1 = 1;
 var nValue2 = 1;
+var z = d3.scaleOrdinal(d3.schemeCategory20);
 
-d3.select("#nValue1").on("change", function() {
-  nValue1 = this.value;
-  distance_file = "csv_files/distance.csv";
-  d3.csv(distance_file,function(error, data){
-	data.forEach(function(d){
-		if(d.number === nValue1){
-			nValue2 = d.farest;
-			document.getElementById("nValue2").value = nValue2;
-			update(nValue1,d.farest);
-		}
-	});
-  });
-});
-
-d3.select("#nValue2").on("change", function() {
-  nValue2 = this.value;
-  update(nValue1, nValue2);
-});
-//histogram_structure.csv contains the histogram csv for the structure view
-//histogram_community.csv for gephi classes
-d3.csv("csv_files/histogram_community.csv", function(d, i, columns) {
+function compare_students(name_number1, name_number2,file_name) {
+	
+d3.csv(file_name, function(d, i, columns) {
   for (i = 1, t = 0; i < columns.length; ++i) t += d[columns[i]] = +d[columns[i]];
   d.total = t;
   return d;
   }, 
-  function(error, data) {
-	Originaldata = data;
-	// Initial update value 
-	update(1, 1);
-});
+  function(error, Originaldata) {
+	
+	d3.select("#histogram").selectAll("g>*").remove();
+  var x = d3.scaleLinear()
+    .rangeRound([width/2, width]);
+  var x1 = d3.scaleLinear()
+	.rangeRound([width/2, 0]);
 
-
-// adjust the text
-function update(nValue1, nValue2) {
-  var name_number1 = nValue1;
-  var name_number2 = nValue2;
-  compare_students(name_number1, name_number2);
-}
-
-
-/***************************************************************************
-                              COMPARISON VIEW
-***************************************************************************/
-function compare_students(name_number1, name_number2) {
-d3.select("#histogram").selectAll("g>*").remove();
-console.log("num1="+name_number1.toString());
-console.log("num2="+name_number2.toString());
-
+  var y = d3.scaleBand()
+    .rangeRound([0, height])
+	.paddingInner(0.05);
   var name1 = "student" + name_number1 + "_"
   var name2 = "student" + name_number2 + "_"
 
@@ -90,7 +46,7 @@ console.log("num2="+name_number2.toString());
  
   var data1 = JSON.parse(JSON.stringify(Originaldata.filter(filterCriteria1)));
   var data2 = JSON.parse(JSON.stringify(Originaldata.filter(filterCriteria2)));
-
+  
   var i;
   for (i = 0; i < data1.length; i++) {
 	var tmp = data1[i].student_assignment_grade;
@@ -112,8 +68,6 @@ console.log("num2="+name_number2.toString());
   var keys = Originaldata.columns.slice(1);
   data1.sort(function(a,b){ return a.no - b.no; });
   data2.sort(function(a,b){ return a.no - b.no; });
-  console.log(data1);
-  console.log(data2);
   a = d3.max(data1, function(d){return d.total; });
   b = d3.max(data2, function(d){return d.total; });
   c = a>b?a:b;
@@ -121,11 +75,10 @@ console.log("num2="+name_number2.toString());
   x1.domain([0, c+5]);
   y.domain(assign_name);
   z.domain(keys);
-  console.log(z("struc0"));
   d = d3.stack().keys(keys)(data1);
   d1 = d3.stack().keys(keys)(data2);
   
-   g.append("g")
+   g4.append("g")
     .selectAll("g")
     .data(d)
     .enter()
@@ -140,7 +93,7 @@ console.log("num2="+name_number2.toString());
       .attr("width", function(d) { return x(d[1]) - x(d[0]); })
       .attr("height", y.bandwidth());
 	 
-	g.append("g")
+	g4.append("g")
       .selectAll("g")
       .data(d1)
       .enter().append("g")
@@ -154,7 +107,7 @@ console.log("num2="+name_number2.toString());
       .attr("width", function(d) { return x1(d[0]) - x1(d[1]); })
       .attr("height", y.bandwidth());
 	  
-	 g.append("g")
+	 g4.append("g")
 	  .selectAll("text")
 	  .data(data1)
 	  .enter()
@@ -168,7 +121,7 @@ console.log("num2="+name_number2.toString());
 			return d.grade;
 	  });
 	  
-	 g.append("g")
+	 g4.append("g")
 	  .selectAll("text")
 	  .data(data2)
 	  .enter()
@@ -182,17 +135,17 @@ console.log("num2="+name_number2.toString());
 			return d.grade;
 	  });
 	 
-  g.append("g")
+  g4.append("g")
       .attr("class", "axis")
       .attr("transform", "translate(0"  +"," + height + ")")
       .call(d3.axisBottom(x));
 
- g.append("g")
+ g4.append("g")
       .attr("class", "axis")
       .attr("transform", "translate(0"  +"," + height + ")")
       .call(d3.axisBottom(x1));
 
-  g.append("g")
+  g4.append("g")
       .attr("class", "axis")
 	  .attr("transform", "translate("+ width/2 +",0" + ")")
       .call(d3.axisLeft(y).ticks(null, "s"))
@@ -224,18 +177,15 @@ console.log("num2="+name_number2.toString());
 	  .attr("y", 9.5)
       .attr("dy", "0.32em")
       .text(function(d) { return d; });*/
-};
-
-
+});
+}
 
 /***************************************************************************
                                AGGREGATE VIEW
 ***************************************************************************/
-function aggregate() {
+function aggregate(file_name) {
 d3.select("#histogram").selectAll("g>*").remove();
-//grades_structure.csv for struc2vec classes
-//grades_community.csv for gephi classes
-d3.csv("csv_files/grades_community.csv", function(d, i, columns) {
+d3.csv(file_name, function(d, i, columns) {
   for (i = 1, t = 0; i < columns.length; ++i) t += d[columns[i]] = +d[columns[i]];
   d.total = t;
   return d;
@@ -254,7 +204,7 @@ d3.csv("csv_files/grades_community.csv", function(d, i, columns) {
   y.domain([0, d3.max(data, function(d) { return d.total; })]).nice();
   z.domain(keys);
 
-  g.append("g")
+  g4.append("g")
     .selectAll("g")
     .data(d3.stack().keys(keys)(data))
     .enter().append("g")
@@ -267,12 +217,12 @@ d3.csv("csv_files/grades_community.csv", function(d, i, columns) {
       .attr("height", function(d) { return y(d[0]) - y(d[1]); })
       .attr("width", x.bandwidth());
 
-  g.append("g")
+  g4.append("g")
       .attr("class", "axis")
       .attr("transform", "translate(0," + height + ")")
       .call(d3.axisBottom(x));
 
-  g.append("g")
+  g4.append("g")
       .attr("class", "axis")
 	  .attr("transform", "translate(" + 20 + ",0)")
       .call(d3.axisLeft(y).ticks(null, "s"))
@@ -285,7 +235,7 @@ d3.csv("csv_files/grades_community.csv", function(d, i, columns) {
       .attr("text-anchor", "start")
       .text("Number of instances");
 
-  var legend = g.append("g")
+  /*var legend = g.append("g")
       .attr("font-family", "sans-serif")
       .attr("font-size", 10)
       .attr("text-anchor", "end")
@@ -304,24 +254,75 @@ d3.csv("csv_files/grades_community.csv", function(d, i, columns) {
       .attr("x", width-19 )
       .attr("y", 9.5)
       .attr("dy", "0.32em")
-      .text(function(d) { return d; });
+      .text(function(d) { return d; });*/
 });
 };
+var distance_file = "json_files/distance_4cluster.json";
+var student_data_total;
+d3.json(distance_file,function(error, data){
+	student_data_total = data;
+});
+
+function makeHistogram(){
+	
+var stack = d3.stack()
+    .offset(d3.stackOffsetExpand);
+
+// ** Update student display based on raw input
+
+d3.select("#nValue1").on("change", function() {
+	nValue1 = this.value;
+	student_data = student_data_total[nValue1];
+	nValue2 = student_data[0];
+	dist = student_data[1];
+	if(num_of_cluster == 4)
+		compare_students(nValue1,nValue2,cluster4_file);
+	else if(num_of_cluster == 16)
+		compare_students(nValue1,nValue2,cluster16_file);
+	document.getElementById("nValue2").value = nValue2;
+	document.getElementById("dist").innerHTML = dist;
+
+});
+
+d3.select("#nValue2").on("change", function() {
+  nValue2 = this.value;
+  student_data = student_data_total[nValue1];
+  dist = student_data[2][nValue2 - 1 ];
+  if(num_of_cluster == 4)
+		compare_students(nValue1,nValue2,cluster4_file);
+  else if(num_of_cluster == 16)
+		compare_students(nValue1,nValue2,cluster16_file);
+  document.getElementById("dist").innerHTML = dist;
+});
+
+update(1,1,cluster16_file);
+
+
+// adjust the text
+function update(nValue1, nValue2,file_name) {
+  var name_number1 = nValue1;
+  var name_number2 = nValue2;
+  compare_students(name_number1, name_number2,file_name);
+}
 
 
 d3.select("#histogram_info").selectAll("input[name=filter2]").on("change", function(d){
 
   // value of selected radio
-  var value = this.value;
-  console.log(value);
-	switch (value) {
+  value4 = this.value;
+ 
+	switch (value4) {
 		case "aggregate":
-			console.log("aggregate");
-			aggregate();
+			if(num_of_cluster == 4)
+				aggregate(cluster4_aggr);
+			else if(num_of_cluster == 16)
+				aggregate(cluster16_aggr);
 			break;
 		case "two":
-			console.log("two");
-			compare_students(nValue1,nValue2);
+			if(num_of_cluster == 4)
+				compare_students(nValue1,nValue2,cluster4_file);
+			else if(num_of_cluster == 16)
+				compare_students(nValue1,nValue2,cluster16_file);
 			break;
 	}
 
